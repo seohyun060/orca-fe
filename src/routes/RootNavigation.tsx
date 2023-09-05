@@ -1,4 +1,4 @@
-import HomeContainer from 'src/components/Home/containers/HomeContainer';
+import HomeContainer from 'src/pages/Home/containers/HomeContainer';
 import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './styles/rootnavigation.style.css';
-import GnbContainer from 'src/components/Gnb/containers/GnbContainer';
+import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
 // /* eslint no-restricted-globals: ["off"] */
 
 const RootNavigation = () => {

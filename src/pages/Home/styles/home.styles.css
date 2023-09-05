@@ -1,0 +1,14 @@
+.home {
+  width: 100%;
+}
+.home-anime {
+  width: 100%;
+  height: 727px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-anime img {
+  margin-top: 77px;
+}/*# sourceMappingURL=home.styles.css.map */

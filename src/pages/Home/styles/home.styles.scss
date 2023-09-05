@@ -1,0 +1,15 @@
+.home {
+  width: 100%;
+
+  &-anime {
+    width: 100%;
+    height: 727px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-top: 77px;
+    }
+  }
+}

@@ -17,13 +17,7 @@ const RootNavigation = () => {
     <>
       <GnbContainer />
       <Routes location={location}>
-        <Route
-          path='/'
-          element={
-            //<HelmetHoc title='Portfolio | 움직이는네모'>
-            <HomeContainer />
-          }
-        />
+        <Route path='/' element={<HomeContainer />} />
       </Routes>
     </>
   );

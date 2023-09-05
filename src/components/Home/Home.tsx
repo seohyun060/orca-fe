@@ -1,5 +1,4 @@
 import React from 'react';
-
 import home_banner from '../../assets/images/HOME/home_banner.png';
 type Props = {};
 

@@ -1,5 +1,7 @@
 .home {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .home-anime {
   width: 100%;
@@ -7,19 +9,31 @@
   background-color: black;
   display: flex;
   align-items: center;
+  position: relative;
   justify-content: center;
 }
 .home-anime img {
   margin-top: 77px;
 }
 .home-intro {
+  width: 100%;
   height: 1272px;
   background-color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .home-intro-what {
   width: 948px;
   height: 244px;
   color: white;
+  display: grid;
+  grid-template-columns: 304px 644px;
+  grid-template-rows: 98px 146px;
+  margin-top: 120px;
+  margin-left: 364px;
+  position: relative;
+  grid-template-areas: "head head" "about body";
 }
 .home-intro-what-head {
   color: white;
@@ -30,6 +44,7 @@
   font-style: normal;
   line-height: 28px;
   letter-spacing: normal;
+  grid-area: head;
 }
 .home-intro-what-about {
   color: white;
@@ -40,6 +55,9 @@
   font-style: normal;
   line-height: 28px;
   letter-spacing: normal;
+  width: 210px;
+  height: 28px;
+  grid-area: about;
 }
 .home-intro-what-body {
   color: white;
@@ -49,5 +67,114 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 36.5px;
+  letter-spacing: normal;
+  grid-area: body;
+  width: 644px;
+  height: 106px;
+}
+.home-intro-goal {
+  width: 1040px;
+  height: 298px;
+  display: grid;
+  grid-template-rows: 98px 116px 84px;
+  position: relative;
+  margin-top: 150px;
+  margin-left: 364px;
+  grid-template-areas: "head" "body1" "body2";
+}
+.home-intro-goal-head {
+  color: white;
+  font-size: 60px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  grid-area: head;
+  width: 668px;
+  height: 28px;
+}
+.home-intro-goal-body1, .home-intro-goal-body2 {
+  color: white;
+  font-size: 22px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  width: 584px;
+  height: 84px;
+  grid-area: body1;
+  justify-self: end;
+}
+.home-intro-goal-body2 {
+  grid-area: body2;
+}
+.home-intro-contact {
+  color: white;
+  position: relative;
+  width: 1192px;
+  height: 160px;
+  margin-top: 150px;
+  margin-left: 364px;
+}
+.home-intro-contact-head {
+  color: white;
+  font-size: 30px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  margin-bottom: 16px;
+}
+.home-intro-contact-email {
+  background-color: black;
+  width: 1192px;
+  height: 44px;
+  margin-bottom: 16px;
+}
+.home-intro-contact-email input {
+  width: 987px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--Light-gray, #f0f0f0);
+  background-color: black;
+  color: #f0f0f0;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  padding-left: 21px;
+  margin-right: 21px;
+}
+.home-intro-contact-email button {
+  border-radius: 10px;
+  width: 184px;
+  height: 44px;
+  background: var(--Light-gray, #f0f0f0);
+  color: #3c3c3c;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+.home-intro-contact-body {
+  color: #9e9e9e;
+  font-size: 22px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
   letter-spacing: normal;
 }/*# sourceMappingURL=home.styles.css.map */

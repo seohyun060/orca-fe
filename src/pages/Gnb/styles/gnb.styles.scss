@@ -19,7 +19,8 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  position: absolute;
+  position: fixed;
+  z-index: 100;
   &-logo {
     position: absolute;
     left: 60px;

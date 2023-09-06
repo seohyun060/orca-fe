@@ -12,33 +12,128 @@
 }
 .home {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   &-anime {
+    //animation section
     width: 100%;
     height: 727px;
     background-color: black;
     display: flex;
     align-items: center;
+    position: relative;
     justify-content: center;
     img {
       margin-top: 77px;
     }
   }
   &-intro {
+    //intro section
+    width: 100%;
     height: 1272px;
     background-color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     &-what {
       width: 948px;
       height: 244px;
       color: white;
+      display: grid;
+      grid-template-columns: 304px 644px;
+      grid-template-rows: 98px 146px;
+      margin-top: 120px;
+      margin-left: 364px;
+      position: relative;
       &-head {
         @include font-setting(white, 600, 60px, 28px);
+        grid-area: head;
       }
       &-about {
         @include font-setting(white, 400, 22px, 28px);
+        width: 210px;
+        height: 28px;
+        grid-area: about;
       }
       &-body {
         @include font-setting(white, 600, 30px, 36.5px);
+        grid-area: body;
+        width: 644px;
+        height: 106px;
+      }
+
+      grid-template-areas:
+        'head head'
+        'about body';
+    }
+    &-goal {
+      width: 1040px;
+      height: 298px;
+      display: grid;
+      grid-template-rows: 98px 116px 84px;
+      position: relative;
+      margin-top: 150px;
+      margin-left: 364px;
+
+      &-head {
+        @include font-setting(white, 600, 60px, 28px);
+        grid-area: head;
+        width: 668px;
+        height: 28px;
+      }
+      &-body1 {
+        @include font-setting(white, 400, 22px, 28px);
+        width: 584px;
+        height: 84px;
+        grid-area: body1;
+        justify-self: end;
+      }
+      &-body2 {
+        @extend .home-intro-goal-body1;
+        grid-area: body2;
+      }
+      grid-template-areas:
+        'head'
+        'body1'
+        'body2';
+    }
+    &-contact {
+      color: white;
+      position: relative;
+      width: 1192px;
+      height: 160px;
+      margin-top: 150px;
+      margin-left: 364px;
+      &-head {
+        @include font-setting(white, 600, 30px, 28px);
+        margin-bottom: 16px;
+      }
+      &-email {
+        background-color: black;
+        width: 1192px;
+        height: 44px;
+        input {
+          width: 987px;
+          height: 44px;
+          border-radius: 10px;
+          border: 1px solid var(--Light-gray, #f0f0f0);
+          background-color: black;
+          @include font-setting(#f0f0f0, 300, 20px, 28px);
+          padding-left: 21px;
+          margin-right: 21px;
+        }
+        button {
+          border-radius: 10px;
+          width: 184px;
+          height: 44px;
+          background: var(--Light-gray, #f0f0f0);
+          @include font-setting(#3c3c3c, 300, 20px, 28px);
+        }
+        margin-bottom: 16px;
+      }
+      &-body {
+        @include font-setting(#9e9e9e, 400, 22px, 28px);
       }
     }
   }

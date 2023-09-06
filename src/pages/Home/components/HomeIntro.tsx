@@ -1,8 +1,13 @@
 import React from 'react';
 import '../styles/home.styles.css';
-type Props = {};
+import { EChange } from '@typedef/types';
+type Props = {
+  email: string;
+  onChangeEmail: (e: EChange) => void;
+  onSubmitClicked: () => void;
+};
 
-const HomeIntro = (props: Props) => {
+const HomeIntro = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
   return (
     <div className='home-intro'>
       <div className='home-intro-what'>
@@ -12,6 +17,39 @@ const HomeIntro = (props: Props) => {
           The ORCA (Optimized Research in Clinical AI) Group at BeamWorks is a
           collaborative team of AI specialists and clinical researchers, focused
           on healthcare applications.
+        </div>
+      </div>
+      <div className='home-intro-goal'>
+        <div className='home-intro-goal-head'>Goal of the ORCA Group</div>
+        <div className='home-intro-goal-body1'>
+          We develop and validate cutting-edge AI technologies, and we
+          facilitate effective communication between healthcare providers and
+          patients.
+        </div>
+        <div className='home-intro-goal-body2'>
+          Our optimized AI empowers healthcare professionals, leading to more
+          accurate diagnoses and personalized treatment plans, ultimately
+          improving patient outcomes.
+        </div>
+      </div>
+      <div className='home-intro-contact'>
+        <div className='home-intro-contact-head'>
+          Are you interested in joining the ORCA Group?
+        </div>
+        <form className='home-intro-contact-email' onSubmit={onSubmitClicked}>
+          <input
+            className='email'
+            placeholder='Please write your email address!'
+            onChange={onChangeEmail}
+            required
+            value={email}
+          ></input>
+          <button type='submit'>Subscribe</button>
+        </form>
+        <div className='home-intro-contact-body'>
+          Please provide us with your email address so that we can send it to
+          the ORCA Group for confirmation. Once they verify, we will forward the
+          information to your email.
         </div>
       </div>
     </div>

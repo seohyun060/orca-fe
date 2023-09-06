@@ -8,7 +8,7 @@ export default function ProjectComponent() {
     <div>
       <section className="ProjectsSection">
         <div className="ProjectsSectionTitle">
-          <label className="ProjectFont">Projects</label>
+          <label className="MainTitleFont">Projects</label>
           {/* project로 연결 */}
           <button className="ViewButton">
             <label className="View">View All</label>

@@ -19,7 +19,7 @@ const Home = (props: Props) => {
       <HomeIntroContainer />
       <section className='Section'>
         <div className='SectionTitle'>
-          <label className='ProjectFont'>Projects</label>
+          <label className='MainTitleFont'>Projects</label>
           {/* project로 연결 */}
           <button className='ViewButton'>
             <label className='View'>View All</label>
@@ -32,8 +32,8 @@ const Home = (props: Props) => {
         </div>
       </section>
       <section className="Section">
-      <div className='SectionTitle'>
-          <label className='ProjectFont'>Events</label>
+        <div className='SectionTitle'>
+          <label className='MainTitleFont'>Events</label>
           {/* project로 연결 */}
           <button className='ViewButton'>
             <label className='View'>View All</label>
@@ -41,6 +41,7 @@ const Home = (props: Props) => {
         </div>
         <div className="SectionTitle">
           <div className="EventBox">
+            <EventCard />
             <EventCard />
             <EventCard />
             <EventCard />

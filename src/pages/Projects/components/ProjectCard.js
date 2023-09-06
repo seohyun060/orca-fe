@@ -18,7 +18,7 @@ export default function ProjectCard() {
       </div>
       {/* 과제카테고리? */}
       <div className="RowBox">
-        <label className="Category">CADAI-B</label>
+        <label className="ProjectCategory">CADAI-B</label>
       </div>
       {/* 지역 및 상세 페이지 버튼 */}
       <div className="RowBox">

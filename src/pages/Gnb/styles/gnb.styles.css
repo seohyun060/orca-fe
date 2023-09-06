@@ -7,7 +7,8 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  position: relative;
+  position: fixed;
+  z-index: 100;
 }
 .gnb-logo {
   position: absolute;

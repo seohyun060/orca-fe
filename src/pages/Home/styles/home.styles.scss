@@ -294,16 +294,6 @@
   opacity: 0.9;
 }
 
-.MainTitleFont {
-  color: #000;
-  font-family: Pretendard;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px;
-  opacity: 0.9;
-}
-
 .ViewButton {
   width: 161px;
   height: 44px;
@@ -322,7 +312,6 @@
 // Project
 
 .ProjectBox {
-  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;

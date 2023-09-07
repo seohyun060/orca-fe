@@ -177,4 +177,149 @@
   font-style: normal;
   line-height: 28px;
   letter-spacing: normal;
+}
+.home-research {
+  position: relative;
+  width: 100%;
+  height: 665px;
+  background-color: white;
+}
+.home-research-head {
+  position: relative;
+  margin-top: 142px;
+  margin-left: 364px;
+  width: 1192px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-research-head span {
+  color: black;
+  font-size: 60px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+.home-research-head button {
+  width: 161px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  color: #3c3c3c;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+.home-research-body {
+  position: relative;
+  width: 1192px;
+  height: 596px;
+  margin-top: 40px;
+  margin-left: 364px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.home-research-body svg {
+  position: absolute;
+  width: 94.46%;
+  height: 96.47%;
+  top: 15.23px;
+  left: 37.93px;
+}
+.home-research-body .country0, .home-research-body .country3, .home-research-body .country2, .home-research-body .country1 {
+  position: relative;
+  width: 149px;
+  height: 149px;
+  border-top: 1px solid var(--Midium-gray, #9e9e9e);
+  border-left: 1px solid var(--Midium-gray, #9e9e9e);
+  z-index: 30;
+}
+.home-research-body .country0 .country-box, .home-research-body .country3 .country-box, .home-research-body .country2 .country-box, .home-research-body .country1 .country-box {
+  position: absolute;
+  width: 149px;
+  height: 149px;
+  z-index: -5;
+}
+.home-research-body .country0 .researchers, .home-research-body .country3 .researchers, .home-research-body .country2 .researchers, .home-research-body .country1 .researchers {
+  position: absolute;
+  width: 247px;
+  height: 393px;
+  z-index: 100;
+  left: 140px;
+  display: grid;
+  grid-template-columns: 18px 211px 18px;
+  grid-template-rows: 33px 344px 16px;
+  grid-template-areas: ". head ." "back body go" ". . .";
+}
+.home-research-body .country0 .researchers-head, .home-research-body .country3 .researchers-head, .home-research-body .country2 .researchers-head, .home-research-body .country1 .researchers-head {
+  grid-area: head;
+  color: #3c3c3c;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+.home-research-body .country0 .researchers-back, .home-research-body .country3 .researchers-back, .home-research-body .country2 .researchers-back, .home-research-body .country1 .researchers-back {
+  grid-area: back;
+  place-self: center center;
+}
+.home-research-body .country0 .researchers-body, .home-research-body .country3 .researchers-body, .home-research-body .country2 .researchers-body, .home-research-body .country1 .researchers-body {
+  width: 211px;
+  height: 344px;
+  grid-area: body;
+}
+.home-research-body .country0 .researchers-body .researcher-card, .home-research-body .country3 .researchers-body .researcher-card, .home-research-body .country2 .researchers-body .researcher-card, .home-research-body .country1 .researchers-body .researcher-card {
+  width: 211px;
+  height: 108px;
+  display: flex;
+  margin-bottom: 10px;
+  background: var(--Dark-gray, #3c3c3c);
+}
+.home-research-body .country0 .researchers-body .researcher-card img, .home-research-body .country3 .researchers-body .researcher-card img, .home-research-body .country2 .researchers-body .researcher-card img, .home-research-body .country1 .researchers-body .researcher-card img {
+  width: 92px;
+  height: 92px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.home-research-body .country0 .researchers-body .researcher-card span, .home-research-body .country3 .researchers-body .researcher-card span, .home-research-body .country2 .researchers-body .researcher-card span, .home-research-body .country1 .researchers-body .researcher-card span {
+  margin-top: 72px;
+  margin-left: 8px;
+  color: white;
+  font-size: 30px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+.home-research-body .country0 .researchers-go, .home-research-body .country3 .researchers-go, .home-research-body .country2 .researchers-go, .home-research-body .country1 .researchers-go {
+  grid-area: go;
+  place-self: center center;
+}
+.home-research-body .country0:hover, .home-research-body .country3:hover, .home-research-body .country2:hover, .home-research-body .country1:hover {
+  background: var(--Midium-gray, #9e9e9e);
+  mix-blend-mode: multiply;
+  cursor: pointer;
+}
+.home-research-body .country1 {
+  border-right: 1px solid var(--Midium-gray, #9e9e9e);
+}
+.home-research-body .country2 {
+  border-bottom: 1px solid var(--Midium-gray, #9e9e9e);
+}
+.home-research-body .country3 {
+  border: 1px solid var(--Midium-gray, #9e9e9e);
 }/*# sourceMappingURL=home.styles.css.map */

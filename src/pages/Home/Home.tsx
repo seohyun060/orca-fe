@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/home.styles.css';
 import HomeIntroContainer from './containers/HomeIntroContainer';
-
+import HomeResearcherContainer from './containers/HomeResearcherContainer';
 import images from 'src/assets/images';
 import home_banner from '../../assets/images/HOME/home_banner.png';
 type Props = {};
@@ -12,6 +12,7 @@ const Home = (props: Props) => {
         <img src={images.logo_orca} />
       </div>
       <HomeIntroContainer />
+      <HomeResearcherContainer />
     </div>
   );
 };

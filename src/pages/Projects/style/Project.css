@@ -1,0 +1,73 @@
+.ProjectContent {
+  padding: 30px 24px;
+  max-width: 1133px;
+  border: 0.75px solid #9E9E9E;
+  height: 210px;
+  margin: 20px 0px;
+}
+
+.RowBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Completed {
+  color: var(--point, #1ACFAF);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.PID {
+  color: var(--Midium-gray, #9E9E9E);
+  text-align: right;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.Title {
+  width: 65%;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.Category {
+  background: var(--Light-gray, #F0F0F0);
+  display: inline-flex;
+  padding: 4px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.Location {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.LeadMoreButton {
+  width: 161px;
+  height: 44px;
+  background-color: white;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 1px;
+  font-family: Pretendard;
+}/*# sourceMappingURL=Project.css.map */

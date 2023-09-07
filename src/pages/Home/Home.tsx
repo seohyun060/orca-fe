@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./styles/home.styles.css";
-import "./styles/home.styles.scss";
 import HomeIntroContainer from "./containers/HomeIntroContainer";
 import HomeProjects from "./components/HomeProjects";
 import HomeEvents from "./components/HomeEvents";

@@ -10,7 +10,7 @@ const HomeEvents = () => {
   return (
     <section className="Section">
       <div className="SectionTitle">
-        <label className="MainTitleFont">Events</label>
+        <label>Events</label>
         <button className="ViewButton" onClick={() => navigate("/events")}>
           <label className="View">View All</label>
         </button>

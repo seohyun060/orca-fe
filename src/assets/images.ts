@@ -5,6 +5,7 @@ const images = {
   back: '/assets/images/back.png',
   go: '/assets/images/go.png',
   view: '/assets/images/view.svg',
+  search: '/assets/images/search.svg'
 };
 
 export default images;

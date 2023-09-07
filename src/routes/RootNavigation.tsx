@@ -1,4 +1,6 @@
 import HomeContainer from 'src/pages/Home/containers/HomeContainer';
+import ProjectsPage from 'src/pages/Projects/ProjectsPage'
+
 import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -18,6 +20,7 @@ const RootNavigation = () => {
       <GnbContainer />
       <Routes location={location}>
         <Route path='/' element={<HomeContainer />} />
+        <Route path='/projects' element={<ProjectsPage />} />
       </Routes>
     </>
   );

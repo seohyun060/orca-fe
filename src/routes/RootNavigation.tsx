@@ -8,7 +8,9 @@ import {
 } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './styles/rootnavigation.style.css';
+import FooterContainer from 'src/pages/Footer/containers/FooterContainer';
 import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
+
 // /* eslint no-restricted-globals: ["off"] */
 
 const RootNavigation = () => {
@@ -19,6 +21,7 @@ const RootNavigation = () => {
       <Routes location={location}>
         <Route path='/' element={<HomeContainer />} />
       </Routes>
+      <FooterContainer />
     </>
   );
 };

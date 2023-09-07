@@ -1,0 +1,202 @@
+.footer {
+  width: 1192px;
+  height: 814px;
+  margin: auto;
+}
+.footer-news {
+  width: 100%;
+  height: 166px;
+  margin-bottom: 131px;
+}
+.footer-news-head {
+  color: #000;
+  /* web. semi.30 */
+  font-family: Pretendard;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 93.333% */
+  margin-bottom: 24px;
+}
+.footer-news form {
+  width: 1192px;
+  height: 44px;
+  margin-bottom: 16px;
+}
+.footer-news form input {
+  width: 987px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  color: #f0f0f0;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  padding-left: 21px;
+  margin-right: 21px;
+}
+.footer-news form button {
+  width: 184px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--Dark-gray, #3c3c3c);
+  color: #f0f0f0;
+  font-size: 20px;
+  font-family: Pretendard;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+}
+.footer-news-please {
+  width: 762px;
+  color: var(--Midium-gray, #9e9e9e);
+  /* web. re.22 */
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info {
+  display: flex;
+  flex-direction: column;
+}
+.footer-info-head {
+  color: #000;
+  height: 20px;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 127.273% */
+  text-decoration-line: underline;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+.footer-info-head .legal {
+  margin-right: 29px;
+}
+.footer-info-beamworks {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+  margin-bottom: 20px;
+}
+.footer-info-ceo {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.footer-info-ceo .ceo {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 21px;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-ceo .kim {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-address {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.footer-info-address .business {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 21px;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-address .location {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-number {
+  display: flex;
+  flex-direction: row;
+}
+.footer-info-number .number1 {
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 21px;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-number .number2 {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+  margin-right: 49px;
+}
+.footer-info-number .email1 {
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 21px;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-number .email2 {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+  margin-right: 65px;
+}
+.footer-info-number .fax1 {
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 21px;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-number .fax2 {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+}
+.footer-info-logo {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer-info-logo .beamworks {
+  margin-right: 31px;
+  margin-top: -2px;
+}/*# sourceMappingURL=footer.styles.css.map */

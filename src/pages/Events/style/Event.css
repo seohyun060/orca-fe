@@ -1,8 +1,8 @@
 .EventCard {
   display: flex;
   flex-direction: column;
-  width: 370px;
-  height: 200px;
+  width: 432px;
+  height: 233px;
   flex-shrink: 0;
   background: var(--Dark-gray, #3c3c3c);
   padding: 14px 18px;
@@ -25,7 +25,7 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   margin-left: 4px;
 }
 
@@ -57,7 +57,7 @@
   font-weight: 600;
   line-height: 25px;
   margin-left: 4px;
-  margin-bottom: 29px;
+  margin-bottom: 30px;
 }
 
 .EventTime {

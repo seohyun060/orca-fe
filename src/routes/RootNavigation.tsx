@@ -1,5 +1,5 @@
 import HomeContainer from 'src/pages/Home/containers/HomeContainer';
-import ProjectsPage from 'src/pages/Projects/ProjectsPage'
+import ProjectsPage from 'src/pages/Projects/ProjectsPage';
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -19,7 +19,7 @@ const RootNavigation = () => {
   const location = useLocation();
   return (
     <>
-      <GnbContainer />
+      <GnbContainer location={location.pathname} />
       <Routes location={location}>
         <Route path='/' element={<HomeContainer />} />
         <Route path='/projects' element={<ProjectsPage />} />

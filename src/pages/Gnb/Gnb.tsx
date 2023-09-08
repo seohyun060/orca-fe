@@ -5,6 +5,7 @@ import { GNBTableTypes } from '@typedef/types';
 type Props = {
   tabTable: GNBTableTypes[];
   language: string;
+  route: string;
   onLanguageClicked: () => void;
   onItemClicked: (item: string) => void;
 };
@@ -12,12 +13,19 @@ type Props = {
 const gnb = ({
   tabTable,
   language,
+  route,
   onLanguageClicked,
   onItemClicked,
 }: Props) => {
   return (
     <div className='gnb'>
-      <img src={images.logo} className='gnb-logo' />
+      <img
+        src={images.logo}
+        className='gnb-logo'
+        onClick={() => {
+          onItemClicked('/');
+        }}
+      />
       <div className='gnb-menu'>
         {tabTable.map((item, idx) => {
           return (
@@ -25,6 +33,9 @@ const gnb = ({
               key={idx}
               onClick={() => {
                 onItemClicked(item.path);
+              }}
+              style={{
+                textDecorationLine: `/${route}` == item.path ? 'underline' : '',
               }}
             >
               {item.label}

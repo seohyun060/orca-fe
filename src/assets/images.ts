@@ -5,6 +5,8 @@ const images = {
   back: '/assets/images/back.png',
   go: '/assets/images/go.png',
   view: '/assets/images/view.svg',
+  beamworks: '/assets/images/beamworks.png',
+  logo_s: '/assets/images/logo-s.png',
   search: '/assets/images/search.svg'
 };
 

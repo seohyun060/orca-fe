@@ -9,7 +9,7 @@ type Props = {
 };
 
 const HomeResearcher = ({ onViewAllClicked, globalLists }: Props) => {
-  let boxSelected = false;
+  const [isSelected, setIsSelected] = useState<boolean>(false);
   return (
     <div className='home-research'>
       <div className='home-research-head'>
@@ -17,13 +17,6 @@ const HomeResearcher = ({ onViewAllClicked, globalLists }: Props) => {
         <button onClick={onViewAllClicked}>View All</button>
       </div>
       <div className='home-research-body'>
-        {globalLists.map((researcherList, index) => (
-          <ResearcherBoxContainer
-            researcherList={researcherList}
-            index={index}
-            boxSelected={boxSelected}
-          />
-        ))}
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='1126'
@@ -38,6 +31,16 @@ const HomeResearcher = ({ onViewAllClicked, globalLists }: Props) => {
             fill='#9E9E9E'
           />
         </svg>
+        <div className='research-box-container'>
+          {globalLists.map((researcherList, index) => (
+            <ResearcherBoxContainer
+              researcherList={researcherList}
+              index={index}
+              isSelected={isSelected}
+              setIsSelected={setIsSelected}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

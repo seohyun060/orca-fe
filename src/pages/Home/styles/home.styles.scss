@@ -28,12 +28,16 @@
       margin-top: 77px;
     }
   }
-
+  .intro-background {
+    width: 100%;
+    background-color: black;
+  }
   &-intro {
     //intro section
-    width: 100%;
+    width: 1192px;
     height: 1272px;
     background-color: black;
+    margin: auto;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -45,7 +49,7 @@
       grid-template-columns: 304px 644px;
       grid-template-rows: 98px 146px;
       margin-top: 120px;
-      margin-left: 364px;
+      //margin-left: 18.9583%;
       position: relative;
       &-head {
         @include font-setting(white, 600, 60px, 28px);
@@ -65,8 +69,8 @@
       }
 
       grid-template-areas:
-        "head head"
-        "about body";
+        'head head'
+        'about body';
     }
     &-goal {
       width: 1040px;
@@ -75,7 +79,7 @@
       grid-template-rows: 98px 116px 84px;
       position: relative;
       margin-top: 150px;
-      margin-left: 364px;
+      //margin-left: 18.9583%;
 
       &-head {
         @include font-setting(white, 600, 60px, 28px);
@@ -95,9 +99,9 @@
         grid-area: body2;
       }
       grid-template-areas:
-        "head"
-        "body1"
-        "body2";
+        'head'
+        'body1'
+        'body2';
     }
     &-contact {
       color: white;
@@ -105,7 +109,7 @@
       width: 1192px;
       height: 160px;
       margin-top: 150px;
-      margin-left: 364px;
+      //margin-left: 18.9583%;
       &-head {
         @include font-setting(white, 600, 30px, 28px);
         margin-bottom: 16px;
@@ -141,13 +145,16 @@
 
   &-research {
     position: relative;
-    width: 100%;
-    height: 665px;
+    width: 1192px;
+    height: 814px;
     background-color: white;
+    margin-bottom: 150px;
+    margin: auto;
+
     &-head {
       position: relative;
       margin-top: 142px;
-      margin-left: 364px;
+      //margin-left: 18.9583%;
       width: 1192px;
       height: 46px;
       display: flex;
@@ -169,40 +176,45 @@
       width: 1192px;
       height: 596px;
       margin-top: 40px;
-
-      margin-left: 364px;
+      //margin-left: 18.9583%;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: repeat(4, 1fr);
 
-      svg {
+      .research-box-container {
         position: absolute;
-
-        width: 94.46%;
-        height: 96.47%;
-        top: 15.23px;
-        left: 37.93px;
+        display: flex;
+        flex-wrap: wrap;
       }
 
       .country0 {
         position: relative;
         width: 149px;
         height: 149px;
-        border-top: 1px solid var(--Midium-gray, #9e9e9e);
-        border-left: 1px solid var(--Midium-gray, #9e9e9e);
-        z-index: 30;
         .country-box {
-          position: absolute;
           width: 149px;
           height: 149px;
-          z-index: -5;
+          border-top: 1px solid var(--Midium-gray, #909090);
+          border-left: 1px solid var(--Midium-gray, #909090);
         }
-
+        .country-box:hover {
+          background: var(--Midium-gray, #9e9e9e);
+          opacity: 0.7;
+          mix-blend-mode: multiply;
+          cursor: pointer;
+        }
+        .country-box-Off {
+          width: 149px;
+          height: 149px;
+          border-top: 1px solid var(--Midium-gray, #909090);
+          border-left: 1px solid var(--Midium-gray, #909090);
+        }
         .researchers {
           position: absolute;
           width: 247px;
           height: 393px;
           z-index: 100;
+          top: 0px;
           left: 140px;
           //border: 1px solid var(--Midium-gray, #9e9e9e);
           display: grid;
@@ -249,11 +261,7 @@
             '. . .';
         }
       }
-      .country0:hover {
-        background: var(--Midium-gray, #9e9e9e);
-        mix-blend-mode: multiply;
-        cursor: pointer;
-      }
+
       .country1 {
         @extend .country0;
         border-right: 1px solid var(--Midium-gray, #9e9e9e);
@@ -264,7 +272,8 @@
       }
       .country3 {
         @extend .country0;
-        border: 1px solid var(--Midium-gray, #9e9e9e);
+        border-right: 1px solid var(--Midium-gray, #9e9e9e);
+        border-bottom: 1px solid var(--Midium-gray, #9e9e9e);
       }
     }
   }

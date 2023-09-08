@@ -3,15 +3,16 @@ import Gnb from '../Gnb';
 import { GNBTableTypes } from '@typedef/types';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-type Props = {};
-const GnbContainer = (props: Props) => {
+type Props = { location: string };
+const GnbContainer = ({ location }: Props) => {
+  const route = location.split('/')[1];
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState<string>('/');
   const [language, setLanguage] = useState('En');
   const tabTable: GNBTableTypes[] = [
     {
       label: 'ORCA',
-      path: '/',
+      path: '/orca',
     },
     {
       label: 'Researcher',
@@ -44,12 +45,20 @@ const GnbContainer = (props: Props) => {
       setLanguage('Kr');
     }
   }, [language]);
-
+  // useEffect(() => {
+  //   let route = location.split('/')[1];
+  //   if (route === 'mypage' || route.includes('upload')) {
+  //     setTextColor('black');
+  //   } else {
+  //     setTextColor('white');
+  //   }
+  // }, [location]);
   return (
     <div>
       <Gnb
         tabTable={tabTable}
         language={language}
+        route={route}
         onLanguageClicked={onLanguageClicked}
         onItemClicked={onItemClicked}
       />

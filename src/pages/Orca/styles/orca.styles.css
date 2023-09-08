@@ -1,0 +1,196 @@
+.orca {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orca-what-background {
+  width: 100%;
+  background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+}
+.orca-what {
+  width: 1192px;
+  height: 727px;
+  background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.orca-what-box {
+  width: 948px;
+  height: 244px;
+  color: white;
+  display: grid;
+  grid-template-columns: 304px 644px;
+  grid-template-rows: 98px 146px;
+  margin-top: 290px;
+  position: relative;
+  grid-template-areas: "head head" "about body";
+}
+.orca-what-box-head {
+  color: white;
+  font-size: 60px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  grid-area: head;
+}
+.orca-what-box-about {
+  color: white;
+  font-size: 22px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  width: 210px;
+  height: 28px;
+  grid-area: about;
+}
+.orca-what-box-body {
+  color: white;
+  font-size: 30px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 36.5px;
+  letter-spacing: normal;
+  grid-area: body;
+  width: 644px;
+  height: 106px;
+}
+.orca-goal {
+  width: 1192px;
+  height: 210px;
+  margin: auto;
+  margin-top: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.orca-goal-box {
+  width: 1040px;
+  height: 210px;
+  display: grid;
+  grid-template-rows: 98px 112px;
+  grid-template-columns: 456px 584px;
+  position: relative;
+  grid-template-areas: "head head" "body1 body2";
+}
+.orca-goal-box-head {
+  color: black;
+  font-size: 60px;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  grid-area: head;
+  width: 668px;
+  height: 28px;
+}
+.orca-goal-box-body1 {
+  color: black;
+  font-size: 22px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  width: 432px;
+  height: 112px;
+  grid-area: body1;
+}
+.orca-goal-box-body2 {
+  color: black;
+  font-size: 22px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 28px;
+  letter-spacing: normal;
+  width: 584px;
+  height: 84px;
+  grid-area: body2;
+}
+.orca-benefits {
+  width: 1192px;
+  height: 664px;
+  margin: auto;
+  margin-top: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+.orca-benefits-box {
+  width: 941px;
+  height: 664px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 152px;
+}
+.orca-benefits-box-head {
+  color: #000;
+  /* Pre.Semi 60 */
+  font-family: Pretendard;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 46.667% */
+  margin-bottom: 70px;
+}
+.orca-benefits-box-body1, .orca-benefits-box-body3, .orca-benefits-box-body2 {
+  width: 584px;
+  height: 136px;
+  display: grid;
+  grid-template-columns: 152px 432px;
+  grid-template-rows: 52px 84px;
+  margin-bottom: 80px;
+  grid-template-areas: "graybox head" "graybox body";
+}
+.orca-benefits-box-body1-square, .orca-benefits-box-body3-square, .orca-benefits-box-body2-square {
+  width: 128px;
+  height: 136px;
+  background: var(--Light-gray, #f0f0f0);
+  grid-area: graybox;
+}
+.orca-benefits-box-body1-head, .orca-benefits-box-body3-head, .orca-benefits-box-body2-head {
+  width: 426px;
+  height: 28px;
+  grid-area: head;
+  color: #000;
+  /* web. semi.30 */
+  font-family: Pretendard;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 93.333% */
+}
+.orca-benefits-box-body1-body, .orca-benefits-box-body3-body, .orca-benefits-box-body2-body {
+  width: 432px;
+  height: 84px;
+  color: #000;
+  grid-area: body;
+  /* web. re.22 */
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 127.273% */
+}
+.orca-benefits-box-body2-head {
+  width: 559px;
+}
+.orca-benefits-box-body3-head {
+  width: 784px;
+}/*# sourceMappingURL=orca.styles.css.map */

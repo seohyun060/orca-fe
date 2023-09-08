@@ -1,0 +1,201 @@
+@mixin font-setting($color, $font-weight: normal, $font-size, $line-height) {
+  color: $color;
+  font-size: $font-size;
+  font-family: Pretendard;
+  @if $font-weight != normal {
+    font-weight: $font-weight;
+  }
+  font-stretch: normal;
+  font-style: normal;
+  line-height: $line-height;
+  letter-spacing: normal;
+}
+
+.orca {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-what-background {
+    width: 100%;
+    background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+  }
+  &-what {
+    width: 1192px;
+    height: 727px;
+    background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &-box {
+      width: 948px;
+      height: 244px;
+      color: white;
+      display: grid;
+      grid-template-columns: 304px 644px;
+      grid-template-rows: 98px 146px;
+      margin-top: 290px;
+      //margin-left: 18.9583%;
+      position: relative;
+      &-head {
+        @include font-setting(white, 600, 60px, 28px);
+        grid-area: head;
+      }
+      &-about {
+        @include font-setting(white, 400, 22px, 28px);
+        width: 210px;
+        height: 28px;
+        grid-area: about;
+      }
+      &-body {
+        @include font-setting(white, 600, 30px, 36.5px);
+        grid-area: body;
+        width: 644px;
+        height: 106px;
+      }
+
+      grid-template-areas:
+        'head head'
+        'about body';
+    }
+  }
+  &-goal {
+    width: 1192px;
+    height: 210px;
+    margin: auto;
+    margin-top: 150px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &-box {
+      width: 1040px;
+      height: 210px;
+      display: grid;
+      grid-template-rows: 98px 112px;
+      grid-template-columns: 456px 584px;
+      position: relative;
+
+      //margin-left: 18.9583%;
+
+      &-head {
+        @include font-setting(black, 600, 60px, 28px);
+        grid-area: head;
+        width: 668px;
+        height: 28px;
+      }
+      &-body1 {
+        @include font-setting(black, 400, 22px, 28px);
+        width: 432px;
+        height: 112px;
+        grid-area: body1;
+      }
+      &-body2 {
+        @include font-setting(black, 400, 22px, 28px);
+        width: 584px;
+        height: 84px;
+
+        grid-area: body2;
+      }
+      grid-template-areas:
+        'head head'
+        'body1 body2';
+    }
+  }
+  &-benefits {
+    width: 1192px;
+    height: 664px;
+    margin: auto;
+    margin-top: 150px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 150px;
+    &-box {
+      width: 941px;
+      height: 664px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 152px;
+      &-head {
+        color: #000;
+
+        /* Pre.Semi 60 */
+        font-family: Pretendard;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 28px; /* 46.667% */
+        margin-bottom: 70px;
+      }
+      &-body1 {
+        width: 584px;
+        height: 136px;
+        display: grid;
+        grid-template-columns: 152px 432px;
+        grid-template-rows: 52px 84px;
+        margin-bottom: 80px;
+        &-square {
+          width: 128px;
+          height: 136px;
+          background: var(--Light-gray, #f0f0f0);
+          grid-area: graybox;
+        }
+        &-head {
+          width: 426px;
+          height: 28px;
+          grid-area: head;
+          color: #000;
+
+          /* web. semi.30 */
+          font-family: Pretendard;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 28px; /* 93.333% */
+        }
+        &-body {
+          width: 432px;
+          height: 84px;
+          color: #000;
+          grid-area: body;
+          /* web. re.22 */
+          font-family: Pretendard;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px; /* 127.273% */
+        }
+        grid-template-areas:
+          'graybox head'
+          'graybox body';
+      }
+      &-body2 {
+        @extend .orca-benefits-box-body1;
+        &-square {
+          @extend .orca-benefits-box-body1-square;
+        }
+        &-head {
+          @extend .orca-benefits-box-body1-head;
+          width: 559px;
+        }
+        &-body {
+          @extend .orca-benefits-box-body1-body;
+        }
+      }
+      &-body3 {
+        @extend .orca-benefits-box-body1;
+        &-square {
+          @extend .orca-benefits-box-body1-square;
+        }
+        &-head {
+          @extend .orca-benefits-box-body1-head;
+          width: 784px;
+        }
+        &-body {
+          @extend .orca-benefits-box-body1-body;
+        }
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './styles/rootnavigation.style.css';
 import FooterContainer from 'src/pages/Footer/containers/FooterContainer';
 import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
-
+import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 // /* eslint no-restricted-globals: ["off"] */
 
 const RootNavigation = () => {
@@ -22,6 +22,7 @@ const RootNavigation = () => {
       <GnbContainer location={location.pathname} />
       <Routes location={location}>
         <Route path='/' element={<HomeContainer />} />
+        <Route path='/orca' element={<OrcaContainer />} />
         <Route path='/projects' element={<ProjectsPage />} />
       </Routes>
       <FooterContainer />

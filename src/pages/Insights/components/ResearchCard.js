@@ -2,12 +2,12 @@ import React from "react";
 import '../style/Insight.scss'
 import images from "src/assets/images";
 
-export default function InsightCard(props) {
+export default function ResearchCard(props) {
   return (
-    <div className="InsightCard">
-      <img className="InsightImage" src={images.logo_orca}></img>
-      <div className="InsightCategory">CadAI-B</div>
-      <div className="InsightTitle">
+    <div className="ResearchCard">
+      <img className="ResearchImage" src={images.logo_orca}></img>
+      <div className="ResearchCategory">CadAI-B</div>
+      <div className="ResearchTitle">
         Revolutionizing Ultrasound Technology: The Global Frontier of Artificial
         Intelligence Ultrasound
       </div>

@@ -1,11 +1,11 @@
-.InsightCard {
+.ResearchCard {
   width: 280px;
   height: 546px;
   flex-shrink: 0;
   margin-right: 24px;
 }
 
-.InsightImage {
+.ResearchImage {
   width: 280px;
   height: 339px;
   flex-shrink: 0;
@@ -13,7 +13,7 @@
   background: var(--Light-gray, #f0f0f0);
 }
 
-.InsightCategory {
+.ResearchCategory {
   color: #000;
   font-family: Pretendard;
   font-size: 20px;
@@ -24,7 +24,7 @@
   margin-top: 14px;
 }
 
-.InsightTitle {
+.ResearchTitle {
   color: #000;
   font-family: Pretendard;
   font-size: 22px;

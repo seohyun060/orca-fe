@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 77px;
+  margin: auto;
 }
 
 .ProjectExplore {
@@ -33,9 +34,8 @@
   line-height: 28px;
 }
 .CategoryBar button:hover {
-  background: var(--Dark-gray, #3c3c3c);
-  color: #fff;
-  opacity: 0.5;
+  background: var(--Light-gray, #f0f0f0);
+  color: #000;
 }
 .CategoryBar button:focus {
   background: var(--Dark-gray, #3c3c3c);
@@ -130,7 +130,249 @@
   border-bottom: 0px;
 }
 
-.ProjectContent {
+article {
+  padding: 40px 0px;
+  border-bottom: solid 1px var(--Midium-gray, #9e9e9e);
+}
+article .SubjectName {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+article .Content {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.ProjectDetailsSection {
+  justify-content: center;
+  flex-direction: column;
+  margin: 60px auto;
+  width: 1192px;
+}
+
+.BackImage {
+  width: 88px;
+  height: 28px;
+  flex-shrink: 0;
+  margin-left: 6px;
+  margin-bottom: 20px;
+}
+
+.ProjectTitle {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 45px;
+  width: 888px;
+}
+
+.ProjectGird {
+  display: grid;
+  grid-template-columns: 888px 2fr;
+}
+
+.ArticleTitle {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.StudyOverview {
+  margin-top: 48px;
+  margin-bottom: 20px;
+}
+
+.StudyOverviewContents {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.StudyOverviewContents .Contents {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.ProjectOfficial {
+  margin-top: 60px;
+}
+.ProjectOfficial .Contents {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 10px;
+}
+
+.ProjectCondition {
+  margin-top: 40px;
+}
+.ProjectCondition button {
+  margin-top: 10px;
+  display: inline-flex;
+  padding: 4px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--Light-gray, #f0f0f0);
+}
+.ProjectCondition button label {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.ShowMoreButton {
+  color: #44c194;
+  background-color: #fff;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 20px;
+}
+
+.StudyInformation {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  width: 432px;
+  height: 496px;
+  flex-shrink: 0;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  padding-top: 5px;
+  padding-bottom: 11px;
+  margin-top: 136px;
+  margin-left: 24px;
+}
+.StudyInformation .Information {
+  margin: 30px 0px 30px 44px;
+}
+
+.Contact {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+.Contact .Information {
+  margin-top: 20px;
+}
+.Contact .Information div {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.ParticipationCreteria {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+.ParticipationCreteria .ArticleTitle {
+  margin-bottom: 20px;
+}
+
+.StudyPlan {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+.StudyPlan .ArticleTitle {
+  margin-bottom: 20px;
+}
+.StudyPlan .SubjectName {
+  margin-bottom: 10px;
+}
+.StudyPlan .Content {
+  margin-bottom: 30px;
+}
+
+.CandI {
+  grid-column-start: 1;
+  grid-row-start: 5;
+  padding-bottom: 20px;
+}
+.CandI .SubjectName {
+  padding-top: 20px;
+}
+
+.CandIInfo {
+  display: flex;
+  align-items: center;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 20px 0px;
+}
+.CandIInfo .Link {
+  display: inline-flex;
+  padding: 4px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-right: 24px;
+  background: var(--Light-gray, #f0f0f0);
+}
+.CandIInfo .SeparateLine {
+  margin: 0px 30px;
+  flex-shrink: 0;
+  stroke-width: 1px;
+  stroke: #000;
+}
+
+.Publications {
+  grid-column-start: 1;
+  grid-row-start: 6;
+}
+
+.MenuBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+  background: var(--Light-gray, #f0f0f0);
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  margin-top: 10px;
+}
+
+.MenuBarContent {
+  padding: 20px 0px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.ProjectCardContent {
   padding: 24px 24px;
   border: 0.75px solid var(--Midium-gray, #9e9e9e);
   margin-bottom: 20px;
@@ -145,7 +387,7 @@
   align-items: center;
 }
 
-.ProjectProgress {
+.ProjectCardProgress {
   color: var(--point, #1acfaf);
   font-family: Pretendard;
   font-size: 22px;
@@ -154,7 +396,7 @@
   line-height: 28px;
 }
 
-.ProjectID {
+.ProjectCardID {
   color: var(--Midium-gray, #9e9e9e);
   text-align: right;
   font-family: Pretendard;
@@ -164,7 +406,7 @@
   line-height: 28px;
 }
 
-.ProjectTitle {
+.ProjectCardTitle {
   width: 60%;
   color: #000;
   font-family: Pretendard;
@@ -175,7 +417,7 @@
   margin-top: 10px;
 }
 
-.ProjectCategory {
+.ProjectCardCategory {
   display: inline-flex;
   padding: 4px 30px;
   justify-content: center;
@@ -191,7 +433,7 @@
   margin-top: 14px;
 }
 
-.ProjectLocation {
+.ProjectCardLocation {
   color: #000;
   font-family: Pretendard;
   font-size: 18px;
@@ -202,6 +444,8 @@
 }
 
 .LeadMoreButton {
+  width: 192px;
+  height: 44px;
   display: flex;
   padding: 8px 46px;
   justify-content: center;
@@ -217,4 +461,4 @@
   font-weight: 300;
   line-height: 28px;
   background-color: white;
-}/*# sourceMappingURL=projects.css.map */
+}/*# sourceMappingURL=Projects.css.map */

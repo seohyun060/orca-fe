@@ -10,6 +10,7 @@ const images = {
   beamworks: '/assets/images/beamworks.png',
   logo_s: '/assets/images/logo-s.png',
   search: '/assets/images/search.svg',
+  back_arrow: '/assets/images/back-arrow.svg',
 };
 
 export default images;

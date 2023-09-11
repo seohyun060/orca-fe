@@ -12,6 +12,13 @@ type Props = {
   filteredList: ResearcherList;
   containerHeight: string;
   onReadMoreClick: () => void;
+  // onResearcherClick: (
+  //   profile: string,
+  //   name: string,
+  //   department: string,
+  //   project: string,
+  // ) => void;
+  onResearcherClick: any;
 };
 
 const Researcher = ({
@@ -22,6 +29,7 @@ const Researcher = ({
   filteredList,
   containerHeight,
   onReadMoreClick,
+  onResearcherClick,
 }: Props) => {
   return (
     <div className='researcher'>
@@ -53,7 +61,18 @@ const Researcher = ({
           }}
         >
           {filteredList.map((researcher, index) => (
-            <div className='researcher-info'>
+            <div
+              className='researcher-info'
+              onClick={() => {
+                onResearcherClick(
+                  researcher.name,
+                  researcher.profile,
+                  researcher.department,
+                  researcher.project,
+                );
+                console.log('onResearcherClick');
+              }}
+            >
               <img src={images.profile} />
               <div className='researcher-info-name'>{researcher.name}</div>
               <div className='researcher-info-department'>

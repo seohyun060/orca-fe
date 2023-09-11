@@ -14,7 +14,7 @@ import FooterContainer from 'src/pages/Footer/containers/FooterContainer';
 import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
 import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherContainer';
-
+import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
 // /* eslint no-restricted-globals: ["off"] */
 
 const RootNavigation = () => {
@@ -31,6 +31,10 @@ const RootNavigation = () => {
         <Route
           path='/researcher'
           element={<ResearcherContainer location={location.pathname} />}
+        />
+        <Route
+          path='/researcherdetail'
+          element={<ResearcherDetailContainer />}
         />
         <Route path='/projects' element={<ProjectsPage />} />
       </Routes>

@@ -103,3 +103,31 @@
     @include font-setting(black, 300, 20px, 2.3);
   }
 }
+
+.gnb-white {
+  @extend .gnb;
+  background-color: white;
+  .gnb-menu {
+    color: #000;
+    text-align: center;
+
+    /* web. light.20 */
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px; /* 140% */
+  }
+  .gnb-tiny {
+    position: absolute;
+    left: 188px;
+    top: 17px;
+    color: var(--Dark-gray, #3c3c3c);
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px; /* 175% */
+  }
+}

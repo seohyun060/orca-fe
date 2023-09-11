@@ -7,8 +7,6 @@ type Props = { location: string };
 const GnbContainer = ({ location }: Props) => {
   const route = location.split('/')[1];
   const navigate = useNavigate();
-  const [selectedTab, setSelectedTab] = useState<string>('/');
-  const [language, setLanguage] = useState('En');
   const tabTable: GNBTableTypes[] = [
     {
       label: 'ORCA',
@@ -31,6 +29,11 @@ const GnbContainer = ({ location }: Props) => {
       path: '/insights',
     },
   ];
+  const [selectedTab, setSelectedTab] = useState<string>('/');
+  const [language, setLanguage] = useState('En');
+  const [gnbColor, setGnbColor] = useState('');
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const onItemClicked = useCallback((path: string) => {
     if (path === '/custom') {
       return;
@@ -38,6 +41,39 @@ const GnbContainer = ({ location }: Props) => {
     setSelectedTab(path);
     navigate(path);
   }, []);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  // useEffect(() => {
+  //   window.addEventListener('scroll', updateScroll);
+  // });
+
+  const gnbColorHandler = useCallback(() => {
+    if (`/${route}` == '/') {
+      if (scrollPosition > 2000) {
+        setGnbColor('-white');
+      } else {
+        setGnbColor('');
+      }
+    } else if (`/${route}` == '/orca') {
+      if (scrollPosition > 727) {
+        setGnbColor('-white');
+      } else {
+        setGnbColor('');
+      }
+    } else if (`/${route}` == '/researcher') {
+      if (scrollPosition > 1081) {
+        setGnbColor('-white');
+      } else {
+        setGnbColor('');
+      }
+    } else if (`/${route}` == '/projects') {
+      setGnbColor('-white');
+    } else if (`/${route}` == '/researcherdetail') {
+      setGnbColor('-white');
+    }
+  }, [scrollPosition, route]);
+
   const onLanguageClicked = useCallback(() => {
     if (language === 'Kr') {
       setLanguage('En');
@@ -45,17 +81,15 @@ const GnbContainer = ({ location }: Props) => {
       setLanguage('Kr');
     }
   }, [language]);
-  // useEffect(() => {
-  //   let route = location.split('/')[1];
-  //   if (route === 'mypage' || route.includes('upload')) {
-  //     setTextColor('black');
-  //   } else {
-  //     setTextColor('white');
-  //   }
-  // }, [location]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', updateScroll);
+    gnbColorHandler();
+  }, [scrollPosition, route]);
   return (
     <div>
       <Gnb
+        gnbColor={gnbColor}
         tabTable={tabTable}
         language={language}
         route={route}

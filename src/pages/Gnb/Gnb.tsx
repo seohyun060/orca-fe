@@ -3,6 +3,7 @@ import './styles/gnb.styles.css';
 import images from 'src/assets/images';
 import { GNBTableTypes } from '@typedef/types';
 type Props = {
+  gnbColor: string;
   tabTable: GNBTableTypes[];
   language: string;
   route: string;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const gnb = ({
+  gnbColor,
   tabTable,
   language,
   route,
@@ -18,14 +20,16 @@ const gnb = ({
   onItemClicked,
 }: Props) => {
   return (
-    <div className='gnb'>
+    <div className={`gnb${gnbColor}`}>
       <img
-        src={images.logo}
+        src={gnbColor === '-white' ? images.logo_b : images.logo_w}
+        // src={images.logo_w}
         className='gnb-logo'
         onClick={() => {
           onItemClicked('/');
         }}
       />
+      {gnbColor === '-white' ? <div className='gnb-tiny'>[ˈɔːr.kə]</div> : ''}
       <div className='gnb-menu'>
         {tabTable.map((item, idx) => {
           return (

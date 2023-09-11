@@ -14,7 +14,6 @@ const images = {
   vector36: '/assets/images/vector36.svg',
   beamworks: '/assets/images/beamworks.png',
   logo_s: '/assets/images/logo-s.png',
-  search: '/assets/images/search.svg',
 };
 
 export default images;

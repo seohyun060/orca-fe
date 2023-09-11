@@ -5,9 +5,11 @@ export type GNBTableTypes = {
 
 export type EChange = React.ChangeEvent<HTMLInputElement>;
 
-export type Researcher = {
+export type Researchers = {
   profile: string;
   name: string;
+  department: string;
+  project: string;
 };
 
-export type ResearcherList = Researcher[];
+export type ResearcherList = Researchers[];

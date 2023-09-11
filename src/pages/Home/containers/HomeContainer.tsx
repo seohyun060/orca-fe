@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import Home from '../Home';
-type Props = {};
+type Props = {
+  location: string;
+};
 
-const HomeContainer = (props: Props) => {
+const HomeContainer = ({ location }: Props) => {
+  const route = location.split('/')[1];
   return (
     <>
-      <Home />
+      <Home route={route} />
     </>
   );
 };

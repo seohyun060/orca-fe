@@ -13,6 +13,7 @@ type Props = {
   onSetInPopUp: () => void;
   isSelected: boolean;
   setIsSelected: React.Dispatch<React.SetStateAction<boolean>>;
+  black: string;
 };
 
 const ResearcherBox = ({
@@ -26,6 +27,7 @@ const ResearcherBox = ({
   setIsSelected,
   onSetInBox,
   onSetInPopUp,
+  black,
 }: Props) => {
   useEffect(() => {
     onSetActive();
@@ -82,7 +84,8 @@ const ResearcherBox = ({
         }`}
         style={{
           backgroundColor: tempActive ? '#9e9e9e' : '',
-          opacity: tempActive ? 0.7 : 1,
+          mixBlendMode: 'multiply',
+          //opacity: tempActive ? 0.7 : 1,
         }}
       ></div>
       {tempActive ? (
@@ -96,7 +99,7 @@ const ResearcherBox = ({
           <div className='researchers-head'>Researchers List</div>
           <img
             className='researchers-back'
-            src={images.back}
+            src={black === '' ? images.back_b : images.back_w}
             onClick={onBackClick}
           />
           <div className='researchers-body'>
@@ -107,7 +110,11 @@ const ResearcherBox = ({
               </div>
             ))}
           </div>
-          <img className='researchers-go' src={images.go} onClick={onGoClick} />
+          <img
+            className='researchers-go'
+            src={black === '' ? images.go_b : images.go_w}
+            onClick={onGoClick}
+          />
         </div>
       ) : (
         ''

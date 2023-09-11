@@ -7,6 +7,7 @@ type Props = {
   index: number;
   isSelected: boolean;
   setIsSelected: React.Dispatch<React.SetStateAction<boolean>>;
+  black: string;
 };
 
 const ResearcherBoxContainer = ({
@@ -14,6 +15,7 @@ const ResearcherBoxContainer = ({
   index,
   isSelected,
   setIsSelected,
+  black,
 }: Props) => {
   let boxType = 0;
   if (index === 31) {
@@ -56,6 +58,7 @@ const ResearcherBoxContainer = ({
       onSetActive={onSetActive}
       onSetInBox={onSetInBox}
       onSetInPopUp={onSetInPopUp}
+      black={black}
     />
   );
 };

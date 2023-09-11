@@ -12,15 +12,17 @@ import home_banner from '../../assets/images/HOME/home_banner.png';
 import HomeResearcherContainer from './containers/HomeResearcherContainer';
 import FooterContainer from '../Footer/containers/FooterContainer';
 import './styles/home.styles.scss';
-type Props = {};
-const Home = (props: Props) => {
+type Props = {
+  route: string;
+};
+const Home = ({ route }: Props) => {
   return (
     <div className='home'>
       <div className='home-anime'>
         <img src={images.logo_orca} />
       </div>
       <HomeIntroContainer />
-      <HomeResearcherContainer />
+      <HomeResearcherContainer route={route} />
       <HomeProjects />
       <HomeEvents />
       <HomeInsights />

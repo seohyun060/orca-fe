@@ -5,7 +5,11 @@ const images = {
   back: '/assets/images/back.png',
   go: '/assets/images/go.png',
   view: '/assets/images/view.svg',
-  search: '/assets/images/search.svg'
+  search: '/assets/images/search.svg',
+  backwithletter: '/assets/images/backwithletter.svg',
+  baropen: '/assets/images/baropen.svg',
+  barclose: '/assets/images/barclose.svg',
+  vector36: '/assets/images/vector36.svg',
 };
 
 export default images;

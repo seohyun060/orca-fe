@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/home.styles.scss";
-import InsightCard from "../../Insights/components/InsightCard";
+import ResearchCard from "../../Insights/components/ResearchCard";
 
 const HomeInsights = () => {
   const navigate = useNavigate();
@@ -16,10 +16,10 @@ const HomeInsights = () => {
         </button>
       </div>
       <div className="EventBox">
-        <InsightCard />
-        <InsightCard />
-        <InsightCard />
-        <InsightCard />
+        <ResearchCard />
+        <ResearchCard />
+        <ResearchCard />
+        <ResearchCard />
       </div>
     </section>
   );

@@ -5,13 +5,17 @@ import { useState, useCallback } from 'react';
 type Props = {
   researcherList: ResearcherList;
   index: number;
-  boxSelected: boolean;
+  isSelected: boolean;
+  setIsSelected: React.Dispatch<React.SetStateAction<boolean>>;
+  black: string;
 };
 
 const ResearcherBoxContainer = ({
   researcherList,
   index,
-  boxSelected,
+  isSelected,
+  setIsSelected,
+  black,
 }: Props) => {
   let boxType = 0;
   if (index === 31) {
@@ -45,7 +49,8 @@ const ResearcherBoxContainer = ({
   return (
     <ResearcherBox
       researcherList={researcherList}
-      boxSelected={boxSelected}
+      isSelected={isSelected}
+      setIsSelected={setIsSelected}
       boxType={boxType}
       active={active}
       inBox={inBox}
@@ -53,6 +58,7 @@ const ResearcherBoxContainer = ({
       onSetActive={onSetActive}
       onSetInBox={onSetInBox}
       onSetInPopUp={onSetInPopUp}
+      black={black}
     />
   );
 };

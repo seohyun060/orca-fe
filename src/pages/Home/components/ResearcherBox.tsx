@@ -9,9 +9,11 @@ type Props = {
   inBox: boolean;
   inPopUp: boolean;
   onSetActive: () => void;
-  boxSelected: boolean;
   onSetInBox: () => void;
   onSetInPopUp: () => void;
+  isSelected: boolean;
+  setIsSelected: React.Dispatch<React.SetStateAction<boolean>>;
+  black: string;
 };
 
 const ResearcherBox = ({
@@ -21,9 +23,11 @@ const ResearcherBox = ({
   inBox,
   inPopUp,
   onSetActive,
-  boxSelected,
+  isSelected,
+  setIsSelected,
   onSetInBox,
   onSetInPopUp,
+  black,
 }: Props) => {
   useEffect(() => {
     onSetActive();
@@ -49,15 +53,6 @@ const ResearcherBox = ({
     },
     [currentPage],
   );
-  // const onGoClick = useCallback(
-  //   (e: React.MouseEvent<HTMLImageElement>) => {
-  //     e.stopPropagation();
-  //     if (currentPage != totalPage) {
-  //       setCurrentPage((prev) => prev + 1);
-  //     }
-  //   },
-  //   [currentPage],
-  // );
 
   const onGoClick = (e: any) => {
     e.preventDefault();
@@ -67,8 +62,32 @@ const ResearcherBox = ({
     }
   };
 
+  function boxClickHandler(e: React.MouseEvent<HTMLElement>) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!(isSelected && !tempActive)) {
+      setIsSelected(tempActive ? false : true);
+      setTempActive((prev) => !prev);
+    }
+    //부모가 자식이 선택된 박스가 있는지 booleanType의 state를 setState(true) isSelected
+    //isSelected && !TempActive 클릭이 불가능하게 만들면
+  }
+
   return (
     <div className={`country${boxType}`}>
+      <div
+        // onMouseOver={() => setTempActive(true)}
+        // onMouseOut={() => setTempActive(false)}
+        onClick={(e) => boxClickHandler(e)}
+        className={`${
+          !isSelected || tempActive ? 'country-box' : 'country-box-Off'
+        }`}
+        style={{
+          backgroundColor: tempActive ? '#9e9e9e' : '',
+          mixBlendMode: 'multiply',
+          //opacity: tempActive ? 0.7 : 1,
+        }}
+      ></div>
       {tempActive ? (
         <div
           className='researchers'
@@ -80,7 +99,7 @@ const ResearcherBox = ({
           <div className='researchers-head'>Researchers List</div>
           <img
             className='researchers-back'
-            src={images.back}
+            src={black === '' ? images.back_b : images.back_w}
             onClick={onBackClick}
           />
           <div className='researchers-body'>
@@ -91,17 +110,15 @@ const ResearcherBox = ({
               </div>
             ))}
           </div>
-          <img className='researchers-go' src={images.go} onClick={onGoClick} />
+          <img
+            className='researchers-go'
+            src={black === '' ? images.go_b : images.go_w}
+            onClick={onGoClick}
+          />
         </div>
       ) : (
         ''
       )}
-      <div
-        // onMouseOver={() => setTempActive(true)}
-        // onMouseOut={() => setTempActive(false)}
-        onClick={() => setTempActive((prev) => !prev)}
-        className={`country-box`}
-      ></div>
     </div>
   );
 };

@@ -9,7 +9,6 @@ export default function ProjectCard(props) {
   const navigate = useNavigate();
 
   const { shortForm, projID } = props;
-  console.log("shortForm :" + shortForm);
 
   // projID를 통해 project정보 가져온 후 내용출력
 

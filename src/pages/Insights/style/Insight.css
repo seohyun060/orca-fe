@@ -35,6 +35,15 @@
   margin-top: 14px;
 }
 
+.ResearchDate {
+  color: var(--Midium-gray, #9e9e9e);
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
+}
+
 .ViewCount {
   display: flex;
   align-items: center;

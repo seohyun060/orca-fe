@@ -7,7 +7,7 @@ import images from "src/assets/images";
 
 import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";
-import ResearchCard from "src/pages/Insights/components/ResearchCard";
+import ProjectCard from "./components/ProjectCard";
 
 const PrejectsDetails = (props) => {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const PrejectsDetails = (props) => {
           Large-scale Data for Breast Cancer Diagnosis
         </div>
         <div className="ProjectGird">
-          <article className="StudyOverviewContents">
+          <article className="StudyOverviewContents Article">
             <div className="StudyOverview ArticleTitle">Study Overview</div>
             <div className="Contents">{samplePharagraph}</div>
             <button className="ShowMoreButton">+ Show more</button>
@@ -57,7 +57,7 @@ const PrejectsDetails = (props) => {
               </button>
             </div>
           </article>
-          <article className="StudyInformation">
+          <article className="StudyInformation Article">
             <div className="Information">
               <div className="SubjectName">Study Start (Actual)</div>
               <div className="Content">23.00.00</div>
@@ -79,7 +79,7 @@ const PrejectsDetails = (props) => {
               <div className="Content">NCC2962</div>
             </div>
           </article>
-          <article className="Contact">
+          <article className="Contact Article">
             <div className="ArticleTitle">Contancts and Locations</div>
             <div className="Information">
               <div>Name</div>
@@ -87,7 +87,7 @@ const PrejectsDetails = (props) => {
               <div>Email</div>
             </div>
           </article>
-          <article className="ParticipationCreteria">
+          <article className="ParticipationCreteria Article">
             <div className="ArticleTitle">Participation Criteria</div>
             {sampleContents}
             <ProjectMenuBar
@@ -103,7 +103,7 @@ const PrejectsDetails = (props) => {
               Content={sampleContents}
             />
           </article>
-          <article className="StudyPlan">
+          <article className="StudyPlan Article">
             <div className="ArticleTitle">Study Plan</div>
             <div className="SubjectName">Design details</div>
             <div className="Content">
@@ -124,7 +124,7 @@ const PrejectsDetails = (props) => {
               Content={sampleContents}
             />
           </article>
-          <article className="CandI">
+          <article className="CandI Article">
             <div className="ArticleTitle">Collaborators and Investigators</div>
             <div className="SubjectName">Principal Investigator</div>
             <CandIInfo
@@ -153,9 +153,9 @@ const PrejectsDetails = (props) => {
               AffiliatedInstitution="Affiliated Institution"
             />
           </article>
-          <article className="Publications">
+          <article className="Publications Article">
             <div className="ArticleTitle">Publications</div>
-            <ResearchCard />
+            <ProjectCard shortForm = {true}/>
           </article>
         </div>
       </section>

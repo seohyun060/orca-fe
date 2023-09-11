@@ -8,12 +8,18 @@ type Props = {
   profile: string;
   department: string;
   project: string;
+  publist: number[];
+  navigate: (e: string) => void;
 };
 
-const publist = [1, 2, 3, 4, 5, 6, 7];
-const ResearcherDetail = ({ name, profile, department, project }: Props) => {
-  console.log(name, department, project);
-  const navigate = useNavigate();
+const ResearcherDetail = ({
+  name,
+  profile,
+  department,
+  project,
+  publist,
+  navigate,
+}: Props) => {
   return (
     <div className='researcherdetail'>
       <div

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/footer.styles.scss';
+import './styles/footer.styles.css';
 import { EChange } from '@typedef/types';
 import images from 'src/assets/images';
 type Props = {

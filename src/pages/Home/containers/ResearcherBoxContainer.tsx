@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import ResearcherBox from '../components/ResearcherBox';
 import { ResearcherList } from '@typedef/types';
 import { useState, useCallback } from 'react';
@@ -17,48 +17,65 @@ const ResearcherBoxContainer = ({
   setIsSelected,
   black,
 }: Props) => {
-  let boxType = 0;
-  if (index === 31) {
-    boxType = 3;
-  } else if (index > 23) {
-    boxType = 2;
-  } else if (index % 8 === 7) {
-    boxType = 1;
-  }
-  const [inBox, setInBox] = useState(false);
-  const [inPopUp, setInPopUp] = useState(false);
   const [active, setActive] = useState(false);
-  const onSetActive = useCallback(() => {
-    if (inBox == false && inPopUp == false) {
-      setActive(false);
-    } else {
-      setActive(true);
-    }
-  }, [inBox, inPopUp, active]);
-  const onSetInBox = useCallback(() => {
-    setInBox((prev) => !prev);
-    console.log('inbox: ', inBox);
-    console.log('inPopUp: ', inPopUp);
-  }, [inBox]);
-  const onSetInPopUp = useCallback(() => {
-    setInPopUp((prev) => !prev);
-    console.log('inbox: ', inBox);
-    console.log('inPopUp: ', inPopUp);
-  }, [inPopUp]);
+  const [boxType, setBoxType] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const lastIndex = useMemo(() => currentPage * 3, [currentPage]);
+  const firstIndex = useMemo(() => lastIndex - 3, [currentPage]);
+  const requestedItems = useMemo(
+    () => researcherList.slice(firstIndex, lastIndex),
+    [currentPage],
+  );
+  const totalPosts = useMemo(() => researcherList.length, [currentPage]);
+  const totalPage = Math.ceil(totalPosts / 3);
 
+  useEffect(() => {
+    if (index === 31) {
+      setBoxType(3);
+    } else if (index > 23) {
+      setBoxType(2);
+    } else if (index % 8 === 7) {
+      setBoxType(1);
+    }
+  }, [index, boxType]);
+
+  const onBackClick = useCallback(
+    (e: React.MouseEvent<HTMLImageElement>) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (currentPage != 1) {
+        setCurrentPage((prev) => prev - 1);
+      }
+    },
+    [currentPage],
+  );
+
+  const onGoClick = (e: any) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (currentPage != totalPage) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const boxClickHandler = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!(isSelected && !active)) {
+      setIsSelected(active ? false : true);
+      setActive((prev) => !prev);
+    }
+  };
   return (
     <ResearcherBox
-      researcherList={researcherList}
-      isSelected={isSelected}
-      setIsSelected={setIsSelected}
-      boxType={boxType}
+      requestedItems={requestedItems}
       active={active}
-      inBox={inBox}
-      inPopUp={inPopUp}
-      onSetActive={onSetActive}
-      onSetInBox={onSetInBox}
-      onSetInPopUp={onSetInPopUp}
+      boxType={boxType}
       black={black}
+      isSelected={isSelected}
+      onBackClick={onBackClick}
+      onGoClick={onGoClick}
+      boxClickHandler={boxClickHandler}
     />
   );
 };

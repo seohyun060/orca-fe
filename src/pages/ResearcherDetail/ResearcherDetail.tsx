@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './styles/researcherdetail.styles.css';
 import images from 'src/assets/images';
+import ProjectCard from '../Projects/components/ProjectCard';
 type Props = {
   name: string;
   profile: string;
@@ -9,6 +10,7 @@ type Props = {
   project: string;
 };
 
+const publist = [1, 2, 3, 4, 5, 6, 7];
 const ResearcherDetail = ({ name, profile, department, project }: Props) => {
   console.log(name, department, project);
   const navigate = useNavigate();
@@ -56,6 +58,13 @@ const ResearcherDetail = ({ name, profile, department, project }: Props) => {
       <div className='researcherdetail-line'>
         <div></div>
       </div>
+      <div className='researcherdetail-publication'>
+        <div className='head'>Publications</div>
+        {publist.map((index) => (
+          <ProjectCard shortForm={true} />
+        ))}
+      </div>
+      {/* //<ProjectCard shortForm={true} /> */}
     </div>
   );
 };

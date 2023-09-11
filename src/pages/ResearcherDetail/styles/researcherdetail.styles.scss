@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   &-back {
-    width: 1204px;
+    width: 1192px;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -29,7 +29,7 @@
   }
   &-individual {
     height: 28px;
-    width: 1204px;
+    width: 1192px;
     margin-top: 30px;
     color: var(--Midium-gray, #9e9e9e);
 
@@ -44,7 +44,7 @@
     }
   }
   &-profile {
-    width: 1204px;
+    width: 1192px;
     height: 280px;
     margin: auto;
     margin-top: 70px;
@@ -112,7 +112,7 @@
       'image icons';
   }
   &-biography {
-    width: 1204px;
+    width: 1192px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -142,7 +142,7 @@
     }
   }
   &-line {
-    width: 1240px;
+    width: 1192px;
     margin-bottom: 70px;
     div {
       width: 280px;
@@ -150,5 +150,19 @@
       flex-shrink: 0;
       background-color: #9e9e9e;
     }
+  }
+  &-publication {
+    width: 1192px;
+    .head {
+      color: #000;
+      margin-bottom: 70px;
+      /* Pre.Semi 60 */
+      font-family: Pretendard;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 28px; /* 46.667% */
+    }
+    margin-bottom: 116px;
   }
 }

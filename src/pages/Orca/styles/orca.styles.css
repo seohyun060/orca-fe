@@ -193,4 +193,252 @@
 }
 .orca-benefits-box-body3-head {
   width: 784px;
+}
+@media (max-width: 1500px) {
+  .orca-what {
+    padding-left: 50px;
+  }
+  .orca-goal {
+    padding-left: 50px;
+  }
+  .orca-benefits {
+    padding-left: 50px;
+  }
+}
+@media (max-width: 1023px) {
+  .orca {
+    justify-content: center;
+  }
+  .orca-what {
+    width: 700px;
+  }
+  .orca-what-box {
+    width: 600px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+  }
+  .orca-what-box-head {
+    color: white;
+    font-size: 45px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-what-box-about {
+    margin-top: 60px;
+  }
+  .orca-what-box-body {
+    width: 500px;
+    margin-top: 20px;
+    color: white;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-goal {
+    width: 700px;
+  }
+  .orca-goal-box {
+    width: 600px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+  }
+  .orca-goal-box-head {
+    color: black;
+    font-size: 45px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-goal-box-body1 {
+    width: 500px;
+    margin-top: 50px;
+    color: black;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-goal-box-body2 {
+    width: 500px;
+    margin-top: 15px;
+    color: black;
+    font-size: 20px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-benefits {
+    width: 700px;
+  }
+  .orca-benefits-box {
+    width: 600px;
+    margin-left: 0px;
+  }
+  .orca-benefits-box-head {
+    color: black;
+    font-size: 45px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-benefits-box-body1, .orca-benefits-box-body2, .orca-benefits-box-body3 {
+    width: 600px;
+    grid-template-columns: 110px 490px;
+    grid-template-rows: 40px 50px;
+    margin-bottom: 20px;
+  }
+  .orca-benefits-box-body1-square, .orca-benefits-box-body2-square, .orca-benefits-box-body3-square {
+    width: 90px;
+    height: 90px;
+  }
+  .orca-benefits-box-body1-head, .orca-benefits-box-body2-head, .orca-benefits-box-body3-head {
+    font-size: 20px;
+  }
+  .orca-benefits-box-body1-body, .orca-benefits-box-body2-body, .orca-benefits-box-body3-body {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .orca {
+    justify-content: center;
+  }
+  .orca-what {
+    width: 400px;
+  }
+  .orca-what-box {
+    width: 300px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+  }
+  .orca-what-box-head {
+    color: white;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-what-box-about {
+    margin-top: 40px;
+    font-size: 17px;
+  }
+  .orca-what-box-body {
+    width: 300px;
+    margin-top: 10px;
+    color: white;
+    font-size: 13px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-goal {
+    width: 400px;
+    height: 350px;
+  }
+  .orca-goal-box {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  .orca-goal-box-head {
+    color: black;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-goal-box-body1 {
+    width: 300px;
+    margin-top: 50px;
+    color: black;
+    font-size: 13px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-goal-box-body2 {
+    width: 300px;
+    margin-top: 15px;
+    color: black;
+    font-size: 13px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+  }
+  .orca-benefits {
+    width: 400px;
+  }
+  .orca-benefits-box {
+    width: 300px;
+    margin-left: 0px;
+  }
+  .orca-benefits-box-head {
+    color: black;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
+    margin-bottom: 40px;
+  }
+  .orca-benefits-box-body1, .orca-benefits-box-body2, .orca-benefits-box-body3 {
+    width: 300px;
+    grid-template-columns: 100px 200px;
+    grid-template-rows: 50px 50px;
+    margin-bottom: 0px;
+  }
+  .orca-benefits-box-body1-square, .orca-benefits-box-body2-square, .orca-benefits-box-body3-square {
+    width: 90px;
+    height: 90px;
+  }
+  .orca-benefits-box-body1-head, .orca-benefits-box-body2-head, .orca-benefits-box-body3-head {
+    font-size: 14px;
+    width: 200px;
+    line-height: 1;
+  }
+  .orca-benefits-box-body1-body, .orca-benefits-box-body2-body, .orca-benefits-box-body3-body {
+    font-size: 12px;
+    width: 200px;
+    line-height: 1;
+  }
 }/*# sourceMappingURL=orca.styles.css.map */

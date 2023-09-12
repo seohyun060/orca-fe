@@ -44,9 +44,6 @@ const GnbContainer = ({ location }: Props) => {
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   };
-  // useEffect(() => {
-  //   window.addEventListener('scroll', updateScroll);
-  // });
 
   const gnbColorHandler = useCallback(() => {
     if (`/${route}` == '/') {
@@ -70,6 +67,8 @@ const GnbContainer = ({ location }: Props) => {
     } else if (`/${route}` == '/projects') {
       setGnbColor('-white');
     } else if (`/${route}` == '/researcherdetail') {
+      setGnbColor('-white');
+    } else if (`/${route}` == '/insights') {
       setGnbColor('-white');
     }
   }, [scrollPosition, route]);

@@ -76,11 +76,7 @@
       width: 1192px;
       max-height: 1742px;
       overflow: hidden;
-      //height: 500px;
-      // display: flex;
-      // flex-wrap: wrap;
-      // flex-direction: row;
-      //justify-content: space-between;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       column-gap: 24px;

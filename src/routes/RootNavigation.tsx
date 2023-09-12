@@ -16,6 +16,7 @@ import FooterContainer from 'src/pages/Footer/containers/FooterContainer';
 import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
 import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherContainer';
+import InsightsContainer from 'src/pages/Insights/containers/InsightsContainer';
 import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
 // /* eslint no-restricted-globals: ["off"] */
 
@@ -41,7 +42,9 @@ const RootNavigation = () => {
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/projects/default' element={<ProjectDetails projID="default"/>} />
         <Route path='/events' element={<EventsPage />} />
+        <Route path='/insights' element={<InsightsContainer />} />
       </Routes>
+
       <FooterContainer />
     </>
   );

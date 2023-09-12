@@ -72,7 +72,6 @@
   grid-column-start: 1;
   grid-row-start: 2;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   margin-top: 20px;
 }
@@ -83,7 +82,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1040px;
+  width: 1192px;
 }
 
 .ProjectSelectionSector {
@@ -128,6 +127,12 @@
 }
 .ProjectSelectionBar .sub:last-child {
   border-bottom: 0px;
+}
+
+.ButtonArrange {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 
 .Article {
@@ -420,6 +425,7 @@
 
 .ProjectCardTitle {
   width: 60%;
+  height: 64px;
   color: #000;
   font-family: Pretendard;
   font-size: 22px;

@@ -9,6 +9,8 @@ import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";
 import ProjectCard from "./components/ProjectCard";
 
+import dummyData from "./components/dummyData";
+
 const PrejectsDetails = (props) => {
   const navigate = useNavigate();
 
@@ -155,7 +157,9 @@ const PrejectsDetails = (props) => {
           </article>
           <article className="Publications Article">
             <div className="ArticleTitle">Publications</div>
-            <ProjectCard shortForm = {true}/>
+            <ProjectCard shortForm = {true}
+            title = {dummyData[0].title}
+            projDate = {dummyData[0].projDate}/>
           </article>
         </div>
       </section>

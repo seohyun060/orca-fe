@@ -12,4 +12,9 @@ export type Researchers = {
   project: string;
 };
 
+export type Insight = {
+  type: string;
+  title: string;
+  date: string;
+};
 export type ResearcherList = Researchers[];

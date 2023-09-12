@@ -1,6 +1,6 @@
 import HomeContainer from 'src/pages/Home/containers/HomeContainer';
-import ProjectsPage from 'src/pages/Projects/ProjectsPage'
-import ProjectDetails from 'src/pages/Projects/ProjectDetails'
+import ProjectsPage from 'src/pages/Projects/ProjectsPage';
+import ProjectDetails from 'src/pages/Projects/ProjectDetails';
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -15,6 +15,7 @@ import FooterContainer from 'src/pages/Footer/containers/FooterContainer';
 import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
 import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherContainer';
+import InsightsContainer from 'src/pages/Insights/containers/InsightsContainer';
 import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
 // /* eslint no-restricted-globals: ["off"] */
 
@@ -38,8 +39,13 @@ const RootNavigation = () => {
           element={<ResearcherDetailContainer />}
         />
         <Route path='/projects' element={<ProjectsPage />} />
-        <Route path='/projects/default' element={<ProjectDetails projID="default"/>} />
+        <Route
+          path='/projects/default'
+          element={<ProjectDetails projID='default' />}
+        />
+        <Route path='/insights' element={<InsightsContainer />} />
       </Routes>
+
       <FooterContainer />
     </>
   );

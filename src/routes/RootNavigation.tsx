@@ -1,6 +1,7 @@
 import HomeContainer from 'src/pages/Home/containers/HomeContainer';
 import ProjectsPage from 'src/pages/Projects/ProjectsPage'
 import ProjectDetails from 'src/pages/Projects/ProjectDetails'
+import EventsPage from 'src/pages/Events/EventsPage';
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -15,6 +16,7 @@ import FooterContainer from 'src/pages/Footer/containers/FooterContainer';
 import GnbContainer from 'src/pages/Gnb/containers/GnbContainer';
 import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherContainer';
+
 
 // /* eslint no-restricted-globals: ["off"] */
 
@@ -35,6 +37,7 @@ const RootNavigation = () => {
         />
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/projects/default' element={<ProjectDetails projID="default"/>} />
+        <Route path='/events' element={<EventsPage />} />
       </Routes>
       <FooterContainer />
     </>

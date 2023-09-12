@@ -8,11 +8,6 @@ const PrejectsPage = () => {
   return (
     <div className="Projects">
       <ProjectExplore />
-      <section className="Section">
-        <button className="LeadMoreButton">
-          <label>Read More</label>
-        </button>
-      </section>
     </div>
   );
 };

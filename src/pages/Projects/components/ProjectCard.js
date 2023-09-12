@@ -52,3 +52,13 @@ export default function ProjectCard(props) {
     </article>
   );
 }
+
+// 추후 삭제
+ProjectCard.defaultProps = {
+  title: "test",
+  status: "test",
+  projID: "test",
+  category: "test",
+  location: "test",
+  projDate: "test",
+}

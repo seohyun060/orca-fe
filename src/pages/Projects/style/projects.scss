@@ -141,6 +141,12 @@
   }
 }
 
+.ButtonArrange {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
 // ProjectDetails //////////////////////////////////////////////////////////////////////
 
 .Article {
@@ -453,6 +459,7 @@
 
 .ProjectCardTitle {
   width: 60%;
+  height: 64px;
   color: #000;
   font-family: Pretendard;
   font-size: 22px;

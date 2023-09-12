@@ -169,6 +169,11 @@ const ProjectExplore = (props) => {
           </div>
         </div>
       </div>
+      <div className="ButtonArrange">
+        <button className="LeadMoreButton">
+          <label>Read More</label>
+        </button>
+      </div>
     </section>
   );
 };

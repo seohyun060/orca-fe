@@ -45,6 +45,24 @@
 .ButtonArrange {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.EventCardPaging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  img:nth-child(2) {
+    margin: 0px 40px; 
+
+    circle {
+      fill:#d9d9d9;
+    }
+  }
+  
+  
 }
 
 // EventCard

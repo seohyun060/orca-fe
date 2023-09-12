@@ -16,6 +16,7 @@ const images = {
   beamworks: '/assets/images/beamworks.png',
   logo_s: '/assets/images/logo-s.png',
   back_arrow: '/assets/images/back-arrow.svg',
+  paging_bar: '/assets/images/paging_bar.svg',
 };
 
 export default images;

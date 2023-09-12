@@ -4,7 +4,7 @@ import ProjectExplore from "./components/ProjectExplore";
 
 import "./style/projects.css";
 
-const PrejectsPage = () => {
+const ProjectsPage = () => {
   return (
     <div className="Projects">
       <ProjectExplore />
@@ -12,4 +12,4 @@ const PrejectsPage = () => {
   );
 };
 
-export default PrejectsPage;
+export default ProjectsPage;

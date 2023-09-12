@@ -3,7 +3,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 import "./style/projects.css";
 
-import images from "src/assets/images";
+import images from 'src/assets/images';
 
 import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";

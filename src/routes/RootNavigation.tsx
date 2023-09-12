@@ -2,6 +2,7 @@ import HomeContainer from 'src/pages/Home/containers/HomeContainer';
 import ProjectsPage from 'src/pages/Projects/ProjectsPage'
 import ProjectDetails from 'src/pages/Projects/ProjectDetails'
 import EventsPage from 'src/pages/Events/EventsPage';
+import EventDetails from 'src/pages/Events/EventDetails';
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -41,6 +42,7 @@ const RootNavigation = () => {
         <Route path='/projects' element={<ProjectsPage />} />
         <Route path='/projects/default' element={<ProjectDetails projID="default"/>} />
         <Route path='/events' element={<EventsPage />} />
+        <Route path='/events/default' element={<EventDetails />} />
       </Routes>
       <FooterContainer />
     </>

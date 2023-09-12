@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./style/events.css";
+import images from "src/assets/images";
 import EventCard from "./components/EventCard";
 
 const PrejectsPage = (props) => {

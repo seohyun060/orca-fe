@@ -71,7 +71,7 @@
   width: 584px;
   height: 372px;
   background: white;
-  border: 1px solid var(--Dark-gray, #3C3C3C);
+  border: 1px solid var(--Dark-gray, #3c3c3c);
   padding: 0px;
   margin-bottom: 30px;
 }
@@ -80,24 +80,26 @@
   opacity: 0.2;
 }
 
-.EventImage {
+.EventCardImage {
   width: 584px;
   height: 278px;
   flex-shrink: 0;
   background: #717171;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-.EventPeriod {
+.EventCardPeriod {
   display: flex;
   justify-content: space-between;
 }
-.EventPeriod.Past {
+.EventCardPeriod.Past {
   height: 94px;
   padding: 10px;
   flex-direction: column;
 }
 
-.EventMonth {
+.EventCardMonth {
   color: #fff;
   font-family: Pretendard;
   font-size: 20px;
@@ -108,7 +110,7 @@
   margin-left: 4px;
 }
 
-.EventDday {
+.EventCardDday {
   color: var(--Midium-gray, #9e9e9e);
   text-align: right;
   font-family: Pretendard;
@@ -118,7 +120,7 @@
   line-height: 28px;
 }
 
-.EventDate {
+.EventCardDate {
   color: #fff;
   font-family: Pretendard;
   font-size: 40px;
@@ -127,14 +129,14 @@
   line-height: 28px;
   margin-bottom: 30px;
 }
-.EventDate.Past {
+.EventCardDate.Past {
   color: var(--Midium-gray, #9e9e9e);
   font-size: 20px;
   font-weight: 300;
   margin: 0px;
 }
 
-.EventTitle {
+.EventCardTitle {
   color: #fff;
   font-family: Pretendard;
   font-size: 22px;
@@ -144,10 +146,10 @@
   margin-left: 4px;
   margin-bottom: 30px;
 }
-.EventTitle.InEvent {
+.EventCardTitle.InEvent {
   height: 175px;
 }
-.EventTitle.Past {
+.EventCardTitle.Past {
   color: #000;
   font-size: 30px;
   line-height: 35px;
@@ -156,11 +158,147 @@
   margin: 0px;
 }
 
-.EventTime {
+.EventCardTime {
   color: #fff;
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
   line-height: 28px;
+}
+
+.SubtitleFont {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.DescriptFont {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.EventInformation {
+  display: flex;
+}
+
+.EventImage {
+  margin-top: 9px;
+  width: 432px;
+  height: 402px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.EventTitle {
+  width: 736px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px;
+  margin-bottom: 40px;
+}
+
+.EventPeriod {
+  display: flex;
+  margin-bottom: 30px;
+}
+.EventPeriod :first-child {
+  margin-right: 20px;
+}
+
+.EventVenue,
+.EventTime,
+.EventWebsite {
+  margin-bottom: 20px;
+}
+.EventVenue :first-child,
+.EventTime :first-child,
+.EventWebsite :first-child {
+  margin-right: 30px;
+}
+
+.EventPurpose {
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.EventPurpose :first-child {
+  margin-bottom: 20px;
+}
+
+.EventDetail {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+.EventDetail :first-child {
+  margin-bottom: 20px;
+}
+
+.EventCarousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.EventCarousel.img {
+  width: 16px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.EventCarouselImages {
+  display: flex;
+  justify-content: space-around;
+  height: 475px;
+  width: 100%;
+  margin: 0px 53px;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+.EventCarouselImages img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.EventMap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+
+.EventMapLocation {
+  margin-top: 30px;
+  width: 1192px;
+  height: 475px;
+  background: #d9d9d9;
+}
+
+.EventGallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.EventGalleryImages {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 475px;
+}
+.EventGalleryImages img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 200px;
 }/*# sourceMappingURL=events.css.map */

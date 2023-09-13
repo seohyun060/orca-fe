@@ -166,6 +166,7 @@
       button {
         width: 161px;
         height: 44px;
+        background: var(--Light-gray, #fff);
         border-radius: 10px;
         border: 1px solid var(--Dark-gray, #3c3c3c);
         @include font-setting(#3c3c3c, 300, 20px, 28px);
@@ -174,7 +175,395 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .intro-background {
+      width: 100%;
+      background-color: black;
+    }
+    &-intro {
+      //intro section
+      width: 900px;
+
+      &-what {
+        width: 771px;
+        height: 250px;
+        //margin-top: 200px;
+        //background-color: blue;
+        //display: flex;
+        //flex-direction: column;
+        &-head {
+          @include font-setting(white, 600, 45px, 28px);
+        }
+        &-about {
+          margin-top: 20px;
+        }
+        &-body {
+          width: 542px;
+          margin-top: 20px;
+          @include font-setting(white, 600, 24px, 28px);
+        }
+      }
+      &-goal {
+        width: 771px;
+        height: 300px;
+        //margin-top: 200px;
+        //background-color: blue;
+        //display: flex;
+        //flex-direction: column;
+        //background-color: blue;
+        &-head {
+          @include font-setting(white, 600, 45px, 28px);
+        }
+        &-body1 {
+          width: 550px;
+          //margin-top: 50px;
+          //@include font-setting(black, 600, 20px, 28px);
+          margin-left: 60px;
+        }
+        &-body2 {
+          width: 550px;
+          margin-left: 0px;
+          //margin-top: 15px;
+          //@include font-setting(black, 600, 20px, 28px);
+        }
+      }
+      &-contact {
+        color: white;
+        position: relative;
+        width: 900px;
+        height: 160px;
+        margin-top: 150px;
+        //margin-left: 18.9583%;
+        &-head {
+          @include font-setting(white, 600, 25px, 28px);
+          margin-bottom: 16px;
+        }
+        &-email {
+          background-color: black;
+          width: 900px;
+          height: 44px;
+          input {
+            width: 750px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid var(--Light-gray, #f0f0f0);
+            background-color: black;
+            @include font-setting(#f0f0f0, 300, 20px, 28px);
+            padding-left: 21px;
+            margin-right: 20px;
+          }
+          button {
+            border-radius: 10px;
+            width: 184px;
+            height: 44px;
+            width: 130px;
+            background: var(--Light-gray, #f0f0f0);
+            @include font-setting(#3c3c3c, 300, 20px, 28px);
+          }
+          margin-bottom: 16px;
+        }
+        &-body {
+          @include font-setting(#9e9e9e, 400, 16px, 28px);
+        }
+      }
+    }
+
+    &-research {
+      position: relative;
+      width: 900px;
+      height: 814px;
+      background-color: white;
+      margin-bottom: 150px;
+      margin: auto;
+
+      &-head {
+        position: relative;
+        margin-top: 142px;
+        //margin-left: 18.9583%;
+        width: 998px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          @include font-setting(black, 600, 45px, 28px);
+        }
+        button {
+          width: 161px;
+          height: 44px;
+          border-radius: 10px;
+          margin-left: 100px;
+          border: 1px solid var(--Dark-gray, #3c3c3c);
+          @include font-setting(#3c3c3c, 300, 20px, 28px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .intro-background {
+      width: 100%;
+      background-color: black;
+    }
+    &-intro {
+      //intro section
+      width: 700px;
+
+      &-what {
+        width: 600px;
+        height: 250px;
+        //margin-top: 200px;
+        //background-color: blue;
+        display: flex;
+        flex-direction: column;
+        &-head {
+          @include font-setting(white, 600, 45px, 28px);
+        }
+        &-about {
+          margin-top: 60px;
+        }
+        &-body {
+          width: 500px;
+          margin-top: 20px;
+          @include font-setting(white, 600, 25px, 28px);
+        }
+      }
+      &-goal {
+        width: 600px;
+        height: 250px;
+        //margin-top: 200px;
+        //background-color: blue;
+        display: flex;
+        flex-direction: column;
+        //background-color: blue;
+        &-head {
+          @include font-setting(white, 600, 45px, 28px);
+        }
+        &-body1 {
+          width: 500px;
+          margin-top: 50px;
+          margin-left: 0px;
+          @include font-setting(white, 600, 20px, 28px);
+        }
+        &-body2 {
+          width: 500px;
+          margin-top: 15px;
+          @include font-setting(white, 600, 20px, 28px);
+        }
+      }
+      &-contact {
+        color: white;
+        position: relative;
+        width: 700px;
+        height: 160px;
+        margin-top: 150px;
+        //margin-left: 18.9583%;
+        &-head {
+          @include font-setting(white, 600, 20px, 28px);
+          margin-bottom: 16px;
+        }
+        &-email {
+          background-color: black;
+          width: 700px;
+          height: 44px;
+          input {
+            width: 550px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid var(--Light-gray, #f0f0f0);
+            background-color: black;
+            @include font-setting(#f0f0f0, 300, 20px, 28px);
+            padding-left: 21px;
+            margin-right: 20px;
+          }
+          button {
+            border-radius: 10px;
+            width: 184px;
+            height: 44px;
+            width: 130px;
+            background: var(--Light-gray, #f0f0f0);
+            @include font-setting(#3c3c3c, 300, 20px, 28px);
+          }
+          margin-bottom: 16px;
+        }
+        &-body {
+          @include font-setting(#9e9e9e, 400, 14px, 28px);
+        }
+      }
+    }
+
+    &-research {
+      position: relative;
+      width: 700px;
+      height: 814px;
+      background-color: white;
+      margin-bottom: 150px;
+      margin: auto;
+
+      &-head {
+        position: relative;
+        margin-top: 142px;
+        //margin-left: 18.9583%;
+        width: 775px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          @include font-setting(black, 600, 45px, 28px);
+        }
+        button {
+          width: 161px;
+          height: 44px;
+          border-radius: 10px;
+          border: 1px solid var(--Dark-gray, #3c3c3c);
+          @include font-setting(#3c3c3c, 300, 20px, 28px);
+        }
+      }
+    }
+  }
+}
 // common
+@media (max-width: 767px) {
+  .home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .intro-background {
+      width: 100%;
+      background-color: black;
+    }
+    &-intro {
+      //intro section
+      width: 400px;
+
+      &-what {
+        width: 300px;
+        height: 250px;
+        //margin-top: 200px;
+        //background-color: blue;
+        display: flex;
+        flex-direction: column;
+        &-head {
+          @include font-setting(white, 600, 25px, 28px);
+        }
+        &-about {
+          margin-top: 40px;
+          font-size: 17px;
+        }
+        &-body {
+          width: 300px;
+          margin-top: 10px;
+          @include font-setting(white, 600, 13px, 1.7);
+        }
+      }
+      &-goal {
+        width: 300px;
+        height: 350px;
+        //margin-top: 200px;
+        //background-color: blue;
+        display: flex;
+        flex-direction: column;
+        //background-color: blue;
+        &-head {
+          @include font-setting(white, 600, 25px, 28px);
+        }
+        &-body1 {
+          width: 400px;
+          margin-top: 50px;
+          height: 50px;
+          @include font-setting(white, 600, 13px, 1.7);
+        }
+        &-body2 {
+          width: 400px;
+          margin-top: 15px;
+          @include font-setting(white, 600, 13px, 1.7);
+        }
+      }
+      &-contact {
+        color: white;
+        position: relative;
+        width: 400px;
+        height: 160px;
+        margin-top: 150px;
+        //margin-left: 18.9583%;
+        &-head {
+          @include font-setting(white, 600, 15px, 28px);
+          margin-bottom: 16px;
+        }
+        &-email {
+          background-color: black;
+          width: 400px;
+          height: 44px;
+          input {
+            width: 280px;
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid var(--Light-gray, #f0f0f0);
+            background-color: black;
+            @include font-setting(#f0f0f0, 300, 12px, 28px);
+            padding-left: 21px;
+            margin-right: 20px;
+          }
+          button {
+            border-radius: 10px;
+            width: 184px;
+            height: 44px;
+            width: 100px;
+            background: var(--Light-gray, #f0f0f0);
+            @include font-setting(#3c3c3c, 300, 14px, 28px);
+          }
+          margin-bottom: 16px;
+        }
+        &-body {
+          @include font-setting(#9e9e9e, 400, 12px, 1.7);
+        }
+      }
+    }
+
+    &-research {
+      position: relative;
+      width: 400px;
+      height: 514px;
+      background-color: white;
+      margin-bottom: 150px;
+      margin: auto;
+
+      &-head {
+        position: relative;
+        margin-top: 142px;
+        //margin-left: 18.9583%;
+        width: 442px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+          @include font-setting(black, 600, 25px, 28px);
+        }
+        button {
+          width: 70px;
+          height: 34px;
+          border-radius: 10px;
+          border: 1px solid var(--Dark-gray, #3c3c3c);
+          @include font-setting(#3c3c3c, 300, 12px, 28px);
+        }
+      }
+    }
+  }
+}
 
 .Section {
   display: flex;

@@ -9,88 +9,86 @@ import ProjectDummyData from "./ProjectDummyData";
 const ProjectExplore = (props) => {
   const { projStatus, projID, projTitle, projCategory, projLocation } = props;
   const [tempData, setTempData] = useState(ProjectDummyData);
-  // object로 관리
-  const[yearly, setYearly] = useState([
-    { criteria: "The past year", isChecked: false },
-    { criteria: "The past 3 years", isChecked: false },
-    { criteria: "The past 5 years", isChecked: false }
+
+  const [category, setCategory] = useState([
+    "ORCA Projects",
+    "CadAI-B",
+    "CadAI-T",
+    "Chat AI",
   ]);
+  const [isCategoryChecked, setIsCategoryChecked] = useState([
+    true,
+    false,
+    false,
+    false,
+  ]);
+  const [yearly, setYearly] = useState([
+    "The past year",
+    "The past 3 years",
+    "The past 5 years",
+  ]);
+  const [isYearlyChecked, setIsYearlyChecked] = useState([false, false, false]);
+  const [status, setStatus] = useState(["Active", "Completed", "Terminated"]);
   const [isStatusChecked, setIsStatusChecked] = useState([false, false, false]);
 
-  const category = ["ORCA Projects", "CadAI-B", "CadAI-T", "Chat AI"];
-  const status = ["Active", "Completed", "Terminated"];
+  const getProjectData = () => {
+    // 백엔드 생성시 데이터를 받을 함수
+  };
 
-  const onCateoryClick = () => {};
+  const onCategoryClick = (categoryNum) => {
+    onSearchChange();
+    if (categoryNum == 0) {
+      const temp = [true, false, false, false];
+      setIsCategoryChecked(temp);
+      setTempData(ProjectDummyData)
+    } else {
+      let temp = [false, false, false, false];
+      temp[categoryNum] = true;
+      setIsCategoryChecked(temp);
+      setTempData(
+        ProjectDummyData.filter((data) => {
+          if (data.category == category[categoryNum]) {
+            return true;
+          }
+        })
+      );
+    }
+    console.log(categoryNum);
+  };
 
-  const getProjectData = () => {};
+  const filterStatus = () => {
+    
+  };
 
   const filterYearly = (index) => {
-    console.log(yearly)
-    console.log(1)
+    console.log(yearly);
+    console.log(1);
     if (yearly[index].isChecked == true) {
     } else if (yearly[index] == false) {
     }
-    console.log(yearly)
+    console.log(yearly);
     let temp = { ...yearly };
-    console.log(typeof(yearly))
-    console.log(yearly)
-    console.log(2)
+    console.log(typeof yearly);
+    console.log(yearly);
+    console.log(2);
     temp[index].isChecked = !temp[index].isChecked;
-    console.log(3)
+    console.log(3);
     setYearly(temp);
-    console.log(4)
-    console.log(yearly)
+    console.log(4);
+    console.log(yearly);
   };
 
-  console.log(yearly)
-
-  const filterStatus = (index) => {
-    console.log(isStatusChecked);
-    // console.log(isStatusChecked[index]);
-
-    if (isStatusChecked[index] == false) {
-      console.log(true);
-
-      // let tempData = {...ProjectDummyData}
-      // isStatusChecked.map((checked, index) => {
-      //   if (checked[index]) {
-      //     tempData.filter((data) => (data.status = status[index]));
-      //   }
-      // });
-      console.log(tempData);
-    } else if (isStatusChecked[index] == true) {
-      console.log(false);
-
-      // isStatusChecked.map((checked, index) => {
-      //   if (checked[index]) {
-      //     let temp = isStatusChecked;
-      //     temp[index] = !temp[index];
-      //     setIsStatusChecked(temp);
-      //     setTempData(tempData.filter((data) => (data.status = criteria)));
-      //   }
-      // });
-    }
-    let temp = { ...isStatusChecked };
-    console.log(temp);
-    temp[index] = !temp[index];
-    setIsStatusChecked(temp);
-    console.log(isStatusChecked);
-  };
+  console.log(yearly);
 
   const onSearchChange = () => {
     const value = document.getElementById("search").value;
     setTempData(
       ProjectDummyData.filter((data) => {
-        console.log(data);
-        console.log(value);
         if (data.title.includes(value)) {
-          console.log(true);
           return true;
         }
       })
     );
-    console.log(value);
-    console.log(tempData);
   };
 
   useEffect(() => {}, []);
@@ -101,11 +99,14 @@ const ProjectExplore = (props) => {
       <div className="ProjectExplore">
         <div className="ProjectExploreUpperBar">
           <div className="CategoryBar">
-            {/* 추후에 동적생성? */}
-            <button>ORCA Projects</button>
-            <button>CadAI-B</button>
-            <button>CadAI-T</button>
-            <button>Chat AI</button>
+            {category.map((category, index) => (
+              <button
+                className={isCategoryChecked[index].toString()}
+                onClick={(e) => onCategoryClick(index)}
+              >
+                {category}
+              </button>
+            ))}
           </div>
           <div className="SearchBar">
             <input
@@ -142,12 +143,12 @@ const ProjectExplore = (props) => {
             <div className="title">Yearly</div>
             {yearly.map((yearly, index) => (
               <div className="sub">
-                {yearly.criteria}
+                {yearly}
                 <input
                   type="checkbox"
-                  key={yearly.criteria}
-                  checked={yearly.isChecked}
-                  onChange={(e) => filterYearly(index)}
+                  key={yearly}
+                  checked={isYearlyChecked[index]}
+                  // onChange={(e) => filterYearly(index)}
                 />
               </div>
             ))}

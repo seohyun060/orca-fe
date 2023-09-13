@@ -41,7 +41,7 @@
       color: #000;
     }
 
-    &:focus {
+    &.true {
       background: var(--Dark-gray, #3c3c3c);
       color: #fff;
     }

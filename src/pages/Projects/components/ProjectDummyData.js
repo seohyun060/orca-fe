@@ -1,4 +1,4 @@
-const dummyData = [
+const ProjectDummyData = [
   {
     title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis1",
     status: "Completed",
@@ -49,4 +49,4 @@ const dummyData = [
   },
 ];
 
-export default dummyData;
+export default ProjectDummyData;

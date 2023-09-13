@@ -15,7 +15,7 @@ const HomeInsights = () => {
           <label className='View'>View All</label>
         </button>
       </div>
-      <div className='EventBox'>
+      <div className='EventBoxSlide'>
         <ResearchCard />
         <ResearchCard />
         <ResearchCard />

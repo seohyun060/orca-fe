@@ -272,12 +272,16 @@
   flex-direction: column;
   margin: 10px auto;
   width: 1192px;
+  overflow: hidden;
 }
 
 .EventBox {
+  overflow: hidden;
+}
+
+.EventBoxSlide {
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: row;
-  overflow: hidden;
 }/*# sourceMappingURL=home.styles.css.map */

@@ -41,6 +41,7 @@
     "framer-motion": "^7.5.3",
     "fs-extra": "^10.0.0",
     "google-map-react": "^2.2.0",
+    "google-maps-react": "^2.0.6",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",

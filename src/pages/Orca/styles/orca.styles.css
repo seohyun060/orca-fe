@@ -194,15 +194,68 @@
 .orca-benefits-box-body3-head {
   width: 784px;
 }
-@media (max-width: 1500px) {
+@media (max-width: 1400px) {
+  .orca {
+    justify-content: center;
+  }
   .orca-what {
-    padding-left: 50px;
+    width: 900px;
+  }
+  .orca-what-box {
+    width: 771px;
+    height: 250px;
+  }
+  .orca-what-box-about {
+    margin-top: 20px;
+  }
+  .orca-what-box-body {
+    width: 542px;
+    margin-top: 20px;
+    color: white;
+    font-size: 25px;
+    font-family: Pretendard;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 28px;
+    letter-spacing: normal;
   }
   .orca-goal {
-    padding-left: 50px;
+    width: 900px;
+  }
+  .orca-goal-box {
+    width: 771px;
+    height: 250px;
+  }
+  .orca-goal-box-body1 {
+    width: 400px;
+  }
+  .orca-goal-box-body2 {
+    width: 440px;
+    margin-left: 0px;
   }
   .orca-benefits {
-    padding-left: 50px;
+    width: 900px;
+  }
+  .orca-benefits-box {
+    width: 771px;
+    margin-left: 0px;
+  }
+  .orca-benefits-box-body1, .orca-benefits-box-body2, .orca-benefits-box-body3 {
+    width: 771px;
+    grid-template-columns: 141px 630px;
+    grid-template-rows: 40px 50px;
+    margin-bottom: 20px;
+  }
+  .orca-benefits-box-body1-square, .orca-benefits-box-body2-square, .orca-benefits-box-body3-square {
+    width: 90px;
+    height: 90px;
+  }
+  .orca-benefits-box-body1-head, .orca-benefits-box-body2-head, .orca-benefits-box-body3-head {
+    font-size: 20px;
+  }
+  .orca-benefits-box-body1-body, .orca-benefits-box-body2-body, .orca-benefits-box-body3-body {
+    font-size: 15px;
   }
 }
 @media (max-width: 1023px) {
@@ -405,6 +458,9 @@
   }
   .orca-benefits {
     width: 400px;
+    height: 550px;
+    margin-top: 50px;
+    margin-bottom: 0px;
   }
   .orca-benefits-box {
     width: 300px;

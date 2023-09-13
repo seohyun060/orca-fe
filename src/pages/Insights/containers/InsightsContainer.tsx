@@ -69,18 +69,46 @@ const InsightsContainer = (props: Props) => {
           break;
       }
       console.log(selectedTab);
+      console.log(window.innerWidth);
     },
     [filteredList, selectedTab],
   );
-  useEffect(() => {
-    if (filteredList.length > 12 && !readMore) {
-      setContainerHeight('1314px');
+  const handleResize = () => {
+    if (window.innerWidth > 1400) {
+      if (filteredList.length > 12 && !readMore) {
+        setContainerHeight('1314px');
+      } else {
+        setContainerHeight('fit-content');
+      }
+    } else if (window.innerWidth > 1024) {
+      console.log(readMore, window.innerWidth, containerHeight, 'ddd');
+      if (filteredList.length > 12 && !readMore) {
+        setContainerHeight('992px');
+      } else {
+        setContainerHeight('fit-content');
+      }
+    } else if (window.innerWidth > 768) {
+      if (filteredList.length > 12 && !readMore) {
+        setContainerHeight('771.64px');
+      } else {
+        setContainerHeight('fit-content');
+      }
     } else {
-      setContainerHeight('fit-content');
+      if (filteredList.length > 12 && !readMore) {
+        setContainerHeight('440.94px');
+      } else {
+        setContainerHeight('fit-content');
+      }
     }
+  };
 
+  useEffect(() => {
+    //handleResize();
+    const observer = new ResizeObserver(handleResize);
+    const targetElement = document.querySelector('.insights')!;
+    observer.observe(targetElement);
     return () => {};
-  }, [filteredList, readMore, containerHeight]);
+  }, [filteredList, readMore, containerHeight, window.innerWidth]);
 
   return (
     <Insights

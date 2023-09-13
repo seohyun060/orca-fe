@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/home.styles.scss";
 import images from "src/assets/images";
 import EventCard from "../../Events/components/EventCard";
+import EventBoxSlide from "src/pages/Events/components/EventBoxSlide";
 
 const HomeEvents = () => {
   const navigate = useNavigate();
@@ -43,19 +44,7 @@ const HomeEvents = () => {
           <label className="View">View All</label>
         </button>
       </div>
-      <div className="EventBox">
-        <div className="EventBoxSlide"ref={eventSlideRef}>
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-        </div>
-        <div className="EventCardPaging">
-          <img src={images.back_b} onClick={onBackButtonClick}></img>
-          <img src={images.paging_bar}></img>
-          <img src={images.go_b} onClick={onGoButtonClick}></img>
-        </div>
-      </div>
+      <EventBoxSlide inEvent={false}/>
     </section>
   );
 };

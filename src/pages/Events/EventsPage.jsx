@@ -7,35 +7,6 @@ import EventCard from "./components/EventCard";
 import EventBoxSlide from "./components/EventBoxSlide";
 
 const EventsPage = (props) => {
-  const [currentEventSlide, setCurrentEventSlide] = useState(0);
-  const [eventSlideMoving, setEventSlideMoving] = useState(0);
-  const eventSlideRef = useRef();
-  const totalSides = 3;
-
-  const onBackButtonClick = () => {
-    if (currentEventSlide <= 0) {
-      return;
-    } else {
-      console.log("clickBack");
-      setEventSlideMoving(eventSlideMoving + 456);
-      setCurrentEventSlide(currentEventSlide - 1);
-      eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving + 456
-      }px)`;
-    }
-  };
-  const onGoButtonClick = () => {
-    if (currentEventSlide >= totalSides) {
-      return;
-    } else {
-      console.log("clickGo");
-      setEventSlideMoving(eventSlideMoving - 456);
-      setCurrentEventSlide(currentEventSlide + 1);
-      eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving - 456
-      }px)`;
-    }
-  };
 
   return (
     <div className="Events">
@@ -44,7 +15,7 @@ const EventsPage = (props) => {
         <div className="SubPhrase">
           Learn about ORCA's upcoming events for potential meet-ups
         </div>
-        <EventBoxSlide />
+        <EventBoxSlide inEvent={true}/>
       </section>
       <section className="Section">
         <div className="SectionTitle">Past Events</div>

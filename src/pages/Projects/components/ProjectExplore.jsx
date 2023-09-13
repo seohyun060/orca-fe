@@ -4,11 +4,11 @@ import ProjectCard from "./ProjectCard";
 
 import images from "src/assets/images";
 
-import dummyData from "./dummyData";
+import ProjectDummyData from "./ProjectDummyData";
 
 const ProjectExplore = (props) => {
   const { projStatus, projID, projTitle, projCategory, projLocation } = props;
-  const [tempData, setTempData] = useState(dummyData);
+  const [tempData, setTempData] = useState(ProjectDummyData);
   // object로 관리
   const[yearly, setYearly] = useState([
     { criteria: "The past year", isChecked: false },
@@ -51,7 +51,7 @@ const ProjectExplore = (props) => {
     if (isStatusChecked[index] == false) {
       console.log(true);
 
-      // let tempData = {...dummyData}
+      // let tempData = {...ProjectDummyData}
       // isStatusChecked.map((checked, index) => {
       //   if (checked[index]) {
       //     tempData.filter((data) => (data.status = status[index]));
@@ -80,7 +80,7 @@ const ProjectExplore = (props) => {
   const onSearchChange = () => {
     const value = document.getElementById("search").value;
     setTempData(
-      dummyData.filter((data) => {
+      ProjectDummyData.filter((data) => {
         console.log(data);
         console.log(value);
         if (data.title.includes(value)) {

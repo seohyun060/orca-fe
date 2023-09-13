@@ -3,21 +3,25 @@ import "../style/events.css";
 import images from "src/assets/images";
 import EventCard from "./EventCard";
 
-import dummyData from "./dummyData";
+import EventDummyData from "./EventDummyData";
 
-const EventBoxSlide = () => {
+const EventBoxSlide = (props) => {
+  const { inEvent } = props;
+
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
   const eventSlideRef = useRef();
-  const totalSides = 3; // 추후 갯수만큼 불러오기
+  const totalSides = EventDummyData.length - 2; // 추후 갯수만큼 불러오기
+
+  console.log(EventDummyData);
 
   const onBackButtonClick = () => {
     if (currentEventSlide <= 0) {
       return;
     } else {
-      console.log("clickBack");
       setEventSlideMoving(eventSlideMoving + 456);
       setCurrentEventSlide(currentEventSlide - 1);
+      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving + 456
       }px)`;
@@ -27,9 +31,9 @@ const EventBoxSlide = () => {
     if (currentEventSlide >= totalSides) {
       return;
     } else {
-      console.log("clickGo");
       setEventSlideMoving(eventSlideMoving - 456);
       setCurrentEventSlide(currentEventSlide + 1);
+      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving - 456
       }px)`;
@@ -40,8 +44,14 @@ const EventBoxSlide = () => {
     <>
       <div className="EventBox">
         <div className="EventBoxSlide" ref={eventSlideRef}>
-            {dummyData.map((data) => {<EventCard inEvent={true}
-            title={data.title} date={data.eventDate}/>})}
+          {console.log(EventDummyData)}
+          {EventDummyData.map((data) => (
+            <EventCard
+              inEvent={inEvent}
+              title={data.title}
+              eventDate={data.eventDate}
+            />
+          ))}
         </div>
       </div>
       <div className="EventCardPaging">

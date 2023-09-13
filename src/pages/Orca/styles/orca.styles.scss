@@ -199,16 +199,83 @@
     }
   }
 }
-@media (max-width: 1500px) {
+@media (max-width: 1400px) {
   .orca {
+    justify-content: center;
     &-what {
-      padding-left: 50px;
+      width: 900px;
+
+      &-box {
+        width: 771px;
+        height: 250px;
+        //margin-top: 200px;
+        //background-color: blue;
+        //display: flex;
+        //flex-direction: column;
+        &-head {
+          //@include font-setting(white, 600, 45px, 28px);
+        }
+        &-about {
+          margin-top: 20px;
+        }
+        &-body {
+          width: 542px;
+          margin-top: 20px;
+          @include font-setting(white, 600, 25px, 28px);
+        }
+      }
     }
     &-goal {
-      padding-left: 50px;
+      width: 900px;
+      &-box {
+        width: 771px;
+        height: 250px;
+        //margin-top: 200px;
+        //background-color: blue;
+        //display: flex;
+        //flex-direction: column;
+        //background-color: blue;
+        &-head {
+          //@include font-setting(black, 600, 45px, 28px);
+        }
+        &-body1 {
+          width: 400px;
+          //margin-top: 50px;
+          //@include font-setting(black, 600, 20px, 28px);
+        }
+        &-body2 {
+          width: 440px;
+          margin-left: 0px;
+          //margin-top: 15px;
+          //@include font-setting(black, 600, 20px, 28px);
+        }
+      }
     }
     &-benefits {
-      padding-left: 50px;
+      width: 900px;
+      &-box {
+        width: 771px;
+        margin-left: 0px;
+        &-head {
+          //@include font-setting(black, 600, 45px, 28px);
+        }
+        &-body1 {
+          width: 771px;
+          grid-template-columns: 141px 630px;
+          grid-template-rows: 40px 50px;
+          margin-bottom: 20px;
+          &-square {
+            width: 90px;
+            height: 90px;
+          }
+          &-head {
+            font-size: 20px;
+          }
+          &-body {
+            font-size: 15px;
+          }
+        }
+      }
     }
   }
 }
@@ -347,6 +414,9 @@
     }
     &-benefits {
       width: 400px;
+      height: 550px;
+      margin-top: 50px;
+      margin-bottom: 0px;
       &-box {
         width: 300px;
         margin-left: 0px;

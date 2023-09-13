@@ -211,16 +211,81 @@
     }
   }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   .footer {
-    padding-left: 50px;
+    //padding-left: 50px;
+    width: 900px;
+    height: 800px;
+    //margin: auto;
+    &-news {
+      width: 900px;
+
+      form {
+        width: 900px;
+        input {
+          width: 750px;
+          margin-right: 20px;
+        }
+        button {
+          width: 130px;
+        }
+      }
+      &-please {
+        width: 900px;
+      }
+    }
+    &-info {
+      width: 900px;
+      &-head {
+      }
+      &-beamworks {
+      }
+      &-ceo {
+        .ceo {
+        }
+        .kim {
+        }
+      }
+      &-address {
+        .business {
+          font-size: 15px;
+        }
+        .location {
+          font-size: 15px;
+        }
+      }
+      &-number {
+        .number1 {
+          font-size: 15px;
+        }
+        .number2 {
+          font-size: 15px;
+        }
+        .email1 {
+          font-size: 15px;
+        }
+        .email2 {
+          font-size: 15px;
+        }
+        .fax1 {
+          font-size: 15px;
+        }
+        .fax2 {
+          font-size: 15px;
+        }
+      }
+      &-logo {
+        .beamworks {
+        }
+      }
+    }
   }
 }
 
 @media (max-width: 1023px) {
   .footer {
     width: 700px;
-    height: 700px;
+    height: 600px;
     margin: auto;
     padding-left: 0px;
     //justify-content: center;
@@ -304,10 +369,12 @@
 @media (max-width: 767px) {
   .footer {
     width: 400px;
+    height: 500px;
     justify-content: center;
     padding-left: 0px;
     &-news {
       width: 400px;
+      margin-bottom: 50px;
       &-head {
         font-size: 20px;
         margin-bottom: 15px;

@@ -201,15 +201,59 @@
   margin-top: -2px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   .footer {
-    padding-left: 50px;
+    width: 900px;
+    height: 800px;
+  }
+  .footer-news {
+    width: 900px;
+  }
+  .footer-news form {
+    width: 900px;
+  }
+  .footer-news form input {
+    width: 750px;
+    margin-right: 20px;
+  }
+  .footer-news form button {
+    width: 130px;
+  }
+  .footer-news-please {
+    width: 900px;
+  }
+  .footer-info {
+    width: 900px;
+  }
+  .footer-info-address .business {
+    font-size: 15px;
+  }
+  .footer-info-address .location {
+    font-size: 15px;
+  }
+  .footer-info-number .number1 {
+    font-size: 15px;
+  }
+  .footer-info-number .number2 {
+    font-size: 15px;
+  }
+  .footer-info-number .email1 {
+    font-size: 15px;
+  }
+  .footer-info-number .email2 {
+    font-size: 15px;
+  }
+  .footer-info-number .fax1 {
+    font-size: 15px;
+  }
+  .footer-info-number .fax2 {
+    font-size: 15px;
   }
 }
 @media (max-width: 1023px) {
   .footer {
     width: 700px;
-    height: 700px;
+    height: 600px;
     margin: auto;
     padding-left: 0px;
   }
@@ -286,11 +330,13 @@
 @media (max-width: 767px) {
   .footer {
     width: 400px;
+    height: 500px;
     justify-content: center;
     padding-left: 0px;
   }
   .footer-news {
     width: 400px;
+    margin-bottom: 50px;
   }
   .footer-news-head {
     font-size: 20px;

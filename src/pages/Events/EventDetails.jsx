@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import images from "src/assets/images";
@@ -6,6 +6,36 @@ import images from "src/assets/images";
 const EventDetails = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [currentEventSlide, setCurrentEventSlide] = useState(0);
+  const [eventSlideMoving, setEventSlideMoving] = useState(0);
+  const eventSlideRef = useRef();
+  const totalSides = 3; // 추후 갯수만큼 불러오기
+
+  const onBackButtonClick = () => {
+    if (currentEventSlide <= 0) {
+      return;
+    } else {
+      setEventSlideMoving(eventSlideMoving + 1066);
+      setCurrentEventSlide(currentEventSlide - 1);
+      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
+      eventSlideRef.current.style.transform = `translateX(${
+        eventSlideMoving + 1066
+      }px)`;
+    }
+  };
+  const onGoButtonClick = () => {
+    if (currentEventSlide >= totalSides - 1) {
+      return;
+    } else {
+      setEventSlideMoving(eventSlideMoving - 1066);
+      setCurrentEventSlide(currentEventSlide + 1);
+      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
+      eventSlideRef.current.style.transform = `translateX(${
+        eventSlideMoving - 1066
+      }px)`;
+    }
+  };
 
   const past = location.state.past;
 
@@ -63,13 +93,15 @@ const EventDetails = (props) => {
           </label>
         </div>
         <div className="EventCarousel">
-          <img src={images.back_b}></img>
+          <img src={images.back_b} onClick={onBackButtonClick}></img>
           <div className="EventCarouselImages">
-            {/* image.map() -> image 쭉 늘어놓기? */}
-            <img src={images.profile}></img>
-            <img src={images.profile}></img>
+            <div className="EventCarouselSlide" ref={eventSlideRef}>
+              <img className="CarouselImage" src={images.profile}></img>
+              <img className="CarouselImage" src={images.profile}></img>
+              <img className="CarouselImage" src={images.profile}></img>
+            </div>
           </div>
-          <img src={images.go_b}></img>
+          <img src={images.go_b} onClick={onGoButtonClick}></img>
         </div>
         <div className="EventMap">
           <label className="SubtitleFont">Map</label>

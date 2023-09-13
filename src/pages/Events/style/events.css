@@ -55,7 +55,8 @@
 .EventCardPaging img:nth-child(2) {
   margin: 0px 40px;
 }
-.EventCardPaging img:nth-child(2) circle {
+
+circle {
   fill: #d9d9d9;
 }
 

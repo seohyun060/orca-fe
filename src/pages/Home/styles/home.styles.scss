@@ -230,13 +230,17 @@
   flex-direction: column;
   margin: 10px auto;
   width: 1192px;
+  overflow: hidden;
 }
 
 .EventBox {
+  overflow: hidden;
+}
+
+.EventBoxSlide {
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: row;
   //나중에 디자인팀 질문
-  overflow: hidden;
 }

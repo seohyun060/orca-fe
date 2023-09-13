@@ -75,6 +75,7 @@ const EventDetails = (props) => {
           <label className="SubtitleFont">Map</label>
           <div className="EventMapLocation"></div>
         </div>
+        {/* 지난 이벤트의 경우 Gallery 표현 */}
         {past ? (
           <div className="EventGallery">
             <label className="SubtitleFont">Gallery</label>

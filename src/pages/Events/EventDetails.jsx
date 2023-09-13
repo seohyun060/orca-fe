@@ -1,16 +1,21 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 import images from "src/assets/images";
+import MapContainer from "./MapContainer";
 
 const EventDetails = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const past = location.state.past;
 
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
   const eventSlideRef = useRef();
   const totalSides = 3; // 추후 갯수만큼 불러오기
+
+  console.log(process.env.REACT_APP_GOOGLE_MAP_API_KEY)
 
   const onBackButtonClick = () => {
     if (currentEventSlide <= 0) {
@@ -36,8 +41,6 @@ const EventDetails = (props) => {
       }px)`;
     }
   };
-
-  const past = location.state.past;
 
   return (
     <div className="Projects">
@@ -105,7 +108,9 @@ const EventDetails = (props) => {
         </div>
         <div className="EventMap">
           <label className="SubtitleFont">Map</label>
-          <div className="EventMapLocation"></div>
+          <div className="EventMapLocation">
+            <MapContainer />
+          </div>
         </div>
         {/* 지난 이벤트의 경우 Gallery 표현 */}
         {past ? (

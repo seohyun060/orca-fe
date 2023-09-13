@@ -54,13 +54,38 @@ const ResearcherContainer = ({ location }: Props) => {
     },
     [navigate],
   );
-
-  useEffect(() => {
-    if (filteredList.length > 16 && !readMore) {
-      setContainerHeight('1742px');
+  const handleResize = () => {
+    if (window.innerWidth > 1400) {
+      if (filteredList.length > 16 && !readMore) {
+        setContainerHeight('1742px');
+      } else {
+        setContainerHeight('fit-content');
+      }
+    } else if (window.innerWidth > 1024) {
+      console.log(readMore, window.innerWidth, containerHeight, 'ddd');
+      if (filteredList.length > 16 && !readMore) {
+        setContainerHeight('1315px');
+      } else {
+        setContainerHeight('fit-content');
+      }
+    } else if (window.innerWidth > 768) {
+      if (filteredList.length > 16 && !readMore) {
+        setContainerHeight('1022px');
+      } else {
+        setContainerHeight('fit-content');
+      }
     } else {
-      setContainerHeight('fit-content');
+      if (filteredList.length > 16 && !readMore) {
+        setContainerHeight('584px');
+      } else {
+        setContainerHeight('fit-content');
+      }
     }
+  };
+  useEffect(() => {
+    const observer = new ResizeObserver(handleResize);
+    const targetElement = document.querySelector('.researcher')!;
+    observer.observe(targetElement);
     return () => {};
   }, [filteredList, readMore, containerHeight]);
 

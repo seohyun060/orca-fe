@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/home.styles.css';
 import { EChange } from '@typedef/types';
+import { useTranslation } from "react-i18next";
 type Props = {
   email: string;
   onChangeEmail: (e: EChange) => void;
@@ -8,11 +9,12 @@ type Props = {
 };
 
 const HomeIntro = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
+  const { i18n, t } = useTranslation();
   return (
     <div className='intro-background'>
       <div className='home-intro'>
         <div className='home-intro-what'>
-          <div className='home-intro-what-head'>What is the ORCA Group?</div>
+          <div className='home-intro-what-head'>{t("introduce")}</div>
           <div className='home-intro-what-about'>About ORCA /ˈɔːr.kə/</div>
           <div className='home-intro-what-body'>
             The ORCA (Optimized Research in Clinical AI) Group at BeamWorks is a

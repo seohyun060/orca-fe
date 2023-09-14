@@ -1,479 +1,384 @@
 @mixin font-setting($color, $font-weight: normal, $font-size, $line-height) {
-  color: $color;
-  font-size: $font-size;
-  font-family: Pretendard;
-  @if $font-weight != normal {
-    font-weight: $font-weight;
-  }
-  font-stretch: normal;
-  font-style: normal;
-  line-height: $line-height;
-  letter-spacing: normal;
+	color: $color;
+	font-size: $font-size;
+	font-family: Pretendard;
+	@if $font-weight != normal {
+		font-weight: $font-weight;
+	}
+	font-stretch: normal;
+	font-style: normal;
+	line-height: $line-height;
+	letter-spacing: normal;
 }
 .footer {
-  width: 1192px;
-  height: 814px;
-  margin: auto;
-  &-news {
-    width: 100%;
-    height: 166px;
-    margin-bottom: 131px;
-    &-head {
-      color: #000;
+	width: 1192px;
+	height: 814px;
+	margin: auto;
+	&-news {
+		width: 100%;
+		height: 166px;
+		margin-bottom: 131px;
+		&-head {
+			margin-bottom: 24px;
+			color: #000;
+			font-family: Pretendard;
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 28px; /* 93.333% */
+		}
+		form {
+			width: 1192px;
+			height: 44px;
+			margin-bottom: 16px;
+			input {
+				width: 987px;
+				height: 44px;
+				margin-right: 21px;
+				padding-left: 21px;
+				border-radius: 10px;
+				border: 1px solid var(--Dark-gray, #3c3c3c);
 
-      /* web. semi.30 */
-      font-family: Pretendard;
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 28px; /* 93.333% */
-      margin-bottom: 24px;
-    }
+				@include font-setting(#f0f0f0, 300, 20px, 28px);
+			}
+			button {
+				width: 184px;
+				height: 44px;
+				border-radius: 10px;
+				background: var(--Dark-gray, #3c3c3c);
+				@include font-setting(#f0f0f0, 300, 20px, 28px);
+			}
+		}
+		&-please {
+			width: 762px;
+			color: var(--Midium-gray, #9e9e9e);
+			font-family: Pretendard;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 28px; /* 127.273% */
+		}
+	}
+	&-info {
+		display: flex;
+		flex-direction: column;
+		&-head {
+			display: flex;
+			flex-direction: row;
+			height: 20px;
+			margin-bottom: 40px;
+			color: #000;
+			//text-align: center;
+			font-family: Pretendard;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 28px; /* 127.273% */
+			text-decoration-line: underline;
+			.legal {
+				margin-right: 29px;
+			}
+		}
+		&-beamworks {
+			margin-bottom: 20px;
+			color: #000;
+			font-family: Pretendard;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 28px; /* 127.273% */
+		}
+		&-ceo {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 20px;
+			.ceo {
+				margin-right: 21px;
+				color: #000;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 28px; /* 127.273% */
+			}
+			.kim {
+				color: #000;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+			}
+		}
+		&-address {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 20px;
+			.business {
+				margin-right: 21px;
+				color: #000;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 28px; /* 127.273% */
+			}
+			.location {
+				color: #000;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+			}
+		}
+		&-number {
+			display: flex;
+			flex-direction: row;
+			.number1 {
+				margin-right: 21px;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 28px; /* 127.273% */
+			}
+			.number2 {
+				margin-right: 49px;
+				color: #000;
 
-    form {
-      width: 1192px;
-      height: 44px;
-      input {
-        width: 987px;
-        height: 44px;
-        border-radius: 10px;
-        border: 1px solid var(--Dark-gray, #3c3c3c);
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+			}
+			.email1 {
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 600;
+				margin-right: 21px;
+				line-height: 28px; /* 127.273% */
+			}
+			.email2 {
+				margin-right: 65px;
+				color: #000;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+			}
+			.fax1 {
+				margin-right: 21px;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 600;
 
-        @include font-setting(#f0f0f0, 300, 20px, 28px);
-        padding-left: 21px;
-        margin-right: 21px;
-      }
-      button {
-        width: 184px;
-        height: 44px;
-        border-radius: 10px;
-        background: var(--Dark-gray, #3c3c3c);
-        @include font-setting(#f0f0f0, 300, 20px, 28px);
-      }
-      margin-bottom: 16px;
-    }
-    &-please {
-      width: 762px;
-      color: var(--Midium-gray, #9e9e9e);
-
-      /* web. re.22 */
-      font-family: Pretendard;
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 28px; /* 127.273% */
-    }
-  }
-  &-info {
-    display: flex;
-    flex-direction: column;
-    &-head {
-      color: #000;
-      height: 20px;
-      //text-align: center;
-      font-family: Pretendard;
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 28px; /* 127.273% */
-      text-decoration-line: underline;
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 40px;
-      .legal {
-        margin-right: 29px;
-      }
-    }
-    &-beamworks {
-      color: #000;
-
-      font-family: Pretendard;
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 28px; /* 127.273% */
-      margin-bottom: 20px;
-    }
-    &-ceo {
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 20px;
-      .ceo {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 600;
-        margin-right: 21px;
-        line-height: 28px; /* 127.273% */
-      }
-      .kim {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px; /* 127.273% */
-      }
-    }
-    &-address {
-      display: flex;
-      flex-direction: row;
-      margin-bottom: 20px;
-      .business {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 600;
-        margin-right: 21px;
-        line-height: 28px; /* 127.273% */
-      }
-      .location {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px; /* 127.273% */
-      }
-    }
-    &-number {
-      display: flex;
-      flex-direction: row;
-      .number1 {
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 600;
-        margin-right: 21px;
-        line-height: 28px; /* 127.273% */
-      }
-      .number2 {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px; /* 127.273% */
-        margin-right: 49px;
-      }
-      .email1 {
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 600;
-        margin-right: 21px;
-        line-height: 28px; /* 127.273% */
-      }
-      .email2 {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px; /* 127.273% */
-        margin-right: 65px;
-      }
-      .fax1 {
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 600;
-        margin-right: 21px;
-        line-height: 28px; /* 127.273% */
-      }
-      .fax2 {
-        color: #000;
-
-        font-family: Pretendard;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px; /* 127.273% */
-      }
-    }
-    &-logo {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      .beamworks {
-        margin-right: 31px;
-        margin-top: -2px;
-      }
-    }
-  }
+				line-height: 28px; /* 127.273% */
+			}
+			.fax2 {
+				color: #000;
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+			}
+		}
+		&-logo {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-top: 30px;
+			.beamworks {
+				margin-right: 31px;
+				margin-top: -2px;
+			}
+		}
+	}
 }
-@media (max-width: 1400px) {
-  .footer {
-    //padding-left: 50px;
-    width: 900px;
-    height: 800px;
-    //margin: auto;
-    &-news {
-      width: 900px;
 
-      form {
-        width: 900px;
-        input {
-          width: 750px;
-          margin-right: 20px;
-        }
-        button {
-          width: 130px;
-        }
-      }
-      &-please {
-        width: 900px;
-      }
-    }
-    &-info {
-      width: 900px;
-      &-head {
-      }
-      &-beamworks {
-      }
-      &-ceo {
-        .ceo {
-        }
-        .kim {
-        }
-      }
-      &-address {
-        .business {
-          font-size: 15px;
-        }
-        .location {
-          font-size: 15px;
-        }
-      }
-      &-number {
-        .number1 {
-          font-size: 15px;
-        }
-        .number2 {
-          font-size: 15px;
-        }
-        .email1 {
-          font-size: 15px;
-        }
-        .email2 {
-          font-size: 15px;
-        }
-        .fax1 {
-          font-size: 15px;
-        }
-        .fax2 {
-          font-size: 15px;
-        }
-      }
-      &-logo {
-        .beamworks {
-        }
-      }
-    }
-  }
+@media (max-width: 1400px) {
+	.footer {
+		width: 900px;
+		height: 800px;
+		&-news {
+			width: 900px;
+			form {
+				width: 900px;
+				input {
+					width: 750px;
+					margin-right: 20px;
+				}
+				button {
+					width: 130px;
+				}
+			}
+			&-please {
+				width: 900px;
+			}
+		}
+		&-info {
+			width: 900px;
+			&-address {
+				font-size: 15px;
+			}
+			&-number {
+				font-size: 15px;
+			}
+		}
+	}
 }
 
 @media (max-width: 1023px) {
-  .footer {
-    width: 700px;
-    height: 600px;
-    margin: auto;
-    padding-left: 0px;
-    //justify-content: center;
-    //align-items: center;
-    &-news {
-      width: 700px;
+	.footer {
+		width: 700px;
+		height: 600px;
+		margin: auto;
+		padding-left: 0px;
+		&-news {
+			width: 700px;
+			&-head {
+				font-size: 25px;
+			}
+			form {
+				width: 700px;
+				input {
+					width: 550px;
+					margin-right: 15px;
+				}
+				button {
+					width: 130px;
+				}
+			}
+			&-please {
+				width: 700px;
+			}
+		}
+		&-info {
+			width: 700px;
+			&-head {
+				margin-bottom: 20px;
 
-      &-head {
-        font-size: 25px;
-      }
-      form {
-        width: 700px;
-        input {
-          width: 550px;
-          margin-right: 15px;
-        }
-        button {
-          width: 130px;
-        }
-      }
-      &-please {
-        width: 700px;
-      }
-    }
-    &-info {
-      width: 700px;
-      &-head {
-        font-size: 17px;
-        margin-bottom: 20px;
-      }
-      &-beamworks {
-        font-size: 12px;
-        margin-bottom: 0px;
-      }
-      &-ceo {
-        margin-bottom: 0px;
-        .ceo {
-          font-size: 12px;
-        }
-        .kim {
-          font-size: 12px;
-        }
-      }
-      &-address {
-        margin-bottom: 0px;
-        .business {
-          font-size: 12px;
-        }
-        .location {
-          font-size: 12px;
-        }
-      }
-      &-number {
-        .number1 {
-          font-size: 12px;
-        }
-        .number2 {
-          font-size: 12px;
-        }
-        .email1 {
-          font-size: 12px;
-        }
-        .email2 {
-          font-size: 12px;
-        }
-        .fax1 {
-          font-size: 12px;
-        }
-        .fax2 {
-          font-size: 12px;
-        }
-      }
-      &-logo {
-        .beamworks {
-          font-size: 15px;
-        }
-      }
-    }
-  }
+				font-size: 17px;
+			}
+			&-beamworks {
+				margin-bottom: 0px;
+				font-size: 12px;
+			}
+			&-ceo {
+				margin-bottom: 0px;
+				font-size: 12px;
+			}
+			&-address {
+				margin-bottom: 0px;
+				font-size: 12px;
+			}
+			&-number {
+				font-size: 12px;
+			}
+			&-logo {
+				.beamworks {
+					font-size: 15px;
+				}
+			}
+		}
+	}
 }
 @media (max-width: 767px) {
-  .footer {
-    width: 400px;
-    height: 500px;
-    justify-content: center;
-    padding-left: 0px;
-    &-news {
-      width: 400px;
-      margin-bottom: 50px;
-      &-head {
-        font-size: 20px;
-        margin-bottom: 15px;
-      }
-      form {
-        width: 400px;
-        input {
-          width: 290px;
-          margin-right: 10px;
-          font-size: 15px;
-        }
-        button {
-          width: 100px;
-          font-size: 15px;
-        }
-      }
-      &-please {
-        width: 400px;
-        font-size: 12px;
-        line-height: 1.2;
-      }
-    }
-    &-info {
-      width: 400px;
-      display: grid;
-      grid-template-columns: 90px 175px 153px;
-      grid-template-rows: 40px 73px 70px 50px;
-      &-head {
-        font-size: 15px;
-        grid-area: head;
-      }
-      &-beamworks {
-        font-size: 11px;
-        margin-bottom: 0px;
-        grid-area: beamworks;
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 20px;
-      }
-      &-ceo {
-        margin-bottom: 0px;
-        grid-area: ceo;
-        flex-direction: column;
-        flex-wrap: wrap;
-        .ceo {
-          font-size: 11px;
-        }
-        .kim {
-          font-size: 11px;
-        }
-      }
-      &-address {
-        flex-direction: column;
+	.footer {
+		justify-content: center;
+		width: 400px;
+		height: 500px;
+		padding-left: 0px;
+		&-news {
+			width: 400px;
+			margin-bottom: 50px;
+			&-head {
+				margin-bottom: 15px;
 
-        grid-area: address;
-        margin-bottom: 0px;
-        .business {
-          font-size: 11px;
-          margin-bottom: 10px;
-        }
-        .location {
-          font-size: 11px;
-          line-height: 1.6;
-        }
-      }
-      &-number {
-        grid-area: number;
-        flex-direction: column;
+				font-size: 20px;
+			}
+			form {
+				width: 400px;
+				input {
+					width: 290px;
+					margin-right: 10px;
+					font-size: 15px;
+				}
+				button {
+					width: 100px;
+					font-size: 15px;
+				}
+			}
+			&-please {
+				width: 400px;
+				font-size: 12px;
+				line-height: 1.2;
+			}
+		}
+		&-info {
+			display: grid;
+			grid-template-columns: 90px 175px 153px;
+			grid-template-rows: 40px 73px 70px 50px;
+			width: 400px;
+			&-head {
+				font-size: 15px;
+				grid-area: head;
+			}
+			&-beamworks {
+				grid-area: beamworks;
+				flex-direction: column;
+				flex-wrap: wrap;
+				height: 20px;
+				margin-bottom: 0px;
+				font-size: 11px;
+			}
 
-        .number1 {
-          font-size: 12px;
-          margin-bottom: -5px;
-        }
-        .number2 {
-          font-size: 12px;
-        }
-        .email1 {
-          font-size: 12px;
-          margin-bottom: -5px;
-        }
-        .email2 {
-          font-size: 12px;
-        }
-        .fax1 {
-          font-size: 12px;
-          margin-bottom: -5px;
-        }
-        .fax2 {
-          font-size: 12px;
-        }
-      }
-      &-logo {
-        grid-area: logo;
-      }
-      grid-template-areas:
-        'head head head'
-        'beamworks ceo number'
-        'address address number'
-        'logo logo logo';
-    }
-  }
+			&-ceo {
+				grid-area: ceo;
+				flex-direction: column;
+				flex-wrap: wrap;
+				margin-bottom: 0px;
+				font-size: 11px;
+			}
+			&-address {
+				grid-area: address;
+				flex-direction: column;
+				margin-bottom: 0px;
+				font-size: 11px;
+				.business {
+					margin-bottom: 10px;
+				}
+				.location {
+					line-height: 1.6;
+				}
+			}
+			&-number {
+				grid-area: number;
+				flex-direction: column;
+				font-size: 12px;
+				.number1 {
+					margin-bottom: -5px;
+				}
+				.email1 {
+					margin-bottom: -5px;
+				}
+				.fax1 {
+					margin-bottom: -5px;
+				}
+			}
+			&-logo {
+				grid-area: logo;
+			}
+			grid-template-areas:
+				'head head head'
+				'beamworks ceo number'
+				'address address number'
+				'logo logo logo';
+		}
+	}
 }

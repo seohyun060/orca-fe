@@ -530,3 +530,47 @@
   line-height: 28px;
   background-color: white;
 }
+
+@media (max-width: 1400px) {
+  .ProjectCardContent {
+    &.shortForm {
+      width: 785px;
+      height: 134px;
+      flex-shrink: 0;
+      border: 1px solid var(--Dark-gray, #3c3c3c);
+      padding: 16px 18px;
+      margin: 20px 0px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .ProjectCardContent {
+    &.shortForm {
+      width: 611px;
+      height: 134px;
+      flex-shrink: 0;
+      border: 1px solid var(--Dark-gray, #3c3c3c);
+      padding: 16px 18px;
+      margin: 20px 0px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .ProjectCardContent {
+    &.shortForm {
+      width: 349px;
+      height: 84px;
+      flex-shrink: 0;
+      border: 1px solid var(--Dark-gray, #3c3c3c);
+      padding: 16px 18px;
+      margin: 20px 0px;
+      .ProjectCardTitle {
+        &.shortForm {
+          height: 30px;
+        }
+      }
+    }
+  }
+}

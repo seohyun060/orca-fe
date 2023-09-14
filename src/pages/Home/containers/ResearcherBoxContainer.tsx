@@ -22,6 +22,8 @@ const ResearcherBoxContainer = ({
   const [currentPage, setCurrentPage] = useState(1);
   const lastIndex = useMemo(() => currentPage * 3, [currentPage]);
   const firstIndex = useMemo(() => lastIndex - 3, [currentPage]);
+  const [topPosition, setTopPosition] = useState('');
+  const [leftPosition, setLeftPosition] = useState('');
   const requestedItems = useMemo(
     () => researcherList.slice(firstIndex, lastIndex),
     [currentPage],
@@ -37,7 +39,44 @@ const ResearcherBoxContainer = ({
     } else if (index % 8 === 7) {
       setBoxType(1);
     }
-  }, [index, boxType]);
+    if (black == '') {
+      if (index < 16) {
+        if (index % 8 < 4) {
+          setTopPosition('-22%');
+          setLeftPosition('100%');
+        } else {
+          setTopPosition('-22%');
+          setLeftPosition('-165%');
+        }
+      } else {
+        if (index % 8 < 4) {
+          setTopPosition('-131%');
+          setLeftPosition('100%');
+        } else {
+          setTopPosition('-131%');
+          setLeftPosition('-165%');
+        }
+      }
+    } else {
+      if (index < 16) {
+        if (index % 8 < 4) {
+          setTopPosition('-22%');
+          setLeftPosition('100%');
+        } else {
+          setTopPosition('-22%');
+          setLeftPosition('-155%');
+        }
+      } else {
+        if (index % 8 < 4) {
+          setTopPosition('-140%');
+          setLeftPosition('100%');
+        } else {
+          setTopPosition('-140%');
+          setLeftPosition('-155%');
+        }
+      }
+    }
+  }, [black, index, boxType, topPosition, leftPosition]);
 
   const onBackClick = useCallback(
     (e: React.MouseEvent<HTMLImageElement>) => {
@@ -76,6 +115,8 @@ const ResearcherBoxContainer = ({
       onBackClick={onBackClick}
       onGoClick={onGoClick}
       boxClickHandler={boxClickHandler}
+      topPosition={topPosition}
+      leftPosition={leftPosition}
     />
   );
 };

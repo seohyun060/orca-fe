@@ -11,6 +11,8 @@ type Props = {
   onGoClick: (e: React.MouseEvent<HTMLImageElement>) => void;
   boxClickHandler: (e: React.MouseEvent<HTMLElement>) => void;
   black: string;
+  topPosition: string;
+  leftPosition: string;
 };
 
 const ResearcherBox = ({
@@ -22,6 +24,8 @@ const ResearcherBox = ({
   onGoClick,
   boxClickHandler,
   black,
+  topPosition,
+  leftPosition,
 }: Props) => {
   return (
     <div className={`country${boxType}`}>
@@ -36,7 +40,13 @@ const ResearcherBox = ({
         }}
       ></div>
       {active ? (
-        <div className='researchers'>
+        <div
+          className='researchers'
+          style={{
+            top: topPosition,
+            left: leftPosition,
+          }}
+        >
           <div className='researchers-head'>Researchers List</div>
           <img
             className='researchers-back'

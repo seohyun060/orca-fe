@@ -78,6 +78,7 @@ circle {
   background: var(--Dark-gray, #3c3c3c);
   padding: 14px 18px;
   margin-right: 24px;
+  cursor: pointer;
 }
 .EventCard.InEvent {
   height: 388px;
@@ -89,6 +90,9 @@ circle {
   border: 1px solid var(--Dark-gray, #3c3c3c);
   padding: 0px;
   margin-bottom: 30px;
+}
+.EventCard.CommingSoon {
+  opacity: 0.5;
 }
 
 .EventCard-noevent {
@@ -171,6 +175,13 @@ circle {
   overflow: hidden;
   height: 40px;
   margin: 0px;
+}
+.EventCardTitle.CommingSoon {
+  margin: 34px 0px;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 54.5px;
 }
 
 .EventCardTime {

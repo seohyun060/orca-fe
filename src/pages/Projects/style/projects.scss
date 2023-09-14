@@ -139,6 +139,14 @@
   .sub:last-child {
     border-bottom: 0px;
   }
+
+  input {
+    background: url(/public/assets/images/checkon.svg) no-repeat 0 0px / contain;
+  }
+
+  input:checked {
+    background: url(/public/assets/images/checkon.svg) no-repeat 0 0px / contain;
+  }
 }
 
 .ButtonArrange {

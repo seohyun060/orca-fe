@@ -5,7 +5,7 @@ import images from "src/assets/images";
 
 export default function EventCard(props) {
   const navigate = useNavigate();
-  const { past, inEvent, image, title, eventDate } = props;
+  const { commingSoon, past, inEvent, image, title, eventDate } = props;
 
   const monthNames = [
     "January",
@@ -22,11 +22,14 @@ export default function EventCard(props) {
     "December",
   ];
 
-  console.log(eventDate);
-
   const date = new Date(eventDate);
+  const now = new Date();
 
-  console.log(date);
+  const makeFullDateFormat = () => {
+    return (
+      date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate()
+    );
+  };
 
   // 추후 Event 시작 및 종료 날짜 및 시간에 대한 데이터 상의
 
@@ -38,21 +41,35 @@ export default function EventCard(props) {
       <img className="EventCardImage" src={image}></img>
       <div className="EventCardPeriod Past">
         <div className="EventCardTitle Past">{title}</div>
-        <div className="EventDate Past">23.09.01</div>
+        <div className="EventDate Past">{makeFullDateFormat()}</div>
       </div>
     </article>
   ) : inEvent ? (
-    <article
-      className="EventCard InEvent"
-      onClick={() => navigate("/events/default", { state: { past: past } })}
-    >
-      <div className="EventCardPeriod">
-        <div className="EventCardMonth">{monthNames[date.getMonth()]}</div>
-        <div className="EventCardDday">Day - 10</div>
-      </div>
-      <div className="EventCardDate">18-19</div>
-      <div className="EventCardTitle InEvent">{title}</div>
-      <div className="EventCardTime">11:00 - 12:00</div>
+    commingSoon ? (
+      <article className="EventCard InEvent CommingSoon">
+        <div className="EventCardTitle CommingSoon">Comming<br />Soon</div>
+      </article>
+    ) : (
+      <article
+        className="EventCard InEvent"
+        onClick={() => navigate("/events/default", { state: { past: past } })}
+      >
+        <div className="EventCardPeriod">
+          <div className="EventCardMonth">{monthNames[date.getMonth()]}</div>
+          <div className="EventCardDday">
+            {now.getDate() - date.getDate()
+              ? "Day - " + (now.getDate() - date.getDate())
+              : "D-day"}
+          </div>
+        </div>
+        <div className="EventCardDate">18-19</div>
+        <div className="EventCardTitle InEvent">{title}</div>
+        <div className="EventCardTime">11:00 - 12:00</div>
+      </article>
+    )
+  ) : commingSoon ? (
+    <article className="EventCard CommingSoon">
+      <div className="EventCardTitle CommingSoon">{title}</div>
     </article>
   ) : (
     <article
@@ -61,7 +78,11 @@ export default function EventCard(props) {
     >
       <div className="EventCardPeriod">
         <div className="EventCardMonth">{monthNames[date.getMonth()]}</div>
-        <div className="EventCardDday">Day - 10</div>
+        <div className="EventCardDday">
+          {now.getDate() - date.getDate()
+            ? "Day - " + (now.getDate() - date.getDate())
+            : "D-day"}
+        </div>
       </div>
       <div className="EventCardDate">18-19</div>
       <div className="EventCardTitle">{title}</div>
@@ -71,6 +92,7 @@ export default function EventCard(props) {
 }
 
 EventCard.defaultProps = {
+  commingSoon: false,
   inEvent: false,
   past: false,
   image: images.logo_orca,

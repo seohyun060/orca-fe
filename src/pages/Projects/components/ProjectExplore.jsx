@@ -77,7 +77,6 @@ const ProjectExplore = (props) => {
       }
     });
 
-    console.log(isCategoryChecked);
     if (isCategoryChecked[0] == false) {
       const categoryNum = isCategoryChecked.indexOf(true);
       filterData = filterData.filter((data) => {
@@ -85,15 +84,12 @@ const ProjectExplore = (props) => {
           return true;
         }
       });
-      console.log(filterData);
     }
 
     if (isYearlyChecked.indexOf(true) != -1) {
       const yearlyNum = isYearlyChecked.indexOf(true);
-      console.log(yearlyNum);
       filterData = filterData.filter((data) => {
         const projectDate = new Date(data.projDate);
-        console.log((new Date() - projectDate) / (1000 * 60 * 60 * 24));
         if (
           (new Date() - projectDate) / (1000 * 60 * 60 * 24) <
           yearlyCriteria[yearlyNum] * 365
@@ -101,7 +97,6 @@ const ProjectExplore = (props) => {
           return true;
         }
       });
-      console.log(filterData);
     }
 
     let tempStatsus = [];
@@ -110,12 +105,9 @@ const ProjectExplore = (props) => {
       if (isStatus) {
         temp = filterData.filter((data) => {
           if (data.status == status[index]) {
-            console.log(status[index]);
-            console.log(status[index]);
             return true;
           }
         });
-        console.log(temp);
         tempStatsus = [...tempStatsus, ...temp];
       }
     });

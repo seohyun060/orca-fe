@@ -200,13 +200,13 @@
 		}
 	}
 }
-
 @media (max-width: 1400px) {
 	.footer {
 		width: 900px;
 		height: 800px;
 		&-news {
 			width: 900px;
+
 			form {
 				width: 900px;
 				input {
@@ -224,10 +224,32 @@
 		&-info {
 			width: 900px;
 			&-address {
-				font-size: 15px;
+				.business {
+					font-size: 15px;
+				}
+				.location {
+					font-size: 15px;
+				}
 			}
 			&-number {
-				font-size: 15px;
+				.number1 {
+					font-size: 15px;
+				}
+				.number2 {
+					font-size: 15px;
+				}
+				.email1 {
+					font-size: 15px;
+				}
+				.email2 {
+					font-size: 15px;
+				}
+				.fax1 {
+					font-size: 15px;
+				}
+				.fax2 {
+					font-size: 15px;
+				}
 			}
 		}
 	}
@@ -237,10 +259,10 @@
 	.footer {
 		width: 700px;
 		height: 600px;
-		margin: auto;
-		padding-left: 0px;
+
 		&-news {
 			width: 700px;
+
 			&-head {
 				font-size: 25px;
 			}
@@ -262,7 +284,6 @@
 			width: 700px;
 			&-head {
 				margin-bottom: 20px;
-
 				font-size: 17px;
 			}
 			&-beamworks {
@@ -271,14 +292,41 @@
 			}
 			&-ceo {
 				margin-bottom: 0px;
-				font-size: 12px;
+				.ceo {
+					font-size: 12px;
+				}
+				.kim {
+					font-size: 12px;
+				}
 			}
 			&-address {
 				margin-bottom: 0px;
-				font-size: 12px;
+				.business {
+					font-size: 12px;
+				}
+				.location {
+					font-size: 12px;
+				}
 			}
 			&-number {
-				font-size: 12px;
+				.number1 {
+					font-size: 12px;
+				}
+				.number2 {
+					font-size: 12px;
+				}
+				.email1 {
+					font-size: 12px;
+				}
+				.email2 {
+					font-size: 12px;
+				}
+				.fax1 {
+					font-size: 12px;
+				}
+				.fax2 {
+					font-size: 12px;
+				}
 			}
 			&-logo {
 				.beamworks {
@@ -288,18 +336,17 @@
 		}
 	}
 }
+
 @media (max-width: 767px) {
 	.footer {
-		justify-content: center;
 		width: 400px;
 		height: 500px;
-		padding-left: 0px;
+
 		&-news {
 			width: 400px;
 			margin-bottom: 50px;
 			&-head {
 				margin-bottom: 15px;
-
 				font-size: 20px;
 			}
 			form {
@@ -325,9 +372,10 @@
 			grid-template-columns: 90px 175px 153px;
 			grid-template-rows: 40px 73px 70px 50px;
 			width: 400px;
+
 			&-head {
-				font-size: 15px;
 				grid-area: head;
+				font-size: 15px;
 			}
 			&-beamworks {
 				grid-area: beamworks;
@@ -337,38 +385,55 @@
 				margin-bottom: 0px;
 				font-size: 11px;
 			}
-
 			&-ceo {
 				grid-area: ceo;
 				flex-direction: column;
 				flex-wrap: wrap;
 				margin-bottom: 0px;
-				font-size: 11px;
+				.ceo {
+					font-size: 11px;
+				}
+				.kim {
+					font-size: 11px;
+				}
 			}
 			&-address {
 				grid-area: address;
 				flex-direction: column;
 				margin-bottom: 0px;
-				font-size: 11px;
 				.business {
 					margin-bottom: 10px;
+					font-size: 11px;
 				}
 				.location {
+					font-size: 11px;
 					line-height: 1.6;
 				}
 			}
 			&-number {
 				grid-area: number;
 				flex-direction: column;
-				font-size: 12px;
+
 				.number1 {
 					margin-bottom: -5px;
+					font-size: 12px;
+				}
+				.number2 {
+					font-size: 12px;
 				}
 				.email1 {
 					margin-bottom: -5px;
+					font-size: 12px;
+				}
+				.email2 {
+					font-size: 12px;
 				}
 				.fax1 {
 					margin-bottom: -5px;
+					font-size: 12px;
+				}
+				.fax2 {
+					font-size: 12px;
 				}
 			}
 			&-logo {

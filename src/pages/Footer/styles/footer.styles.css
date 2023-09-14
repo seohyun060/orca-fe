@@ -223,10 +223,28 @@
   .footer-info {
     width: 900px;
   }
-  .footer-info-address {
+  .footer-info-address .business {
     font-size: 15px;
   }
-  .footer-info-number {
+  .footer-info-address .location {
+    font-size: 15px;
+  }
+  .footer-info-number .number1 {
+    font-size: 15px;
+  }
+  .footer-info-number .number2 {
+    font-size: 15px;
+  }
+  .footer-info-number .email1 {
+    font-size: 15px;
+  }
+  .footer-info-number .email2 {
+    font-size: 15px;
+  }
+  .footer-info-number .fax1 {
+    font-size: 15px;
+  }
+  .footer-info-number .fax2 {
     font-size: 15px;
   }
 }
@@ -234,8 +252,6 @@
   .footer {
     width: 700px;
     height: 600px;
-    margin: auto;
-    padding-left: 0px;
   }
   .footer-news {
     width: 700px;
@@ -269,13 +285,38 @@
   }
   .footer-info-ceo {
     margin-bottom: 0px;
+  }
+  .footer-info-ceo .ceo {
+    font-size: 12px;
+  }
+  .footer-info-ceo .kim {
     font-size: 12px;
   }
   .footer-info-address {
     margin-bottom: 0px;
+  }
+  .footer-info-address .business {
     font-size: 12px;
   }
-  .footer-info-number {
+  .footer-info-address .location {
+    font-size: 12px;
+  }
+  .footer-info-number .number1 {
+    font-size: 12px;
+  }
+  .footer-info-number .number2 {
+    font-size: 12px;
+  }
+  .footer-info-number .email1 {
+    font-size: 12px;
+  }
+  .footer-info-number .email2 {
+    font-size: 12px;
+  }
+  .footer-info-number .fax1 {
+    font-size: 12px;
+  }
+  .footer-info-number .fax2 {
     font-size: 12px;
   }
   .footer-info-logo .beamworks {
@@ -284,10 +325,8 @@
 }
 @media (max-width: 767px) {
   .footer {
-    justify-content: center;
     width: 400px;
     height: 500px;
-    padding-left: 0px;
   }
   .footer-news {
     width: 400px;
@@ -322,8 +361,8 @@
     grid-template-areas: "head head head" "beamworks ceo number" "address address number" "logo logo logo";
   }
   .footer-info-head {
-    font-size: 15px;
     grid-area: head;
+    font-size: 15px;
   }
   .footer-info-beamworks {
     grid-area: beamworks;
@@ -338,33 +377,50 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin-bottom: 0px;
+  }
+  .footer-info-ceo .ceo {
+    font-size: 11px;
+  }
+  .footer-info-ceo .kim {
     font-size: 11px;
   }
   .footer-info-address {
     grid-area: address;
     flex-direction: column;
     margin-bottom: 0px;
-    font-size: 11px;
   }
   .footer-info-address .business {
     margin-bottom: 10px;
+    font-size: 11px;
   }
   .footer-info-address .location {
+    font-size: 11px;
     line-height: 1.6;
   }
   .footer-info-number {
     grid-area: number;
     flex-direction: column;
-    font-size: 12px;
   }
   .footer-info-number .number1 {
     margin-bottom: -5px;
+    font-size: 12px;
+  }
+  .footer-info-number .number2 {
+    font-size: 12px;
   }
   .footer-info-number .email1 {
     margin-bottom: -5px;
+    font-size: 12px;
+  }
+  .footer-info-number .email2 {
+    font-size: 12px;
   }
   .footer-info-number .fax1 {
     margin-bottom: -5px;
+    font-size: 12px;
+  }
+  .footer-info-number .fax2 {
+    font-size: 12px;
   }
   .footer-info-logo {
     grid-area: logo;

@@ -37,7 +37,7 @@
   background: var(--Light-gray, #f0f0f0);
   color: #000;
 }
-.CategoryBar button:focus {
+.CategoryBar button.true {
   background: var(--Dark-gray, #3c3c3c);
   color: #fff;
 }

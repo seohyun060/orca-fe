@@ -44,8 +44,6 @@
   width: 247px;
   height: 393px;
   z-index: 100;
-  top: 0px;
-  left: 140px;
   display: grid;
   grid-template-columns: 18px 211px 18px;
   grid-template-rows: 33px 344px 16px;
@@ -76,7 +74,7 @@
   height: 108px;
   display: flex;
   margin-bottom: 10px;
-  background: var(--Dark-gray, #3c3c3c);
+  background: var(--Dark-gray, #382323);
 }
 .researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img {
   width: 92px;
@@ -159,12 +157,12 @@
 }
 .researcher-map-black .country0 .researchers, .researcher-map-black .country3 .researchers, .researcher-map-black .country2 .researchers, .researcher-map-black .country1 .researchers {
   position: absolute;
-  width: 247px;
-  height: 393px;
   z-index: 100;
   top: -33px;
   left: 165px;
   display: grid;
+  width: 247px;
+  height: 393px;
   grid-template-columns: 18px 211px 18px;
   grid-template-rows: 33px 344px 16px;
   grid-template-areas: ". head ." "back body go" ". . .";
@@ -258,13 +256,17 @@
   .researcher-map .country0 .researchers, .researcher-map .country1 .researchers, .researcher-map .country2 .researchers, .researcher-map .country3 .researchers {
     top: -24.9px;
     left: 124.58px;
+    width: 186.5px;
+    height: 296.7px;
+    grid-template-columns: 13.6px 159.3px 13.6px;
+    grid-template-rows: 25px 259.7px 12.1px;
     grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map .country0 .researchers-head, .researcher-map .country1 .researchers-head, .researcher-map .country2 .researchers-head, .researcher-map .country3 .researchers-head {
     grid-area: head;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 22px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
@@ -272,29 +274,31 @@
   .researcher-map .country0 .researchers-back, .researcher-map .country1 .researchers-back, .researcher-map .country2 .researchers-back, .researcher-map .country3 .researchers-back {
     grid-area: back;
     place-self: center center;
+    width: 8px;
+    height: 13.6px;
   }
   .researcher-map .country0 .researchers-body, .researcher-map .country1 .researchers-body, .researcher-map .country2 .researchers-body, .researcher-map .country3 .researchers-body {
-    width: 211px;
-    height: 344px;
+    width: 159.3px;
+    height: 259.7px;
     grid-area: body;
   }
   .researcher-map .country0 .researchers-body .researcher-card, .researcher-map .country1 .researchers-body .researcher-card, .researcher-map .country2 .researchers-body .researcher-card, .researcher-map .country3 .researchers-body .researcher-card {
-    width: 211px;
-    height: 108px;
+    width: 159.3px;
+    height: 81.5px;
     display: flex;
     margin-bottom: 10px;
   }
   .researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img {
-    width: 92px;
-    height: 92px;
-    margin-top: 8px;
-    margin-left: 8px;
+    width: 69.5px;
+    height: 69.5px;
+    margin-top: 6px;
+    margin-left: 6px;
   }
   .researcher-map .country0 .researchers-body .researcher-card span, .researcher-map .country1 .researchers-body .researcher-card span, .researcher-map .country2 .researchers-body .researcher-card span, .researcher-map .country3 .researchers-body .researcher-card span {
-    margin-top: 72px;
-    margin-left: 8px;
+    margin-top: 52px;
+    margin-left: 4px;
     color: white;
-    font-size: 30px;
+    font-size: 22px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -305,6 +309,8 @@
   .researcher-map .country0 .researchers-go, .researcher-map .country1 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country3 .researchers-go {
     grid-area: go;
     place-self: center center;
+    width: 8px;
+    height: 13.6px;
   }
   .researcher-map-black {
     margin-top: 0px;
@@ -339,6 +345,10 @@
   .researcher-map-black .country0 .researchers, .researcher-map-black .country1 .researchers, .researcher-map-black .country2 .researchers, .researcher-map-black .country3 .researchers {
     top: -24.9px;
     left: 124.58px;
+    width: 186.5px;
+    height: 296.7px;
+    grid-template-columns: 13.6px 159.3px 13.6px;
+    grid-template-rows: 25px 259.7px 12.1px;
     grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
@@ -346,38 +356,40 @@
     color: #fff;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 22px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
   }
   .researcher-map-black .country0 .researchers-back, .researcher-map-black .country1 .researchers-back, .researcher-map-black .country2 .researchers-back, .researcher-map-black .country3 .researchers-back {
     grid-area: back;
+    width: 8px;
+    height: 13.6px;
     place-self: center center;
   }
   .researcher-map-black .country0 .researchers-body, .researcher-map-black .country1 .researchers-body, .researcher-map-black .country2 .researchers-body, .researcher-map-black .country3 .researchers-body {
-    width: 211px;
-    height: 344px;
+    width: 159.3px;
+    height: 259.7px;
     grid-area: body;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card {
-    width: 211px;
-    height: 108px;
+    width: 159.3px;
+    height: 81.5px;
     display: flex;
     margin-bottom: 10px;
     background-color: #fff;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card img, .researcher-map-black .country1 .researchers-body .researcher-card img, .researcher-map-black .country2 .researchers-body .researcher-card img, .researcher-map-black .country3 .researchers-body .researcher-card img {
-    width: 92px;
-    height: 92px;
-    margin-top: 8px;
-    margin-left: 8px;
+    width: 69.5px;
+    height: 69.5px;
+    margin-top: 6px;
+    margin-left: 6px;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card span, .researcher-map-black .country1 .researchers-body .researcher-card span, .researcher-map-black .country2 .researchers-body .researcher-card span, .researcher-map-black .country3 .researchers-body .researcher-card span {
-    margin-top: 72px;
-    margin-left: 8px;
+    margin-top: 52px;
+    margin-left: 4px;
     color: black;
-    font-size: 30px;
+    font-size: 22px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -387,6 +399,8 @@
   }
   .researcher-map-black .country0 .researchers-go, .researcher-map-black .country1 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country3 .researchers-go {
     grid-area: go;
+    width: 8px;
+    height: 13.6px;
     place-self: center center;
   }
   .researcher-map-black .country1 {
@@ -434,6 +448,10 @@
   .researcher-map-black .country0 .researchers, .researcher-map-black .country1 .researchers, .researcher-map-black .country2 .researchers, .researcher-map-black .country3 .researchers {
     top: -34.9px;
     left: 94.58px;
+    width: 145px;
+    height: 230.7px;
+    grid-template-columns: 10.6px 123.9px 10.6px;
+    grid-template-rows: 19.4px 202px 9.4px;
     grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
@@ -441,7 +459,7 @@
     color: #fff;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 22px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
@@ -451,28 +469,28 @@
     place-self: center center;
   }
   .researcher-map-black .country0 .researchers-body, .researcher-map-black .country1 .researchers-body, .researcher-map-black .country2 .researchers-body, .researcher-map-black .country3 .researchers-body {
-    width: 211px;
-    height: 344px;
+    width: 124px;
+    height: 202px;
     grid-area: body;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card {
-    width: 211px;
-    height: 108px;
+    width: 124px;
+    height: 63.4px;
     display: flex;
     margin-bottom: 10px;
     background-color: #fff;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card img, .researcher-map-black .country1 .researchers-body .researcher-card img, .researcher-map-black .country2 .researchers-body .researcher-card img, .researcher-map-black .country3 .researchers-body .researcher-card img {
-    width: 92px;
-    height: 92px;
-    margin-top: 8px;
-    margin-left: 8px;
+    width: 54px;
+    height: 54px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card span, .researcher-map-black .country1 .researchers-body .researcher-card span, .researcher-map-black .country2 .researchers-body .researcher-card span, .researcher-map-black .country3 .researchers-body .researcher-card span {
-    margin-top: 72px;
+    margin-top: 37px;
     margin-left: 8px;
     color: black;
-    font-size: 30px;
+    font-size: 15px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -524,13 +542,17 @@
   .researcher-map .country0 .researchers, .researcher-map .country1 .researchers, .researcher-map .country2 .researchers, .researcher-map .country3 .researchers {
     top: -34.9px;
     left: 94.58px;
+    width: 145px;
+    height: 230.7px;
+    grid-template-columns: 10.6px 123.9px 10.6px;
+    grid-template-rows: 19.4px 202px 9.4px;
     grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map .country0 .researchers-head, .researcher-map .country1 .researchers-head, .researcher-map .country2 .researchers-head, .researcher-map .country3 .researchers-head {
     grid-area: head;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 22px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
@@ -540,27 +562,28 @@
     place-self: center center;
   }
   .researcher-map .country0 .researchers-body, .researcher-map .country1 .researchers-body, .researcher-map .country2 .researchers-body, .researcher-map .country3 .researchers-body {
-    width: 211px;
-    height: 344px;
+    width: 124px;
+    height: 202px;
     grid-area: body;
   }
   .researcher-map .country0 .researchers-body .researcher-card, .researcher-map .country1 .researchers-body .researcher-card, .researcher-map .country2 .researchers-body .researcher-card, .researcher-map .country3 .researchers-body .researcher-card {
-    width: 211px;
-    height: 108px;
+    width: 124px;
+    height: 63.4px;
     display: flex;
     margin-bottom: 10px;
   }
   .researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img {
-    width: 92px;
-    height: 92px;
-    margin-top: 8px;
-    margin-left: 8px;
+    width: 54px;
+    height: 54px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
   .researcher-map .country0 .researchers-body .researcher-card span, .researcher-map .country1 .researchers-body .researcher-card span, .researcher-map .country2 .researchers-body .researcher-card span, .researcher-map .country3 .researchers-body .researcher-card span {
     margin-top: 72px;
+    margin-top: 37px;
     margin-left: 8px;
     color: white;
-    font-size: 30px;
+    font-size: 15px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;

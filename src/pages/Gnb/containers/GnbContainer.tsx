@@ -3,6 +3,7 @@ import Gnb from '../Gnb';
 import { GNBTableTypes } from '@typedef/types';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next"
 type Props = { location: string };
 const GnbContainer = ({ location }: Props) => {
   const route = location.split('/')[1];
@@ -33,6 +34,8 @@ const GnbContainer = ({ location }: Props) => {
   const [language, setLanguage] = useState('En');
   const [gnbColor, setGnbColor] = useState('');
   const [scrollPosition, setScrollPosition] = useState(0);
+  
+  const { i18n, t } = useTranslation();
 
   const onItemClicked = useCallback((path: string) => {
     if (path === '/custom') {
@@ -78,8 +81,10 @@ const GnbContainer = ({ location }: Props) => {
   const onLanguageClicked = useCallback(() => {
     if (language === 'Kr') {
       setLanguage('En');
+      i18n.changeLanguage('en')
     } else {
       setLanguage('Kr');
+      i18n.changeLanguage('kr')
     }
   }, [language]);
 

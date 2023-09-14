@@ -40,6 +40,7 @@ const EventBoxSlide = (props) => {
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving - 152
       }px)`;
+      // dotBarRef.current.img.src = "images.paging_dot_dark"
     } else if (currentEventSlide >= totalSides) {
       return;
     } else {
@@ -51,6 +52,21 @@ const EventBoxSlide = (props) => {
       }px)`;
     }
   };
+
+  const [dotBar, setDotBar] = useState([]);
+  const makeDotbar = () => {
+    console.log(EventDummyData.length)
+    let temp = []
+    for(var i=0;i<EventDummyData.length;i++) {
+      temp.push(<img id={i} src={images.paging_dot_medium}></img>)
+    }
+    setDotBar(temp)
+    console.log(dotBar)
+  }
+
+  useEffect(() => {
+    makeDotbar()
+  }, [])
 
   return (
     <>
@@ -72,7 +88,7 @@ const EventBoxSlide = (props) => {
       </div>
       <div className="EventCardPaging">
         <img src={images.back_b} onClick={onBackButtonClick}></img>
-        <img src={images.paging_bar}></img>
+        {dotBar}
         <img src={images.go_b} onClick={onGoButtonClick}></img>
       </div>
     </>

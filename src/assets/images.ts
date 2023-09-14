@@ -10,13 +10,17 @@ const images = {
   view: '/assets/images/view.svg',
   search: '/assets/images/search.svg',
   backwithletter: '/assets/images/backwithletter.svg',
-  baropen: '/assets/images/baropen.svg',
-  barclose: '/assets/images/barclose.svg',
+  baropen_b: '/assets/images/baropen-b.svg',
+  baropen_w: '/assets/images/baropen-w.svg',
+  barclose_b: '/assets/images/barclose-b.svg',
   vector36: '/assets/images/vector36.svg',
   beamworks: '/assets/images/beamworks.png',
   logo_s: '/assets/images/logo-s.png',
   back_arrow: '/assets/images/back-arrow.svg',
   paging_bar: '/assets/images/paging_bar.svg',
+  checkon: "/assets/images/checkon.svg",
+  paging_dot_dark: "/assets/images/paging_dot_dark.svg",
+  paging_dot_medium: "/assets/images/paging_dot_medium.svg",
 };
 
 export default images;

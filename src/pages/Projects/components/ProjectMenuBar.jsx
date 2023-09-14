@@ -10,9 +10,9 @@ const ProjectMenuBar = (props) => {
       <div className="MenuBar" onClick={() => setisMenubarOpen(!isMenubarOpen)}>
         <ul>{Name}</ul>
         {!isMenubarOpen ? (
-          <img src={images.baropen}></img>
+          <img src={images.baropen_b}></img>
         ) : (
-          <img src={images.barclose}></img>
+          <img src={images.barclose_b}></img>
         )}
       </div>
       {isMenubarOpen && Content}

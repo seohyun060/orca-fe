@@ -93,6 +93,12 @@
   align-items: center;
   justify-content: center;
   width: 1192px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 35px;
 }
 
 .ProjectSelectionSector {
@@ -110,9 +116,9 @@
   .title {
     width: 100%;
     display: inline-flex;
-    padding: 12px 18px;
+    justify-content: space-between;
+    padding: 12px 17px 12px 18px;
     align-items: center;
-    gap: 167px;
     background: var(--Dark-gray, #3c3c3c);
     color: #fff;
     font-family: Pretendard;
@@ -140,13 +146,26 @@
     border-bottom: 0px;
   }
 
-  input {
-    background: url(/public/assets/images/checkon.svg) no-repeat 0 0px / contain;
+  .imageRotate {
+    transform: rotate(180deg);
   }
+}
 
-  input:checked {
-    background: url(/public/assets/images/checkon.svg) no-repeat 0 0px / contain;
-  }
+.checkbox {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  background: #fff;
+}
+
+.checkboxChecked {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  background: var(--Dark-gray, #3c3c3c);
+  padding: 7px 3px 7px 3.5px;
 }
 
 .ButtonArrange {

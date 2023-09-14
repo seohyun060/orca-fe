@@ -54,8 +54,12 @@
   align-items: center;
   margin-top: 50px;
 
-  img:nth-child(2) {
-    margin: 0px 40px;
+  img:first-child {
+    margin-right: 40px;
+  }
+
+  img:last-child {
+    margin-left: 40px;
   }
 }
 

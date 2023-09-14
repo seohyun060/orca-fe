@@ -15,8 +15,6 @@ const EventDetails = (props) => {
   const eventSlideRef = useRef();
   const totalSides = 3; // 추후 갯수만큼 불러오기
 
-  console.log(process.env.REACT_APP_GOOGLE_MAP_API_KEY)
-
   const onBackButtonClick = () => {
     if (currentEventSlide <= 0) {
       return;

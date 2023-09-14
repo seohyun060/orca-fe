@@ -19,6 +19,10 @@ const EventDummyData = [
     title: "The Annual Meeting of the Korean Breast Cancer Society5",
     eventDate: "2023-10-05 15:00:00",
   },
+  {
+    title: "The Annual Meeting of the Korean Breast Cancer Society5",
+    eventDate: "2023-10-05 16:00:00",
+  },
 ];
 
 export default EventDummyData;

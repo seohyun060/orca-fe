@@ -27,71 +27,105 @@ const ProjectExplore = (props) => {
     "The past 3 years",
     "The past 5 years",
   ]);
+  const [yearlyCriteria, setyearlyCrieria] = useState([1, 3, 5]);
   const [isYearlyChecked, setIsYearlyChecked] = useState([false, false, false]);
   const [status, setStatus] = useState(["Active", "Completed", "Terminated"]);
-  const [isStatusChecked, setIsStatusChecked] = useState([false, false, false]);
+  const [isStatusChecked, setIsStatusChecked] = useState([true, true, true]);
 
   const getProjectData = () => {
     // 백엔드 생성시 데이터를 받을 함수
   };
 
   const onCategoryClick = (categoryNum) => {
-    onSearchChange();
     if (categoryNum == 0) {
       const temp = [true, false, false, false];
       setIsCategoryChecked(temp);
-      setTempData(ProjectDummyData)
     } else {
       let temp = [false, false, false, false];
       temp[categoryNum] = true;
       setIsCategoryChecked(temp);
-      setTempData(
-        ProjectDummyData.filter((data) => {
-          if (data.category == category[categoryNum]) {
-            return true;
-          }
-        })
-      );
     }
-    console.log(categoryNum);
   };
 
-  const filterStatus = () => {
-    
-  };
-
-  const filterYearly = (index) => {
-    console.log(yearly);
-    console.log(1);
-    if (yearly[index].isChecked == true) {
-    } else if (yearly[index] == false) {
+  const filterYearly = (yearlyNum) => {
+    if (isYearlyChecked[yearlyNum] == true) {
+      let temp = [...isYearlyChecked];
+      temp[yearlyNum] = false;
+      setIsYearlyChecked(temp);
+    } else {
+      let temp = [false, false, false];
+      temp[yearlyNum] = true;
+      setIsYearlyChecked(temp);
     }
-    console.log(yearly);
-    let temp = { ...yearly };
-    console.log(typeof yearly);
-    console.log(yearly);
-    console.log(2);
-    temp[index].isChecked = !temp[index].isChecked;
-    console.log(3);
-    setYearly(temp);
-    console.log(4);
-    console.log(yearly);
   };
 
-  console.log(yearly);
+  const filterStatus = (statusNum) => {
+    let temp = [...isStatusChecked];
+    temp[statusNum] = !temp[statusNum];
+    setIsStatusChecked(temp);
+  };
 
   const onSearchChange = () => {
-    const value = document.getElementById("search").value;
-    setTempData(
-      ProjectDummyData.filter((data) => {
-        if (data.title.includes(value)) {
-          return true;
-        }
-      })
-    );
+    dataFiltering();
   };
 
-  useEffect(() => {}, []);
+  const dataFiltering = () => {
+    const value = document.getElementById("search").value;
+    let filterData = ProjectDummyData.filter((data) => {
+      if (data.title.includes(value)) {
+        return true;
+      }
+    });
+
+    console.log(isCategoryChecked);
+    if (isCategoryChecked[0] == false) {
+      const categoryNum = isCategoryChecked.indexOf(true);
+      filterData = filterData.filter((data) => {
+        if (data.category == category[categoryNum]) {
+          return true;
+        }
+      });
+      console.log(filterData);
+    }
+
+    if (isYearlyChecked.indexOf(true) != -1) {
+      const yearlyNum = isYearlyChecked.indexOf(true);
+      console.log(yearlyNum);
+      filterData = filterData.filter((data) => {
+        const projectDate = new Date(data.projDate);
+        console.log((new Date() - projectDate) / (1000 * 60 * 60 * 24));
+        if (
+          (new Date() - projectDate) / (1000 * 60 * 60 * 24) <
+          yearlyCriteria[yearlyNum] * 365
+        ) {
+          return true;
+        }
+      });
+      console.log(filterData);
+    }
+
+    let tempStatsus = [];
+    isStatusChecked.map((isStatus, index) => {
+      let temp = [];
+      if (isStatus) {
+        temp = filterData.filter((data) => {
+          if (data.status == status[index]) {
+            console.log(status[index]);
+            console.log(status[index]);
+            return true;
+          }
+        });
+        console.log(temp);
+        tempStatsus = [...tempStatsus, ...temp];
+      }
+    });
+    filterData = tempStatsus;
+    setTempData(filterData);
+  };
+
+  useEffect(() => {
+    dataFiltering();
+  }, [isCategoryChecked, isYearlyChecked, isStatusChecked]);
 
   return (
     <section className="Section">
@@ -148,7 +182,7 @@ const ProjectExplore = (props) => {
                   type="checkbox"
                   key={yearly}
                   checked={isYearlyChecked[index]}
-                  // onChange={(e) => filterYearly(index)}
+                  onChange={(e) => filterYearly(index)}
                 />
               </div>
             ))}

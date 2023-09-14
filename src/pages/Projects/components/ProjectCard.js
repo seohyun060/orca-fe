@@ -8,10 +8,9 @@ import "../style/projects.css";
 export default function ProjectCard(props) {
   const navigate = useNavigate();
 
+  // projID를 통해 project정보 가져온 후 내용출력
   const { shortForm, title, status, projID, category, location, projDate } =
     props;
-
-  // projID를 통해 project정보 가져온 후 내용출력
 
   return shortForm ? (
     // 추후 projID 받아 이동

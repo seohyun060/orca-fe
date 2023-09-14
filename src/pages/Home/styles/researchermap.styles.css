@@ -349,7 +349,7 @@
     height: 296.7px;
     grid-template-columns: 13.6px 159.3px 13.6px;
     grid-template-rows: 25px 259.7px 12.1px;
-    grid-template-areas: ". head ." "back body go" ". . .";
+    grid-template-areas: ". dots ." "back body go" ". dots .";
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
     grid-area: head;
@@ -402,6 +402,10 @@
     width: 8px;
     height: 13.6px;
     place-self: center center;
+  }
+  .researcher-map-black .country0 .researchers-dot, .researcher-map-black .country1 .researchers-dot, .researcher-map-black .country2 .researchers-dot, .researcher-map-black .country3 .researchers-dot {
+    grid-area: dots;
+    height: 13px;
   }
   .researcher-map-black .country1 {
     border-right: 1px solid var(--Midium-gray, #9e9e9e);

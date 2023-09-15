@@ -12,6 +12,8 @@ const ProjectExplore = (props) => {
 
   const { projStatus, projID, projTitle, projCategory, projLocation } = props;
   const [tempData, setTempData] = useState(ProjectDummyData);
+  const [isYearlySelectionBar, setIsYearlySelectionBar] = useState(true);
+  const [isStatusSelectionBar, setIsStatusSelectionBar] = useState(true);
 
   const [category, setCategory] = useState([
     "ORCA Projects",
@@ -150,7 +152,6 @@ const ProjectExplore = (props) => {
             <img src={images.search}></img>
           </div>
         </div>
-        {/* 데이터가 없을때의 페이지 생성 */}
         {tempData.length != 0 ? (
           <div className="ProjectList">
             {tempData.map((temp) => (
@@ -165,37 +166,80 @@ const ProjectExplore = (props) => {
             ))}
           </div>
         ) : (
-          <div className="ResultEmpty">Result Empty</div>
+          <div className="ResultEmpty">
+            No search results match '{document.getElementById("search").value}'
+            <br />
+            Please try a new search
+          </div>
         )}
         <div className="ProjectSelectionSector">
           <div className="ProjectSelectionBar">
-            <div className="title">Yearly</div>
-            {yearly.map((yearly, index) => (
-              <div className="sub">
-                {yearly}
-                <input
-                  type="checkbox"
-                  key={yearly}
-                  checked={isYearlyChecked[index]}
-                  onChange={(e) => filterYearly(index)}
-                />
-              </div>
-            ))}
+            <div
+              className="title"
+              onClick={(e) => setIsYearlySelectionBar(!isYearlySelectionBar)}
+            >
+              <label>Yearly</label>
+              <img
+                className={isYearlySelectionBar ? "imageRotate" : ""}
+                src={images.baropen_w}
+              ></img>
+            </div>
+            {isYearlySelectionBar &&
+              yearly.map((yearly, index) => (
+                <div className="sub">
+                  {yearly}
+                  {!isYearlyChecked[index] ? (
+                    <div
+                      className="checkbox"
+                      key={yearly}
+                      checked={isYearlyChecked[index]}
+                      onClick={(e) => filterYearly(index)}
+                    />
+                  ) : (
+                    <img
+                      className="checkboxChecked"
+                      src={images.checkon}
+                      key={yearly}
+                      checked={isYearlyChecked[index]}
+                      onClick={(e) => filterYearly(index)}
+                    />
+                  )}
+                </div>
+              ))}
           </div>
           <div className="ProjectSelectionBar">
-            <div className="title">Research status</div>
-            {status.map((status, index) => (
-              <div className="sub">
-                {status}
-                {/* checkbox 이미지 처리 */}
-                <input
-                  type="checkbox"
-                  key={status}
-                  checked={isStatusChecked[index]}
-                  onChange={(e) => filterStatus(index)}
-                />
-              </div>
-            ))}
+            <div
+              className="title"
+              onClick={(e) => setIsStatusSelectionBar(!isStatusSelectionBar)}
+            >
+              <label>Research status</label>
+              <img
+                className={isStatusSelectionBar ? "imageRotate" : ""}
+                src={images.baropen_w}
+              ></img>
+            </div>
+            {isStatusSelectionBar &&
+              status.map((status, index) => (
+                <div className="sub">
+                  {status}
+                  {!isStatusChecked[index] ? (
+                    <div
+                      className="checkbox"
+                      key={status}
+                      checked={isStatusChecked[index]}
+                      onClick={(e) => filterStatus(index)}
+                    />
+                  ) : (
+                    <img
+                      className="checkboxChecked"
+                      src={images.checkon}
+                      key={status}
+                      checked={isStatusChecked[index]}
+                      onClick={(e) => filterStatus(index)}
+                    />
+                  )}
+                </div>
+              ))}
           </div>
         </div>
       </div>

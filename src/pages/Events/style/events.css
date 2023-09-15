@@ -52,8 +52,11 @@
   align-items: center;
   margin-top: 50px;
 }
-.EventCardPaging img:nth-child(2) {
-  margin: 0px 40px;
+.EventCardPaging img:first-child {
+  margin-right: 40px;
+}
+.EventCardPaging img:last-child {
+  margin-left: 40px;
 }
 
 circle {

@@ -47,7 +47,7 @@
   display: grid;
   grid-template-columns: 18px 211px 18px;
   grid-template-rows: 33px 344px 16px;
-  grid-template-areas: ". head ." "back body go" ". . .";
+  grid-template-areas: ". head ." "back body go" ". dots .";
 }
 .researcher-map .country0 .researchers-head, .researcher-map .country3 .researchers-head, .researcher-map .country2 .researchers-head, .researcher-map .country1 .researchers-head {
   grid-area: head;
@@ -97,6 +97,14 @@
 .researcher-map .country0 .researchers-go, .researcher-map .country3 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country1 .researchers-go {
   grid-area: go;
   place-self: center center;
+}
+.researcher-map .country0 .researchers-dot, .researcher-map .country3 .researchers-dot, .researcher-map .country2 .researchers-dot, .researcher-map .country1 .researchers-dot {
+  grid-area: dots;
+  place-self: center center;
+  margin-left: 4px;
+}
+.researcher-map .country0 .researchers-dot img, .researcher-map .country3 .researchers-dot img, .researcher-map .country2 .researchers-dot img, .researcher-map .country1 .researchers-dot img {
+  margin-right: 8px;
 }
 .researcher-map .country1 {
   border-right: 1px solid var(--Midium-gray, #9e9e9e);
@@ -165,7 +173,7 @@
   height: 393px;
   grid-template-columns: 18px 211px 18px;
   grid-template-rows: 33px 344px 16px;
-  grid-template-areas: ". head ." "back body go" ". . .";
+  grid-template-areas: ". head ." "back body go" ". dots .";
 }
 .researcher-map-black .country0 .researchers-head, .researcher-map-black .country3 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country1 .researchers-head {
   grid-area: head;
@@ -214,6 +222,14 @@
   grid-area: go;
   place-self: center center;
 }
+.researcher-map-black .country0 .researchers-dot, .researcher-map-black .country3 .researchers-dot, .researcher-map-black .country2 .researchers-dot, .researcher-map-black .country1 .researchers-dot {
+  grid-area: dots;
+  place-self: center center;
+  margin-left: 4px;
+}
+.researcher-map-black .country0 .researchers-dot img, .researcher-map-black .country3 .researchers-dot img, .researcher-map-black .country2 .researchers-dot img, .researcher-map-black .country1 .researchers-dot img {
+  margin-right: 8px;
+}
 .researcher-map-black .country1 {
   border-right: 1px solid var(--Midium-gray, #9e9e9e);
 }
@@ -260,7 +276,6 @@
     height: 296.7px;
     grid-template-columns: 13.6px 159.3px 13.6px;
     grid-template-rows: 25px 259.7px 12.1px;
-    grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map .country0 .researchers-head, .researcher-map .country1 .researchers-head, .researcher-map .country2 .researchers-head, .researcher-map .country3 .researchers-head {
     grid-area: head;
@@ -284,7 +299,7 @@
   }
   .researcher-map .country0 .researchers-body .researcher-card, .researcher-map .country1 .researchers-body .researcher-card, .researcher-map .country2 .researchers-body .researcher-card, .researcher-map .country3 .researchers-body .researcher-card {
     width: 159.3px;
-    height: 81.5px;
+    height: 80px;
     display: flex;
     margin-bottom: 10px;
   }
@@ -349,7 +364,7 @@
     height: 296.7px;
     grid-template-columns: 13.6px 159.3px 13.6px;
     grid-template-rows: 25px 259.7px 12.1px;
-    grid-template-areas: ". head ." "back body go" ". . .";
+    grid-template-areas: ". head ." "back body go" ". dots .";
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
     grid-area: head;
@@ -374,7 +389,7 @@
   }
   .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card {
     width: 159.3px;
-    height: 81.5px;
+    height: 80px;
     display: flex;
     margin-bottom: 10px;
     background-color: #fff;
@@ -417,7 +432,7 @@
 @media (max-width: 1023px) {
   .researcher-map-black {
     margin-top: 0px;
-    width: 775.16px;
+    width: 780.16px;
     height: 498px;
   }
   .researcher-map-black svg {
@@ -452,7 +467,6 @@
     height: 230.7px;
     grid-template-columns: 10.6px 123.9px 10.6px;
     grid-template-rows: 19.4px 202px 9.4px;
-    grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
     grid-area: head;
@@ -475,7 +489,7 @@
   }
   .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card {
     width: 124px;
-    height: 63.4px;
+    height: 61px;
     display: flex;
     margin-bottom: 10px;
     background-color: #fff;
@@ -546,7 +560,6 @@
     height: 230.7px;
     grid-template-columns: 10.6px 123.9px 10.6px;
     grid-template-rows: 19.4px 202px 9.4px;
-    grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map .country0 .researchers-head, .researcher-map .country1 .researchers-head, .researcher-map .country2 .researchers-head, .researcher-map .country3 .researchers-head {
     grid-area: head;
@@ -568,7 +581,7 @@
   }
   .researcher-map .country0 .researchers-body .researcher-card, .researcher-map .country1 .researchers-body .researcher-card, .researcher-map .country2 .researchers-body .researcher-card, .researcher-map .country3 .researchers-body .researcher-card {
     width: 124px;
-    height: 63.4px;
+    height: 61px;
     display: flex;
     margin-bottom: 10px;
   }
@@ -634,7 +647,6 @@
     left: 56.58px;
     grid-template-columns: 6.03px 70.8px 6.03px;
     grid-template-rows: 11px 115.4px 6px;
-    grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
     grid-area: head;
@@ -687,6 +699,15 @@
     place-self: center center;
     width: 5px;
   }
+  .researcher-map-black .country0 .researchers-dot, .researcher-map-black .country1 .researchers-dot, .researcher-map-black .country2 .researchers-dot, .researcher-map-black .country3 .researchers-dot {
+    margin-left: 1px;
+    height: 6px;
+    margin-top: -15px;
+  }
+  .researcher-map-black .country0 .researchers-dot img, .researcher-map-black .country1 .researchers-dot img, .researcher-map-black .country2 .researchers-dot img, .researcher-map-black .country3 .researchers-dot img {
+    margin-right: 2px;
+    height: 3px;
+  }
   .researcher-map-black .country1 {
     border-right: 1px solid var(--Midium-gray, #9e9e9e);
   }
@@ -732,7 +753,6 @@
     left: 56.58px;
     grid-template-columns: 6.03px 70.8px 6.03px;
     grid-template-rows: 11px 115.4px 6px;
-    grid-template-areas: ". head ." "back body go" ". . .";
   }
   .researcher-map .country0 .researchers-head, .researcher-map .country1 .researchers-head, .researcher-map .country2 .researchers-head, .researcher-map .country3 .researchers-head {
     grid-area: head;
@@ -782,5 +802,14 @@
     grid-area: go;
     place-self: center center;
     width: 5px;
+  }
+  .researcher-map .country0 .researchers-dot, .researcher-map .country1 .researchers-dot, .researcher-map .country2 .researchers-dot, .researcher-map .country3 .researchers-dot {
+    margin-left: 1px;
+    height: 6px;
+    margin-top: -15px;
+  }
+  .researcher-map .country0 .researchers-dot img, .researcher-map .country1 .researchers-dot img, .researcher-map .country2 .researchers-dot img, .researcher-map .country3 .researchers-dot img {
+    margin-right: 2px;
+    height: 3px;
   }
 }/*# sourceMappingURL=researchermap.styles.css.map */

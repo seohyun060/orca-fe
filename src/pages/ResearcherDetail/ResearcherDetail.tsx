@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 import './styles/researcherdetail.styles.css';
 import images from 'src/assets/images';
 import ProjectCard from '../Projects/components/ProjectCard';
@@ -20,6 +21,7 @@ const ResearcherDetail = ({
   publist,
   navigate,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <div className='researcherdetail'>
       <div
@@ -29,10 +31,10 @@ const ResearcherDetail = ({
         }}
       >
         <img src={images.back_arrow} />
-        <div>Back</div>
+        <div>{t("back")}</div>
       </div>
       <div className='researcherdetail-individual'>
-        Individual Researcher
+        {t("individual_esearcher")}
         <img src={images.back_arrow} />
       </div>
       <div className='researcherdetail-profile'>
@@ -47,7 +49,7 @@ const ResearcherDetail = ({
         </div>
       </div>
       <div className='researcherdetail-biography'>
-        <div className='researcherdetail-biography-head'>Biography</div>
+        <div className='researcherdetail-biography-head'>{t("biography")}</div>
         <div className='researcherdetail-biography-body'>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
           nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -65,7 +67,7 @@ const ResearcherDetail = ({
         <div></div>
       </div>
       <div className='researcherdetail-publication'>
-        <div className='head'>Publications</div>
+        <div className='head'>{t("publications")}</div>
         {publist.map((index) => (
           <ProjectCard shortForm={true} />
         ))}

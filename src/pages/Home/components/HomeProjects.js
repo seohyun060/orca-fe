@@ -1,18 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import "../styles/home.styles.scss";
 import ProjectCard from "../../Projects/components/ProjectCard";
 
 const HomeProjects = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <section className="Section">
       <div className="SectionTitle">
-        <label>Projects</label>
+        <label>{t("projects")}</label>
         <button className="ViewButton" onClick={() => navigate("/projects")}>
-          <label>View All</label>
+          <label>{t("view_all")}</label>
         </button>
       </div>
       <div className="ProjectBox">

@@ -1,69 +1,62 @@
 import React from 'react';
 import './styles/orca.styles.scss';
+import { useTranslation } from "react-i18next";
 type Props = {};
 
 const Orca = (props: Props) => {
+  const { t } = useTranslation();
   return (
     <div className='orca'>
       <div className='orca-what-background'>
         <div className='orca-what'>
           <div className='orca-what-box'>
-            <div className='orca-what-box-head'>What is the ORCA Group?</div>
-            <div className='orca-what-box-about'>About ORCA /ˈɔːr.kə/</div>
+            <div className='orca-what-box-head'>{t("orca_introduce")}</div>
+            <div className='orca-what-box-about'>{t("orca_about")}</div>
             <div className='orca-what-box-body'>
-              The ORCA (Optimized Research in Clinical AI) Group at BeamWorks is
-              a collaborative team of AI specialists and clinical researchers,
-              focused on healthcare applications.
+              {t("orca_what")}
             </div>
           </div>
         </div>
       </div>
       <div className='orca-goal'>
         <div className='orca-goal-box'>
-          <div className='orca-goal-box-head'>Goal of the ORCA Group</div>
+          <div className='orca-goal-box-head'>{t("orca_goal_head")}</div>
           <div className='orca-goal-box-body1'>
-            We develop and validate cutting-edge AI technologies, and we
-            facilitate effective communication between healthcare providers and
-            patients.
+            {t("orca_goal_body1")}
           </div>
           <div className='orca-goal-box-body2'>
-            Our optimized AI empowers healthcare professionals, leading to more
-            accurate diagnoses and personalized treatment plans, ultimately
-            improving patient outcomes.
+            {t("orca_goal_body2")}
           </div>
         </div>
       </div>
       <div className='orca-benefits'>
         <div className='orca-benefits-box'>
-          <div className='orca-benefits-box-head'>ORCA Group Benefits</div>
+          <div className='orca-benefits-box-head'>{t("orca_benefits")}</div>
           <div className='orca-benefits-box-body1'>
             <div className='orca-benefits-box-body1-square'></div>
             <div className='orca-benefits-box-body1-head'>
-              Interdisciplinary Collaboration:
+              {t("orca_benefit_goal1")}:
             </div>
             <div className='orca-benefits-box-body1-body'>
-              We foster collaboration between AI specialists and clinical
-              researchers, driving advancements in healthcare.
+              {t("orca_benefit_goal1_contents")}
             </div>
           </div>
           <div className='orca-benefits-box-body2'>
             <div className='orca-benefits-box-body2-square'></div>
             <div className='orca-benefits-box-body2-head'>
-              Opportunities for Inbound Clinical Trials:
+              {t("orca_benefit_goal2")}:
             </div>
             <div className='orca-benefits-box-body2-body'>
-              We offer research opportunities to participate in clinical trials,
-              contributing to cutting-edge AI research.
+              {t("orca_benefit_goal2_contents")}
             </div>
           </div>
           <div className='orca-benefits-box-body3'>
             <div className='orca-benefits-box-body3-square'></div>
             <div className='orca-benefits-box-body3-head'>
-              Regular Symposia and Newsletters with Timely Updates:
+              {t("orca_benefit_goal3")}:
             </div>
             <div className='orca-benefits-box-body3-body'>
-              We host regular symposia, facilitating dynamic collaboration
-              between AI specialists and clinical researchers.
+              {t("orca_benefit_goal3_contents")}
             </div>
           </div>
         </div>

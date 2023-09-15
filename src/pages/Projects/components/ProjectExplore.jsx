@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import ProjectCard from "./ProjectCard";
 
@@ -7,6 +8,8 @@ import images from "src/assets/images";
 import ProjectDummyData from "./ProjectDummyData";
 
 const ProjectExplore = (props) => {
+  const { t } = useTranslation();
+
   const { projStatus, projID, projTitle, projCategory, projLocation } = props;
   const [tempData, setTempData] = useState(ProjectDummyData);
 
@@ -121,7 +124,7 @@ const ProjectExplore = (props) => {
 
   return (
     <section className="Section">
-      <div className="SectionTitle">Explore ORCA Projects</div>
+      <div className="SectionTitle">{t("project_explore")}</div>
       <div className="ProjectExplore">
         <div className="ProjectExploreUpperBar">
           <div className="CategoryBar">
@@ -198,7 +201,7 @@ const ProjectExplore = (props) => {
       </div>
       <div className="ButtonArrange">
         <button className="LeadMoreButton">
-          <label>Read More</label>
+          <label>{t("read_more")}</label>
         </button>
       </div>
     </section>

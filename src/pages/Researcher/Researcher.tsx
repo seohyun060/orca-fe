@@ -3,6 +3,7 @@ import ResearcherMapContainer from '../Home/containers/ResearcherMapContainer';
 import './styles/researcher.styles.scss';
 import { EChange, ResearcherList } from '@typedef/types';
 import { notStrictEqual } from 'assert';
+import { useTranslation } from "react-i18next";
 import images from 'src/assets/images';
 type Props = {
   route: string;
@@ -31,19 +32,18 @@ const Researcher = ({
   onReadMoreClick,
   onResearcherClick,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <div className='researcher'>
       <div className='researcher-meet-background'>
         <div className='researcher-meet'>
-          <div className='researcher-meet-head'>Meet Our Researchers</div>
+          <div className='researcher-meet-head'>{t("researcher_title")}</div>
           <ResearcherMapContainer route={route} />
         </div>
       </div>
       <div className='researcher-body'>
         <div className='researcher-body-head'>
-          At the ORCA group, our team is comprised of dedicated AI specialists
-          and accomplished clinical researchers, united by a shared passion for
-          advancing healthcare through innovative AI technologies.
+          {t("researcher_introduce")}
         </div>
         <div className='researcher-body-search'>
           <input
@@ -89,7 +89,7 @@ const Researcher = ({
             className='researcher-body-readmore'
             onClick={onReadMoreClick}
           >
-            {readMore ? 'Fold' : 'Read More'}
+            {readMore ? t("fold") : t("read_more")}
           </button>
         ) : (
           ''

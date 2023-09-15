@@ -1,18 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 import '../styles/home.styles.scss';
 import ResearchCard from '../../Insights/components/InsightsCard';
 
 const HomeInsights = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <section className='Section'>
       <div className='SectionTitle'>
-        <label>Insights</label>
+        <label>{t("insights")}</label>
         <button className='ViewButton' onClick={() => navigate('/insights ')}>
-          <label className='View'>View All</label>
+          <label className='View'>{t("view_all")}</label>
         </button>
       </div>
       <div className='EventBoxSlide'>

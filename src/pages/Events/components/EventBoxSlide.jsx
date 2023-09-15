@@ -11,6 +11,7 @@ const EventBoxSlide = (props) => {
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
   const eventSlideRef = useRef();
+  const [slideImageSrc, setSlideImageSrc] = useState(new Array(EventDummyData.length));
   const totalSides = EventDummyData.length - 1; // 추후 갯수만큼 불러오기
 
   const onBackButtonClick = () => {
@@ -55,18 +56,37 @@ const EventBoxSlide = (props) => {
 
   const [dotBar, setDotBar] = useState([]);
   const makeDotbar = () => {
-    console.log(EventDummyData.length)
-    let temp = []
-    for(var i=0;i<EventDummyData.length;i++) {
-      temp.push(<img id={i} src={images.paging_dot_medium}></img>)
+    console.log(EventDummyData.length);
+    let temp = [];
+    for (var i = 0; i < EventDummyData.length; i++) {
+      temp.push(
+        <img
+          id={i}
+          src={slideImageSrc[i]}
+        ></img>
+      );
     }
-    setDotBar(temp)
-    console.log(dotBar)
+    setDotBar(temp);
+    console.log(dotBar);
+  };
+
+  const changeDotBar = () => {
+    let temp = []
+    for (var i = 0; i < EventDummyData.length; i++) {
+      if (i == currentEventSlide) {
+        temp.push(images.paging_dot_dark)
+      } else {
+        temp.push(images.paging_dot_medium)
+      }
+    }
+    console.log(temp)
+    setSlideImageSrc(temp);
   }
 
   useEffect(() => {
-    makeDotbar()
-  }, [])
+    changeDotBar();
+    makeDotbar();
+  });
 
   return (
     <>

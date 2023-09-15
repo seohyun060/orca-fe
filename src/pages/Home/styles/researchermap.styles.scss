@@ -100,10 +100,18 @@
 				grid-area: go;
 				place-self: center center;
 			}
+			&-dot {
+				grid-area: dots;
+				place-self: center center;
+				margin-left: 4px;
+				img {
+					margin-right: 8px;
+				}
+			}
 			grid-template-areas:
 				'. head .'
 				'back body go'
-				'. . .';
+				'. dots .';
 		}
 	}
 
@@ -226,10 +234,18 @@
 				grid-area: go;
 				place-self: center center;
 			}
+			&-dot {
+				grid-area: dots;
+				place-self: center center;
+				margin-left: 4px;
+				img {
+					margin-right: 8px;
+				}
+			}
 			grid-template-areas:
 				'. head .'
 				'back body go'
-				'. . .';
+				'. dots .';
 		}
 	}
 
@@ -310,7 +326,7 @@
 					grid-area: body;
 					.researcher-card {
 						width: 159.3px;
-						height: 81.5px;
+						height: 80px;
 						display: flex;
 						margin-bottom: 10px;
 						//background-color: #fff;
@@ -333,10 +349,6 @@
 					width: 8px;
 					height: 13.6px;
 				}
-				grid-template-areas:
-					'. head .'
-					'back body go'
-					'. . .';
 			}
 		}
 	}
@@ -402,7 +414,7 @@
 					grid-area: body;
 					.researcher-card {
 						width: 159.3px;
-						height: 81.5px;
+						height: 80px;
 						display: flex;
 						margin-bottom: 10px;
 						background-color: #fff;
@@ -425,12 +437,9 @@
 					height: 13.6px;
 					place-self: center center;
 				}
-				&-dot {
-					grid-area: dots;
-					height: 13px;
-				}
+
 				grid-template-areas:
-					'. dots .'
+					'. head .'
 					'back body go'
 					'. dots .';
 			}
@@ -462,7 +471,7 @@
 			margin-top: 9.86px;
 			margin-left: 24.66px;
 		}
-		width: 775.16px;
+		width: 780.16px;
 		height: 498px;
 
 		.country0 {
@@ -513,7 +522,7 @@
 					grid-area: body;
 					.researcher-card {
 						width: 124px;
-						height: 63.4px;
+						height: 61px;
 						display: flex;
 						margin-bottom: 10px;
 						background-color: #fff;
@@ -534,10 +543,6 @@
 					grid-area: go;
 					place-self: center center;
 				}
-				grid-template-areas:
-					'. head .'
-					'back body go'
-					'. . .';
 			}
 		}
 
@@ -613,7 +618,7 @@
 					grid-area: body;
 					.researcher-card {
 						width: 124px;
-						height: 63.4px;
+						height: 61px;
 						display: flex;
 						margin-bottom: 10px;
 						//background-color: #fff;
@@ -635,10 +640,6 @@
 					grid-area: go;
 					place-self: center center;
 				}
-				grid-template-areas:
-					'. head .'
-					'back body go'
-					'. . .';
 			}
 		}
 	}
@@ -728,10 +729,15 @@
 					place-self: center center;
 					width: 5px;
 				}
-				grid-template-areas:
-					'. head .'
-					'back body go'
-					'. . .';
+				&-dot {
+					margin-left: 1px;
+					height: 6px;
+					margin-top: -15px;
+					img {
+						margin-right: 2px;
+						height: 3px;
+					}
+				}
 			}
 		}
 
@@ -830,10 +836,15 @@
 					place-self: center center;
 					width: 5px;
 				}
-				grid-template-areas:
-					'. head .'
-					'back body go'
-					'. . .';
+				&-dot {
+					margin-left: 1px;
+					height: 6px;
+					margin-top: -15px;
+					img {
+						margin-right: 2px;
+						height: 3px;
+					}
+				}
 			}
 		}
 	}

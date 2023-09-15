@@ -523,6 +523,9 @@
 }
 
 @media (max-width: 1400px) {
+  .ProjectCardContent {
+    width: 998px;
+  }
   .ProjectCardContent.shortForm {
     width: 785px;
     height: 134px;

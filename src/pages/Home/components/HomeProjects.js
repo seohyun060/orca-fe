@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import "../styles/home.styles.scss";
+import "../styles/home.styles.css";
 import ProjectCard from "../../Projects/components/ProjectCard";
 
 const HomeProjects = () => {

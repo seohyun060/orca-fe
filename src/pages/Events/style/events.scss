@@ -357,3 +357,13 @@ circle {
     width: 200px;
   }
 }
+
+@media (max-width: 1400px) {
+  .Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 100px auto;
+    width: 998px;
+  }
+}

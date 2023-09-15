@@ -338,4 +338,14 @@ circle {
   -o-object-fit: contain;
      object-fit: contain;
   width: 200px;
+}
+
+@media (max-width: 1400px) {
+  .Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 100px auto;
+    width: 998px;
+  }
 }/*# sourceMappingURL=events.css.map */

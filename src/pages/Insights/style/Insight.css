@@ -199,6 +199,10 @@
 }
 
 @media (max-width: 1400px) {
+  .ResearchCard {
+    width: 235px;
+    height: 458px;
+  }
   .insights-head {
     width: 900px;
   }

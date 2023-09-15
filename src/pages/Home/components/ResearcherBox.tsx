@@ -52,7 +52,7 @@ const ResearcherBox = ({
 						left: leftPosition,
 					}}
 				>
-					<div className='researchers-head'>Researchers List</div>
+					<div className='researchers-head'>{t("researcher_list")}</div>
 					<img
 						className='researchers-back'
 						src={black === '' ? images.back_b : images.back_w}

@@ -12,6 +12,7 @@
 }
 
 .gnb {
+	display: flex;
 	width: 100%;
 	height: 77px;
 	background: rgba(60, 60, 60, 0.8);
@@ -24,6 +25,11 @@
 	&-logo {
 		position: absolute;
 		left: 60px;
+	}
+	&-bar {
+		display: none;
+		position: absolute;
+		left: 21px;
 	}
 	&-menu {
 		width: 554px;
@@ -38,6 +44,50 @@
 			text-decoration: underline;
 			cursor: pointer;
 			transition: 0.25s;
+		}
+	}
+	.side {
+		position: fixed;
+		display: none;
+		//position: absolute;
+		margin-top: 158vh;
+		width: 208px;
+		height: 150vh;
+		background: rgba(0, 0, 0, 0.6);
+		z-index: 200;
+		.side-menu {
+			//position: absolute;
+			width: 208px;
+			height: 150vh;
+
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+			align-items: center;
+
+			.side-menu-button {
+				//position: absolute;
+				display: flex;
+				align-items: center;
+				height: 60px;
+
+				//text-align: center;
+				color: #fff;
+				//text-align: center;
+
+				/* web. light.20 */
+				font-family: Pretendard;
+				font-size: 20px;
+				font-style: normal;
+				font-weight: 300;
+
+				width: 208px !important;
+				z-index: 1000 !important;
+				border-bottom: 0.5px solid rgba(255, 255, 255, 0.6);
+				div {
+					margin-left: 18px;
+				}
+			}
 		}
 	}
 
@@ -102,6 +152,11 @@
 		background: var(--Light-gray, #f0f0f0);
 		@include font-setting(black, 300, 20px, 2.3);
 	}
+	&-language {
+		display: none;
+		position: absolute;
+		right: 30px;
+	}
 }
 
 .gnb-white {
@@ -148,7 +203,7 @@
 			left: 50px;
 		}
 		&-menu {
-			width: 354px;
+			width: 424px;
 			height: 31px;
 			left: 224px;
 			@include font-setting(white, 300, 15px, 32px);
@@ -212,16 +267,7 @@
 			line-height: 28px; /* 140% */
 		}
 		.gnb-tiny {
-			position: absolute;
-			left: 188px;
-			top: 17px;
-			color: var(--Dark-gray, #3c3c3c);
-			text-align: center;
-			font-family: Pretendard;
-			font-size: 16px;
-			font-style: normal;
-			font-weight: 300;
-			line-height: 28px; /* 175% */
+			display: none;
 		}
 	}
 }
@@ -247,7 +293,9 @@
 			left: 144px;
 			@include font-setting(white, 300, 13px, 32px);
 		}
-
+		.side {
+			margin-top: 156vh;
+		}
 		&-En {
 			right: 131px;
 			width: 60px;
@@ -300,22 +348,99 @@
 
 			/* web. light.20 */
 			font-family: Pretendard;
-			font-size: 20px;
+			font-size: 13px;
 			font-style: normal;
 			font-weight: 300;
 			line-height: 28px; /* 140% */
 		}
-		.gnb-tiny {
+	}
+}
+
+@media (max-width: 767px) {
+	.gnb {
+		width: 100%;
+		height: 57px;
+		background: rgba(60, 60, 60, 0.8);
+		backdrop-filter: blur(5px);
+		display: flex;
+		align-items: center;
+		flex-direction: row; /* 주석 해제해서 활성화 */
+		position: fixed;
+		z-index: 100;
+		justify-content: center;
+		&-logo {
+			position: relative;
+			left: 0px;
+		}
+		&-bar {
+			display: block;
+		}
+		.side {
+			display: block;
 			position: absolute;
-			left: 188px;
-			top: 17px;
-			color: var(--Dark-gray, #3c3c3c);
+			left: 0px;
+			//position: absolute;
+			// margin-top: 142vh;
+			// width: 208px;
+			// height: 150vh;
+			// background-color: rgba(0, 0, 0, 0.3);
+			// z-index: 200;
+			// .side-menu {
+			// 	//position: absolute;
+			// 	width: 208px;
+			// 	height: 150vh;
+
+			// 	display: flex;
+			// 	flex-wrap: wrap;
+			// 	flex-direction: column;
+			// 	align-items: center;
+
+			// 	.side-menu-button {
+			// 		//position: absolute;
+			// 		border: 2px solid black !important;
+			// 		height: 50px;
+			// 		color: blue !important;
+			// 		width: 200px !important;
+			// 		z-index: 1000 !important;
+			// 	}
+			// }
+		}
+		&-menu {
+			display: none;
+			width: 304px;
+			height: 31px;
+			left: 144px;
+			@include font-setting(white, 300, 13px, 32px);
+		}
+
+		&-En {
+			display: none;
+		}
+		&-Kr {
+			display: none;
+		}
+		&-join {
+			display: none;
+		}
+		&-language {
+			display: block;
+		}
+	}
+
+	.gnb-white {
+		background: rgba(255, 255, 255, 0.8);
+		//background-color: black;
+		backdrop-filter: blur(5px);
+		.gnb-menu {
+			color: #000;
 			text-align: center;
+
+			/* web. light.20 */
 			font-family: Pretendard;
-			font-size: 16px;
+			font-size: 13px;
 			font-style: normal;
 			font-weight: 300;
-			line-height: 28px; /* 175% */
+			line-height: 28px; /* 140% */
 		}
 	}
 }

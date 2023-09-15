@@ -19,6 +19,9 @@ const images = {
 	paging_bar: '/assets/images/paging_bar.svg',
 	dot_w: '/assets/images/dot-w.svg',
 	dot_g: '/assets/images/dot-g.svg',
+	menu: '/assets/images/menu.svg',
+	language: '/assets/images/language.svg',
+	gnb_back: '/assets/images/gnb-back.svg',
 };
 
 export default images;

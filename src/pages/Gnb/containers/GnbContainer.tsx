@@ -29,21 +29,34 @@ const GnbContainer = ({ location }: Props) => {
 			label: 'Insights',
 			path: '/insights',
 		},
+		{
+			label: 'Join Us',
+			path: '/',
+		},
 	];
 	const [selectedTab, setSelectedTab] = useState<string>('/');
 	const [language, setLanguage] = useState('En');
 	const [gnbColor, setGnbColor] = useState('');
 	const [scrollPosition, setScrollPosition] = useState(0);
 	const [mobile, setMobile] = useState(false);
-	const { i18n, t } = useTranslation();
+	const [menuToggle, setMenuToggle] = useState(false);
 
-	const onItemClicked = useCallback((path: string) => {
-		if (path === '/custom') {
-			return;
-		}
-		setSelectedTab(path);
-		navigate(path);
+	const { i18n, t } = useTranslation();
+	const onMenuToggleClicked = useCallback(() => {
+		setMenuToggle((prev) => !prev);
 	}, []);
+	const onItemClicked = useCallback(
+		(path: string) => {
+			if (path === '/custom') {
+				return;
+			}
+			setSelectedTab(path);
+
+			navigate(path);
+			window.scrollTo(0, 0);
+		},
+		[selectedTab],
+	);
 	const updateScroll = () => {
 		setScrollPosition(window.scrollY || document.documentElement.scrollTop);
 	};
@@ -99,8 +112,8 @@ const GnbContainer = ({ location }: Props) => {
 		// } else {
 		// 	setMobile(false);
 		// }
-		console.log(mobile);
-	}, [scrollPosition, route, gnbColorHandler]);
+		//console.log(mobile);
+	}, [scrollPosition, route]);
 	return (
 		<div>
 			<Gnb
@@ -110,6 +123,8 @@ const GnbContainer = ({ location }: Props) => {
 				route={route}
 				onLanguageClicked={onLanguageClicked}
 				onItemClicked={onItemClicked}
+				menuToggle={menuToggle}
+				onMenuToggleClicked={onMenuToggleClicked}
 			/>
 		</div>
 	);

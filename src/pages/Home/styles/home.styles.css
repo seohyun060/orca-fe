@@ -770,16 +770,16 @@
   }
   .home-research-head button {
     width: 70px;
-    height: 34px;
-    border-radius: 10px;
+    height: 24px;
+    border-radius: 5px;
     border: 1px solid var(--Dark-gray, #3c3c3c);
     color: #3c3c3c;
-    font-size: 12px;
+    font-size: 11px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 28px;
+    line-height: 25px;
     letter-spacing: normal;
   }
 }

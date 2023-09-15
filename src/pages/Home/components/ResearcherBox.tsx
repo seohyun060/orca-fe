@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import '../styles/home.styles.scss';
 import { ResearcherList } from '@typedef/types';
+import { useTranslation } from "react-i18next";
 import images from 'src/assets/images';
+
 type Props = {
 	requestedItems: ResearcherList;
 	active: boolean;
@@ -29,6 +31,7 @@ const ResearcherBox = ({
 	leftPosition,
 	dotList,
 }: Props) => {
+    const { t } = useTranslation();
 	return (
 		<div className={`country${boxType}`}>
 			<div
@@ -79,6 +82,7 @@ const ResearcherBox = ({
 			)}
 		</div>
 	);
+  
 };
 
 export default ResearcherBox;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
@@ -6,6 +7,8 @@ import images from "src/assets/images";
 import MapContainer from "./MapContainer";
 
 const EventDetails = (props) => {
+  const { t } = useTranslation();
+
   const location = useLocation();
   const navigate = useNavigate();
   const past = location.state.past;
@@ -60,21 +63,21 @@ const EventDetails = (props) => {
               <label className="SubtitleFont">08.18-19</label>
             </div>
             <div className="EventVenue">
-              <label className="SubtitleFont">Venue</label>
+              <label className="SubtitleFont">{t("venue")}</label>
               <label className="DescriptFont">ipsum dolor sit</label>
             </div>
             <div className="EventTime">
-              <label className="SubtitleFont">Opening Hours</label>
+              <label className="SubtitleFont">{t("opening_hours")}</label>
               <label className="DescriptFont">ipsum dolor sit</label>
             </div>
             <div className="EventWebsite">
-              <label className="SubtitleFont">Related Website</label>
+              <label className="SubtitleFont">{t("related_website")}</label>
               <label className="DescriptFont">ipsum dolor sit</label>
             </div>
           </div>
         </div>
         <div className="EventPurpose">
-          <label className="SubtitleFont">Event Purpose</label>
+          <label className="SubtitleFont">{t("event_purpose")}</label>
           <label className="DescriptFont">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -84,7 +87,7 @@ const EventDetails = (props) => {
           </label>
         </div>
         <div className="EventDetail">
-          <label className="SubtitleFont">Detailed Explanation</label>
+          <label className="SubtitleFont">{t("detailed_explanation")}</label>
           <label className="DescriptFont">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat

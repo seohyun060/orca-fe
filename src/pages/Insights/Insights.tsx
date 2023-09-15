@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 import './style/Insight.css';
 import InsightsCard from './components/InsightsCard';
 import { Insight } from '@typedef/types';
@@ -19,11 +20,12 @@ const Insights = ({
   containerHeight,
   selectedTab,
 }: Props) => {
+  const { t } = useTranslation();
   return (
     <div className='insights'>
       <div className='insights-head'>
         <div className='big'>ORCA Insights:</div>
-        <div className='small'>Latest Research and News</div>
+        <div className='small'>{t("news")}</div>
       </div>
       <div className='insights-gnb'>
         <div className='insights-gnb-body'>

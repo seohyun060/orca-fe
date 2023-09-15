@@ -18,9 +18,9 @@ i18n
     .init({
         resources: resource,
         // 초기 설정 언어
-        lng: 'ko',
+        lng: 'en-US',
         fallbackLng: {
-            'en':['en'],
+            'en-US':['en'],
             default:['ko']
         },
         debug: true,

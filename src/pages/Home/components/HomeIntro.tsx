@@ -9,50 +9,42 @@ type Props = {
 };
 
 const HomeIntro = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className='intro-background'>
       <div className='home-intro'>
         <div className='home-intro-what'>
-          <div className='home-intro-what-head'>{t("introduce")}</div>
-          <div className='home-intro-what-about'>About ORCA /ˈɔːr.kə/</div>
+          <div className='home-intro-what-head'>{t("orca_introduce")}</div>
+          <div className='home-intro-what-about'>{t("orca_about")}</div>
           <div className='home-intro-what-body'>
-            The ORCA (Optimized Research in Clinical AI) Group at BeamWorks is a
-            collaborative team of AI specialists and clinical researchers,
-            focused on healthcare applications.
+            {t("orca_what")}
           </div>
         </div>
         <div className='home-intro-goal'>
-          <div className='home-intro-goal-head'>Goal of the ORCA Group</div>
+          <div className='home-intro-goal-head'>{t("orca_goal_head")}</div>
           <div className='home-intro-goal-body1'>
-            We develop and validate cutting-edge AI technologies, and we
-            facilitate effective communication between healthcare providers and
-            patients.
+            {t("orca_goal_body1")}
           </div>
           <div className='home-intro-goal-body2'>
-            Our optimized AI empowers healthcare professionals, leading to more
-            accurate diagnoses and personalized treatment plans, ultimately
-            improving patient outcomes.
+            {t("orca_goal_body2")}
           </div>
         </div>
         <div className='home-intro-contact'>
           <div className='home-intro-contact-head'>
-            Are you interested in joining the ORCA Group?
+            {t("interested")}
           </div>
           <form className='home-intro-contact-email' onSubmit={onSubmitClicked}>
             <input
               className='email'
-              placeholder='Please write your email address!'
+              placeholder={t("email_placeholder")}
               onChange={onChangeEmail}
               required
               value={email}
             ></input>
-            <button type='submit'>Subscribe</button>
+            <button type='submit'>{t("subscribe")}</button>
           </form>
           <div className='home-intro-contact-body'>
-            Please provide us with your email address so that we can send it to
-            the ORCA Group for confirmation. Once they verify, we will forward
-            the information to your email.
+            {t("contact_sentence")}
           </div>
         </div>
       </div>

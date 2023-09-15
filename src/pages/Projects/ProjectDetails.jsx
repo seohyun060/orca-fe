@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import "./style/projects.css";
 
@@ -12,6 +13,7 @@ import ProjectCard from "./components/ProjectCard";
 import ProjectDummyData from "./components/ProjectDummyData";
 
 const PrejectsDetails = (props) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const { projID } = props;
@@ -45,15 +47,15 @@ const PrejectsDetails = (props) => {
         </div>
         <div className="ProjectGird">
           <article className="StudyOverviewContents Article">
-            <div className="StudyOverview ArticleTitle">Study Overview</div>
+            <div className="StudyOverview ArticleTitle">{t("study_overview")}</div>
             <div className="Contents">{samplePharagraph}</div>
-            <button className="ShowMoreButton">+ Show more</button>
+            <button className="ShowMoreButton">+ {t("show_more")}</button>
             <div className="ProjectOfficial">
-              <div className="SubjectName">Official Title</div>
+              <div className="SubjectName">{t("study_title")}</div>
               <div className="Contents">{sampleQautation}</div>
             </div>
             <div className="ProjectCondition">
-              <div className="SubjectName">Conditions</div>
+              <div className="SubjectName">{t("study_condition")}</div>
               <button>
                 <label>View Product Description</label>
               </button>
@@ -82,7 +84,7 @@ const PrejectsDetails = (props) => {
             </div>
           </article>
           <article className="Contact Article">
-            <div className="ArticleTitle">Contancts and Locations</div>
+            <div className="ArticleTitle">{t("contacts_location")}</div>
             <div className="Information">
               <div>Name</div>
               <div>Number</div>
@@ -90,24 +92,24 @@ const PrejectsDetails = (props) => {
             </div>
           </article>
           <article className="ParticipationCreteria Article">
-            <div className="ArticleTitle">Participation Criteria</div>
+            <div className="ArticleTitle">{t("participation_criteria")}</div>
             {sampleContents}
             <ProjectMenuBar
               isMenubarOpen={isInclCriteriaOpen}
               setisMenubarOpen={setIsInclCriteriaOpen}
-              Name="Inclusion Criteria"
+              Name={t("inclusion_criteria")}
               Content={sampleContents}
             />
             <ProjectMenuBar
               isMenubarOpen={isExclCriteriaOpen}
               setisMenubarOpen={setIsExclCriteriaOpen}
-              Name="Exclusion Criteria"
+              Name={t("exclusion_criteria")}
               Content={sampleContents}
             />
           </article>
           <article className="StudyPlan Article">
-            <div className="ArticleTitle">Study Plan</div>
-            <div className="SubjectName">Design details</div>
+            <div className="ArticleTitle">{t("study_plan")}</div>
+            <div className="SubjectName">{t("design_details")}</div>
             <div className="Content">
               Observational Model : Other Time
               <br />
@@ -122,18 +124,18 @@ const PrejectsDetails = (props) => {
             <ProjectMenuBar
               isMenubarOpen={isStudyResultOpen}
               setisMenubarOpen={setStudyResultOpen}
-              Name="Outcome Measure / Measure Description / Time frame"
+              Name={t("measures")}
               Content={sampleContents}
             />
           </article>
           <article className="CandI Article">
-            <div className="ArticleTitle">Collaborators and Investigators</div>
-            <div className="SubjectName">Principal Investigator</div>
+            <div className="ArticleTitle">{t("CandI")}</div>
+            <div className="SubjectName">{t("principal_investigator")}</div>
             <CandIInfo
               Name="Name"
               AffiliatedInstitution="Affiliated Institution"
             />
-            <div className="SubjectName">Collaborators</div>
+            <div className="SubjectName">{t("collaborators")}</div>
             <CandIInfo
               Name="Name"
               AffiliatedInstitution="Affiliated Institution"
@@ -156,7 +158,7 @@ const PrejectsDetails = (props) => {
             />
           </article>
           <article className="Publications Article">
-            <div className="ArticleTitle">Publications</div>
+            <div className="ArticleTitle">{t("related_publications")}</div>
             <ProjectCard shortForm = {true}
             title = {ProjectDummyData[0].title}
             projDate = {ProjectDummyData[0].projDate}/>

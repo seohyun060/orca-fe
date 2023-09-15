@@ -78,15 +78,16 @@ const ResearcherBoxContainer = ({
 				}
 			}
 		}
-		setDotList([]);
+		const newDotList = [];
 		for (let i = 1; i <= totalPage; i++) {
-			if (i == currentPage) {
-				setDotList((prevDotList) => [...prevDotList, images.dot_w]);
+			if (i === currentPage) {
+				newDotList.push(images.dot_w);
 			} else {
-				setDotList((prevDotList) => [...prevDotList, images.dot_g]);
+				newDotList.push(images.dot_g);
 			}
 		}
-	}, [black, index, boxType, topPosition, leftPosition, currentPage, dotList]);
+		setDotList(newDotList);
+	}, [black, index, boxType, topPosition, leftPosition, currentPage]);
 
 	const onBackClick = useCallback(
 		(e: React.MouseEvent<HTMLImageElement>) => {
@@ -102,7 +103,7 @@ const ResearcherBoxContainer = ({
 	const onGoClick = (e: any) => {
 		e.preventDefault();
 		e.stopPropagation();
-		if (currentPage != totalPage) {
+		if (currentPage !== totalPage) {
 			setCurrentPage((prev) => prev + 1);
 		}
 	};

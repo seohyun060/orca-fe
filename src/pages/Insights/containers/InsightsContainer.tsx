@@ -95,7 +95,7 @@ const InsightsContainer = (props: Props) => {
 			}
 		} else {
 			if (filteredList.length > 12 && !readMore) {
-				setContainerHeight('440.94px');
+				setContainerHeight('870px');
 			} else {
 				setContainerHeight('fit-content');
 			}

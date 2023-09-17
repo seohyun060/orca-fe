@@ -322,6 +322,7 @@
     font-size: 13px;
   }
   .insights-body {
+    grid-template-columns: repeat(2, 1fr);
     width: 400px;
     max-height: 1000px;
     -moz-column-gap: 8.05px;
@@ -329,30 +330,31 @@
     row-gap: 4px;
   }
   .insights-body .insight-info {
-    width: 93.96px;
-    height: 144.23px;
+    width: 188px;
+    height: 288px;
+    margin-bottom: 0px;
   }
   .insights-body .insight-info-box {
-    width: 93.96px;
-    height: 93.96px;
+    width: 188px;
+    height: 188px;
   }
   .insights-body .insight-info-type {
-    margin-top: 5px;
-    font-size: 4px;
+    margin-top: 10px;
+    font-size: 15px;
     line-height: 1; /* 140% */
   }
   .insights-body .insight-info-title {
-    width: 93.96px;
-    height: 8px;
+    width: 188px;
+    height: 20px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 5px;
-    line-height: 0.9; /* 145.455% */
+    font-size: 20px;
+    line-height: 1.5; /* 145.455% */
   }
   .insights-body .insight-info-date {
-    font-size: 6.71px;
-    line-height: 0.8; /* 140% */
+    font-size: 15px;
+    line-height: 1.5; /* 140% */
   }
   .insights-readmore {
     width: 80px;

@@ -8,6 +8,8 @@
   grid-template-rows: repeat(4, 1fr);
 }
 .researcher-map svg {
+  width: 1126px;
+  height: 575px;
   margin-top: 16.8px;
   margin-left: 42px;
 }
@@ -243,22 +245,22 @@
 
 @media (max-width: 1400px) {
   .researcher-map {
-    width: 996.64px;
-    height: 498px;
+    width: 900px;
+    height: 450px;
   }
   .researcher-map svg {
-    width: 940px;
-    height: 480.2px;
+    width: 850px;
+    height: 434px;
     margin-top: 12.68px;
     margin-left: 31.71px;
   }
   .researcher-map .country0, .researcher-map .country1, .researcher-map .country2, .researcher-map .country3 {
-    width: 124.58px;
-    height: 124.58px;
+    width: 112.5px;
+    height: 112.5px;
   }
   .researcher-map .country0 .country-box, .researcher-map .country1 .country-box, .researcher-map .country2 .country-box, .researcher-map .country3 .country-box {
-    width: 124.58px;
-    height: 124.58px;
+    width: 112.5px;
+    height: 112.5px;
     z-index: 50;
   }
   .researcher-map .country0 .country-box:hover, .researcher-map .country1 .country-box:hover, .researcher-map .country2 .country-box:hover, .researcher-map .country3 .country-box:hover {
@@ -266,8 +268,8 @@
     cursor: pointer;
   }
   .researcher-map .country0 .country-box-Off, .researcher-map .country1 .country-box-Off, .researcher-map .country2 .country-box-Off, .researcher-map .country3 .country-box-Off {
-    width: 124.58px;
-    height: 124.58px;
+    width: 112.5px;
+    height: 112.5px;
   }
   .researcher-map .country0 .researchers, .researcher-map .country1 .researchers, .researcher-map .country2 .researchers, .researcher-map .country3 .researchers {
     top: -24.9px;
@@ -527,12 +529,12 @@
     border-bottom: 1px solid var(--Midium-gray, #9e9e9e);
   }
   .researcher-map {
-    width: 775.16px;
-    height: 498px;
+    width: 700px;
+    height: 350px;
   }
   .researcher-map svg {
-    width: 731.11px;
-    height: 373.49px;
+    width: 661px;
+    height: 337.66x;
     margin-top: 9.86px;
     margin-left: 24.66px;
   }
@@ -550,8 +552,8 @@
     cursor: pointer;
   }
   .researcher-map .country0 .country-box-Off, .researcher-map .country1 .country-box-Off, .researcher-map .country2 .country-box-Off, .researcher-map .country3 .country-box-Off {
-    width: 96.9px;
-    height: 96.9px;
+    width: 87.5px;
+    height: 87.5px;
   }
   .researcher-map .country0 .researchers, .researcher-map .country1 .researchers, .researcher-map .country2 .researchers, .researcher-map .country3 .researchers {
     top: -34.9px;
@@ -720,22 +722,22 @@
   }
   .researcher-map {
     margin-top: 30px;
-    width: 442.95px;
-    height: 284.57px;
+    width: 400px;
+    height: 200px;
   }
   .researcher-map svg {
-    width: 417.78px;
-    height: 213.42px;
-    margin-top: 9.86px;
-    margin-left: 24.66px;
+    width: 377.85px;
+    height: 193px;
+    margin-top: 5.64px;
+    margin-left: 14.1px;
   }
   .researcher-map .country0, .researcher-map .country1, .researcher-map .country2, .researcher-map .country3 {
-    width: 55.37px;
-    height: 55.37px;
+    width: 50px;
+    height: 50px;
   }
   .researcher-map .country0 .country-box, .researcher-map .country1 .country-box, .researcher-map .country2 .country-box, .researcher-map .country3 .country-box {
-    width: 55.37px;
-    height: 55.37px;
+    width: 50px;
+    height: 50px;
     z-index: 50;
   }
   .researcher-map .country0 .country-box:hover, .researcher-map .country1 .country-box:hover, .researcher-map .country2 .country-box:hover, .researcher-map .country3 .country-box:hover {
@@ -743,8 +745,8 @@
     cursor: pointer;
   }
   .researcher-map .country0 .country-box-Off, .researcher-map .country1 .country-box-Off, .researcher-map .country2 .country-box-Off, .researcher-map .country3 .country-box-Off {
-    width: 55.37px;
-    height: 55.37px;
+    width: 50px;
+    height: 50px;
   }
   .researcher-map .country0 .researchers, .researcher-map .country1 .researchers, .researcher-map .country2 .researchers, .researcher-map .country3 .researchers {
     width: 82.86px;

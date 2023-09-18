@@ -12,47 +12,49 @@ const EventBoxSlide = (props) => {
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
   const eventSlideRef = useRef();
   const [dotBar, setDotBar] = useState([]);
+  const [cardSize, setCardSize] = useState(0);
+  const [cardHiddenSize, setCardHiddenSize] = useState(0);
   const [slideImageSrc, setSlideImageSrc] = useState(
     new Array(EventDummyData.length)
   );
-  const totalSides = EventDummyData.length - 1; // 추후 갯수만큼 불러오기
+  const totalSides = EventDummyData.length - 1;
 
   const onBackButtonClick = () => {
     if (currentEventSlide == totalSides) {
-      setEventSlideMoving(eventSlideMoving + 152);
+      setEventSlideMoving(eventSlideMoving + cardHiddenSize);
       setCurrentEventSlide(currentEventSlide - 1);
       eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving + 152
+        eventSlideMoving + cardHiddenSize
       }px)`;
     } else if (currentEventSlide <= 0) {
       return;
     } else {
-      setEventSlideMoving(eventSlideMoving + 456);
+      setEventSlideMoving(eventSlideMoving + cardSize);
       setCurrentEventSlide(currentEventSlide - 1);
       eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving + 456
+        eventSlideMoving + cardSize
       }px)`;
     }
   };
   const onGoButtonClick = () => {
     if (currentEventSlide == totalSides - 1) {
-      setEventSlideMoving(eventSlideMoving - 152);
+      setEventSlideMoving(eventSlideMoving - cardHiddenSize);
       setCurrentEventSlide(currentEventSlide + 1);
       eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving - 152
+        eventSlideMoving - cardHiddenSize
       }px)`;
       // dotBarRef.current.img.src = "images.paging_dot_dark"
     } else if (currentEventSlide >= totalSides) {
       return;
     } else {
-      setEventSlideMoving(eventSlideMoving - 456);
+      setEventSlideMoving(eventSlideMoving - cardSize);
       setCurrentEventSlide(currentEventSlide + 1);
       eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving - 456
+        eventSlideMoving - cardSize
       }px)`;
     }
   };
@@ -75,8 +77,35 @@ const EventBoxSlide = (props) => {
   };
 
   useEffect(() => {
+    const screenSize = window.innerWidth;
+
+    if (screenSize > 1400) {
+      setCardSize(432+24)
+      setCardHiddenSize(152)
+    } else if (screenSize > 900) {
+      setCardSize(368+24)
+      setCardHiddenSize(251)
+    }
+
+    console.log(window.innerWidth)
+
     makeDotbar();
   }, [currentEventSlide]);
+
+  useEffect(() => {
+    const screenSize = window.innerWidth;
+
+    if (screenSize > 1400) {
+      setCardSize(432+24)
+      setCardHiddenSize(152)
+    } else if (screenSize > 900) {
+      setCardSize(368+24)
+      setCardHiddenSize(251)
+    }
+
+    console.log(window.innerWidth)
+
+  });
 
   return (
     <>

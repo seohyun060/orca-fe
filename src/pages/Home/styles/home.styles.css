@@ -845,4 +845,13 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+
+@media (max-width: 1400px) {
+  .EventBox {
+    width: 900px;
+  }
+  .EventBoxSlide {
+    width: 900px;
+  }
 }/*# sourceMappingURL=home.styles.css.map */

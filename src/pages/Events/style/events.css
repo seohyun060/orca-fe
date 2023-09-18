@@ -346,6 +346,18 @@ circle {
     justify-content: center;
     flex-direction: column;
     margin: 100px auto;
-    width: 998px;
+    width: 900px;
+  }
+  .SectionTitle {
+    position: relative;
+    width: 900px;
+    font-size: 45px;
+  }
+  .EventCardPaging {
+    width: 900px;
+  }
+  .EventCard {
+    width: 368px;
+    height: 233px;
   }
 }/*# sourceMappingURL=events.css.map */

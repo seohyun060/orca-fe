@@ -203,6 +203,16 @@
     width: 235px;
     height: 458px;
   }
+  .ResearchImage {
+    width: 235px;
+    height: 285px;
+  }
+  .ResearchCategory {
+    font-size: 17px;
+  }
+  .ResearchTitle {
+    font-size: 18.5px;
+  }
   .insights-head {
     width: 900px;
   }

@@ -30,42 +30,44 @@
 }
 .home-intro-what {
   width: 948px;
-  height: 244px;
+  height: 364px;
   color: white;
   display: grid;
-  grid-template-columns: 304px 644px;
-  grid-template-rows: 98px 146px;
-  margin-top: 120px;
+  grid-template-columns: 1fr 2.02fr;
+  grid-template-rows: 1.5fr 1fr;
+  margin-top: 0px;
   position: relative;
   grid-template-areas: "head head" "about body";
 }
 .home-intro-what-head {
+  align-self: end;
   color: white;
-  font-size: 60px;
+  font-size: 40px;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 28px;
+  line-height: 70px;
   letter-spacing: normal;
   grid-area: head;
+  margin-bottom: 42px;
 }
 .home-intro-what-about {
   color: white;
-  font-size: 22px;
+  font-size: 20px;
   font-family: Pretendard;
   font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 28px;
   letter-spacing: normal;
-  width: 210px;
+  width: 230px;
   height: 28px;
   grid-area: about;
 }
 .home-intro-what-body {
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
@@ -247,7 +249,7 @@
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 28px;
+    line-height: 60px;
     letter-spacing: normal;
   }
   .home-intro-what-about {
@@ -422,7 +424,7 @@
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 28px;
+    line-height: 60px;
     letter-spacing: normal;
   }
   .home-intro-what-about {

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import '../styles/home.styles.scss';
 import { ResearcherList } from '@typedef/types';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import images from 'src/assets/images';
 
 type Props = {
@@ -31,7 +31,7 @@ const ResearcherBox = ({
 	leftPosition,
 	dotList,
 }: Props) => {
-    const { t } = useTranslation();
+	const { t } = useTranslation();
 	return (
 		<div className={`country${boxType}`}>
 			<div
@@ -44,45 +44,44 @@ const ResearcherBox = ({
 					mixBlendMode: 'multiply',
 				}}
 			></div>
-			{active ? (
-				<div
-					className='researchers'
-					style={{
-						top: topPosition,
-						left: leftPosition,
-					}}
-				>
-					<div className='researchers-head'>{t("researcher_list")}</div>
-					<img
-						className='researchers-back'
-						src={black === '' ? images.back_b : images.back_w}
-						onClick={onBackClick}
-					/>
-					<div className='researchers-body'>
-						{requestedItems.map((requestItem) => (
-							<div className='researcher-card'>
-								<img src={requestItem.profile} />
-								<span>{requestItem.name}</span>
-							</div>
-						))}
-					</div>
-					<img
-						className='researchers-go'
-						src={black === '' ? images.go_b : images.go_w}
-						onClick={onGoClick}
-					/>
-					<div className='researchers-dot'>
-						{dotList.map((dot, index) => (
-							<img src={dot} />
-						))}
-					</div>
+			{/* {active ? ( */}
+			<div
+				className={`researchers${active ? '-active' : ''}`}
+				style={{
+					top: topPosition,
+					left: leftPosition,
+				}}
+			>
+				<div className='researchers-head'>{t('researcher_list')}</div>
+				<img
+					className='researchers-back'
+					src={black === '' ? images.back_b : images.back_w}
+					onClick={onBackClick}
+				/>
+				<div className='researchers-body'>
+					{requestedItems.map((requestItem) => (
+						<div className='researcher-card'>
+							<img src={requestItem.profile} />
+							<span>{requestItem.name}</span>
+						</div>
+					))}
 				</div>
-			) : (
+				<img
+					className='researchers-go'
+					src={black === '' ? images.go_b : images.go_w}
+					onClick={onGoClick}
+				/>
+				<div className='researchers-dot'>
+					{dotList.map((dot, index) => (
+						<img src={dot} />
+					))}
+				</div>
+			</div>
+			{/* ) : (
 				''
-			)}
+			)} */}
 		</div>
 	);
-  
 };
 
 export default ResearcherBox;

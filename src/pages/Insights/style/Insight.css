@@ -199,6 +199,20 @@
 }
 
 @media (max-width: 1400px) {
+  .ResearchCard {
+    width: 210px;
+    height: 458px;
+  }
+  .ResearchImage {
+    width: 210px;
+    height: 254px;
+  }
+  .ResearchCategory {
+    font-size: 17px;
+  }
+  .ResearchTitle {
+    font-size: 18.5px;
+  }
   .insights-head {
     width: 900px;
   }

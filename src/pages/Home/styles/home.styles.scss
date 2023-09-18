@@ -640,3 +640,13 @@
 	flex-direction: row;
 	//나중에 디자인팀 질문
 }
+
+@media (max-width: 1400px) {
+  .EventBox {
+    width: 900px;
+  }
+
+  .EventBoxSlide {
+    width: 900px;
+  }
+}

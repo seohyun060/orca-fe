@@ -357,3 +357,28 @@ circle {
     width: 200px;
   }
 }
+
+@media (max-width: 1400px) {
+  .Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 100px auto;
+    width: 900px;
+  }
+
+  .SectionTitle {
+    position: relative;
+    width: 900px;
+    font-size: 45px;
+  }
+
+  .EventCardPaging {
+    width: 900px;
+  }
+
+  .EventCard {
+    width: 368px;
+    height: 233px;
+  }
+}

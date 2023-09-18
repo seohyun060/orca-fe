@@ -534,17 +534,17 @@
   }
   .researcher-map svg {
     width: 661px;
-    height: 337.66x;
+    height: 337.66px;
     margin-top: 9.86px;
     margin-left: 24.66px;
   }
   .researcher-map .country0, .researcher-map .country1, .researcher-map .country2, .researcher-map .country3 {
-    width: 96.9px;
-    height: 96.9px;
+    width: 87.5px;
+    height: 87.5px;
   }
   .researcher-map .country0 .country-box, .researcher-map .country1 .country-box, .researcher-map .country2 .country-box, .researcher-map .country3 .country-box {
-    width: 96.9px;
-    height: 96.9px;
+    width: 87.5px;
+    height: 87.5px;
     z-index: 50;
   }
   .researcher-map .country0 .country-box:hover, .researcher-map .country1 .country-box:hover, .researcher-map .country2 .country-box:hover, .researcher-map .country3 .country-box:hover {

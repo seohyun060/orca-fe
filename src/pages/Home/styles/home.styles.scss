@@ -43,21 +43,23 @@
 		flex-direction: column;
 		&-what {
 			width: 948px;
-			height: 244px;
+			height: 364px;
 			color: white;
 			display: grid;
-			grid-template-columns: 304px 644px;
-			grid-template-rows: 98px 146px;
-			margin-top: 120px;
+			grid-template-columns: 1fr 2.02fr;
+			grid-template-rows: 1.5fr 1fr;
+			margin-top: 0px;
 			//margin-left: 18.9583%;
 			position: relative;
 			&-head {
-				@include font-setting(white, 600, 60px, 28px);
+				align-self: end;
+				@include font-setting(white, 600, 60px, 70px);
 				grid-area: head;
+				margin-bottom: 42px;
 			}
 			&-about {
 				@include font-setting(white, 400, 22px, 28px);
-				width: 210px;
+				//width: 230px;
 				height: 28px;
 				grid-area: about;
 			}
@@ -197,9 +199,10 @@
 				//display: flex;
 				//flex-direction: column;
 				&-head {
-					@include font-setting(white, 600, 45px, 28px);
+					@include font-setting(white, 600, 45px, 60px);
 				}
 				&-about {
+					font-size: 18px;
 					margin-top: 20px;
 				}
 				&-body {
@@ -328,15 +331,17 @@
 				display: flex;
 				flex-direction: column;
 				&-head {
-					@include font-setting(white, 600, 45px, 28px);
+					align-self: start;
+					margin-bottom: 0px;
+					@include font-setting(white, 600, 30px, 45px);
 				}
 				&-about {
-					margin-top: 60px;
+					margin-top: 30px;
 				}
 				&-body {
 					width: 500px;
 					margin-top: 20px;
-					@include font-setting(white, 600, 25px, 28px);
+					@include font-setting(white, 600, 18px, 28px);
 				}
 			}
 			&-goal {
@@ -348,18 +353,18 @@
 				flex-direction: column;
 				//background-color: blue;
 				&-head {
-					@include font-setting(white, 600, 45px, 28px);
+					@include font-setting(white, 600, 30px, 28px);
 				}
 				&-body1 {
 					width: 500px;
 					margin-top: 50px;
 					margin-left: 0px;
-					@include font-setting(white, 600, 20px, 28px);
+					@include font-setting(white, 600, 18px, 28px);
 				}
 				&-body2 {
 					width: 500px;
 					margin-top: 15px;
-					@include font-setting(white, 600, 20px, 28px);
+					@include font-setting(white, 600, 18px, 28px);
 				}
 			}
 			&-contact {
@@ -457,11 +462,12 @@
 				display: flex;
 				flex-direction: column;
 				&-head {
-					@include font-setting(white, 600, 25px, 28px);
+					@include font-setting(white, 600, 19px, 28px);
 				}
 				&-about {
-					margin-top: 40px;
+					margin-top: 30px;
 					font-size: 17px;
+					font-size: 12px;
 				}
 				&-body {
 					width: 300px;
@@ -478,18 +484,18 @@
 				flex-direction: column;
 				//background-color: blue;
 				&-head {
-					@include font-setting(white, 600, 25px, 28px);
+					@include font-setting(white, 600, 19px, 28px);
 				}
 				&-body1 {
 					width: 400px;
-					margin-top: 50px;
+					margin-top: 30px;
 					height: 50px;
-					@include font-setting(white, 600, 13px, 1.7);
+					@include font-setting(white, 600, 12.5px, 1.7);
 				}
 				&-body2 {
 					width: 400px;
 					margin-top: 15px;
-					@include font-setting(white, 600, 13px, 1.7);
+					@include font-setting(white, 600, 12.5px, 1.7);
 				}
 			}
 			&-contact {

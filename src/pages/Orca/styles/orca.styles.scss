@@ -29,29 +29,32 @@
 		margin: auto;
 		background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
 		&-box {
-			display: grid;
-			grid-template-columns: 304px 644px;
-			grid-template-rows: 98px 146px;
-			position: relative;
 			width: 948px;
-			height: 244px;
-			margin-top: 290px;
+			height: 364px;
 			color: white;
+			display: grid;
+			grid-template-columns: 1fr 2.02fr;
+			grid-template-rows: 1.5fr 1fr;
+			margin-top: 213px;
+			//margin-left: 18.9583%;
+			position: relative;
 			&-head {
+				align-self: end;
+				@include font-setting(white, 600, 60px, 70px);
 				grid-area: head;
-				@include font-setting(white, 600, 60px, 28px);
+				margin-bottom: 42px;
 			}
 			&-about {
-				grid-area: about;
-				width: 210px;
-				height: 28px;
 				@include font-setting(white, 400, 22px, 28px);
+				//width: 230px;
+				height: 28px;
+				grid-area: about;
 			}
 			&-body {
+				@include font-setting(white, 600, 30px, 36.5px);
 				grid-area: body;
 				width: 644px;
 				height: 106px;
-				@include font-setting(white, 600, 30px, 36.5px);
 			}
 
 			grid-template-areas:
@@ -203,13 +206,17 @@
 			&-box {
 				width: 771px;
 				height: 250px;
+				&-head {
+					font-size: 45px;
+				}
 				&-about {
+					font-size: 20px;
 					margin-top: 20px;
 				}
 				&-body {
 					width: 542px;
 					margin-top: 20px;
-					@include font-setting(white, 600, 25px, 28px);
+					@include font-setting(white, 600, 25px, 35px);
 				}
 			}
 		}
@@ -218,6 +225,9 @@
 			&-box {
 				width: 771px;
 				height: 250px;
+				&-head {
+					font-size: 45px;
+				}
 				&-body1 {
 					width: 400px;
 				}
@@ -264,15 +274,17 @@
 				width: 600px;
 				height: 250px;
 				&-head {
-					@include font-setting(white, 600, 45px, 28px);
+					align-self: start;
+					@include font-setting(white, 600, 30px, 45px);
 				}
 				&-about {
-					margin-top: 60px;
+					font-size: 16px;
+					margin-top: 0px;
 				}
 				&-body {
 					width: 500px;
 					margin-top: 20px;
-					@include font-setting(white, 600, 25px, 28px);
+					@include font-setting(white, 600, 19px, 28px);
 				}
 			}
 		}
@@ -286,17 +298,17 @@
 
 				//background-color: blue;
 				&-head {
-					@include font-setting(black, 600, 45px, 28px);
+					@include font-setting(black, 600, 30px, 28px);
 				}
 				&-body1 {
 					width: 500px;
 					margin-top: 50px;
-					@include font-setting(black, 600, 20px, 28px);
+					@include font-setting(black, 600, 16px, 28px);
 				}
 				&-body2 {
 					width: 500px;
 					margin-top: 15px;
-					@include font-setting(black, 600, 20px, 28px);
+					@include font-setting(black, 600, 16px, 28px);
 				}
 			}
 		}
@@ -334,22 +346,23 @@
 		justify-content: center;
 		&-what {
 			width: 400px;
+			height: 500px;
 			&-box {
 				display: flex;
 				flex-direction: column;
 				width: 300px;
 				height: 250px;
 				&-head {
-					@include font-setting(white, 600, 25px, 28px);
+					@include font-setting(white, 600, 19px, 28px);
 				}
 				&-about {
-					margin-top: 40px;
-					font-size: 17px;
+					margin-top: 0px;
+					font-size: 14px;
 				}
 				&-body {
 					width: 300px;
 					margin-top: 10px;
-					@include font-setting(white, 600, 13px, 28px);
+					@include font-setting(white, 600, 12px, 20px);
 				}
 			}
 		}
@@ -360,19 +373,19 @@
 				display: flex;
 				flex-direction: column;
 				width: 300px;
-				height: 350px;
+				height: 200px;
 				&-head {
-					@include font-setting(black, 600, 25px, 28px);
+					@include font-setting(black, 600, 19px, 24px);
 				}
 				&-body1 {
 					width: 300px;
-					margin-top: 50px;
-					@include font-setting(black, 600, 13px, 28px);
+					margin-top: 30px;
+					@include font-setting(black, 600, 12px, 20px);
 				}
 				&-body2 {
 					width: 300px;
-					margin-top: 15px;
-					@include font-setting(black, 600, 13px, 28px);
+					//margin-top: 15px;
+					@include font-setting(black, 600, 12px, 20px);
 				}
 			}
 		}
@@ -404,8 +417,8 @@
 					}
 					&-body {
 						width: 200px;
-						font-size: 12px;
-						line-height: 1;
+						font-size: 11px;
+						line-height: 14px;
 					}
 				}
 			}

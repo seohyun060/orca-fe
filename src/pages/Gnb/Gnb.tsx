@@ -92,7 +92,11 @@ const gnb = ({
 			<div className='gnb-join' onClick={() => onItemClicked('/')}>
 				Join Us
 			</div>
-			<img src={images.language} className='gnb-language' />
+			<img
+				src={images.language}
+				className='gnb-language'
+				onClick={onLanguageClicked}
+			/>
 		</div>
 	);
 };

@@ -42,7 +42,7 @@
 .home-intro-what-head {
   align-self: end;
   color: white;
-  font-size: 40px;
+  font-size: 60px;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
@@ -54,20 +54,19 @@
 }
 .home-intro-what-about {
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   font-family: Pretendard;
   font-weight: 400;
   font-stretch: normal;
   font-style: normal;
   line-height: 28px;
   letter-spacing: normal;
-  width: 230px;
   height: 28px;
   grid-area: about;
 }
 .home-intro-what-body {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
@@ -253,6 +252,7 @@
     letter-spacing: normal;
   }
   .home-intro-what-about {
+    font-size: 18px;
     margin-top: 20px;
   }
   .home-intro-what-body {
@@ -418,23 +418,25 @@
     flex-direction: column;
   }
   .home-intro-what-head {
+    align-self: start;
+    margin-bottom: 0px;
     color: white;
-    font-size: 45px;
+    font-size: 30px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 60px;
+    line-height: 45px;
     letter-spacing: normal;
   }
   .home-intro-what-about {
-    margin-top: 60px;
+    margin-top: 30px;
   }
   .home-intro-what-body {
     width: 500px;
     margin-top: 20px;
     color: white;
-    font-size: 25px;
+    font-size: 18px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -450,7 +452,7 @@
   }
   .home-intro-goal-head {
     color: white;
-    font-size: 45px;
+    font-size: 30px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -463,7 +465,7 @@
     margin-top: 50px;
     margin-left: 0px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -475,7 +477,7 @@
     width: 500px;
     margin-top: 15px;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -612,7 +614,7 @@
   }
   .home-intro-what-head {
     color: white;
-    font-size: 25px;
+    font-size: 19px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -621,8 +623,9 @@
     letter-spacing: normal;
   }
   .home-intro-what-about {
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 17px;
+    font-size: 12px;
   }
   .home-intro-what-body {
     width: 300px;
@@ -644,7 +647,7 @@
   }
   .home-intro-goal-head {
     color: white;
-    font-size: 25px;
+    font-size: 19px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -654,10 +657,10 @@
   }
   .home-intro-goal-body1, .home-intro-goal-body2 {
     width: 400px;
-    margin-top: 50px;
+    margin-top: 30px;
     height: 50px;
     color: white;
-    font-size: 13px;
+    font-size: 12.5px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -669,7 +672,7 @@
     width: 400px;
     margin-top: 15px;
     color: white;
-    font-size: 13px;
+    font-size: 12.5px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;

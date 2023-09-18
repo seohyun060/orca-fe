@@ -21,6 +21,8 @@
 	grid-template-columns: repeat(8, 1fr);
 	grid-template-rows: repeat(4, 1fr);
 	svg {
+		width: 1126px;
+		height: 575px;
 		margin-top: 16.8px;
 		margin-left: 42px;
 	}
@@ -269,21 +271,21 @@
 		//margin-top: 0px;
 		//@extend .researcher-map;
 		svg {
-			width: 940px;
-			height: 480.2px;
+			width: 850px;
+			height: 434px;
 			margin-top: 12.68px;
 			margin-left: 31.71px;
 		}
-		width: 996.64px;
-		height: 498px;
+		width: 900px;
+		height: 450px;
 
 		.country0 {
-			width: 124.58px;
-			height: 124.58px;
+			width: 112.5px;
+			height: 112.5px;
 
 			.country-box {
-				width: 124.58px;
-				height: 124.58px;
+				width: 112.5px;
+				height: 112.5px;
 				z-index: 50;
 			}
 			.country-box:hover {
@@ -293,8 +295,8 @@
 				cursor: pointer;
 			}
 			.country-box-Off {
-				width: 124.58px;
-				height: 124.58px;
+				width: 112.5px;
+				height: 112.5px;
 			}
 			.researchers {
 				top: -24.9px;
@@ -564,13 +566,13 @@
 		//margin-top: 0px;
 		//@extend .researcher-map;
 		svg {
-			width: 731.11px;
-			height: 373.49px;
+			width: 661px;
+			height: 337.66x;
 			margin-top: 9.86px;
 			margin-left: 24.66px;
 		}
-		width: 775.16px;
-		height: 498px;
+		width: 700px;
+		height: 350px;
 
 		.country0 {
 			width: 96.9px;
@@ -587,8 +589,8 @@
 				cursor: pointer;
 			}
 			.country-box-Off {
-				width: 96.9px;
-				height: 96.9px;
+				width: 87.5px;
+				height: 87.5px;
 			}
 			.researchers {
 				top: -34.9px;
@@ -759,20 +761,20 @@
 		margin-top: 30px;
 		//@extend .researcher-map;
 		svg {
-			width: 417.78px;
-			height: 213.42px;
-			margin-top: 9.86px;
-			margin-left: 24.66px;
+			width: 377.85px;
+			height: 193px;
+			margin-top: 5.64px;
+			margin-left: 14.1px;
 		}
-		width: 442.95px;
-		height: 284.57px;
+		width: 400px;
+		height: 200px;
 
 		.country0 {
-			width: 55.37px;
-			height: 55.37px;
+			width: 50px;
+			height: 50px;
 			.country-box {
-				width: 55.37px;
-				height: 55.37px;
+				width: 50px;
+				height: 50px;
 				z-index: 50;
 			}
 			.country-box:hover {
@@ -782,8 +784,8 @@
 				cursor: pointer;
 			}
 			.country-box-Off {
-				width: 55.37px;
-				height: 55.37px;
+				width: 50px;
+				height: 50px;
 			}
 			.researchers {
 				width: 82.86px;

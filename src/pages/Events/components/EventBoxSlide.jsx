@@ -92,8 +92,9 @@ const EventBoxSlide = (props) => {
     makeDotbar();
   }, [currentEventSlide]);
 
-  useEffect(() => {
+  const changeCardSize = () => {
     const screenSize = window.innerWidth;
+    console.log(window.innerWidth)
 
     if (screenSize > 1400) {
       setCardSize(432+24)
@@ -102,10 +103,11 @@ const EventBoxSlide = (props) => {
       setCardSize(368+24)
       setCardHiddenSize(251)
     }
+  }
 
-    console.log(window.innerWidth)
-
-  });
+  useEffect(() => {
+    window.addEventListener('resize', changeCardSize)
+  }, []);
 
   return (
     <>

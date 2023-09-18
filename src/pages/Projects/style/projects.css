@@ -7,9 +7,16 @@
   margin: auto;
 }
 
+.ProjectSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 100px auto;
+  width: 1192px;
+}
+
 .ProjectExplore {
   display: grid;
-  grid-template-columns: 10fr 2fr;
   grid-template-rows: 36px;
 }
 
@@ -61,6 +68,7 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px;
+  width: 200px;
 }
 .SearchBar img {
   width: 20px;
@@ -82,7 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1192px;
+  width: 1040px;
   color: #000;
   font-family: Pretendard;
   font-size: 30px;
@@ -415,6 +423,9 @@
   height: 250px;
   flex-shrink: 0;
 }
+.ProjectCardContent.inProject {
+  width: 1040px;
+}
 .ProjectCardContent.shortForm {
   width: 1040px;
   height: 134px;
@@ -428,6 +439,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 
 .ProjectCardProgress {
@@ -502,7 +514,7 @@
   margin-top: 28px;
 }
 
-.LeadMoreButton {
+.ReadMoreButton {
   width: 192px;
   height: 44px;
   display: flex;
@@ -523,8 +535,14 @@
 }
 
 @media (max-width: 1400px) {
+  .ProjectSection {
+    width: 900px;
+  }
   .ProjectCardContent {
     width: 900px;
+  }
+  .ProjectCardContent.inProject {
+    width: 780px;
   }
   .ProjectCardContent.shortForm {
     width: 785px;
@@ -534,9 +552,38 @@
     padding: 16px 18px;
     margin: 20px 0px;
   }
+  .ProjectExploreUpperBar {
+    width: 780px;
+  }
+  .ProjectExploreUpperBar button {
+    font-size: 16px;
+    padding: 3px 22px;
+  }
+  .ProjectSelectionBar {
+    width: 210px;
+  }
+  .ProjectSelectionBar .title {
+    font-size: 16px;
+    padding: 9px 13px 9px 13px;
+  }
+  .ProjectSelectionBar .sub {
+    font-size: 16px;
+    padding: 15px 3px 15px 15px;
+  }
 }
 @media (max-width: 1023px) {
-  .ProjectCardContent.shortForm {
+  .ProjectSection {
+    width: 700px;
+  }
+  .ProjectCardContent {
+    width: 700px;
+    height: 185px;
+    padding: 16px 16px;
+  }
+  .ProjectCardContent.inProject {
+    width: 676px;
+  }
+  .ProjectCardContent.inProject.shortForm {
     width: 611px;
     height: 134px;
     flex-shrink: 0;
@@ -544,8 +591,45 @@
     padding: 16px 18px;
     margin: 20px 0px;
   }
+  .ProjectCardProgress {
+    font-size: 16.5px;
+  }
+  .ProjectCardID {
+    font-size: 15px;
+  }
+  .ProjectCardCategory {
+    padding: 3px 22.5px;
+    margin-top: 10.5px;
+    font-size: 16.5px;
+    line-height: 21px;
+  }
+  .ProjectCardTitle {
+    height: 48px;
+    font-size: 16.5px;
+    line-height: 24px;
+    margin-top: 7.5px;
+  }
+  .ProjectCardLocation {
+    font-size: 13.5px;
+    margin: 0px;
+  }
+  .ReadMoreButton {
+    width: 144px;
+    height: 33px;
+    font-size: 15px;
+    padding: 0px;
+    margin-bottom: 5px;
+  }
 }
 @media (max-width: 767px) {
+  .ProjectSection {
+    width: 400px;
+  }
+  .ProjectCardContent {
+    width: 400px;
+    height: 100px;
+    padding: 9px 9px;
+  }
   .ProjectCardContent.shortForm {
     width: 349px;
     height: 84px;
@@ -556,5 +640,37 @@
   }
   .ProjectCardContent.shortForm .ProjectCardTitle.shortForm {
     height: 30px;
+  }
+  .ProjectCardProgress {
+    font-size: 9.5px;
+    line-height: 12px;
+  }
+  .ProjectCardID {
+    font-size: 8.5px;
+    line-height: 12px;
+  }
+  .ProjectCardCategory {
+    padding: 1px 7px;
+    margin-top: 3.5px;
+    font-size: 5.5px;
+    line-height: 12px;
+  }
+  .ProjectCardTitle {
+    height: 27px;
+    font-size: 9.5px;
+    line-height: 13.5px;
+    margin-top: 4px;
+  }
+  .ProjectCardLocation {
+    font-size: 7.5px;
+    margin: 0px;
+  }
+  .ReadMoreButton {
+    width: 72px;
+    height: 20px;
+    font-size: 7px;
+    padding: 0px;
+    margin-bottom: 3px;
+    border-radius: 5px;
   }
 }/*# sourceMappingURL=projects.css.map */

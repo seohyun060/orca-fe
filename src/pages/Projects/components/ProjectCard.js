@@ -11,7 +11,7 @@ export default function ProjectCard(props) {
   const { t } = useTranslation();
 
   // projID를 통해 project정보 가져온 후 내용출력
-  const { shortForm, title, status, projID, category, location, projDate } =
+  const { shortForm, inProject, title, status, projID, category, location, projDate } =
     props;
 
   return shortForm ? (
@@ -24,7 +24,8 @@ export default function ProjectCard(props) {
       <div className="ProjectDate">{projDate}</div>
     </article>
   ) : (
-    <article className="ProjectCardContent">
+    <article className={inProject ? "ProjectCardContent inProject" : "ProjectCardContent"}>
+      {/* <article className="ProjectCardContent"> */}
       {/* 진행상황 및 프로젝트번호 */}
       <div className="RowBox">
         <p className="ProjectCardProgress">• {status}</p>
@@ -42,7 +43,7 @@ export default function ProjectCard(props) {
       <div className="RowBox">
         <p className="ProjectCardLocation">{t("locaion")} : {location}</p>
         <button
-          className="LeadMoreButton"
+          className="ReadMoreButton"
           // 추후 projID를 받아와 변경
           onClick={() => navigate("/projects/default")}
           // onClick={() => navigate("/project/" + {projID})}

@@ -358,7 +358,7 @@
   .home-research {
     position: relative;
     width: 900px;
-    height: 814px;
+    height: 750px;
     background-color: white;
     margin-bottom: 150px;
     margin: auto;
@@ -554,7 +554,7 @@
   .home-research {
     position: relative;
     width: 700px;
-    height: 814px;
+    height: 650px;
     background-color: white;
     margin-bottom: 150px;
     margin: auto;
@@ -749,7 +749,7 @@
   .home-research {
     position: relative;
     width: 400px;
-    height: 514px;
+    height: 480px;
     background-color: white;
     margin-bottom: 150px;
     margin: auto;
@@ -858,5 +858,29 @@
   }
   .EventBoxSlide {
     width: 900px;
+  }
+}
+@media (max-width: 1023px) {
+  .EventBox {
+    width: 700px;
+  }
+  .EventBoxSlide {
+    width: 700px;
+  }
+}
+@media (max-width: 767px) {
+  .EventBox {
+    width: 400px;
+  }
+  .EventBoxSlide {
+    width: 400px;
+    height: 300px;
+  }
+  .ViewButton {
+    width: 70px;
+    height: 24px;
+    border-radius: 5px;
+    font-size: 11px;
+    line-height: 25px;
   }
 }/*# sourceMappingURL=home.styles.css.map */

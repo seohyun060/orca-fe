@@ -125,7 +125,7 @@ const ProjectExplore = (props) => {
   }, [isCategoryChecked, isYearlyChecked, isStatusChecked]);
 
   return (
-    <section className="Section">
+    <section className="ProjectSection">
       <div className="SectionTitle">{t("project_explore")}</div>
       <div className="ProjectExplore">
         <div className="ProjectExploreUpperBar">
@@ -156,6 +156,7 @@ const ProjectExplore = (props) => {
           <div className="ProjectList">
             {tempData.map((temp) => (
               <ProjectCard
+                inProject={true}
                 title={temp.title}
                 status={temp.status}
                 projID={temp.projID}
@@ -244,7 +245,7 @@ const ProjectExplore = (props) => {
         </div>
       </div>
       <div className="ButtonArrange">
-        <button className="LeadMoreButton">
+        <button className="ReadMoreButton">
           <label>{t("read_more")}</label>
         </button>
       </div>

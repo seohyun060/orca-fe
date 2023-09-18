@@ -345,7 +345,7 @@ circle {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 100px auto;
+    margin: 50px auto;
     width: 900px;
   }
   .SectionTitle {
@@ -359,5 +359,130 @@ circle {
   .EventCard {
     width: 368px;
     height: 233px;
+  }
+}
+@media (max-width: 1023px) {
+  .Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 80px auto;
+    width: 700px;
+  }
+  .SectionTitle {
+    position: relative;
+    width: 700px;
+    font-size: 45px;
+    margin-bottom: 15px;
+  }
+  .EventCardPaging {
+    width: 700px;
+  }
+  .EventCard {
+    width: 286px;
+    height: 190px;
+    margin-right: 12px;
+  }
+  .EventCardMonth {
+    font-size: 15.5px;
+    line-height: 22px;
+    margin-bottom: 4px;
+    margin-left: 3px;
+  }
+  .EventCardDday {
+    font-size: 15.5px;
+    line-height: 22px;
+  }
+  .EventCardDate {
+    font-size: 35px;
+    line-height: 22px;
+    margin-bottom: 23px;
+  }
+  .EventCardTitle {
+    font-size: 17px;
+    line-height: 19.5px;
+    margin-left: 3px;
+    margin-bottom: 10px;
+  }
+  .EventCardTitle.InEvent {
+    height: 136px;
+  }
+  .EventCardTitle.CommingSoon {
+    margin: 26.5px 0px;
+    font-size: 31px;
+    line-height: 42px;
+  }
+  .EventCardTime {
+    font-size: 15.5px;
+    line-height: 22px;
+  }
+}
+@media (max-width: 767px) {
+  .Section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px auto;
+    width: 400px;
+  }
+  .SectionTitle {
+    position: relative;
+    width: 400px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .EventCardPaging {
+    width: 400px;
+  }
+  .EventCardPaging img {
+    width: 10px;
+    height: 5px;
+  }
+  .EventCardPaging img:first-child {
+    margin-right: 20px;
+    width: 5px;
+    height: 9px;
+  }
+  .EventCardPaging img:last-child {
+    margin-left: 20px;
+    width: 5px;
+    height: 9px;
+  }
+  .EventCard {
+    width: 163px;
+    height: 103px;
+  }
+  .EventCardMonth {
+    font-size: 9px;
+    line-height: 12.5px;
+    margin-bottom: 2px;
+    margin-left: 1.5px;
+  }
+  .EventCardDday {
+    font-size: 9px;
+    line-height: 12.5px;
+  }
+  .EventCardDate {
+    font-size: 20px;
+    line-height: 12.5px;
+    margin-bottom: 5px;
+  }
+  .EventCardTitle {
+    font-size: 9.5px;
+    line-height: 11px;
+    margin-left: 2px;
+    margin-bottom: 5.5px;
+  }
+  .EventCardTitle.InEvent {
+    height: 77.5px;
+  }
+  .EventCardTitle.CommingSoon {
+    margin: 15px 0px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .EventCardTime {
+    font-size: 9px;
+    line-height: 12.5px;
   }
 }/*# sourceMappingURL=events.css.map */

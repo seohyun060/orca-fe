@@ -77,18 +77,7 @@ const EventBoxSlide = (props) => {
   };
 
   useEffect(() => {
-    const screenSize = window.innerWidth;
-
-    if (screenSize > 1400) {
-      setCardSize(432+24)
-      setCardHiddenSize(152)
-    } else if (screenSize > 900) {
-      setCardSize(368+24)
-      setCardHiddenSize(251)
-    }
-
-    console.log(window.innerWidth)
-
+    changeCardSize();
     makeDotbar();
   }, [currentEventSlide]);
 
@@ -99,9 +88,15 @@ const EventBoxSlide = (props) => {
     if (screenSize > 1400) {
       setCardSize(432+24)
       setCardHiddenSize(152)
-    } else if (screenSize > 900) {
+    } else if (screenSize > 1023) {
       setCardSize(368+24)
       setCardHiddenSize(251)
+    } else if (screenSize > 767) {
+      setCardSize(286+24)
+      setCardHiddenSize(206)
+    } else {
+      setCardSize(163+12)
+      setCardHiddenSize(113)
     }
   }
 

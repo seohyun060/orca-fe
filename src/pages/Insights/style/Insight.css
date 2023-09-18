@@ -255,6 +255,24 @@
   }
 }
 @media (max-width: 1023px) {
+  .ResearchCard {
+    width: 162px;
+    height: 356px;
+    margin-right: 18px;
+  }
+  .ResearchImage {
+    width: 163px;
+    height: 197.5px;
+  }
+  .ResearchCategory {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .ResearchTitle {
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 20px;
+  }
   .insights {
     padding-left: 0px;
   }
@@ -313,6 +331,40 @@
   }
 }
 @media (max-width: 767px) {
+  .ResearchCard {
+    width: 93px;
+    height: 250px;
+    margin-right: 10px;
+  }
+  .ResearchImage {
+    width: 93px;
+    height: 112.5px;
+  }
+  .ResearchCategory {
+    font-size: 7.5px;
+    margin-top: 5.5px;
+    line-height: 10px;
+  }
+  .ResearchTitle {
+    font-size: 8px;
+    margin-top: 6px;
+    line-height: 11.5px;
+  }
+  .ViewCount {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .ViewCount img {
+    width: 10px;
+    height: 7px;
+    flex-shrink: 0;
+  }
+  .ViewCount label {
+    font-size: 10px;
+    line-height: 15px;
+    margin-left: 5px;
+  }
   .insights-head {
     width: 400px;
     padding-left: 0px;

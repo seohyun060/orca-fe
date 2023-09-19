@@ -646,6 +646,7 @@
     flex-direction: column;
   }
   .home-intro-goal-head {
+    width: 350px;
     color: white;
     font-size: 19px;
     font-family: Pretendard;

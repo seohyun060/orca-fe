@@ -1,681 +1,682 @@
 @mixin font-setting($color, $font-weight: normal, $font-size, $line-height) {
-  color: $color;
-  font-size: $font-size;
-  font-family: Pretendard;
-  @if $font-weight != normal {
-    font-weight: $font-weight;
-  }
-  font-stretch: normal;
-  font-style: normal;
-  line-height: $line-height;
-  letter-spacing: normal;
+	color: $color;
+	font-size: $font-size;
+	font-family: Pretendard;
+	@if $font-weight != normal {
+		font-weight: $font-weight;
+	}
+	font-stretch: normal;
+	font-style: normal;
+	line-height: $line-height;
+	letter-spacing: normal;
 }
 .home {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 
-  &-anime {
-    //animation section
-    width: 100%;
-    height: 727px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    img {
-      margin-top: 77px;
-    }
-  }
-  .intro-background {
-    width: 100%;
-    background-color: black;
-  }
-  &-intro {
-    //intro section
-    width: 1192px;
-    height: 1272px;
-    background-color: black;
-    margin: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    &-what {
-      width: 948px;
-      height: 364px;
-      color: white;
-      display: grid;
-      grid-template-columns: 1fr 2.02fr;
-      grid-template-rows: 1.5fr 1fr;
-      margin-top: 0px;
-      //margin-left: 18.9583%;
-      position: relative;
-      &-head {
-        align-self: end;
-        @include font-setting(white, 600, 60px, 70px);
-        grid-area: head;
-        margin-bottom: 42px;
-      }
-      &-about {
-        @include font-setting(white, 400, 22px, 28px);
-        //width: 230px;
-        height: 28px;
-        grid-area: about;
-      }
-      &-body {
-        @include font-setting(white, 600, 30px, 36.5px);
-        grid-area: body;
-        width: 644px;
-        height: 106px;
-      }
+	&-anime {
+		//animation section
+		width: 100%;
+		height: 727px;
+		background-color: black;
+		display: flex;
+		align-items: center;
+		position: relative;
+		justify-content: center;
+		img {
+			margin-top: 77px;
+		}
+	}
+	.intro-background {
+		width: 100%;
+		background-color: black;
+	}
+	&-intro {
+		//intro section
+		width: 1192px;
+		height: 1272px;
+		background-color: black;
+		margin: auto;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		&-what {
+			width: 948px;
+			height: 364px;
+			color: white;
+			display: grid;
+			grid-template-columns: 1fr 2.02fr;
+			grid-template-rows: 1.5fr 1fr;
+			margin-top: 0px;
+			//margin-left: 18.9583%;
+			position: relative;
+			&-head {
+				align-self: end;
+				@include font-setting(white, 600, 60px, 70px);
+				grid-area: head;
+				margin-bottom: 42px;
+			}
+			&-about {
+				@include font-setting(white, 400, 22px, 28px);
+				//width: 230px;
+				height: 28px;
+				grid-area: about;
+			}
+			&-body {
+				@include font-setting(white, 600, 30px, 36.5px);
+				grid-area: body;
+				width: 644px;
+				height: 106px;
+			}
 
-      grid-template-areas:
-        "head head"
-        "about body";
-    }
-    &-goal {
-      width: 1040px;
-      height: 298px;
-      display: grid;
-      grid-template-rows: 98px 116px 84px;
-      position: relative;
-      margin-top: 150px;
-      //margin-left: 18.9583%;
+			grid-template-areas:
+				'head head'
+				'about body';
+		}
+		&-goal {
+			width: 1040px;
+			height: 298px;
+			display: grid;
+			grid-template-rows: 98px 116px 84px;
+			position: relative;
+			margin-top: 150px;
+			//margin-left: 18.9583%;
 
-      &-head {
-        @include font-setting(white, 600, 60px, 28px);
-        grid-area: head;
-        width: 668px;
-        height: 28px;
-      }
-      &-body1 {
-        @include font-setting(white, 400, 22px, 28px);
-        width: 584px;
-        height: 84px;
-        grid-area: body1;
-        justify-self: end;
-      }
-      &-body2 {
-        @extend .home-intro-goal-body1;
-        grid-area: body2;
-      }
-      grid-template-areas:
-        "head"
-        "body1"
-        "body2";
-    }
-    &-contact {
-      color: white;
-      position: relative;
-      width: 1192px;
-      height: 160px;
-      margin-top: 150px;
-      //margin-left: 18.9583%;
-      &-head {
-        @include font-setting(white, 600, 30px, 28px);
-        margin-bottom: 16px;
-      }
-      &-email {
-        background-color: black;
-        width: 1192px;
-        height: 44px;
-        input {
-          width: 987px;
-          height: 44px;
-          border-radius: 10px;
-          border: 1px solid var(--Light-gray, #f0f0f0);
-          background-color: black;
-          @include font-setting(#f0f0f0, 300, 20px, 28px);
-          padding-left: 21px;
-          margin-right: 21px;
-        }
-        button {
-          border-radius: 10px;
-          width: 184px;
-          height: 44px;
-          background: var(--Light-gray, #f0f0f0);
-          @include font-setting(#3c3c3c, 300, 20px, 28px);
-        }
-        margin-bottom: 16px;
-      }
-      &-body {
-        @include font-setting(#9e9e9e, 400, 22px, 28px);
-      }
-    }
-  }
+			&-head {
+				@include font-setting(white, 600, 60px, 28px);
+				grid-area: head;
+				width: 668px;
+				height: 28px;
+			}
+			&-body1 {
+				@include font-setting(white, 400, 22px, 28px);
+				width: 584px;
+				height: 84px;
+				grid-area: body1;
+				justify-self: end;
+			}
+			&-body2 {
+				@extend .home-intro-goal-body1;
+				grid-area: body2;
+			}
+			grid-template-areas:
+				'head'
+				'body1'
+				'body2';
+		}
+		&-contact {
+			color: white;
+			position: relative;
+			width: 1192px;
+			height: 160px;
+			margin-top: 150px;
+			//margin-left: 18.9583%;
+			&-head {
+				@include font-setting(white, 600, 30px, 28px);
+				margin-bottom: 16px;
+			}
+			&-email {
+				background-color: black;
+				width: 1192px;
+				height: 44px;
+				input {
+					width: 987px;
+					height: 44px;
+					border-radius: 10px;
+					border: 1px solid var(--Light-gray, #f0f0f0);
+					background-color: black;
+					@include font-setting(#f0f0f0, 300, 20px, 28px);
+					padding-left: 21px;
+					margin-right: 21px;
+				}
+				button {
+					border-radius: 10px;
+					width: 184px;
+					height: 44px;
+					background: var(--Light-gray, #f0f0f0);
+					@include font-setting(#3c3c3c, 300, 20px, 28px);
+				}
+				margin-bottom: 16px;
+			}
+			&-body {
+				@include font-setting(#9e9e9e, 400, 22px, 28px);
+			}
+		}
+	}
 
-  &-research {
-    position: relative;
-    width: 1192px;
-    height: 814px;
-    background-color: white;
-    margin-bottom: 150px;
-    margin: auto;
+	&-research {
+		position: relative;
+		width: 1192px;
+		height: 814px;
+		background-color: white;
+		margin-bottom: 150px;
+		margin: auto;
 
-    &-head {
-      position: relative;
-      margin-top: 142px;
-      //margin-left: 18.9583%;
-      width: 1192px;
-      height: 46px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      span {
-        @include font-setting(black, 600, 60px, 28px);
-      }
-      button {
-        width: 161px;
-        height: 44px;
-        background: var(--Light-gray, #fff);
-        border-radius: 10px;
-        border: 1px solid var(--Dark-gray, #3c3c3c);
-        @include font-setting(#3c3c3c, 300, 20px, 28px);
-      }
-    }
-  }
+		&-head {
+			position: relative;
+			margin-top: 142px;
+			//margin-left: 18.9583%;
+			width: 1192px;
+			height: 46px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			span {
+				@include font-setting(black, 600, 60px, 28px);
+			}
+			button {
+				width: 161px;
+				height: 44px;
+				background: var(--Light-gray, #fff);
+				border-radius: 10px;
+				border: 1px solid var(--Dark-gray, #3c3c3c);
+				@include font-setting(#3c3c3c, 300, 20px, 28px);
+			}
+		}
+	}
 }
 
 @media (max-width: 1400px) {
-  .home {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+	.home {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 
-    .intro-background {
-      width: 100%;
-      background-color: black;
-    }
-    &-intro {
-      //intro section
-      width: 900px;
+		.intro-background {
+			width: 100%;
+			background-color: black;
+		}
+		&-intro {
+			//intro section
+			width: 900px;
 
-      &-what {
-        width: 771px;
-        height: 250px;
-        //margin-top: 200px;
-        //background-color: blue;
-        //display: flex;
-        //flex-direction: column;
-        &-head {
-          @include font-setting(white, 600, 45px, 60px);
-        }
-        &-about {
-          font-size: 18px;
-          margin-top: 20px;
-        }
-        &-body {
-          width: 542px;
-          margin-top: 20px;
-          @include font-setting(white, 600, 24px, 28px);
-        }
-      }
-      &-goal {
-        width: 771px;
-        height: 300px;
-        //margin-top: 200px;
-        //background-color: blue;
-        //display: flex;
-        //flex-direction: column;
-        //background-color: blue;
-        &-head {
-          @include font-setting(white, 600, 45px, 28px);
-        }
-        &-body1 {
-          width: 550px;
-          //margin-top: 50px;
-          //@include font-setting(black, 600, 20px, 28px);
-          margin-left: 60px;
-        }
-        &-body2 {
-          width: 550px;
-          margin-left: 0px;
-          //margin-top: 15px;
-          //@include font-setting(black, 600, 20px, 28px);
-        }
-      }
-      &-contact {
-        color: white;
-        position: relative;
-        width: 900px;
-        height: 160px;
-        margin-top: 150px;
-        //margin-left: 18.9583%;
-        &-head {
-          @include font-setting(white, 600, 25px, 28px);
-          margin-bottom: 16px;
-        }
-        &-email {
-          background-color: black;
-          width: 900px;
-          height: 44px;
-          input {
-            width: 750px;
-            height: 44px;
-            border-radius: 10px;
-            border: 1px solid var(--Light-gray, #f0f0f0);
-            background-color: black;
-            @include font-setting(#f0f0f0, 300, 20px, 28px);
-            padding-left: 21px;
-            margin-right: 20px;
-          }
-          button {
-            border-radius: 10px;
-            width: 184px;
-            height: 44px;
-            width: 130px;
-            background: var(--Light-gray, #f0f0f0);
-            @include font-setting(#3c3c3c, 300, 20px, 28px);
-          }
-          margin-bottom: 16px;
-        }
-        &-body {
-          @include font-setting(#9e9e9e, 400, 16px, 28px);
-        }
-      }
-    }
+			&-what {
+				width: 771px;
+				height: 250px;
+				//margin-top: 200px;
+				//background-color: blue;
+				//display: flex;
+				//flex-direction: column;
+				&-head {
+					@include font-setting(white, 600, 45px, 60px);
+				}
+				&-about {
+					font-size: 18px;
+					margin-top: 20px;
+				}
+				&-body {
+					width: 542px;
+					margin-top: 20px;
+					@include font-setting(white, 600, 24px, 28px);
+				}
+			}
+			&-goal {
+				width: 771px;
+				height: 300px;
+				//margin-top: 200px;
+				//background-color: blue;
+				//display: flex;
+				//flex-direction: column;
+				//background-color: blue;
+				&-head {
+					@include font-setting(white, 600, 45px, 28px);
+				}
+				&-body1 {
+					width: 550px;
+					//margin-top: 50px;
+					//@include font-setting(black, 600, 20px, 28px);
+					margin-left: 60px;
+				}
+				&-body2 {
+					width: 550px;
+					margin-left: 0px;
+					//margin-top: 15px;
+					//@include font-setting(black, 600, 20px, 28px);
+				}
+			}
+			&-contact {
+				color: white;
+				position: relative;
+				width: 900px;
+				height: 160px;
+				margin-top: 150px;
+				//margin-left: 18.9583%;
+				&-head {
+					@include font-setting(white, 600, 25px, 28px);
+					margin-bottom: 16px;
+				}
+				&-email {
+					background-color: black;
+					width: 900px;
+					height: 44px;
+					input {
+						width: 750px;
+						height: 44px;
+						border-radius: 10px;
+						border: 1px solid var(--Light-gray, #f0f0f0);
+						background-color: black;
+						@include font-setting(#f0f0f0, 300, 20px, 28px);
+						padding-left: 21px;
+						margin-right: 20px;
+					}
+					button {
+						border-radius: 10px;
+						width: 184px;
+						height: 44px;
+						width: 130px;
+						background: var(--Light-gray, #f0f0f0);
+						@include font-setting(#3c3c3c, 300, 20px, 28px);
+					}
+					margin-bottom: 16px;
+				}
+				&-body {
+					@include font-setting(#9e9e9e, 400, 16px, 28px);
+				}
+			}
+		}
 
-    &-research {
-      position: relative;
-      width: 900px;
-      height: 750px;
-      background-color: white;
-      margin-bottom: 150px;
-      margin: auto;
+		&-research {
+			position: relative;
+			width: 900px;
+			height: 750px;
+			background-color: white;
+			margin-bottom: 150px;
+			margin: auto;
 
-      &-head {
-        position: relative;
-        margin-top: 142px;
-        //margin-left: 18.9583%;
-        width: 900px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        span {
-          @include font-setting(black, 600, 45px, 28px);
-        }
-        button {
-          width: 161px;
-          height: 44px;
-          border-radius: 10px;
-          margin-left: 100px;
-          border: 1px solid var(--Dark-gray, #3c3c3c);
-          @include font-setting(#3c3c3c, 300, 20px, 28px);
-        }
-      }
-    }
-  }
+			&-head {
+				position: relative;
+				margin-top: 142px;
+				//margin-left: 18.9583%;
+				width: 900px;
+				height: 46px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				span {
+					@include font-setting(black, 600, 45px, 28px);
+				}
+				button {
+					width: 161px;
+					height: 44px;
+					border-radius: 10px;
+					margin-left: 100px;
+					border: 1px solid var(--Dark-gray, #3c3c3c);
+					@include font-setting(#3c3c3c, 300, 20px, 28px);
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 1023px) {
-  .home {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+	.home {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 
-    .intro-background {
-      width: 100%;
-      background-color: black;
-    }
-    &-intro {
-      //intro section
-      width: 700px;
+		.intro-background {
+			width: 100%;
+			background-color: black;
+		}
+		&-intro {
+			//intro section
+			width: 700px;
 
-      &-what {
-        width: 600px;
-        height: 250px;
-        //margin-top: 200px;
-        //background-color: blue;
-        display: flex;
-        flex-direction: column;
-        &-head {
-          align-self: start;
-          margin-bottom: 0px;
-          @include font-setting(white, 600, 30px, 45px);
-        }
-        &-about {
-          margin-top: 30px;
-        }
-        &-body {
-          width: 500px;
-          margin-top: 20px;
-          @include font-setting(white, 600, 18px, 28px);
-        }
-      }
-      &-goal {
-        width: 600px;
-        height: 250px;
-        //margin-top: 200px;
-        //background-color: blue;
-        display: flex;
-        flex-direction: column;
-        //background-color: blue;
-        &-head {
-          @include font-setting(white, 600, 30px, 28px);
-        }
-        &-body1 {
-          width: 500px;
-          margin-top: 50px;
-          margin-left: 0px;
-          @include font-setting(white, 600, 18px, 28px);
-        }
-        &-body2 {
-          width: 500px;
-          margin-top: 15px;
-          @include font-setting(white, 600, 18px, 28px);
-        }
-      }
-      &-contact {
-        color: white;
-        position: relative;
-        width: 700px;
-        height: 160px;
-        margin-top: 150px;
-        //margin-left: 18.9583%;
-        &-head {
-          @include font-setting(white, 600, 20px, 28px);
-          margin-bottom: 16px;
-        }
-        &-email {
-          background-color: black;
-          width: 700px;
-          height: 44px;
-          input {
-            width: 550px;
-            height: 44px;
-            border-radius: 10px;
-            border: 1px solid var(--Light-gray, #f0f0f0);
-            background-color: black;
-            @include font-setting(#f0f0f0, 300, 20px, 28px);
-            padding-left: 21px;
-            margin-right: 20px;
-          }
-          button {
-            border-radius: 10px;
-            width: 184px;
-            height: 44px;
-            width: 130px;
-            background: var(--Light-gray, #f0f0f0);
-            @include font-setting(#3c3c3c, 300, 20px, 28px);
-          }
-          margin-bottom: 16px;
-        }
-        &-body {
-          @include font-setting(#9e9e9e, 400, 14px, 28px);
-        }
-      }
-    }
+			&-what {
+				width: 600px;
+				height: 250px;
+				//margin-top: 200px;
+				//background-color: blue;
+				display: flex;
+				flex-direction: column;
+				&-head {
+					align-self: start;
+					margin-bottom: 0px;
+					@include font-setting(white, 600, 30px, 45px);
+				}
+				&-about {
+					margin-top: 30px;
+				}
+				&-body {
+					width: 500px;
+					margin-top: 20px;
+					@include font-setting(white, 600, 18px, 28px);
+				}
+			}
+			&-goal {
+				width: 600px;
+				height: 250px;
+				//margin-top: 200px;
+				//background-color: blue;
+				display: flex;
+				flex-direction: column;
+				//background-color: blue;
+				&-head {
+					@include font-setting(white, 600, 30px, 28px);
+				}
+				&-body1 {
+					width: 500px;
+					margin-top: 50px;
+					margin-left: 0px;
+					@include font-setting(white, 600, 18px, 28px);
+				}
+				&-body2 {
+					width: 500px;
+					margin-top: 15px;
+					@include font-setting(white, 600, 18px, 28px);
+				}
+			}
+			&-contact {
+				color: white;
+				position: relative;
+				width: 700px;
+				height: 160px;
+				margin-top: 150px;
+				//margin-left: 18.9583%;
+				&-head {
+					@include font-setting(white, 600, 20px, 28px);
+					margin-bottom: 16px;
+				}
+				&-email {
+					background-color: black;
+					width: 700px;
+					height: 44px;
+					input {
+						width: 550px;
+						height: 44px;
+						border-radius: 10px;
+						border: 1px solid var(--Light-gray, #f0f0f0);
+						background-color: black;
+						@include font-setting(#f0f0f0, 300, 20px, 28px);
+						padding-left: 21px;
+						margin-right: 20px;
+					}
+					button {
+						border-radius: 10px;
+						width: 184px;
+						height: 44px;
+						width: 130px;
+						background: var(--Light-gray, #f0f0f0);
+						@include font-setting(#3c3c3c, 300, 20px, 28px);
+					}
+					margin-bottom: 16px;
+				}
+				&-body {
+					@include font-setting(#9e9e9e, 400, 14px, 28px);
+				}
+			}
+		}
 
-    &-research {
-      position: relative;
-      width: 700px;
-      height: 650px;
-      background-color: white;
-      margin-bottom: 150px;
-      margin: auto;
+		&-research {
+			position: relative;
+			width: 700px;
+			height: 650px;
+			background-color: white;
+			margin-bottom: 150px;
+			margin: auto;
 
-      &-head {
-        position: relative;
-        margin-top: 142px;
-        //margin-left: 18.9583%;
-        width: 700px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        span {
-          @include font-setting(black, 600, 45px, 28px);
-        }
-        button {
-          width: 161px;
-          height: 44px;
-          border-radius: 10px;
-          border: 1px solid var(--Dark-gray, #3c3c3c);
-          @include font-setting(#3c3c3c, 300, 20px, 28px);
-        }
-      }
-    }
-  }
+			&-head {
+				position: relative;
+				margin-top: 142px;
+				//margin-left: 18.9583%;
+				width: 700px;
+				height: 46px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				span {
+					@include font-setting(black, 600, 45px, 28px);
+				}
+				button {
+					width: 161px;
+					height: 44px;
+					border-radius: 10px;
+					border: 1px solid var(--Dark-gray, #3c3c3c);
+					@include font-setting(#3c3c3c, 300, 20px, 28px);
+				}
+			}
+		}
+	}
 }
 // common
 @media (max-width: 767px) {
-  .home {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+	.home {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 
-    .intro-background {
-      width: 100%;
-      background-color: black;
-    }
-    &-intro {
-      //intro section
-      width: 400px;
+		.intro-background {
+			width: 100%;
+			background-color: black;
+		}
+		&-intro {
+			//intro section
+			width: 400px;
 
-      &-what {
-        width: 300px;
-        height: 250px;
-        //margin-top: 200px;
-        //background-color: blue;
-        display: flex;
-        flex-direction: column;
-        &-head {
-          @include font-setting(white, 600, 19px, 28px);
-        }
-        &-about {
-          margin-top: 30px;
-          font-size: 17px;
-          font-size: 12px;
-        }
-        &-body {
-          width: 300px;
-          margin-top: 10px;
-          @include font-setting(white, 600, 13px, 1.7);
-        }
-      }
-      &-goal {
-        width: 300px;
-        height: 350px;
-        //margin-top: 200px;
-        //background-color: blue;
-        display: flex;
-        flex-direction: column;
-        //background-color: blue;
-        &-head {
-          @include font-setting(white, 600, 19px, 28px);
-        }
-        &-body1 {
-          width: 400px;
-          margin-top: 30px;
-          height: 50px;
-          @include font-setting(white, 600, 12.5px, 1.7);
-        }
-        &-body2 {
-          width: 400px;
-          margin-top: 15px;
-          @include font-setting(white, 600, 12.5px, 1.7);
-        }
-      }
-      &-contact {
-        color: white;
-        position: relative;
-        width: 400px;
-        height: 160px;
-        margin-top: 150px;
-        //margin-left: 18.9583%;
-        &-head {
-          @include font-setting(white, 600, 15px, 28px);
-          margin-bottom: 16px;
-        }
-        &-email {
-          background-color: black;
-          width: 400px;
-          height: 44px;
-          input {
-            width: 280px;
-            height: 44px;
-            border-radius: 10px;
-            border: 1px solid var(--Light-gray, #f0f0f0);
-            background-color: black;
-            @include font-setting(#f0f0f0, 300, 12px, 28px);
-            padding-left: 21px;
-            margin-right: 20px;
-          }
-          button {
-            border-radius: 10px;
-            width: 184px;
-            height: 44px;
-            width: 100px;
-            background: var(--Light-gray, #f0f0f0);
-            @include font-setting(#3c3c3c, 300, 14px, 28px);
-          }
-          margin-bottom: 16px;
-        }
-        &-body {
-          @include font-setting(#9e9e9e, 400, 12px, 1.7);
-        }
-      }
-    }
+			&-what {
+				width: 300px;
+				height: 250px;
+				//margin-top: 200px;
+				//background-color: blue;
+				display: flex;
+				flex-direction: column;
+				&-head {
+					@include font-setting(white, 600, 19px, 28px);
+				}
+				&-about {
+					margin-top: 30px;
+					font-size: 17px;
+					font-size: 12px;
+				}
+				&-body {
+					width: 300px;
+					margin-top: 10px;
+					@include font-setting(white, 600, 13px, 1.7);
+				}
+			}
+			&-goal {
+				width: 300px;
+				height: 350px;
+				//margin-top: 200px;
+				//background-color: blue;
+				display: flex;
+				flex-direction: column;
+				//background-color: blue;
+				&-head {
+					width: 350px;
+					@include font-setting(white, 600, 19px, 28px);
+				}
+				&-body1 {
+					width: 400px;
+					margin-top: 30px;
+					height: 50px;
+					@include font-setting(white, 600, 12.5px, 1.7);
+				}
+				&-body2 {
+					width: 400px;
+					margin-top: 15px;
+					@include font-setting(white, 600, 12.5px, 1.7);
+				}
+			}
+			&-contact {
+				color: white;
+				position: relative;
+				width: 400px;
+				height: 160px;
+				margin-top: 150px;
+				//margin-left: 18.9583%;
+				&-head {
+					@include font-setting(white, 600, 15px, 28px);
+					margin-bottom: 16px;
+				}
+				&-email {
+					background-color: black;
+					width: 400px;
+					height: 44px;
+					input {
+						width: 280px;
+						height: 44px;
+						border-radius: 10px;
+						border: 1px solid var(--Light-gray, #f0f0f0);
+						background-color: black;
+						@include font-setting(#f0f0f0, 300, 12px, 28px);
+						padding-left: 21px;
+						margin-right: 20px;
+					}
+					button {
+						border-radius: 10px;
+						width: 184px;
+						height: 44px;
+						width: 100px;
+						background: var(--Light-gray, #f0f0f0);
+						@include font-setting(#3c3c3c, 300, 14px, 28px);
+					}
+					margin-bottom: 16px;
+				}
+				&-body {
+					@include font-setting(#9e9e9e, 400, 12px, 1.7);
+				}
+			}
+		}
 
-    &-research {
-      position: relative;
-      width: 400px;
-      height: 480px;
-      background-color: white;
-      margin-bottom: 150px;
-      margin: auto;
+		&-research {
+			position: relative;
+			width: 400px;
+			height: 480px;
+			background-color: white;
+			margin-bottom: 150px;
+			margin: auto;
 
-      &-head {
-        position: relative;
-        margin-top: 142px;
-        //margin-left: 18.9583%;
-        width: 400px;
-        height: 46px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        span {
-          @include font-setting(black, 600, 25px, 28px);
-        }
-        button {
-          width: 70px;
-          height: 24px;
-          border-radius: 5px;
+			&-head {
+				position: relative;
+				margin-top: 142px;
+				//margin-left: 18.9583%;
+				width: 400px;
+				height: 46px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				span {
+					@include font-setting(black, 600, 25px, 28px);
+				}
+				button {
+					width: 70px;
+					height: 24px;
+					border-radius: 5px;
 
-          border: 1px solid var(--Dark-gray, #3c3c3c);
-          @include font-setting(#3c3c3c, 300, 11px, 25px);
-        }
-      }
-    }
-  }
+					border: 1px solid var(--Dark-gray, #3c3c3c);
+					@include font-setting(#3c3c3c, 300, 11px, 25px);
+				}
+			}
+		}
+	}
 }
 
 .Section {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 100px auto;
-  width: 1192px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 100px auto;
+	width: 1192px;
 }
 
 .SectionTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  color: #000;
-  font-family: Pretendard;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 80px;
-  opacity: 0.9;
-  text-align: start;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+	color: #000;
+	font-family: Pretendard;
+	font-size: 60px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 80px;
+	opacity: 0.9;
+	text-align: start;
 }
 
 .ViewButton {
-  width: 161px;
-  height: 44px;
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid var(--Dark-gray, #3c3c3c);
-  color: var(--Dark-gray, #3c3c3c);
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 28px;
+	width: 161px;
+	height: 44px;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid var(--Dark-gray, #3c3c3c);
+	color: var(--Dark-gray, #3c3c3c);
+	text-align: center;
+	font-family: Pretendard;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 28px;
 }
 
 // Project
 
 .ProjectBox {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
 
 // Event
 
 .EventSection {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10px auto;
-  width: 1192px;
-  overflow: hidden;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 10px auto;
+	width: 1192px;
+	overflow: hidden;
 }
 
 .EventBox {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .EventBoxSlide {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  //나중에 디자인팀 질문
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	//나중에 디자인팀 질문
 }
 
 @media (max-width: 1400px) {
-  .EventBox {
-    width: 900px;
-  }
+	.EventBox {
+		width: 900px;
+	}
 
-  .EventBoxSlide {
-    width: 900px;
-  }
+	.EventBoxSlide {
+		width: 900px;
+	}
 }
 
 @media (max-width: 1023px) {
-  .EventBox {
-    width: 700px;
-  }
+	.EventBox {
+		width: 700px;
+	}
 
-  .EventBoxSlide {
-    width: 700px;
-  }
+	.EventBoxSlide {
+		width: 700px;
+	}
 }
 
 @media (max-width: 767px) {
-  .EventBox {
-    width: 400px;
-  }
+	.EventBox {
+		width: 400px;
+	}
 
-  .EventBoxSlide {
-    width: 400px;
-	height: 300px;
-  }
+	.EventBoxSlide {
+		width: 400px;
+		height: 300px;
+	}
 
-  .ViewButton {
-    width: 70px;
-    height: 24px;
-    border-radius: 5px;
-    font-size: 11px;
-    line-height: 25px;
-  }
+	.ViewButton {
+		width: 70px;
+		height: 24px;
+		border-radius: 5px;
+		font-size: 11px;
+		line-height: 25px;
+	}
 }

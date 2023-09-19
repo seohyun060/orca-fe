@@ -380,6 +380,45 @@ circle {
   .EventCard {
     width: 368px;
     height: 233px;
+
+    &.InEvent {
+      height: 330px;
+    }
+
+    &.Past {
+      width: 440px;
+      height: 280px;
+      margin-bottom: 30px;
+      margin-right: 20px;
+    }
+  }
+
+  .EventCardImage {
+    width: 440px;
+    height: 210px;
+  }
+
+  .EventCardPeriod {
+    &.Past {
+      height: 70px;
+      padding: 7px;
+    }
+  }
+
+  .EventCardDate {
+    &.Past {
+      font-size: 15px;
+    }
+  }
+
+  .EventCardTitle {
+    &.Past {
+      font-size: 22px;
+      line-height: 28px;
+    }
+    &.InEvent {
+       height: 120px;
+    }
   }
 }
 
@@ -399,6 +438,12 @@ circle {
     margin-bottom: 15px;
   }
 
+  .SubPhrase {
+    font-size: 25px;
+    line-height: 28px;
+    margin-bottom: 30px;
+  }
+
   .EventCardPaging {
     width: 700px;
   }
@@ -407,6 +452,29 @@ circle {
     width: 286px;
     height: 190px;
     margin-right: 12px;
+
+    &.InEvent {
+      height: 245px;
+    }
+
+    &.Past {
+      width: 340px;
+      height: 210px;
+      margin-bottom: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  .EventCardImage {
+    width: 340px;
+    height: 157px;
+  }
+
+  .EventCardPeriod {
+    &.Past {
+      height: 53px;
+      padding: 5px;
+    }
   }
 
   .EventCardMonth {
@@ -427,10 +495,7 @@ circle {
     margin-bottom: 23px;
 
     &.Past {
-      // color: var(--Midium-gray, #9e9e9e);
-      // font-size: 20px;
-      // font-weight: 300;
-      // margin: 0px;
+      font-size: 12px;
     }
   }
 
@@ -440,16 +505,12 @@ circle {
     margin-left: 3px;
     margin-bottom: 10px;
     &.InEvent {
-      height: 136px;
+      height: 100px;
     }
 
     &.Past {
-      // color: #000;
-      // font-size: 30px;
-      // line-height: 35px;
-      // overflow: hidden;
-      // height: 40px;
-      // margin: 0px;
+      font-size: 16px;
+      line-height: 20px;
     }
 
     &.CommingSoon {
@@ -471,18 +532,27 @@ circle {
     justify-content: center;
     flex-direction: column;
     margin: 0px auto;
-    width: 400px;
+    width: 350px;
   }
 
   .SectionTitle {
     position: relative;
-    width: 400px;
+    width: 350px;
     font-size: 25px;
     line-height: 30px;
   }
 
+  .SubPhrase {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }  
+
   .EventCardPaging {
-    width: 400px;
+    width: 350px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+
     img {
       width: 10px;
       height: 5px;
@@ -502,6 +572,19 @@ circle {
   .EventCard {
     width: 163px;
     height: 103px;
+    
+    &.InEvent {
+      height: 155px;
+    }
+    &.Past {
+      height: 225px;
+    }
+  }
+  
+  .EventCardPeriod {
+    &.Past {
+      height: 120px;
+    }
   }
 
   .EventCardMonth {

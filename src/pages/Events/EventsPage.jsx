@@ -33,7 +33,7 @@ const EventsPage = (props) => {
           ))}
         </div>
         <div className="ButtonArrange">
-          <button className="LeadMoreButton">
+          <button className="ReadMoreButton">
             <label>{t("read_more")}</label>
           </button>
         </div>

@@ -92,8 +92,8 @@ const EventBoxSlide = (props) => {
       setCardSize(368+24)
       setCardHiddenSize(251)
     } else if (screenSize > 767) {
-      setCardSize(286+24)
-      setCardHiddenSize(206)
+      setCardSize(286+12)
+      setCardHiddenSize(182)
     } else {
       setCardSize(163+12)
       setCardHiddenSize(113)

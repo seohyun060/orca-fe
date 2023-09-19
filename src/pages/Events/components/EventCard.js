@@ -41,7 +41,7 @@ export default function EventCard(props) {
       <img className="EventCardImage" src={image}></img>
       <div className="EventCardPeriod Past">
         <div className="EventCardTitle Past">{title}</div>
-        <div className="EventDate Past">{makeFullDateFormat()}</div>
+        <div className="EventCardDate Past">{makeFullDateFormat()}</div>
       </div>
     </article>
   ) : inEvent ? (

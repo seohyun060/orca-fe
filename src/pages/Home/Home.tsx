@@ -13,21 +13,21 @@ import HomeResearcherContainer from './containers/HomeResearcherContainer';
 import FooterContainer from '../Footer/containers/FooterContainer';
 import './styles/home.styles.scss';
 type Props = {
-  route: string;
+	route: string;
 };
 const Home = ({ route }: Props) => {
-  return (
-    <div className='home'>
-      <div className='home-anime'>
-        <img src={images.logo_orca} />
-      </div>
-      <HomeIntroContainer />
-      <HomeResearcherContainer route={route} />
-      <HomeProjects />
-      <HomeEvents />
-      <HomeInsights />
-    </div>
-  );
+	return (
+		<div className='home'>
+			<div className='home-anime'>
+				<img src={images.logo_orca} />
+			</div>
+			<HomeIntroContainer />
+			<HomeResearcherContainer route={route} />
+			<HomeProjects />
+			<HomeEvents />
+			<HomeInsights />
+		</div>
+	);
 };
 
 export default Home;

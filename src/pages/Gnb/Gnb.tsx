@@ -11,6 +11,7 @@ type Props = {
 	onItemClicked: (item: string) => void;
 	menuToggle: boolean;
 	onMenuToggleClicked: () => void;
+	setMenuToggle: any;
 };
 
 const gnb = ({
@@ -22,6 +23,7 @@ const gnb = ({
 	onItemClicked,
 	menuToggle,
 	onMenuToggleClicked,
+	setMenuToggle,
 }: Props) => {
 	return (
 		<div className={`gnb${gnbColor}`}>
@@ -31,17 +33,18 @@ const gnb = ({
 				className='gnb-logo'
 				onClick={() => {
 					onItemClicked('/');
+					setMenuToggle(false);
 				}}
 			/>
 			{!menuToggle ? (
 				<img
-					src={images.menu}
+					src={gnbColor === '-white' ? images.menu_b : images.menu}
 					className='gnb-bar'
 					onClick={onMenuToggleClicked}
 				/>
 			) : (
 				<img
-					src={images.gnb_back}
+					src={gnbColor === '-white' ? images.gnb_back_b : images.gnb_back}
 					className='gnb-bar'
 					onClick={onMenuToggleClicked}
 				/>
@@ -93,7 +96,7 @@ const gnb = ({
 				Join Us
 			</div>
 			<img
-				src={images.language}
+				src={gnbColor === '-white' ? images.language_b : images.language}
 				className='gnb-language'
 				onClick={onLanguageClicked}
 			/>

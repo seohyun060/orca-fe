@@ -375,6 +375,7 @@
 				width: 300px;
 				height: 200px;
 				&-head {
+					width: 300px;
 					@include font-setting(black, 600, 19px, 24px);
 				}
 				&-body1 {

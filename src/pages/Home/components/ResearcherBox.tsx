@@ -3,6 +3,8 @@ import '../styles/home.styles.scss';
 import { ResearcherList } from '@typedef/types';
 import { useTranslation } from 'react-i18next';
 import images from 'src/assets/images';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type Props = {
 	requestedItems: ResearcherList;
@@ -16,6 +18,7 @@ type Props = {
 	topPosition: string;
 	leftPosition: string;
 	dotList: string[];
+	goTransition: boolean;
 };
 
 const ResearcherBox = ({
@@ -30,6 +33,7 @@ const ResearcherBox = ({
 	topPosition,
 	leftPosition,
 	dotList,
+	goTransition,
 }: Props) => {
 	const { t } = useTranslation();
 	return (
@@ -58,14 +62,25 @@ const ResearcherBox = ({
 					src={black === '' ? images.back_b : images.back_w}
 					onClick={onBackClick}
 				/>
-				<div className='researchers-body'>
-					{requestedItems.map((requestItem) => (
-						<div className='researcher-card'>
-							<img src={requestItem.profile} />
-							<span>{requestItem.name}</span>
-						</div>
-					))}
-				</div>
+				<AnimatePresence>
+					<div className='researchers-body'>
+						{requestedItems.map((requestItem, index) => (
+							<motion.div
+								layout
+								initial={{ x: goTransition ? 100 : -100, opacity: 0 }}
+								animate={{ x: 0, opacity: 1 }}
+								exit={{ x: goTransition ? -100 : 100, opacity: 0 }}
+								transition={{ duration: 0.3 }}
+								className='researcher-card'
+								//key={`${requestItem.name}-${index}`}
+								key={`${requestItem.name}`}
+							>
+								<img src={requestItem.profile} />
+								<span>{requestItem.name}</span>
+							</motion.div>
+						))}
+					</div>
+				</AnimatePresence>
 				<img
 					className='researchers-go'
 					src={black === '' ? images.go_b : images.go_w}

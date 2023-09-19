@@ -333,7 +333,8 @@
   }
   .insights-gnb-body button {
     padding: 5px 10px;
-    font-size: 13px;
+    font-size: 11px;
+    line-height: 15px;
   }
   .insights-body {
     grid-template-columns: repeat(2, 1fr);
@@ -364,7 +365,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 20px;
-    line-height: 1.5; /* 145.455% */
+    line-height: 1; /* 145.455% */
   }
   .insights-body .insight-info-date {
     font-size: 15px;

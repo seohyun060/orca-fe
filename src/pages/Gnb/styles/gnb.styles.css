@@ -173,6 +173,29 @@
   position: absolute;
   right: 30px;
 }
+.gnb .globeBox, .gnb-white .globeBox {
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 48px;
+  width: 51px;
+  height: 60px;
+  border: 0.5px solid var(--Light-gray, #f0f0f0);
+  background-color: black;
+}
+.gnb .globeBox-kr, .gnb-white .globeBox-kr, .gnb .globeBox-en, .gnb-white .globeBox-en {
+  height: 30px;
+  color: #fff;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 30px;
+  text-align: center;
+}
+.gnb .globeBox-en, .gnb-white .globeBox-en {
+  border-bottom: 0.5px solid var(--Light-gray, #f0f0f0);
+}
 
 .gnb-white {
   background: rgba(255, 255, 255, 0.8);
@@ -495,6 +518,9 @@
     display: none;
   }
   .gnb-language {
+    display: block;
+  }
+  .gnb .globeBox, .gnb-white .globeBox {
     display: block;
   }
   .gnb-white {

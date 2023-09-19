@@ -20,7 +20,6 @@
 .ProjectExplore {
   display: grid;
   // grid-template-columns: 10fr 2fr;
-  grid-template-rows: 36px;
 }
 
 .ProjectExploreUpperBar {
@@ -135,11 +134,17 @@
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
+
+    img {
+      width: 18px;
+      height: 10px;
+    }
   }
 
   .sub {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #000;
     font-family: Pretendard;
     font-size: 22px;
@@ -212,6 +217,7 @@
 }
 
 .ProjectDetailsSection {
+  display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 60px auto;
@@ -575,12 +581,17 @@
 @media (max-width: 1400px) {
   .ProjectSection {
     width: 900px;
+    margin-top: 80px;
   }
 
   .ProjectCardContent {
     width: 900px;
+    margin-bottom: 13px;
     &.inProject {
       width: 780px;
+      .ProjectCardTitle {
+        width: 75%;
+      }
     }
     &.shortForm {
       width: 785px;
@@ -601,34 +612,159 @@
   }
 
   .ProjectSelectionBar {
+    margin: 13px 0px 2.5px 16px;
     width: 210px;
     .title {
       font-size: 16px;
-      padding: 9px 13px 9px 13px;
+      padding: 9px 15px 9px 13px;
+      line-height: 18px;
+      img {
+        width: 16px;
+        height: 9px;
+      }
     }
     .sub {
       font-size: 16px;
       padding: 15px 3px 15px 15px;
+      line-height: 18px;
+      align-items: center;
+      margin: 0px 9px;
+    }
+    .imageRotate {
+      transform: rotate(180deg);
     }
   }
 
-  // .checkbox {
-  //   width: 20px;
-  //   height: 20px;
-  // }
+  .ProjectList {
+    margin-top: 13px;
+  }
+
+  .ResultEmpty {
+    width: 780px;
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkboxChecked {
+    width: 20px;
+    height: 20px;
+    padding: 4.5px 1.2px 4.5px 2.2px;
+  }
+
+  // ProjectDetail
+
+  .ProjectDetailsSection {
+    width: 900px;
+  }
+
+  .ProjectTitle {
+    width: 640px;
+  }
+
+  .ProjectGird {
+    grid-template-columns: 640px 2fr;
+  }
+
+  .StudyInformation {
+    width: 310px;
+    height: 450px;
+
+    .Information {
+      margin: 21px 0px 21px 32px;
+    }
+  }
 }
 
 @media (max-width: 1023px) {
   .ProjectSection {
     width: 700px;
+    margin-top: 50px;
+  }
+
+  .ProjectExploreUpperBar {
+    width: 550px;
+    button {
+      font-size: 12px;
+      padding: 2px 14px;
+    }
+  }
+
+  .ProjectSelectionBar {
+    margin: 8px 0px 1px 10px;
+    width: 135px;
+    .title {
+      font-size: 10px;
+      padding: 6px 10px 6px 8px;
+      line-height: 14px;
+      img {
+        width: 12px;
+        height: 7px;
+      }
+    }
+    .sub {
+      font-size: 10px;
+      padding: 10px 2px 10px 10px;
+      line-height: 12px;
+      margin: 0px 8px;
+    }
+  }
+
+  .ProjectList {
+    margin-top: 8px;
+  }
+
+  .SearchBar {
+    width: 140px;
+    height: 30px;
+
+    padding-left: 8px;
+    padding-right: 4px;
+
+    input {
+      font-size: 14px;
+      line-height: 20px;
+      width: 100px;
+    }
+
+    img {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+  }
+
+  .ResultEmpty {
+    width: 500px;
+    font-size: 13px;
+    line-height: 14px;
+  }
+
+  .checkbox {
+    width: 13px;
+    height: 13px;
+  }
+
+  .checkboxChecked {
+    width: 13px;
+    height: 13px;
+    padding: 3px 0.8px 3px 1.4px;
   }
 
   .ProjectCardContent {
     width: 700px;
     height: 185px;
+    margin-bottom: 8px;
     padding: 16px 16px;
     &.inProject {
-      width: 676px;
+      width: 550px;
+      .ProjectCardTitle {
+        width: 85%;
+      }
       &.shortForm {
         width: 611px;
         height: 134px;
@@ -674,17 +810,80 @@
     padding: 0px;
     margin-bottom: 5px;
   }
+
+  .ProjectDetailsSection {
+    width: 700px;
+  }
+
+  .ProjectTitle {
+    width: 498px;
+  }
+
+  .ProjectGird {
+    grid-template-columns: 498px 1fr;
+  }
+
+  .StudyInformation {
+    width: 195px;
+    height: 283px;
+
+    .Information {
+      margin: 10px 0px 10px 18px;
+    }
+
+    .SubjectName {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .Content {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
 }
 
 @media (max-width: 767px) {
   .ProjectSection {
     width: 400px;
+    margin-top: 0px;
+  }
+
+  .ProjectExploreUpperBar {
+    width: 310px;
+    button {
+      font-size: 5px;
+      padding: 1px 5px;
+      line-height: 7px;
+    }
+  }
+
+  .SearchBar {
+    width: 80px;
+    height: 20.5px;
+
+    padding-left: 4.5px;
+    padding-right: 2px;
+
+    input {
+      font-size: 8px;
+      line-height: 11.5px;
+      width: 57px;
+    }
+
+    img {
+      width: 7px;
+      height: 7px;
+      flex-shrink: 0;
+    }
   }
 
   .ProjectCardContent {
     width: 400px;
     height: 100px;
     padding: 9px 9px;
+    &.inProject {
+      width: 310px;
+    }
     &.shortForm {
       width: 349px;
       height: 84px;
@@ -736,5 +935,211 @@
     padding: 0px;
     margin-bottom: 3px;
     border-radius: 5px;
+  }
+
+  .ProjectSelectionBar {
+    margin: 8px 0px 1px 0px;
+    width: 80px;
+    .title {
+      font-size: 5.5px;
+      padding: 3.5px 5.5px 3.5px 4.5px;
+      line-height: 15.5px;
+      img {
+        width: 6.5px;
+        height: 4px;
+      }
+    }
+    .sub {
+      font-size: 5.5px;
+      padding: 5.5px 1px 5.5px 5.5px;
+      line-height: 9px;
+      margin: 0px 4px;
+    }
+
+    .checkbox {
+      width: 10px;
+      height: 10px;
+    }
+
+    .checkboxChecked {
+      width: 10px;
+      height: 10px;
+      padding: 1.5px 0.4px 1.5px 0.7px;
+    }
+  }
+
+
+  ///////////////////////////////////////
+  /// ////////////////////////////////////
+  /// ///////////////////////////////////
+  /// ////////////////////////////////////
+  /// ///////////////////////////////////
+  /// ////////////////////////////////////
+  /// ////////////////////////////////////
+  /// /////////////////////////////////
+  /// ///////////////////////////////////
+  /// /////////////////////////////////
+
+  .Article {
+    .SubjectName {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    .Content {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  .Article:last-child {
+    border-bottom: 0px;
+  }
+
+  .ProjectDetailsSection {
+    margin: 0px auto;
+    width: 330px;
+  }
+
+  .BackImage {
+    width: 44px;
+    height: 14px;
+  }
+
+  .ProjectTitle {
+    font-size: 25px;
+    line-height: 34px;
+    width: 330px;
+  }
+
+  .ProjectGird {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 400px;
+  }
+
+  .ArticleTitle {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .StudyOverview {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .StudyOverviewContents {
+    .Contents {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  .ProjectOfficial {
+    margin-top: 50px;
+
+    .Contents {
+      font-size: 15px;
+      line-height: 20px;
+      margin-top: 10px;
+    }
+  }
+
+  .ProjectCondition {
+    button {
+      label {
+        font-size: 15px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .ShowMoreButton {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .StudyInformation {
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+    margin: 40px 0px 0px 0px;
+
+    .Information {
+      margin: 10px 0px 10px 18px;
+    }
+
+    .SubjectName {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .Content {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  .Contact {
+    .Information {
+      margin-top: 20px;
+      div {
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .ParticipationCreteria {
+    .ArticleTitle {
+      margin-bottom: 0px;
+    }
+  }
+
+  .MenuBar {
+    padding: 10px 20px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .MenuBarContent {
+    padding: 10px 0px;
+    font-size: 15px;
+    line-height: 28px;
+  }
+
+  .StudyPlan {
+    .ArticleTitle {
+      margin-bottom: 10px;
+    }
+  }
+
+  .CandI {
+    padding-bottom: 20px;
+
+    .SubjectName {
+      padding-top: 20px;
+    }
+  }
+
+  .CandIInfo {
+    font-size: 15px;
+    line-height: 20px;
+    margin: 10px 0px;
+
+    .Link {
+      display: inline-flex;
+      padding: 4px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-right: 24px;
+      background: var(--Light-gray, #f0f0f0);
+    }
+
+    .SeparateLine {
+      margin: 0px 30px;
+      flex-shrink: 0;
+      stroke-width: 1px;
+      stroke: #000;
+    }
   }
 }

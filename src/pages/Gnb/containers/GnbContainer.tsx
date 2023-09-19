@@ -39,12 +39,17 @@ const GnbContainer = ({ location }: Props) => {
 	const [gnbColor, setGnbColor] = useState('');
 	const [scrollPosition, setScrollPosition] = useState(0);
 	const [mobile, setMobile] = useState(false);
+	const [globe, setGlobe] = useState(false);
 	const [menuToggle, setMenuToggle] = useState(false);
 
 	const { i18n, t } = useTranslation();
 	const onMenuToggleClicked = useCallback(() => {
 		setMenuToggle((prev) => !prev);
 	}, []);
+	const onGlobeClicked = useCallback(() => {
+		setGlobe((prev) => !prev);
+	}, []);
+
 	const onItemClicked = useCallback(
 		(path: string) => {
 			if (path === '/custom') {
@@ -126,6 +131,10 @@ const GnbContainer = ({ location }: Props) => {
 				menuToggle={menuToggle}
 				onMenuToggleClicked={onMenuToggleClicked}
 				setMenuToggle={setMenuToggle}
+				globe={globe}
+				onGlobeClicked={onGlobeClicked}
+				setLanguage={setLanguage}
+				i18n={i18n}
 			/>
 		</div>
 	);

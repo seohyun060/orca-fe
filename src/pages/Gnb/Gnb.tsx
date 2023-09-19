@@ -12,6 +12,10 @@ type Props = {
 	menuToggle: boolean;
 	onMenuToggleClicked: () => void;
 	setMenuToggle: any;
+	globe: boolean;
+	onGlobeClicked: any;
+	setLanguage: any;
+	i18n: any;
 };
 
 const gnb = ({
@@ -24,6 +28,10 @@ const gnb = ({
 	menuToggle,
 	onMenuToggleClicked,
 	setMenuToggle,
+	globe,
+	onGlobeClicked,
+	setLanguage,
+	i18n,
 }: Props) => {
 	return (
 		<div className={`gnb${gnbColor}`}>
@@ -98,8 +106,39 @@ const gnb = ({
 			<img
 				src={gnbColor === '-white' ? images.language_b : images.language}
 				className='gnb-language'
-				onClick={onLanguageClicked}
+				//onClick={onLanguageClicked}
+				onClick={onGlobeClicked}
 			/>
+			{globe ? (
+				<div className='globeBox'>
+					<div
+						className='globeBox-en'
+						onClick={() => {
+							setLanguage('En');
+							i18n.changeLanguage('en');
+						}}
+						style={{
+							backgroundColor: language === 'En' ? '#3c3c3c' : '',
+						}}
+					>
+						EN
+					</div>
+					<div
+						className='globeBox-kr'
+						onClick={() => {
+							setLanguage('Kr');
+							i18n.changeLanguage('kr');
+						}}
+						style={{
+							backgroundColor: language === 'Kr' ? '#3c3c3c' : '',
+						}}
+					>
+						KR
+					</div>
+				</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

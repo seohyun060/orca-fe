@@ -110,7 +110,7 @@
   width: 825px;
 }
 .insights-gnb-body button {
-  padding: 4px 30px;
+  padding: 12px 30px;
   border-bottom: 1px solid;
   background: #fff;
   text-align: center;
@@ -295,8 +295,8 @@
     width: 700px;
   }
   .insights-gnb-body button {
-    font-size: 18px;
-    padding: 5px 30px;
+    font-size: 16.7px;
+    padding: 11px 30px;
   }
   .insights-body {
     width: 700px;
@@ -385,7 +385,7 @@
     width: 400px;
   }
   .insights-gnb-body button {
-    padding: 5px 10px;
+    padding: 5px 13px;
     font-size: 11px;
     line-height: 15px;
   }

@@ -24,26 +24,29 @@ const ResearcherContainer = ({ location }: Props) => {
 	const [readMore, setReadMore] = useState(false);
 	const [containerHeight, setContainerHeight] = useState('1742px');
 	const [prevHeight, setPrevHeight] = useState('1742px');
+	const [filteredList, setFilteredList] = useState<ResearcherList>([]);
+	const [slicedList, setSlicedList] = useState<ResearcherList>([]);
 	const onReadMoreClick = useCallback(() => {
 		if (filteredList.length > 16) {
 			setPrevHeight(containerHeight);
+
 			setReadMore((prev) => !prev);
 			console.log(prevHeight, containerHeight);
 		}
-	}, [readMore]);
+	}, [readMore, filteredList]);
 	const onSetSearch = useCallback(
 		(e: EChange) => {
 			setSearch(e.target.value);
 		},
 		[search],
 	);
-	const filteredList = useMemo(
-		() =>
-			researcherList.filter(
-				(researcher) => researcher.name.indexOf(search) !== -1,
-			),
-		[search],
-	);
+	// const filteredList = useMemo(
+	// 	() =>
+	// 		researcherList.filter(
+	// 			(researcher) => researcher.name.indexOf(search) !== -1,
+	// 		),
+	// 	[search, readMore],
+	// );
 	const onResearcherClick = useCallback(
 		(name: string, profile: string, department: string, project: string) => {
 			navigate('/researcherdetail', {
@@ -57,39 +60,55 @@ const ResearcherContainer = ({ location }: Props) => {
 		},
 		[navigate],
 	);
-	const handleResize = () => {
-		if (window.innerWidth > 1400) {
-			if (filteredList.length > 16 && !readMore) {
-				setContainerHeight('1742px');
-			} else {
-				setContainerHeight('fit-content');
-			}
-		} else if (window.innerWidth > 1024) {
-			if (filteredList.length > 16 && !readMore) {
-				setContainerHeight('1315px');
-			} else {
-				setContainerHeight('fit-content');
-			}
-		} else if (window.innerWidth > 768) {
-			if (filteredList.length > 16 && !readMore) {
-				setContainerHeight('1022px');
-			} else {
-				setContainerHeight('fit-content');
-			}
-		} else {
-			if (filteredList.length > 16 && !readMore) {
-				setContainerHeight('584px');
-			} else {
-				setContainerHeight('fit-content');
-			}
-		}
-	};
+	// const handleResize = () => {
+	// 	if (window.innerWidth > 1400) {
+	// 		if (filteredList.length > 16 && !readMore) {
+	// 			setContainerHeight('1742px');
+	// 		} else {
+	// 			setContainerHeight('fit-content');
+	// 		}
+	// 	} else if (window.innerWidth > 1024) {
+	// 		if (filteredList.length > 16 && !readMore) {
+	// 			setContainerHeight('1315px');
+	// 		} else {
+	// 			setContainerHeight('fit-content');
+	// 		}
+	// 	} else if (window.innerWidth > 768) {
+	// 		if (filteredList.length > 16 && !readMore) {
+	// 			setContainerHeight('1022px');
+	// 		} else {
+	// 			setContainerHeight('fit-content');
+	// 		}
+	// 	} else {
+	// 		if (filteredList.length > 16 && !readMore) {
+	// 			setContainerHeight('584px');
+	// 		} else {
+	// 			setContainerHeight('fit-content');
+	// 		}
+	// 	}
+	// };
 	useEffect(() => {
-		const observer = new ResizeObserver(handleResize);
-		const targetElement = document.querySelector('.researcher')!;
-		observer.observe(targetElement);
+		// const observer = new ResizeObserver(handleResize);
+		// const targetElement = document.querySelector('.researcher')!;
+		// observer.observe(targetElement);
+		setFilteredList(
+			researcherList.filter(
+				(researcher) => researcher.name.indexOf(search) !== -1,
+			),
+		);
+
+		if (readMore) {
+			setSlicedList(filteredList);
+		} else {
+			setSlicedList(
+				researcherList
+					.filter((researcher) => researcher.name.indexOf(search) !== -1)
+					.slice(0, 16),
+			);
+		}
+		console.log(slicedList);
 		return () => {};
-	}, [filteredList, readMore, containerHeight]);
+	}, [search, readMore, containerHeight]);
 
 	return (
 		<Researcher
@@ -98,6 +117,7 @@ const ResearcherContainer = ({ location }: Props) => {
 			readMore={readMore}
 			onSetSearch={onSetSearch}
 			filteredList={filteredList}
+			slicedList={slicedList}
 			containerHeight={containerHeight}
 			onReadMoreClick={onReadMoreClick}
 			onResearcherClick={onResearcherClick}

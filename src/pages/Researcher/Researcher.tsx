@@ -13,6 +13,7 @@ type Props = {
 	readMore: boolean;
 	onSetSearch: (e: EChange) => void;
 	filteredList: ResearcherList;
+	slicedList: ResearcherList;
 	containerHeight: string;
 	onReadMoreClick: () => void;
 
@@ -26,6 +27,7 @@ const Researcher = ({
 	readMore,
 	onSetSearch,
 	filteredList,
+	slicedList,
 	containerHeight,
 	onReadMoreClick,
 	onResearcherClick,
@@ -51,49 +53,57 @@ const Researcher = ({
 					></input>
 					<img src={images.search} />
 				</div>
-				<motion.div
-					className='researcher-body-list'
-					style={{
-						maxHeight: containerHeight,
-					}}
-					initial={{ maxHeight: prevHeight }}
-					animate={{ maxHeight: containerHeight }}
-					exit={{ maxHeight: prevHeight }}
-					key={containerHeight}
-					transition={{ duration: 0.3 }} // Adjust the duration as needed
-				>
-					<AnimatePresence>
-						{filteredList.map((researcher, index) => (
-							<motion.div
-								className='researcher-info'
-								layout
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
-								transition={{ duration: 0.3 }}
-								key={`${researcher.name}`}
-								onClick={() => {
-									onResearcherClick(
-										researcher.name,
-										researcher.profile,
-										researcher.department,
-										researcher.project,
-									);
-									console.log('onResearcherClick');
-								}}
-							>
-								<img src={images.profile} />
-								<div className='researcher-info-name'>{researcher.name}</div>
-								<div className='researcher-info-department'>
-									{researcher.department}
-								</div>
-								<div className='researcher-info-project'>
-									{researcher.project}
-								</div>
-							</motion.div>
-						))}
-					</AnimatePresence>
-				</motion.div>
+				<AnimatePresence>
+					<motion.div
+						className='researcher-body-list'
+						style={{
+							maxHeight: 'fit-content',
+						}}
+						// initial={{ maxHeight: prevHeight }}
+						// animate={{ maxHeight: containerHeight }}
+						// exit={{ maxHeight: prevHeight }}
+						// key={containerHeight}
+						// transition={{ duration: 0.5 }}
+						// Adjust the duration as needed
+					>
+						<AnimatePresence>
+							{slicedList.map((researcher, index) => (
+								<motion.div
+									className='researcher-info'
+									layout
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									key={`${researcher.name}`}
+									transition={{
+										duration: 0.3,
+										delay: 0.05,
+									}}
+									//key={`researcher-${index}`}
+									// transition={{ duration: 0.3, delay:0.05*index}}
+									onClick={() => {
+										onResearcherClick(
+											researcher.name,
+											researcher.profile,
+											researcher.department,
+											researcher.project,
+										);
+										console.log('onResearcherClick');
+									}}
+								>
+									<img src={images.profile} />
+									<div className='researcher-info-name'>{researcher.name}</div>
+									<div className='researcher-info-department'>
+										{researcher.department}
+									</div>
+									<div className='researcher-info-project'>
+										{researcher.project}
+									</div>
+								</motion.div>
+							))}
+						</AnimatePresence>
+					</motion.div>
+				</AnimatePresence>
 				{filteredList.length > 16 ? (
 					<button
 						className='researcher-body-readmore'

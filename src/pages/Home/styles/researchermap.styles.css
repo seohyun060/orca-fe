@@ -71,26 +71,25 @@
   grid-area: back;
   place-self: center center;
 }
-.researcher-map .country0 .researchers .researchers-body, .researcher-map .country3 .researchers .researchers-body, .researcher-map .country2 .researchers .researchers-body, .researcher-map .country1 .researchers .researchers-body, .researcher-map .country0 .researchers-active .researchers-body, .researcher-map .country3 .researchers-active .researchers-body, .researcher-map .country2 .researchers-active .researchers-body, .researcher-map .country1 .researchers-active .researchers-body {
+.researcher-map .country0 .researchers-body, .researcher-map .country3 .researchers-body, .researcher-map .country2 .researchers-body, .researcher-map .country1 .researchers-body {
   width: 211px;
   height: 344px;
   grid-area: body;
 }
-.researcher-map .country0 .researchers .researchers-body .researcher-card, .researcher-map .country3 .researchers .researchers-body .researcher-card, .researcher-map .country2 .researchers .researchers-body .researcher-card, .researcher-map .country1 .researchers .researchers-body .researcher-card, .researcher-map .country0 .researchers-active .researchers-body .researcher-card, .researcher-map .country3 .researchers-active .researchers-body .researcher-card, .researcher-map .country2 .researchers-active .researchers-body .researcher-card, .researcher-map .country1 .researchers-active .researchers-body .researcher-card {
+.researcher-map .country0 .researchers-body .researcher-card, .researcher-map .country3 .researchers-body .researcher-card, .researcher-map .country2 .researchers-body .researcher-card, .researcher-map .country1 .researchers-body .researcher-card {
   width: 211px;
   height: 108px;
   display: flex;
   margin-bottom: 10px;
   background: var(--Dark-gray, #382323);
-  /* transition 적용 */
 }
-.researcher-map .country0 .researchers .researchers-body .researcher-card img, .researcher-map .country3 .researchers .researchers-body .researcher-card img, .researcher-map .country2 .researchers .researchers-body .researcher-card img, .researcher-map .country1 .researchers .researchers-body .researcher-card img, .researcher-map .country0 .researchers-active .researchers-body .researcher-card img, .researcher-map .country3 .researchers-active .researchers-body .researcher-card img, .researcher-map .country2 .researchers-active .researchers-body .researcher-card img, .researcher-map .country1 .researchers-active .researchers-body .researcher-card img {
+.researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img {
   width: 92px;
   height: 92px;
   margin-top: 8px;
   margin-left: 8px;
 }
-.researcher-map .country0 .researchers .researchers-body .researcher-card span, .researcher-map .country3 .researchers .researchers-body .researcher-card span, .researcher-map .country2 .researchers .researchers-body .researcher-card span, .researcher-map .country1 .researchers .researchers-body .researcher-card span, .researcher-map .country0 .researchers-active .researchers-body .researcher-card span, .researcher-map .country3 .researchers-active .researchers-body .researcher-card span, .researcher-map .country2 .researchers-active .researchers-body .researcher-card span, .researcher-map .country1 .researchers-active .researchers-body .researcher-card span {
+.researcher-map .country0 .researchers-body .researcher-card span, .researcher-map .country3 .researchers-body .researcher-card span, .researcher-map .country2 .researchers-body .researcher-card span, .researcher-map .country1 .researchers-body .researcher-card span {
   margin-top: 72px;
   margin-left: 8px;
   color: white;
@@ -177,6 +176,7 @@
   mix-blend-mode: multiply;
 }
 .researcher-map-black .country0 .researchers, .researcher-map-black .country3 .researchers, .researcher-map-black .country2 .researchers, .researcher-map-black .country1 .researchers, .researcher-map-black .country0 .researchers-active, .researcher-map-black .country3 .researchers-active, .researcher-map-black .country2 .researchers-active, .researcher-map-black .country1 .researchers-active {
+  display: none;
   position: absolute;
   z-index: -10;
   top: -33px;

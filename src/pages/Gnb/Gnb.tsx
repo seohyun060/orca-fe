@@ -11,6 +11,7 @@ type Props = {
 	onItemClicked: (item: string) => void;
 	menuToggle: boolean;
 	onMenuToggleClicked: () => void;
+	setMenuToggle: any;
 };
 
 const gnb = ({
@@ -22,6 +23,7 @@ const gnb = ({
 	onItemClicked,
 	menuToggle,
 	onMenuToggleClicked,
+	setMenuToggle,
 }: Props) => {
 	return (
 		<div className={`gnb${gnbColor}`}>
@@ -31,6 +33,7 @@ const gnb = ({
 				className='gnb-logo'
 				onClick={() => {
 					onItemClicked('/');
+					setMenuToggle(false);
 				}}
 			/>
 			{!menuToggle ? (

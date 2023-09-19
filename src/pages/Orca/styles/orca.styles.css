@@ -433,6 +433,7 @@
     height: 200px;
   }
   .orca-goal-box-head {
+    width: 300px;
     color: black;
     font-size: 19px;
     font-family: Pretendard;

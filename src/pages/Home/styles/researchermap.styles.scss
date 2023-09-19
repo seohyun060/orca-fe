@@ -56,12 +56,10 @@
 			border-left: 1px solid var(--Midium-gray, #9e9e9e);
 			mix-blend-mode: multiply;
 		}
-
 		.researchers {
 			position: absolute;
 			width: 247px;
 			height: 393px;
-			//display: none;
 			z-index: -10;
 			// top: 0px;
 			// left: 140px;
@@ -69,9 +67,9 @@
 			display: grid;
 			grid-template-columns: 18px 211px 18px;
 			grid-template-rows: 33px 344px 16px;
+			//display: none;
 			opacity: 0;
 			transform: translateY(-20px);
-
 			/* transition 적용 */
 			transition: opacity 0.3s ease, transform 0.3s ease;
 			&-head {
@@ -82,23 +80,16 @@
 				grid-area: back;
 				place-self: center center;
 			}
-			.researchers-body {
+			&-body {
 				width: 211px;
 				height: 344px;
 				grid-area: body;
-				//transition: opacity 0.3s ease, transform 0.3s ease;
-
 				.researcher-card {
 					width: 211px;
 					height: 108px;
 					display: flex;
 					margin-bottom: 10px;
 					background: var(--Dark-gray, #382323);
-					//opacity: 0;
-					// transform: translateY(-20px);
-
-					/* transition 적용 */
-
 					img {
 						width: 92px;
 						height: 92px;
@@ -111,12 +102,7 @@
 						@include font-setting(white, 600, 30px, 28px);
 					}
 				}
-				// .researcher-card.active {
-				// 	opacity: 1;
-				// 	transform: translateY(0);
-				// }
 			}
-
 			&-go {
 				grid-area: go;
 				place-self: center center;
@@ -209,6 +195,7 @@
 			mix-blend-mode: multiply;
 		}
 		.researchers {
+			display: none;
 			position: absolute;
 
 			z-index: -10;
@@ -225,6 +212,7 @@
 
 			/* transition 적용 */
 			transition: opacity 0.3s ease, transform 0.3s ease;
+
 			&-head {
 				grid-area: head;
 				color: #fff;

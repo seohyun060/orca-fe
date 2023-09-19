@@ -125,6 +125,7 @@ const GnbContainer = ({ location }: Props) => {
 				onItemClicked={onItemClicked}
 				menuToggle={menuToggle}
 				onMenuToggleClicked={onMenuToggleClicked}
+				setMenuToggle={setMenuToggle}
 			/>
 		</div>
 	);

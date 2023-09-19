@@ -121,7 +121,7 @@
   margin-right: 21px;
   color: #000;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 127.273% */
@@ -129,7 +129,7 @@
 .footer-info-address .location {
   color: #000;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 127.273% */
@@ -141,7 +141,7 @@
 .footer-info-number .number1 {
   margin-right: 21px;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 127.273% */
@@ -150,14 +150,14 @@
   margin-right: 49px;
   color: #000;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 127.273% */
 }
 .footer-info-number .email1 {
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   margin-right: 21px;
@@ -167,7 +167,7 @@
   margin-right: 65px;
   color: #000;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 127.273% */
@@ -175,7 +175,7 @@
 .footer-info-number .fax1 {
   margin-right: 21px;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 127.273% */
@@ -183,7 +183,7 @@
 .footer-info-number .fax2 {
   color: #000;
   font-family: Pretendard;
-  font-size: 22px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 127.273% */
@@ -398,12 +398,13 @@
     line-height: 1.6;
   }
   .footer-info-number {
+    margin-left: 5px;
     grid-area: number;
     flex-direction: column;
   }
   .footer-info-number .number1 {
     margin-bottom: -5px;
-    font-size: 12px;
+    font-size: 11px;
   }
   .footer-info-number .number2 {
     font-size: 12px;
@@ -423,6 +424,8 @@
     font-size: 12px;
   }
   .footer-info-logo {
+    margin-top: 50px;
+    align-self: end;
     grid-area: logo;
   }
 }/*# sourceMappingURL=footer.styles.css.map */

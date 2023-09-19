@@ -59,6 +59,7 @@ const Researcher = ({
 						style={{
 							maxHeight: 'fit-content',
 						}}
+
 						// initial={{ maxHeight: prevHeight }}
 						// animate={{ maxHeight: containerHeight }}
 						// exit={{ maxHeight: prevHeight }}
@@ -76,8 +77,9 @@ const Researcher = ({
 									exit={{ opacity: 0 }}
 									key={`${researcher.name}`}
 									transition={{
-										duration: 0.3,
-										delay: 0.05,
+										duration: 0.2,
+										//delay: 0.2,
+										delay: 0.01 * (readMore ? index - 16 : index),
 									}}
 									//key={`researcher-${index}`}
 									// transition={{ duration: 0.3, delay:0.05*index}}

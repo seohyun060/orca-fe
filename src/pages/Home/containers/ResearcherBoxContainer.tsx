@@ -32,7 +32,7 @@ const ResearcherBoxContainer = ({
 	);
 	const totalPosts = useMemo(() => researcherList.length, [currentPage]);
 	const totalPage = Math.ceil(totalPosts / 3);
-
+	const [goTransition, setGoTransition] = useState(true);
 	useEffect(() => {
 		if (index === 31) {
 			setBoxType(3);
@@ -96,6 +96,7 @@ const ResearcherBoxContainer = ({
 			if (currentPage != 1) {
 				setCurrentPage((prev) => prev - 1);
 			}
+			setGoTransition(false);
 		},
 		[currentPage],
 	);
@@ -106,6 +107,7 @@ const ResearcherBoxContainer = ({
 		if (currentPage !== totalPage) {
 			setCurrentPage((prev) => prev + 1);
 		}
+		setGoTransition(true);
 	};
 
 	const boxClickHandler = (e: React.MouseEvent<HTMLElement>) => {
@@ -129,6 +131,7 @@ const ResearcherBoxContainer = ({
 			topPosition={topPosition}
 			leftPosition={leftPosition}
 			dotList={dotList}
+			goTransition={goTransition}
 		/>
 	);
 };

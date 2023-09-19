@@ -386,7 +386,8 @@
   }
   .insights-gnb-body button {
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 15px;
   }
   .insights-body {
     grid-template-columns: repeat(2, 1fr);

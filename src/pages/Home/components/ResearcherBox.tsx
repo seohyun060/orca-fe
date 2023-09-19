@@ -1,8 +1,10 @@
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import '../styles/home.styles.scss';
 import { ResearcherList } from '@typedef/types';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import images from 'src/assets/images';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type Props = {
 	requestedItems: ResearcherList;
@@ -16,6 +18,7 @@ type Props = {
 	topPosition: string;
 	leftPosition: string;
 	dotList: string[];
+	goTransition: boolean;
 };
 
 const ResearcherBox = ({
@@ -30,8 +33,9 @@ const ResearcherBox = ({
 	topPosition,
 	leftPosition,
 	dotList,
+	goTransition,
 }: Props) => {
-    const { t } = useTranslation();
+	const { t } = useTranslation();
 	return (
 		<div className={`country${boxType}`}>
 			<div
@@ -44,45 +48,55 @@ const ResearcherBox = ({
 					mixBlendMode: 'multiply',
 				}}
 			></div>
-			{active ? (
-				<div
-					className='researchers'
-					style={{
-						top: topPosition,
-						left: leftPosition,
-					}}
-				>
-					<div className='researchers-head'>{t("researcher_list")}</div>
-					<img
-						className='researchers-back'
-						src={black === '' ? images.back_b : images.back_w}
-						onClick={onBackClick}
-					/>
+			{/* {active ? ( */}
+			<div
+				className={`researchers${active ? '-active' : ''}`}
+				style={{
+					top: topPosition,
+					left: leftPosition,
+				}}
+			>
+				<div className='researchers-head'>{t('researcher_list')}</div>
+				<img
+					className='researchers-back'
+					src={black === '' ? images.back_b : images.back_w}
+					onClick={onBackClick}
+				/>
+				<AnimatePresence>
 					<div className='researchers-body'>
-						{requestedItems.map((requestItem) => (
-							<div className='researcher-card'>
+						{requestedItems.map((requestItem, index) => (
+							<motion.div
+								layout
+								initial={{ x: goTransition ? 100 : -100, opacity: 0 }}
+								animate={{ x: 0, opacity: 1 }}
+								exit={{ x: goTransition ? -100 : 100, opacity: 0 }}
+								transition={{ duration: 0.3 }}
+								className='researcher-card'
+								//key={`${requestItem.name}-${index}`}
+								key={`${requestItem.name}`}
+							>
 								<img src={requestItem.profile} />
 								<span>{requestItem.name}</span>
-							</div>
+							</motion.div>
 						))}
 					</div>
-					<img
-						className='researchers-go'
-						src={black === '' ? images.go_b : images.go_w}
-						onClick={onGoClick}
-					/>
-					<div className='researchers-dot'>
-						{dotList.map((dot, index) => (
-							<img src={dot} />
-						))}
-					</div>
+				</AnimatePresence>
+				<img
+					className='researchers-go'
+					src={black === '' ? images.go_b : images.go_w}
+					onClick={onGoClick}
+				/>
+				<div className='researchers-dot'>
+					{dotList.map((dot, index) => (
+						<img src={dot} />
+					))}
 				</div>
-			) : (
+			</div>
+			{/* ) : (
 				''
-			)}
+			)} */}
 		</div>
 	);
-  
 };
 
 export default ResearcherBox;

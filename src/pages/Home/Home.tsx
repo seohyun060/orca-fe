@@ -23,9 +23,9 @@ const Home = ({ route }: Props) => {
 			</div>
 			<HomeIntroContainer />
 			<HomeResearcherContainer route={route} />
-			<HomeProjects />
-			<HomeEvents />
-			<HomeInsights />
+			{/* <HomeProjects /> */}
+			{/* <HomeEvents /> */}
+			{/* <HomeInsights /> */}
 		</div>
 	);
 };

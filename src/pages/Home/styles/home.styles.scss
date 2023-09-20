@@ -452,10 +452,10 @@
 		}
 		&-intro {
 			//intro section
-			width: 400px;
+			width: 350px;
 
 			&-what {
-				width: 300px;
+				width: 350px;
 				height: 250px;
 				//margin-top: 200px;
 				//background-color: blue;
@@ -476,7 +476,7 @@
 				}
 			}
 			&-goal {
-				width: 300px;
+				width: 350px;
 				height: 350px;
 				//margin-top: 200px;
 				//background-color: blue;
@@ -488,21 +488,22 @@
 					@include font-setting(white, 600, 19px, 28px);
 				}
 				&-body1 {
-					width: 400px;
+					width: 350px;
 					margin-top: 30px;
-					height: 50px;
-					@include font-setting(white, 600, 12.5px, 1.7);
+					height: fit-content;
+					@include font-setting(white, 600, 12px, 1.7);
 				}
 				&-body2 {
-					width: 400px;
+					width: 350px;
 					margin-top: 15px;
-					@include font-setting(white, 600, 12.5px, 1.7);
+					height: fit-content;
+					@include font-setting(white, 600, 12px, 1.7);
 				}
 			}
 			&-contact {
 				color: white;
 				position: relative;
-				width: 400px;
+				width: 350px;
 				height: 160px;
 				margin-top: 150px;
 				//margin-left: 18.9583%;
@@ -512,23 +513,22 @@
 				}
 				&-email {
 					background-color: black;
-					width: 400px;
+					width: 350px;
 					height: 44px;
 					input {
-						width: 280px;
+						width: 240px;
 						height: 44px;
 						border-radius: 10px;
 						border: 1px solid var(--Light-gray, #f0f0f0);
 						background-color: black;
 						@include font-setting(#f0f0f0, 300, 12px, 28px);
-						padding-left: 21px;
+						padding-left: 20px;
 						margin-right: 20px;
 					}
 					button {
 						border-radius: 10px;
-						width: 184px;
+						width: 90px;
 						height: 44px;
-						width: 100px;
 						background: var(--Light-gray, #f0f0f0);
 						@include font-setting(#3c3c3c, 300, 14px, 28px);
 					}
@@ -542,7 +542,7 @@
 
 		&-research {
 			position: relative;
-			width: 400px;
+			width: 350px;
 			height: 480px;
 			background-color: white;
 			margin-bottom: 150px;
@@ -552,13 +552,13 @@
 				position: relative;
 				margin-top: 142px;
 				//margin-left: 18.9583%;
-				width: 400px;
+				width: 350px;
 				height: 46px;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 				span {
-					@include font-setting(black, 600, 25px, 28px);
+					@include font-setting(black, 600, 20px, 28px);
 				}
 				button {
 					width: 70px;
@@ -667,9 +667,9 @@
 		width: 400px;
 	}
 
-  .EventBoxSlide {
-    width: 350px;
-  }
+	.EventBoxSlide {
+		width: 350px;
+	}
 
 	.ViewButton {
 		width: 70px;

@@ -48,7 +48,7 @@ const ResearcherBoxContainer = ({
 					setLeftPosition('100%');
 				} else {
 					setTopPosition('-22%');
-					setLeftPosition('-165%');
+					setLeftPosition('-175%');
 				}
 			} else {
 				if (index % 8 < 4) {
@@ -56,7 +56,7 @@ const ResearcherBoxContainer = ({
 					setLeftPosition('100%');
 				} else {
 					setTopPosition('-131%');
-					setLeftPosition('-165%');
+					setLeftPosition('-175%');
 				}
 			}
 		} else {
@@ -66,7 +66,7 @@ const ResearcherBoxContainer = ({
 					setLeftPosition('100%');
 				} else {
 					setTopPosition('-22%');
-					setLeftPosition('-155%');
+					setLeftPosition('-175%');
 				}
 			} else {
 				if (index % 8 < 4) {
@@ -74,7 +74,7 @@ const ResearcherBoxContainer = ({
 					setLeftPosition('100%');
 				} else {
 					setTopPosition('-140%');
-					setLeftPosition('-155%');
+					setLeftPosition('-175%');
 				}
 			}
 		}

@@ -604,10 +604,10 @@
     background-color: black;
   }
   .home-intro {
-    width: 400px;
+    width: 350px;
   }
   .home-intro-what {
-    width: 300px;
+    width: 350px;
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -640,7 +640,7 @@
     letter-spacing: normal;
   }
   .home-intro-goal {
-    width: 300px;
+    width: 350px;
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -657,11 +657,12 @@
     letter-spacing: normal;
   }
   .home-intro-goal-body1, .home-intro-goal-body2 {
-    width: 400px;
+    width: 350px;
     margin-top: 30px;
-    height: 50px;
+    height: -moz-fit-content;
+    height: fit-content;
     color: white;
-    font-size: 12.5px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -670,10 +671,12 @@
     letter-spacing: normal;
   }
   .home-intro-goal-body2 {
-    width: 400px;
+    width: 350px;
     margin-top: 15px;
+    height: -moz-fit-content;
+    height: fit-content;
     color: white;
-    font-size: 12.5px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
@@ -684,7 +687,7 @@
   .home-intro-contact {
     color: white;
     position: relative;
-    width: 400px;
+    width: 350px;
     height: 160px;
     margin-top: 150px;
   }
@@ -701,12 +704,12 @@
   }
   .home-intro-contact-email {
     background-color: black;
-    width: 400px;
+    width: 350px;
     height: 44px;
     margin-bottom: 16px;
   }
   .home-intro-contact-email input {
-    width: 280px;
+    width: 240px;
     height: 44px;
     border-radius: 10px;
     border: 1px solid var(--Light-gray, #f0f0f0);
@@ -719,14 +722,13 @@
     font-style: normal;
     line-height: 28px;
     letter-spacing: normal;
-    padding-left: 21px;
+    padding-left: 20px;
     margin-right: 20px;
   }
   .home-intro-contact-email button {
     border-radius: 10px;
-    width: 184px;
+    width: 90px;
     height: 44px;
-    width: 100px;
     background: var(--Light-gray, #f0f0f0);
     color: #3c3c3c;
     font-size: 14px;
@@ -749,7 +751,7 @@
   }
   .home-research {
     position: relative;
-    width: 400px;
+    width: 350px;
     height: 480px;
     background-color: white;
     margin-bottom: 150px;
@@ -758,7 +760,7 @@
   .home-research-head {
     position: relative;
     margin-top: 142px;
-    width: 400px;
+    width: 350px;
     height: 46px;
     display: flex;
     align-items: center;
@@ -766,7 +768,7 @@
   }
   .home-research-head span {
     color: black;
-    font-size: 25px;
+    font-size: 20px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;

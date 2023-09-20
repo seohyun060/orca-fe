@@ -77,9 +77,9 @@ const Researcher = ({
 									exit={{ opacity: 0 }}
 									key={`${researcher.name}`}
 									transition={{
-										duration: 0.2,
+										duration: 0.1,
 										//delay: 0.2,
-										delay: 0.01 * (readMore ? index - 16 : index),
+										delay: 0.005 * (readMore ? index - 12 : index),
 									}}
 									//key={`researcher-${index}`}
 									// transition={{ duration: 0.3, delay:0.05*index}}

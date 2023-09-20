@@ -18,18 +18,20 @@ const ResearcherMap = ({
 	black,
 }: Props) => {
 	return (
-		<div className={`researcher-map${black}`}>
-			<Map />
-			<div className='research-box-container'>
-				{globalLists.map((researcherList, index) => (
-					<ResearcherBoxContainer
-						researcherList={researcherList}
-						index={index}
-						isSelected={isSelected}
-						setIsSelected={setIsSelected}
-						black={black}
-					/>
-				))}
+		<div className='map-container'>
+			<div className={`researcher-map${black}`}>
+				<Map />
+				<div className='research-box-container'>
+					{globalLists.map((researcherList, index) => (
+						<ResearcherBoxContainer
+							researcherList={researcherList}
+							index={index}
+							isSelected={isSelected}
+							setIsSelected={setIsSelected}
+							black={black}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);

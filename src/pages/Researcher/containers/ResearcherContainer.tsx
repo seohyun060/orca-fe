@@ -27,7 +27,7 @@ const ResearcherContainer = ({ location }: Props) => {
 	const [filteredList, setFilteredList] = useState<ResearcherList>([]);
 	const [slicedList, setSlicedList] = useState<ResearcherList>([]);
 	const onReadMoreClick = useCallback(() => {
-		if (filteredList.length > 16) {
+		if (filteredList.length > 12) {
 			setPrevHeight(containerHeight);
 
 			setReadMore((prev) => !prev);
@@ -103,7 +103,7 @@ const ResearcherContainer = ({ location }: Props) => {
 			setSlicedList(
 				researcherList
 					.filter((researcher) => researcher.name.indexOf(search) !== -1)
-					.slice(0, 16),
+					.slice(0, 12),
 			);
 		}
 		console.log(slicedList);

@@ -325,11 +325,11 @@
 }
 @media (max-width: 767px) {
   .footer {
-    width: 400px;
+    width: 350px;
     height: 500px;
   }
   .footer-news {
-    width: 400px;
+    width: 350px;
     margin-bottom: 50px;
   }
   .footer-news-head {
@@ -337,27 +337,29 @@
     font-size: 20px;
   }
   .footer-news form {
-    width: 400px;
+    width: 350px;
   }
   .footer-news form input {
-    width: 290px;
+    width: 240px;
     margin-right: 10px;
-    font-size: 15px;
+    height: 35px;
+    font-size: 12px;
   }
   .footer-news form button {
     width: 100px;
-    font-size: 15px;
+    height: 35px;
+    font-size: 12px;
   }
   .footer-news-please {
-    width: 400px;
+    width: 350px;
     font-size: 12px;
     line-height: 1.2;
   }
   .footer-info {
     display: grid;
-    grid-template-columns: 90px 175px 153px;
-    grid-template-rows: 40px 73px 70px 50px;
-    width: 400px;
+    grid-template-columns: 100px 100px 150px;
+    grid-template-rows: 1fr 1.4fr 1.75fr 1.25fr;
+    width: 350px;
     grid-template-areas: "head head head" "beamworks ceo number" "address address number" "logo logo logo";
   }
   .footer-info-head {
@@ -424,7 +426,8 @@
     font-size: 12px;
   }
   .footer-info-logo {
-    margin-top: 50px;
+    margin-top: 0px;
+    margin-bottom: 30px;
     align-self: end;
     grid-area: logo;
   }

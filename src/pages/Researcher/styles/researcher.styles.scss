@@ -288,7 +288,7 @@
 			height: 400px;
 		}
 		&-meet {
-			width: 429.314px;
+			width: 350px;
 			height: 262.66px;
 			&-head {
 				margin-top: 106px;
@@ -298,11 +298,11 @@
 			}
 		}
 		&-body {
-			width: 400px;
+			width: 350px;
 			margin-top: 50px;
 			margin-bottom: 100px;
 			&-head {
-				width: 297.98px;
+				width: 350px;
 				height: 60px;
 				font-size: 9.77px;
 				line-height: 2; /* 121.667% */
@@ -326,18 +326,18 @@
 			&-list {
 				grid-template-columns: repeat(3, 1fr);
 
-				column-gap: 8.045px;
+				column-gap: 10px;
 				row-gap: 16.78px;
 				margin-top: 20px;
-				width: 400px;
+				width: 350px;
 				max-height: 584.44px;
 				.researcher-info {
-					width: 125px;
+					width: 110px;
 					height: 178px;
 
 					img {
-						width: 125px;
-						height: 125px;
+						width: 110px;
+						height: 110px;
 
 						margin-bottom: 4px;
 					}
@@ -351,12 +351,18 @@
 						font-size: 12px;
 
 						line-height: 1; /* 175% */
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
 						//margin-bottom: 4px;
 					}
 					&-project {
 						font-size: 12px;
 
 						line-height: 1.5; /* 175% */
+						overflow: hidden;
+						white-space: nowrap;
+						text-overflow: ellipsis;
 					}
 				}
 			}

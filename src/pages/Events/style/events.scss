@@ -305,7 +305,6 @@ circle {
 .EventCarouselImages {
   display: flex;
   margin: 0px 53px;
-  height: 475px;
   width: 100%;
   overflow: hidden;
 }
@@ -313,6 +312,7 @@ circle {
 .EventCarouselSlide {
   display: flex;
   justify-content: center;
+  transform: translate(0px);
 }
 
 .CarouselImage {
@@ -417,8 +417,71 @@ circle {
       line-height: 28px;
     }
     &.InEvent {
-       height: 120px;
+      height: 120px;
     }
+  }
+
+  .EventInformation {
+    .SubtitleFont {
+      font-size: 22px;
+      line-height: 21px;
+    }
+  
+    .DescriptFont {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  .SubtitleFont {
+    font-size: 27px;
+    line-height: 24px;
+  }
+
+  .DescriptFont {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .EventImage {
+    width: 324px;
+    height: 301px;
+  }
+
+  .EventTitle {
+    width: 556px;
+    font-size: 41px;
+    line-height: 45px;
+    margin-bottom: 30px;
+  }
+
+  .EventPeriod {
+    display: flex;
+    margin-bottom: 22px;
+
+    :first-child {
+      margin-right: 15px;
+    }
+  }
+
+  .EventVenue,
+  .EventTime,
+  .EventWebsite {
+    margin-bottom: 15px;
+    :first-child {
+      margin-right: 22px;
+    }
+  }
+
+  .CarouselImage {
+    height: 365px;
+    width: 775px;
+    object-fit: contain;
+  }
+
+  .EventMapLocation {
+    width: 900px;
+    height: 365px;
   }
 }
 
@@ -524,6 +587,57 @@ circle {
     font-size: 15.5px;
     line-height: 22px;
   }
+
+  .SubtitleFont {
+    font-size: 22px;
+    line-height: 21px;
+  }
+
+  .DescriptFont {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .EventImage {
+    width: 252px;
+    height: 234px;
+  }
+
+  .EventTitle {
+    width: 428px;
+    font-size: 32px;
+    line-height: 35px;
+    margin-bottom: 18px;
+  }
+
+  .EventPeriod {
+    display: flex;
+    margin-bottom: 14px;
+
+    :first-child {
+      margin-right: 14px;
+    }
+  }
+
+  .EventVenue,
+  .EventTime,
+  .EventWebsite {
+    margin-bottom: 9px;
+    :first-child {
+      margin-right: 22px;
+    }
+  }
+
+  .CarouselImage {
+    height: 284px;
+    width: 573px;
+    object-fit: contain;
+  }
+
+  .EventMapLocation {
+    width: 700px;
+    height: 284px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -546,7 +660,7 @@ circle {
     font-size: 20px;
     line-height: 25px;
     margin-bottom: 20px;
-  }  
+  }
 
   .EventCardPaging {
     width: 350px;
@@ -572,7 +686,7 @@ circle {
   .EventCard {
     width: 163px;
     height: 103px;
-    
+
     &.InEvent {
       height: 155px;
     }
@@ -580,7 +694,7 @@ circle {
       height: 225px;
     }
   }
-  
+
   .EventCardPeriod {
     &.Past {
       height: 120px;
@@ -603,13 +717,6 @@ circle {
     font-size: 20px;
     line-height: 12.5px;
     margin-bottom: 5px;
-
-    &.Past {
-      // color: var(--Midium-gray, #9e9e9e);
-      // font-size: 20px;
-      // font-weight: 300;
-      // margin: 0px;
-    }
   }
 
   .EventCardTitle {
@@ -620,16 +727,6 @@ circle {
     &.InEvent {
       height: 77.5px;
     }
-
-    &.Past {
-      // color: #000;
-      // font-size: 30px;
-      // line-height: 35px;
-      // overflow: hidden;
-      // height: 40px;
-      // margin: 0px;
-    }
-
     &.CommingSoon {
       margin: 15px 0px;
       font-size: 15px;
@@ -640,5 +737,87 @@ circle {
   .EventCardTime {
     font-size: 9px;
     line-height: 12.5px;
+  }
+
+  .EventInformation {
+    .SubtitleFont {
+      font-size: 11px;
+      line-height: 12px;
+    }
+  
+    .DescriptFont {
+      font-size: 8px;
+      line-height: 12px;
+    }
+  }
+
+  .SubtitleFont {
+    font-size: 11px;
+    line-height: 12px;
+  }
+
+  .DescriptFont {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  .EventImage {
+    width: 126px;
+    height: 117px;
+  }
+
+  .EventTitle {
+    width: 214px;
+    font-size: 16px;
+    line-height: 15px;
+    margin-bottom: 9px;
+  }
+
+  .EventPeriod {
+    display: flex;
+    margin-bottom: 7px;
+
+    :first-child {
+      margin-right: 7px;
+    }
+  }
+
+  .EventVenue,
+  .EventTime,
+  .EventWebsite {
+    height: 14px;
+    margin-bottom: 4px;
+    :first-child {
+      margin-right: 11px;
+    }
+  }
+
+  .EventPurpose {
+    margin: 45px 0px;
+    :first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  .EventDetail {
+    margin-bottom: 45px;
+    :first-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  .EventCarousel {
+    margin-bottom: 45px;
+  }
+
+  .CarouselImage {
+    height: 142px;
+    width: 203px;
+    object-fit: contain;
+  }
+
+  .EventMapLocation {
+    width: 330px;
+    height: 142px;
   }
 }

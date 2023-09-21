@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 import images from "src/assets/images";
 import MapContainer from "./MapContainer";
@@ -15,6 +14,7 @@ const EventDetails = (props) => {
 
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
+  const [cardSize, setCardSize] = useState(0);
   const eventSlideRef = useRef();
   const totalSides = 3; // 추후 갯수만큼 불러오기
 
@@ -22,11 +22,10 @@ const EventDetails = (props) => {
     if (currentEventSlide <= 0) {
       return;
     } else {
-      setEventSlideMoving(eventSlideMoving + 1066);
+      setEventSlideMoving(eventSlideMoving + cardSize);
       setCurrentEventSlide(currentEventSlide - 1);
-      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving + 1066
+        eventSlideMoving + cardSize
       }px)`;
     }
   };
@@ -34,14 +33,51 @@ const EventDetails = (props) => {
     if (currentEventSlide >= totalSides - 1) {
       return;
     } else {
-      setEventSlideMoving(eventSlideMoving - 1066);
+      setEventSlideMoving(eventSlideMoving - cardSize);
       setCurrentEventSlide(currentEventSlide + 1);
-      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
-        eventSlideMoving - 1066
+        eventSlideMoving - cardSize
       }px)`;
     }
   };
+
+  const changeCardSize = (width) => {
+    setEventSlideMoving(0);
+    setCurrentEventSlide(0);
+    console.log(width)
+
+    if (width > 1400) {
+      setCardSize(1066);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    } else if (width > 1023) {
+      setCardSize(775);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    } else if (width > 767) {
+      setCardSize(573);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    } else {
+      setCardSize(203);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    }
+  };
+
+  useEffect(() => {
+    eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
+    changeCardSize(window.innerWidth);
+    console.log("재실행");
+  }, []);
+
+  let delay = 50;
+  let timer = null;
+
+  window.addEventListener("resize", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      if (eventSlideRef.current != null) {
+        changeCardSize(window.innerWidth);
+      }
+    }, delay);
+  });
 
   return (
     <div className="Projects">

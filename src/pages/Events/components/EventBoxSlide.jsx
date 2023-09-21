@@ -14,16 +14,15 @@ const EventBoxSlide = (props) => {
   const [dotBar, setDotBar] = useState([]);
   const [cardSize, setCardSize] = useState(0);
   const [cardHiddenSize, setCardHiddenSize] = useState(0);
-  const [slideImageSrc, setSlideImageSrc] = useState(
-    new Array(EventDummyData.length)
-  );
   const totalSides = EventDummyData.length - 1;
 
+
+
   const onBackButtonClick = () => {
+    // eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     if (currentEventSlide == totalSides) {
       setEventSlideMoving(eventSlideMoving + cardHiddenSize);
       setCurrentEventSlide(currentEventSlide - 1);
-      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving + cardHiddenSize
       }px)`;
@@ -32,7 +31,6 @@ const EventBoxSlide = (props) => {
     } else {
       setEventSlideMoving(eventSlideMoving + cardSize);
       setCurrentEventSlide(currentEventSlide - 1);
-      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving + cardSize
       }px)`;
@@ -42,7 +40,6 @@ const EventBoxSlide = (props) => {
     if (currentEventSlide == totalSides - 1) {
       setEventSlideMoving(eventSlideMoving - cardHiddenSize);
       setCurrentEventSlide(currentEventSlide + 1);
-      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving - cardHiddenSize
       }px)`;
@@ -52,7 +49,6 @@ const EventBoxSlide = (props) => {
     } else {
       setEventSlideMoving(eventSlideMoving - cardSize);
       setCurrentEventSlide(currentEventSlide + 1);
-      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving - cardSize
       }px)`;
@@ -76,34 +72,52 @@ const EventBoxSlide = (props) => {
     setDotBar(temp);
   };
 
+  const changeCardSize = (width) => {
+    setEventSlideMoving(0);
+    setCurrentEventSlide(0);
+
+    if (width > 1400) {
+      setCardSize(432 + 24);
+      setCardHiddenSize(152);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    } else if (width > 1023) {
+      setCardSize(368 + 24);
+      setCardHiddenSize(251);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    } else if (width > 767) {
+      setCardSize(286 + 12);
+      setCardHiddenSize(182);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    } else {
+      setCardSize(163 + 12);
+      setCardHiddenSize(113);
+      eventSlideRef.current.style.transform = "translateX(0px)";
+    }
+  };
+
+  let delay = 50;
+  let timer = null;
+
+  window.addEventListener("resize", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      if (eventSlideRef.current) {
+        changeCardSize(window.innerWidth);
+      }
+    }, delay);
+  });
+
+
   useEffect(() => {
-    changeCardSize();
+    eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
+    changeCardSize(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
     makeDotbar();
   }, [currentEventSlide]);
 
-  const changeCardSize = () => {
-    const screenSize = window.innerWidth;
-    console.log(window.innerWidth)
-
-    if (screenSize > 1400) {
-      setCardSize(432+24)
-      setCardHiddenSize(152)
-    } else if (screenSize > 1023) {
-      setCardSize(368+24)
-      setCardHiddenSize(251)
-    } else if (screenSize > 767) {
-      setCardSize(286+12)
-      setCardHiddenSize(182)
-    } else {
-      setCardSize(163+12)
-      setCardHiddenSize(113)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', changeCardSize)
-  }, []);
-
+  
   return (
     <>
       <div className="EventBox">

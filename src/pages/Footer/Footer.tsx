@@ -48,7 +48,7 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
         </div>
         <div className='footer-info-number'>
           <div className='number1'>{t("contact_num")}</div>
-          <div className='number2'>{t("real_contanct_num")}</div>
+          <div className='number2'>053-322-2107</div>
           <div className='email1'>{t("contact_email")}</div>
           <div className='email2'>bws@beamworks.co.kr</div>
           <div className='fax1'>Fax</div>

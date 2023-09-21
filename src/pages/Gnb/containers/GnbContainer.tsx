@@ -80,10 +80,30 @@ const GnbContainer = ({ location }: Props) => {
 				setGnbColor('');
 			}
 		} else if (`/${route}` == '/researcher') {
-			if (scrollPosition > 1081) {
-				setGnbColor('-white');
+			if (window.innerWidth > 1400) {
+				if (scrollPosition > 1080) {
+					setGnbColor('-white');
+				} else {
+					setGnbColor('');
+				}
+			} else if (window.innerWidth > 1092) {
+				if (scrollPosition > 900) {
+					setGnbColor('-white');
+				} else {
+					setGnbColor('');
+				}
+			} else if (window.innerWidth > 768) {
+				if (scrollPosition > 700) {
+					setGnbColor('-white');
+				} else {
+					setGnbColor('');
+				}
 			} else {
-				setGnbColor('');
+				if (scrollPosition > 400) {
+					setGnbColor('-white');
+				} else {
+					setGnbColor('');
+				}
 			}
 		} else if (`/${route}` == '/projects') {
 			setGnbColor('-white');

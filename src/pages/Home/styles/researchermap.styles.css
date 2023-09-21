@@ -7,7 +7,6 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  margin-bottom: 40px;
 }
 .researcher-map svg {
   width: 1126px;

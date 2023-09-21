@@ -367,43 +367,43 @@
     margin-left: 5px;
   }
   .insights-head {
-    width: 400px;
+    width: 350px;
     padding-left: 0px;
   }
   .insights-head .big {
-    width: 400px;
+    width: 350px;
     font-size: 35px;
   }
   .insights-head .small {
-    width: 400px;
+    width: 350px;
     font-size: 18px;
   }
   .insights-gnb {
-    width: 400px;
+    width: 350px;
   }
   .insights-gnb-body {
-    width: 400px;
+    width: 350px;
   }
   .insights-gnb-body button {
-    padding: 5px 13px;
+    padding: 5px 8.5px;
     font-size: 11px;
     line-height: 15px;
   }
   .insights-body {
     grid-template-columns: repeat(2, 1fr);
-    width: 400px;
+    width: 350px;
     max-height: 1000px;
-    -moz-column-gap: 8.05px;
-         column-gap: 8.05px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
     row-gap: 4px;
   }
   .insights-body .insight-info {
-    width: 188px;
+    width: 170px;
     height: 288px;
     margin-bottom: 0px;
   }
   .insights-body .insight-info-box {
-    width: 188px;
+    width: 170px;
     height: 188px;
   }
   .insights-body .insight-info-type {
@@ -412,7 +412,7 @@
     line-height: 1; /* 140% */
   }
   .insights-body .insight-info-title {
-    width: 188px;
+    width: 170px;
     height: 20px;
     overflow: hidden;
     white-space: nowrap;

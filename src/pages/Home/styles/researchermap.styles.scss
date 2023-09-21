@@ -704,19 +704,19 @@
 				height: 43.75px;
 			}
 			.researchers {
-				width: 82.86px;
-				height: 131.88px;
+				width: 120px;
+				height: 174px; //1.69
 				top: -10.9px;
 				left: 56.58px;
-				grid-template-columns: 6.03px 70.8px 6.03px;
-				grid-template-rows: 11px 115.4px 6px;
+				grid-template-columns: 10px 100px 10px;
+				grid-template-rows: 14px 150px 10px;
 				&-head {
 					grid-area: head;
 					color: #fff;
 					width: 82.86px;
 					/* web. re.22 */
 					font-family: Pretendard;
-					font-size: 10px;
+					font-size: 6px;
 					font-style: normal;
 					font-weight: 400;
 					line-height: 15px; /* 127.273% */
@@ -724,35 +724,35 @@
 				&-back {
 					grid-area: back;
 					place-self: center center;
-					width: 5px;
+					width: 10px;
 				}
 				&-body {
-					width: 70.8px;
-					height: 115.4px;
+					width: 100px;
+					height: 150px;
 					grid-area: body;
 					.researcher-card {
-						width: 70.8px;
-						height: 36.24px;
+						width: 100px;
+						height: 50px;
 						display: flex;
 						margin-bottom: 3px;
 						background-color: #fff;
 						img {
-							width: 30.87px;
-							height: 30.87px;
-							margin-top: 2.68px;
-							margin-left: 2.68px;
+							width: 40px;
+							height: 40px;
+							margin-top: 5px;
+							margin-left: 5px;
 						}
 						span {
-							margin-top: 24.16px;
-							margin-left: 2.68px;
-							@include font-setting(black, 600, 10px, 12px);
+							margin-top: 33px;
+							margin-left: 4px;
+							@include font-setting(black, 600, 12px, 12px);
 						}
 					}
 				}
 				&-go {
 					grid-area: go;
 					place-self: center center;
-					width: 5px;
+					width: 10px;
 				}
 				&-dot {
 					margin-left: 1px;
@@ -816,12 +816,12 @@
 					height: 43.75px;
 				}
 				.researchers {
-					width: 82.86px;
-					height: 131.88px;
+					width: 120px;
+					height: 174px; //1.69
 					top: -10.9px;
 					left: 56.58px;
-					grid-template-columns: 6.03px 70.8px 6.03px;
-					grid-template-rows: 11px 115.4px 6px;
+					grid-template-columns: 10px 100px 10px;
+					grid-template-rows: 14px 150px 10px;
 					&-head {
 						grid-area: head;
 						//color: #fff;
@@ -836,27 +836,27 @@
 					&-back {
 						grid-area: back;
 						place-self: center center;
-						width: 5px;
+						width: 10px;
 					}
 					&-body {
-						width: 70.8px;
-						height: 115.4px;
+						width: 100px;
+						height: 150px;
 						grid-area: body;
 						.researcher-card {
-							width: 70.8px;
-							height: 36.24px;
+							width: 100px;
+							height: 50px;
 							display: flex;
 							margin-bottom: 3px;
 							//background-color: #fff;
 							img {
-								width: 30.87px;
-								height: 30.87px;
-								margin-top: 2.68px;
-								margin-left: 2.68px;
+								width: 40px;
+								height: 40px;
+								margin-top: 5px;
+								margin-left: 5px;
 							}
 							span {
-								margin-top: 24.16px;
-								margin-left: 2.68px;
+								margin-top: 33px;
+								margin-left: 4px;
 								@include font-setting(white, 600, 10px, 12px);
 							}
 						}

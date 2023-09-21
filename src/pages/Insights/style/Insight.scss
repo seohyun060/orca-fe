@@ -415,25 +415,25 @@
 
 	.insights {
 		&-head {
-			width: 400px;
+			width: 350px;
 			padding-left: 0px;
 
 			.big {
-				width: 400px;
+				width: 350px;
 				font-size: 35px;
 			}
 			.small {
-				width: 400px;
+				width: 350px;
 				font-size: 18px;
 			}
 		}
 		&-gnb {
-			width: 400px;
+			width: 350px;
 
 			&-body {
-				width: 400px;
+				width: 350px;
 				button {
-					padding: 5px 13px;
+					padding: 5px 8.5px;
 					font-size: 11px;
 					line-height: 15px;
 				}
@@ -442,16 +442,16 @@
 		&-body {
 			grid-template-columns: repeat(2, 1fr);
 
-			width: 400px;
+			width: 350px;
 			max-height: 1000px;
-			column-gap: 8.05px;
+			column-gap: 10px;
 			row-gap: 4px;
 			.insight-info {
-				width: 188px;
+				width: 170px;
 				height: 288px;
 				margin-bottom: 0px;
 				&-box {
-					width: 188px;
+					width: 170px;
 					height: 188px;
 				}
 				&-type {
@@ -461,7 +461,7 @@
 				}
 				&-title {
 					//margin-top: 5px;
-					width: 188px;
+					width: 170px;
 					height: 20px;
 					overflow: hidden;
 					white-space: nowrap;

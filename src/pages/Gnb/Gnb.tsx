@@ -34,7 +34,7 @@ const gnb = ({
 	i18n,
 }: Props) => {
 	return (
-		<div className={`gnb${gnbColor}`}>
+		<div className={`gnb${gnbColor}`} style={{ width: '100vw' }}>
 			<img
 				src={gnbColor === '-white' ? images.logo_b : images.logo_w}
 				// src={images.logo_w}

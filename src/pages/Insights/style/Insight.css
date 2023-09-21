@@ -129,6 +129,9 @@
   background: var(--Dark-gray, #3c3c3c);
   color: #fff;
 }
+.insights-gnb-body button:hover {
+  cursor: pointer;
+}
 .insights-body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -181,6 +184,9 @@
   font-weight: 300;
   line-height: 28px; /* 140% */
 }
+.insights-body .insight-info:hover {
+  cursor: pointer;
+}
 .insights-readmore {
   width: 186px;
   height: 44px;
@@ -197,6 +203,9 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px; /* 140% */
+}
+.insights-readmore:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 1400px) {

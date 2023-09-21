@@ -52,6 +52,9 @@
   line-height: 28px;
   letter-spacing: normal;
 }
+.footer-news form button:hover {
+  cursor: pointer;
+}
 .footer-news-please {
   width: 762px;
   color: var(--Midium-gray, #9e9e9e);

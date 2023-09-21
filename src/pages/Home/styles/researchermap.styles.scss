@@ -80,6 +80,9 @@
 				grid-area: back;
 				place-self: center center;
 			}
+			&-back:hover {
+				cursor: pointer;
+			}
 			&-body {
 				width: 211px;
 				height: 344px;
@@ -106,6 +109,9 @@
 			&-go {
 				grid-area: go;
 				place-self: center center;
+			}
+			&-go:hover {
+				cursor: pointer;
 			}
 			&-dot {
 				grid-area: dots;
@@ -227,6 +233,9 @@
 				grid-area: back;
 				place-self: center center;
 			}
+			&-back:hover {
+				cursor: pointer;
+			}
 			&-body {
 				width: 211px;
 				height: 344px;
@@ -253,6 +262,9 @@
 			&-go {
 				grid-area: go;
 				place-self: center center;
+			}
+			&-go:hover {
+				cursor: pointer;
 			}
 			&-dot {
 				grid-area: dots;

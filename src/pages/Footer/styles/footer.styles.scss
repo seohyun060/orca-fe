@@ -82,6 +82,9 @@
 
 				@include font-setting(#f0f0f0, 300, 20px, 28px);
 			}
+			button:hover {
+				cursor: pointer;
+			}
 		}
 
 		&-please {

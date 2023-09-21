@@ -137,6 +137,9 @@
 					background: var(--Light-gray, #f0f0f0);
 					@include font-setting(#3c3c3c, 300, 20px, 28px);
 				}
+				button:hover {
+					cursor: pointer;
+				}
 				margin-bottom: 16px;
 			}
 			&-body {
@@ -172,6 +175,9 @@
 				border-radius: 10px;
 				border: 1px solid var(--Dark-gray, #3c3c3c);
 				@include font-setting(#3c3c3c, 300, 20px, 28px);
+			}
+			button:hover {
+				cursor: pointer;
 			}
 		}
 	}

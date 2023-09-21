@@ -46,8 +46,8 @@ export default function EventCard(props) {
     </article>
   ) : inEvent ? (
     commingSoon ? (
-      <article className="EventCard InEvent CommingSoon">
-        <div className="EventCardTitle CommingSoon">Comming<br />Soon</div>
+      <article className="EventCard InEvent Comming">
+        <div className="EventCardTitle Comming">Comming</div>
       </article>
     ) : (
       <article
@@ -58,7 +58,7 @@ export default function EventCard(props) {
           <div className="EventCardMonth">{monthNames[date.getMonth()]}</div>
           <div className="EventCardDday">
             {now.getDate() - date.getDate()
-              ? "Day - " + (now.getDate() - date.getDate())
+              ? (now.getDate() - date.getDate() + " - Day")
               : "D-day"}
           </div>
         </div>
@@ -68,8 +68,8 @@ export default function EventCard(props) {
       </article>
     )
   ) : commingSoon ? (
-    <article className="EventCard CommingSoon">
-      <div className="EventCardTitle CommingSoon">{title}</div>
+    <article className="EventCard Comming">
+      <div className="EventCardTitle Comming">Comming</div>
     </article>
   ) : (
     <article

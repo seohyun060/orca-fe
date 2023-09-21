@@ -124,6 +124,7 @@ const ProjectExplore = (props) => {
     dataFiltering();
   }, [isCategoryChecked, isYearlyChecked, isStatusChecked]);
 
+
   return (
     <section className="ProjectSection">
       <div className="SectionTitle">{t("project_explore")}</div>

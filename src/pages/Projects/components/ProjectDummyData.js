@@ -1,6 +1,6 @@
 const ProjectDummyData = [
   {
-    title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis1",
+    title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis1 asdfdasfsadfsafsdafasa",
     status: "Completed",
     projID: 2.13454835226345,
     category: "CadAI-B",
@@ -41,7 +41,7 @@ const ProjectDummyData = [
   },
   {
     title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis6",
-    status: "Terminated",
+    status: "Active",
     projID: 2.13454835226345,
     category: "Chat AI",
     location: "Bukgu, Daegu, Korea",

@@ -387,7 +387,7 @@
     justify-content: center;
   }
   .orca-what {
-    width: 400px;
+    width: 350px;
     height: 500px;
   }
   .orca-what-box {
@@ -423,7 +423,7 @@
     letter-spacing: normal;
   }
   .orca-goal {
-    width: 400px;
+    width: 350px;
     height: 350px;
   }
   .orca-goal-box {
@@ -467,7 +467,7 @@
     letter-spacing: normal;
   }
   .orca-benefits {
-    width: 400px;
+    width: 350px;
     height: 550px;
     margin-top: 50px;
     margin-bottom: 0px;

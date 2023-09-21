@@ -19,6 +19,7 @@ import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherContainer';
 import InsightsContainer from 'src/pages/Insights/containers/InsightsContainer';
 import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
+
 // /* eslint no-restricted-globals: ["off"] */
 
 const RootNavigation = () => {

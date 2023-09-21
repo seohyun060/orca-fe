@@ -2,6 +2,8 @@ import React from 'react';
 import './styles/gnb.styles.css';
 import images from 'src/assets/images';
 import { GNBTableTypes } from '@typedef/types';
+import { motion, AnimatePresence } from 'framer-motion';
+
 type Props = {
 	gnbColor: string;
 	tabTable: GNBTableTypes[];
@@ -33,6 +35,16 @@ const gnb = ({
 	setLanguage,
 	i18n,
 }: Props) => {
+	const krBtnStyle = {
+		backgroundColor: language === 'Kr' ? 'black' : 'white',
+		color: language === 'Kr' ? 'white' : 'black',
+	};
+
+	// EN 버튼의 스타일
+	const enBtnStyle = {
+		backgroundColor: language === 'En' ? 'black' : 'white',
+		color: language === 'En' ? 'white' : 'black',
+	};
 	return (
 		<div className={`gnb${gnbColor}`} style={{ width: '100vw' }}>
 			<img
@@ -96,10 +108,29 @@ const gnb = ({
 					);
 				})}
 			</div>
-			<div className={`gnb-${language}`} onClick={onLanguageClicked}>
-				<div className='kr-btn'>KR</div>
-				<div className='en-btn'>EN</div>
-			</div>
+			<AnimatePresence>
+				<motion.div
+					className={`gnb-${language}`}
+					initial={{
+						opacity: 0,
+					}}
+					animate={{
+						opacity: 1,
+					}}
+					exit={{
+						opacity: 0,
+					}}
+					transition={{
+						duration: 0.5,
+						ease: 'easeInOut',
+					}}
+					key={`${language}`}
+					onClick={onLanguageClicked}
+				>
+					<motion.div className='kr-btn'>KR</motion.div>
+					<motion.div className='en-btn'>EN</motion.div>
+				</motion.div>
+			</AnimatePresence>
 			<div className='gnb-join' onClick={() => onItemClicked('/')}>
 				Join Us
 			</div>

@@ -137,6 +137,9 @@
 					color: #fff;
 				}
 			}
+			button:hover {
+				cursor: pointer;
+			}
 		}
 	}
 	&-body {
@@ -194,6 +197,9 @@
 				line-height: 28px; /* 140% */
 			}
 		}
+		.insight-info:hover {
+			cursor: pointer;
+		}
 	}
 	&-readmore {
 		width: 186px;
@@ -211,6 +217,9 @@
 		font-style: normal;
 		font-weight: 300;
 		line-height: 28px; /* 140% */
+	}
+	&-readmore:hover {
+		cursor: pointer;
 	}
 }
 

@@ -71,6 +71,9 @@
   grid-area: back;
   place-self: center center;
 }
+.researcher-map .country0 .researchers-back:hover, .researcher-map .country3 .researchers-back:hover, .researcher-map .country2 .researchers-back:hover, .researcher-map .country1 .researchers-back:hover {
+  cursor: pointer;
+}
 .researcher-map .country0 .researchers-body, .researcher-map .country3 .researchers-body, .researcher-map .country2 .researchers-body, .researcher-map .country1 .researchers-body {
   width: 211px;
   height: 344px;
@@ -104,6 +107,9 @@
 .researcher-map .country0 .researchers-go, .researcher-map .country3 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country1 .researchers-go {
   grid-area: go;
   place-self: center center;
+}
+.researcher-map .country0 .researchers-go:hover, .researcher-map .country3 .researchers-go:hover, .researcher-map .country2 .researchers-go:hover, .researcher-map .country1 .researchers-go:hover {
+  cursor: pointer;
 }
 .researcher-map .country0 .researchers-dot, .researcher-map .country3 .researchers-dot, .researcher-map .country2 .researchers-dot, .researcher-map .country1 .researchers-dot {
   grid-area: dots;
@@ -205,6 +211,9 @@
   grid-area: back;
   place-self: center center;
 }
+.researcher-map-black .country0 .researchers-back:hover, .researcher-map-black .country3 .researchers-back:hover, .researcher-map-black .country2 .researchers-back:hover, .researcher-map-black .country1 .researchers-back:hover {
+  cursor: pointer;
+}
 .researcher-map-black .country0 .researchers-body, .researcher-map-black .country3 .researchers-body, .researcher-map-black .country2 .researchers-body, .researcher-map-black .country1 .researchers-body {
   width: 211px;
   height: 344px;
@@ -238,6 +247,9 @@
 .researcher-map-black .country0 .researchers-go, .researcher-map-black .country3 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country1 .researchers-go {
   grid-area: go;
   place-self: center center;
+}
+.researcher-map-black .country0 .researchers-go:hover, .researcher-map-black .country3 .researchers-go:hover, .researcher-map-black .country2 .researchers-go:hover, .researcher-map-black .country1 .researchers-go:hover {
+  cursor: pointer;
 }
 .researcher-map-black .country0 .researchers-dot, .researcher-map-black .country3 .researchers-dot, .researcher-map-black .country2 .researchers-dot, .researcher-map-black .country1 .researchers-dot {
   grid-area: dots;

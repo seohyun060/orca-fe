@@ -119,6 +119,9 @@
 					@extend .researcher-info-department;
 				}
 			}
+			.researcher-info:hover {
+				cursor: pointer;
+			}
 		}
 		&-readmore {
 			width: 186px;
@@ -136,6 +139,9 @@
 			font-style: normal;
 			font-weight: 300;
 			line-height: 28px; /* 140% */
+		}
+		&-readmore:hover {
+			cursor: pointer;
 		}
 	}
 }

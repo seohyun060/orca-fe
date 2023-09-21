@@ -112,6 +112,9 @@
   font-weight: 300;
   line-height: 28px; /* 175% */
 }
+.researcher-body-list .researcher-info:hover {
+  cursor: pointer;
+}
 .researcher-body-readmore {
   width: 186px;
   height: 44px;
@@ -128,6 +131,9 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px; /* 140% */
+}
+.researcher-body-readmore:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 1400px) {

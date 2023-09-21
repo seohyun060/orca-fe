@@ -16,10 +16,16 @@
   position: absolute;
   left: 60px;
 }
+.gnb-logo:hover {
+  cursor: pointer;
+}
 .gnb-bar {
   display: none;
   position: absolute;
   left: 21px;
+}
+.gnb-bar:hover {
+  cursor: pointer;
 }
 .gnb-menu {
   width: 554px;
@@ -77,6 +83,9 @@
 .gnb .side .side-menu .side-menu-button div, .gnb-white .side .side-menu .side-menu-button div {
   margin-left: 18px;
 }
+.gnb .side .side-menu .side-menu-button:hover, .gnb-white .side .side-menu .side-menu-button:hover {
+  cursor: pointer;
+}
 .gnb-En {
   position: absolute;
   right: 271px;
@@ -113,6 +122,9 @@
   font-style: normal;
   line-height: 2.3;
   letter-spacing: normal;
+}
+.gnb-En:hover {
+  cursor: pointer;
 }
 .gnb-Kr {
   position: absolute;
@@ -169,10 +181,16 @@
   line-height: 2.3;
   letter-spacing: normal;
 }
+.gnb-join:hover {
+  cursor: pointer;
+}
 .gnb-language {
   display: none;
   position: absolute;
   right: 30px;
+}
+.gnb-language:hover {
+  cursor: pointer;
 }
 .gnb .globeBox, .gnb-white .globeBox {
   display: none;
@@ -196,6 +214,9 @@
 }
 .gnb .globeBox-en, .gnb-white .globeBox-en {
   border-bottom: 0.5px solid var(--Light-gray, #f0f0f0);
+}
+.gnb .globeBox:hover, .gnb-white .globeBox:hover {
+  cursor: pointer;
 }
 
 .gnb-white {
@@ -338,7 +359,7 @@
     text-align: center;
     /* web. light.20 */
     font-family: Pretendard;
-    font-size: 20px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 300;
     line-height: 28px; /* 140% */

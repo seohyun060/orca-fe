@@ -851,6 +851,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  transform: translate(0px);
 }
 
 @media (max-width: 1400px) {

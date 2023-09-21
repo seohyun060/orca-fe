@@ -33,6 +33,7 @@
 }
 .researcher-map .country0 .country-box:hover, .researcher-map .country3 .country-box:hover, .researcher-map .country2 .country-box:hover, .researcher-map .country1 .country-box:hover {
   background: var(--Midium-gray, #9e9e9e);
+  transition: 0.3s;
   cursor: pointer;
 }
 .researcher-map .country0 .country-box-Off, .researcher-map .country3 .country-box-Off, .researcher-map .country2 .country-box-Off, .researcher-map .country1 .country-box-Off {
@@ -172,6 +173,7 @@
 }
 .researcher-map-black .country0 .country-box:hover, .researcher-map-black .country3 .country-box:hover, .researcher-map-black .country2 .country-box:hover, .researcher-map-black .country1 .country-box:hover {
   background: var(--Midium-gray, #9e9e9e);
+  transition: 0.3s;
   cursor: pointer;
 }
 .researcher-map-black .country0 .country-box-Off, .researcher-map-black .country3 .country-box-Off, .researcher-map-black .country2 .country-box-Off, .researcher-map-black .country1 .country-box-Off {

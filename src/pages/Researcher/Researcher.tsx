@@ -93,7 +93,10 @@ const Researcher = ({
 										console.log('onResearcherClick');
 									}}
 								>
-									<img src={images.profile} />
+									<div className='researcher-info-box'>
+										<div>Learn More</div>
+									</div>
+									<img src={images.profile}></img>
 									<div className='researcher-info-name'>{researcher.name}</div>
 									<div className='researcher-info-department'>
 										{researcher.department}

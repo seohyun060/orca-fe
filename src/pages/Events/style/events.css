@@ -576,7 +576,7 @@ circle {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0px auto;
+    margin: 20px auto;
     width: 350px;
   }
   .SectionTitle {
@@ -593,7 +593,7 @@ circle {
   .EventCardPaging {
     width: 350px;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   .EventCardPaging img {
     width: 10px;

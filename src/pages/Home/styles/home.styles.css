@@ -874,7 +874,7 @@
 }
 @media (max-width: 767px) {
   .EventBox {
-    width: 400px;
+    width: 350px;
   }
   .EventBoxSlide {
     width: 350px;

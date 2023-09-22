@@ -61,7 +61,7 @@
 }
 .SearchBar input {
   background: var(--Light-gray, #f0f0f0);
-  color: var(--Midium-gray, #9e9e9e);
+  color: #000;
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
@@ -96,6 +96,17 @@
   font-style: normal;
   font-weight: 600;
   line-height: 35px;
+}
+
+.ResultSentence {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .ProjectSelectionSector {
@@ -212,6 +223,11 @@
   flex-shrink: 0;
   margin-left: 6px;
   margin-bottom: 20px;
+}
+
+.ProjectStatus {
+  margin-top: 27px;
+  margin-bottom: 10px;
 }
 
 .ProjectTitle {
@@ -487,8 +503,8 @@
   white-space: normal;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webket-line-clamp: 2;
-  -webkit-box-orient: horizontal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .ProjectCardTitle.shortForm {
   width: 100%;
@@ -629,6 +645,12 @@
     font-size: 20px;
     line-height: 22px;
   }
+  .ResultSentence {
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 15px;
+    margin-bottom: 22px;
+  }
   .checkbox {
     width: 20px;
     height: 20px;
@@ -640,6 +662,10 @@
   }
   .ProjectDetailsSection {
     width: 900px;
+  }
+  .ProjectStatus {
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   .ProjectTitle {
     width: 640px;
@@ -710,6 +736,12 @@
     font-size: 13px;
     line-height: 14px;
   }
+  .ResultSentence {
+    font-size: 21px;
+    line-height: 28px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
   .checkbox {
     width: 13px;
     height: 13px;
@@ -777,6 +809,13 @@
   .ProjectDetailsSection {
     width: 700px;
   }
+  .ProjectStatus {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .ProjectStatus p {
+    font-size: 20px;
+  }
   .ProjectTitle {
     width: 498px;
   }
@@ -801,15 +840,16 @@
 }
 @media (max-width: 767px) {
   .ProjectSection {
-    width: 400px;
+    width: 350px;
     margin-top: 0px;
+    margin-bottom: 30px;
   }
   .ProjectExploreUpperBar {
-    width: 310px;
+    width: 263px;
   }
   .ProjectExploreUpperBar button {
-    font-size: 5px;
-    padding: 1px 5px;
+    font-size: 4px;
+    padding: 1px 2px;
     line-height: 7px;
   }
   .SearchBar {
@@ -828,13 +868,24 @@
     height: 7px;
     flex-shrink: 0;
   }
+  .ResultEmpty {
+    width: 263px;
+    font-size: 8px;
+    line-height: 10px;
+  }
+  .ResultSentence {
+    font-size: 10px;
+    line-height: 14px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+  }
   .ProjectCardContent {
-    width: 400px;
+    width: 350px;
     height: 100px;
     padding: 9px 9px;
   }
   .ProjectCardContent.inProject {
-    width: 310px;
+    width: 263px;
   }
   .ProjectCardContent.shortForm {
     width: 349px;
@@ -913,6 +964,9 @@
     height: 10px;
     padding: 1.5px 0.4px 1.5px 0.7px;
   }
+  .ButtonArrange {
+    margin-top: 30px;
+  }
   .Article .SubjectName {
     font-size: 20px;
     line-height: 28px;
@@ -931,6 +985,13 @@
   .BackImage {
     width: 44px;
     height: 14px;
+  }
+  .ProjectStatus {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .ProjectStatus p {
+    font-size: 15px;
   }
   .ProjectTitle {
     font-size: 25px;

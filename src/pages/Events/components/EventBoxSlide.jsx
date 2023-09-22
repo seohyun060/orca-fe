@@ -90,7 +90,7 @@ const EventBoxSlide = (props) => {
       eventSlideRef.current.style.transform = "translateX(0px)";
     } else {
       setCardSize(163 + 12);
-      setCardHiddenSize(113);
+      setCardHiddenSize(163);
       eventSlideRef.current.style.transform = "translateX(0px)";
     }
   };

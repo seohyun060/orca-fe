@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "./style/projects.css";
 
-import images from 'src/assets/images';
+import images from "src/assets/images";
 
 import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";
@@ -32,6 +32,27 @@ const PrejectsDetails = (props) => {
     <div className="MenuBarContent">{sampleQautation}</div>
   );
 
+  // 추후 데이터에서 상태를 받아올 때 사용
+  const [statusSector, setStatusSector] = useState(<></>);
+
+  const makeStatusSector = () => {
+    if ("Completed" === "Completed") {
+      setStatusSector(
+        <p className="ProjectCardProgress Completed">• Completed</p>
+      );
+    } else if ("Completed" === "Terminated") {
+      setStatusSector(
+        <p className="ProjectCardProgress Terminated">• Terminated</p>
+      );
+    } else if ("Completed" === "Active") {
+      setStatusSector(<p className="ProjectCardProgress Active">• Active</p>);
+    }
+  };
+
+  useEffect(() => {
+    makeStatusSector();
+  }, []);
+
   // 백엔드 데이터 확인 후 어떤식으로 나눌껀지 생각
   return (
     <div className="Projects">
@@ -41,13 +62,16 @@ const PrejectsDetails = (props) => {
           src={images.backwithletter}
           onClick={() => navigate(-1)}
         />
+        <div className="ProjectStatus">{statusSector}</div>
         <div className="ProjectTitle">
           Real-time Decision Support by Light-weighted AI Model Trained with
           Large-scale Data for Breast Cancer Diagnosis
         </div>
         <div className="ProjectGird">
           <article className="StudyOverviewContents Article">
-            <div className="StudyOverview ArticleTitle">{t("study_overview")}</div>
+            <div className="StudyOverview ArticleTitle">
+              {t("study_overview")}
+            </div>
             <div className="Contents">{samplePharagraph}</div>
             <button className="ShowMoreButton">+ {t("show_more")}</button>
             <div className="ProjectOfficial">
@@ -159,9 +183,11 @@ const PrejectsDetails = (props) => {
           </article>
           <article className="Publications Article">
             <div className="ArticleTitle">{t("related_publications")}</div>
-            <ProjectCard shortForm = {true}
-            title = {ProjectDummyData[0].title}
-            projDate = {ProjectDummyData[0].projDate}/>
+            <ProjectCard
+              shortForm={true}
+              title={ProjectDummyData[0].title}
+              projDate={ProjectDummyData[0].projDate}
+            />
           </article>
         </div>
       </section>

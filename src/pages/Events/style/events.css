@@ -94,7 +94,7 @@ circle {
   padding: 0px;
   margin-bottom: 30px;
 }
-.EventCard.CommingSoon {
+.EventCard.Comming {
   opacity: 0.5;
 }
 
@@ -179,7 +179,7 @@ circle {
   height: 40px;
   margin: 0px;
 }
-.EventCardTitle.CommingSoon {
+.EventCardTitle.Comming {
   margin: 34px 0px;
   font-size: 40px;
   font-style: normal;
@@ -516,7 +516,7 @@ circle {
     font-size: 16px;
     line-height: 20px;
   }
-  .EventCardTitle.CommingSoon {
+  .EventCardTitle.Comming {
     margin: 26.5px 0px;
     font-size: 31px;
     line-height: 42px;
@@ -576,7 +576,7 @@ circle {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0px auto;
+    margin: 20px auto;
     width: 350px;
   }
   .SectionTitle {
@@ -593,7 +593,7 @@ circle {
   .EventCardPaging {
     width: 350px;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
   .EventCardPaging img {
     width: 10px;
@@ -646,7 +646,7 @@ circle {
   .EventCardTitle.InEvent {
     height: 77.5px;
   }
-  .EventCardTitle.CommingSoon {
+  .EventCardTitle.Comming {
     margin: 15px 0px;
     font-size: 15px;
     line-height: 24px;

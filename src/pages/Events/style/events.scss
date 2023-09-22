@@ -75,7 +75,6 @@ circle {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   flex-direction: row;
-  //나중에 디자인팀 질문
   overflow: hidden;
 }
 
@@ -103,7 +102,7 @@ circle {
     margin-bottom: 30px;
   }
 
-  &.CommingSoon {
+  &.Comming {
     opacity: 0.5;
   }
 }
@@ -190,7 +189,7 @@ circle {
     margin: 0px;
   }
 
-  &.CommingSoon {
+  &.Comming {
     margin: 34px 0px;
     font-size: 40px;
     font-style: normal;
@@ -576,7 +575,7 @@ circle {
       line-height: 20px;
     }
 
-    &.CommingSoon {
+    &.Comming {
       margin: 26.5px 0px;
       font-size: 31px;
       line-height: 42px;
@@ -645,7 +644,7 @@ circle {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0px auto;
+    margin: 20px auto;
     width: 350px;
   }
 
@@ -665,7 +664,7 @@ circle {
   .EventCardPaging {
     width: 350px;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 
     img {
       width: 10px;
@@ -727,7 +726,7 @@ circle {
     &.InEvent {
       height: 77.5px;
     }
-    &.CommingSoon {
+    &.Comming {
       margin: 15px 0px;
       font-size: 15px;
       line-height: 24px;

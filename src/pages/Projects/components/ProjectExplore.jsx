@@ -36,6 +36,7 @@ const ProjectExplore = (props) => {
   const [isYearlyChecked, setIsYearlyChecked] = useState([false, false, false]);
   const [status, setStatus] = useState(["Active", "Completed", "Terminated"]);
   const [isStatusChecked, setIsStatusChecked] = useState([true, true, true]);
+  const [searchSentence, setSearchSentence] = useState();
 
   const getProjectData = () => {
     // 백엔드 생성시 데이터를 받을 함수
@@ -121,6 +122,19 @@ const ProjectExplore = (props) => {
   };
 
   useEffect(() => {
+    {
+      document.getElementById("search").value != "" ? (
+        setSearchSentence(<div className="ResultSentence">
+        There are search results for “
+        {document.getElementById("search").value}”.
+      </div>)
+      ) : (
+        setSearchSentence(<></>)
+      );
+    }
+  });
+
+  useEffect(() => {
     dataFiltering();
   }, [isCategoryChecked, isYearlyChecked, isStatusChecked]);
 
@@ -154,6 +168,7 @@ const ProjectExplore = (props) => {
         </div>
         {tempData.length != 0 ? (
           <div className="ProjectList">
+            {searchSentence}
             {tempData.map((temp) => (
               <ProjectCard
                 inProject={true}

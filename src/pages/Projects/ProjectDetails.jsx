@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -15,17 +15,19 @@ import ProjectDummyData from "./components/ProjectDummyData";
 const PrejectsDetails = (props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const StudyPharagraph = useRef();
 
   const { projID } = props;
 
   const [isOpen, setIsopen] = useState(true);
+  const [isPharagraphOpen, setIsPharagraphOpen] = useState(false);
   const [isInclCriteriaOpen, setIsInclCriteriaOpen] = useState(false);
   const [isExclCriteriaOpen, setIsExclCriteriaOpen] = useState(false);
   const [isInvTreatOpen, setIsInvTreatOpen] = useState(false);
   const [isStudyResultOpen, setStudyResultOpen] = useState(false);
 
   const samplePharagraph =
-    "Lorem ipsum dolor sit amet, cosectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ";
+    "Lorem ipsum dolor sit amet, cosectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation Lorem ipsum dolor sit amet, cosectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation";
   const sampleQautation =
     "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, ";
   const sampleContents = (
@@ -47,6 +49,16 @@ const PrejectsDetails = (props) => {
     } else if ("Completed" === "Active") {
       setStatusSector(<p className="ProjectCardProgress Active">• Active</p>);
     }
+  };
+
+  const openPharagraph = () => {
+    if (!isPharagraphOpen) {
+      StudyPharagraph.current.style.display = "block";
+    } else {
+      StudyPharagraph.current.style.display = "-webkit-box";
+    }
+    setIsPharagraphOpen(!isPharagraphOpen);
+    console.log("check");
   };
 
   useEffect(() => {
@@ -72,8 +84,19 @@ const PrejectsDetails = (props) => {
             <div className="StudyOverview ArticleTitle">
               {t("study_overview")}
             </div>
-            <div className="Contents">{samplePharagraph}</div>
-            <button className="ShowMoreButton">+ {t("show_more")}</button>
+            <div className="Contents" ref={StudyPharagraph}>
+              {samplePharagraph}
+            </div>
+            {!isPharagraphOpen ? (
+              <button className="ShowMoreButton" onClick={openPharagraph}>
+                + {t("show_more")}
+              </button>
+            ) : (
+              <button className="ShowMoreButton" onClick={openPharagraph}>
+                - {t("fold")}
+              </button>
+            )}
+
             <div className="ProjectOfficial">
               <div className="SubjectName">{t("study_title")}</div>
               <div className="Contents">{sampleQautation}</div>

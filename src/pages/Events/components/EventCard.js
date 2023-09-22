@@ -36,7 +36,10 @@ export default function EventCard(props) {
   return past ? (
     <article
       className="EventCard Past"
-      onClick={() => navigate("/events/default", { state: { past: past } })}
+      onClick={() => {
+        navigate("/events/default", { state: { past: past } });
+        window.scrollTo(0, 0);
+      }}
     >
       <img className="EventCardImage" src={image}></img>
       <div className="EventCardPeriod Past">
@@ -52,13 +55,16 @@ export default function EventCard(props) {
     ) : (
       <article
         className="EventCard InEvent"
-        onClick={() => navigate("/events/default", { state: { past: past } })}
+        onClick={() => {
+          navigate("/events/default", { state: { past: past } });
+          window.scrollTo(0, 0);
+        }}
       >
         <div className="EventCardPeriod">
           <div className="EventCardMonth">{monthNames[date.getMonth()]}</div>
           <div className="EventCardDday">
             {now.getDate() - date.getDate()
-              ? (now.getDate() - date.getDate() + " - Day")
+              ? now.getDate() - date.getDate() + " - Day"
               : "D-day"}
           </div>
         </div>
@@ -74,7 +80,10 @@ export default function EventCard(props) {
   ) : (
     <article
       className="EventCard"
-      onClick={() => navigate("/events/default", { state: { past: past } })}
+      onClick={() => {
+        navigate("/events/default", { state: { past: past } });
+        window.scrollTo(0, 0);
+      }}
     >
       <div className="EventCardPeriod">
         <div className="EventCardMonth">{monthNames[date.getMonth()]}</div>

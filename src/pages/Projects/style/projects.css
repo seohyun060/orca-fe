@@ -270,6 +270,11 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
 }
 
 .ProjectOfficial {
@@ -315,6 +320,9 @@
   font-weight: 400;
   line-height: 28px;
   margin-top: 20px;
+}
+.ShowMoreButton:hover {
+  cursor: pointer;
 }
 
 .StudyInformation {
@@ -525,6 +533,7 @@
 }
 .ProjectDate.ShortForm {
   color: var(--Midium-gray, #9e9e9e);
+  text-align: left;
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
@@ -602,10 +611,6 @@
   .ProjectCardContent.shortForm {
     width: 785px;
     height: 134px;
-    flex-shrink: 0;
-    border: 1px solid var(--Dark-gray, #3c3c3c);
-    padding: 16px 18px;
-    margin: 20px 0px;
   }
   .ProjectExploreUpperBar {
     width: 780px;
@@ -763,13 +768,10 @@
   .ProjectCardContent.inProject .ProjectCardTitle {
     width: 85%;
   }
-  .ProjectCardContent.inProject.shortForm {
+  .ProjectCardContent.shortForm {
     width: 611px;
-    height: 134px;
+    height: 110px;
     flex-shrink: 0;
-    border: 1px solid var(--Dark-gray, #3c3c3c);
-    padding: 16px 18px;
-    margin: 20px 0px;
   }
   .ProjectCardProgress {
     font-size: 16.5px;
@@ -793,6 +795,10 @@
     font-size: 15px;
     margin-top: 7.5px;
     padding-bottom: 26px;
+    line-height: 20px;
+  }
+  .ProjectDate.ShortForm {
+    font-size: 15px;
     line-height: 20px;
   }
   .ProjectCardLocation {
@@ -888,12 +894,8 @@
     width: 263px;
   }
   .ProjectCardContent.shortForm {
-    width: 349px;
-    height: 84px;
-    flex-shrink: 0;
-    border: 1px solid var(--Dark-gray, #3c3c3c);
-    padding: 16px 18px;
-    margin: 20px 0px;
+    width: 330px;
+    height: 80px;
   }
   .ProjectCardContent.shortForm .ProjectCardTitle.shortForm {
     height: 30px;
@@ -903,6 +905,10 @@
     line-height: 10px;
     margin-top: 4px;
     padding-bottom: 17px;
+  }
+  .ProjectDate.ShortForm {
+    font-size: 10px;
+    line-height: 10px;
   }
   .ProjectCardProgress {
     font-size: 9.5px;

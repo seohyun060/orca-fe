@@ -20,11 +20,33 @@ export default function ProjectCard(props) {
     projDate,
   } = props;
 
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   const projectDate = new Date(projDate);
   const projectDateFormat =
     projectDate.getDate() +
     "." +
-    projectDate.getMonth() +
+    (projectDate.getMonth() + 1) +
+    "." +
+    projectDate.getFullYear();
+
+  const projectDateFormatShortForm =
+    projectDate.getDate() +
+    "." +
+    monthNames[projectDate.getMonth()] +
     "." +
     projectDate.getFullYear();
 
@@ -55,7 +77,7 @@ export default function ProjectCard(props) {
       onClick={() => navigate("/projects/default")}
     >
       <div className="ProjectCardTitle shortForm">{title}</div>
-      <div className="ProjectDate ShortForm">{projDate}</div>
+      <div className="ProjectDate ShortForm">{projectDateFormatShortForm}</div>
     </article>
   ) : (
     <article
@@ -83,7 +105,10 @@ export default function ProjectCard(props) {
         <button
           className="ReadMoreButton"
           // 추후 projID를 받아와 변경
-          onClick={() => navigate("/projects/default")}
+          onClick={() => {
+            navigate("/projects/default");
+            window.scrollTo(0, 0);
+          }}
           // onClick={() => navigate("/project/" + {projID})}
         >
           {t("read_more")}

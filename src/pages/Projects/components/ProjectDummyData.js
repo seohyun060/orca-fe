@@ -5,7 +5,7 @@ const ProjectDummyData = [
     projID: 2.13454835226345,
     category: "CadAI-B",
     location: "Bukgu, Daegu, Korea",
-    projDate: "11.August.23",
+    projDate: "2023/08/11 00:00:00",
   },
   {
     title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis2",
@@ -13,7 +13,7 @@ const ProjectDummyData = [
     projID: 2.13454835226345,
     category: "CadAI-T",
     location: "Bukgu, Daegu, Korea",
-    projDate: "19.August.22",
+    projDate: "2022/08/19 00:00:00",
   },
   {
     title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis3",
@@ -21,7 +21,7 @@ const ProjectDummyData = [
     projID: 2.13454835226345,
     category: "Chat AI",
     location: "Bukgu, Daegu, Korea",
-    projDate: "19.August.21",
+    projDate: "2021/08/19 11:11:11",
   },
   {
     title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis4",

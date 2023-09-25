@@ -49,6 +49,18 @@
   cursor: pointer;
   transition: 0.25s;
 }
+.gnb .gnb-tiny, .gnb-white .gnb-tiny {
+  position: absolute;
+  left: 188px;
+  top: 17px;
+  color: var(--Dark-gray, white);
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+}
 .gnb .side, .gnb-white .side {
   position: fixed;
   display: none;
@@ -161,6 +173,9 @@
   font-style: normal;
   line-height: 2.3;
   letter-spacing: normal;
+}
+.gnb-Kr:hover {
+  cursor: pointer;
 }
 .gnb-join {
   display: flex;
@@ -275,6 +290,9 @@
     font-style: normal;
     line-height: 32px;
     letter-spacing: normal;
+  }
+  .gnb .gnb-tiny, .gnb-white .gnb-tiny {
+    display: none;
   }
   .gnb-En {
     right: 201px;

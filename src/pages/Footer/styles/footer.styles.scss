@@ -68,7 +68,7 @@
 
 				border: 1px solid var(--Dark-gray, #3c3c3c);
 
-				@include font-setting(#f0f0f0, 300, 20px, 28px);
+				@include font-setting(black, 300, 20px, 28px);
 			}
 
 			button {

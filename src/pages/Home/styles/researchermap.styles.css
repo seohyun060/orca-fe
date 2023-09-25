@@ -84,25 +84,30 @@
   width: 211px;
   height: 108px;
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
-  background: var(--Dark-gray, #382323);
+  background: var(--Dark-gray, #3c3c3c);
 }
 .researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img {
   width: 92px;
   height: 92px;
-  margin-top: 8px;
   margin-left: 8px;
 }
 .researcher-map .country0 .researchers-body .researcher-card span, .researcher-map .country3 .researchers-body .researcher-card span, .researcher-map .country2 .researchers-body .researcher-card span, .researcher-map .country1 .researchers-body .researcher-card span {
-  margin-top: 72px;
+  width: 45%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: end;
+  word-wrap: break-word;
   margin-left: 8px;
+  margin-bottom: 8px;
   color: white;
-  font-size: 30px;
+  font-size: 15px;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 28px;
+  line-height: 20px;
   letter-spacing: normal;
 }
 .researcher-map .country0 .researchers-go, .researcher-map .country3 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country1 .researchers-go {
@@ -225,25 +230,30 @@
   width: 211px;
   height: 108px;
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
   background-color: #fff;
 }
 .researcher-map-black .country0 .researchers-body .researcher-card img, .researcher-map-black .country3 .researchers-body .researcher-card img, .researcher-map-black .country2 .researchers-body .researcher-card img, .researcher-map-black .country1 .researchers-body .researcher-card img {
   width: 92px;
   height: 92px;
-  margin-top: 8px;
   margin-left: 8px;
 }
 .researcher-map-black .country0 .researchers-body .researcher-card span, .researcher-map-black .country3 .researchers-body .researcher-card span, .researcher-map-black .country2 .researchers-body .researcher-card span, .researcher-map-black .country1 .researchers-body .researcher-card span {
-  margin-top: 72px;
+  width: 45%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-self: end;
+  word-wrap: break-word;
   margin-left: 8px;
+  margin-bottom: 8px;
   color: black;
-  font-size: 30px;
+  font-size: 15;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 28px;
+  line-height: 20px;
   letter-spacing: normal;
 }
 .researcher-map-black .country0 .researchers-go, .researcher-map-black .country3 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country1 .researchers-go {
@@ -342,19 +352,18 @@
   .researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img {
     width: 69.5px;
     height: 69.5px;
-    margin-top: 6px;
-    margin-left: 6px;
+    margin-left: 5px;
   }
   .researcher-map .country0 .researchers-body .researcher-card span, .researcher-map .country1 .researchers-body .researcher-card span, .researcher-map .country2 .researchers-body .researcher-card span, .researcher-map .country3 .researchers-body .researcher-card span {
-    margin-top: 52px;
     margin-left: 4px;
+    margin-bottom: 5px;
     color: white;
-    font-size: 22px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 28px;
+    line-height: 15px;
     letter-spacing: normal;
   }
   .researcher-map .country0 .researchers-go, .researcher-map .country1 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country3 .researchers-go {
@@ -433,19 +442,18 @@
   .researcher-map-black .country0 .researchers-body .researcher-card img, .researcher-map-black .country1 .researchers-body .researcher-card img, .researcher-map-black .country2 .researchers-body .researcher-card img, .researcher-map-black .country3 .researchers-body .researcher-card img {
     width: 69.5px;
     height: 69.5px;
-    margin-top: 6px;
-    margin-left: 6px;
+    margin-left: 5px;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card span, .researcher-map-black .country1 .researchers-body .researcher-card span, .researcher-map-black .country2 .researchers-body .researcher-card span, .researcher-map-black .country3 .researchers-body .researcher-card span {
-    margin-top: 52px;
     margin-left: 4px;
+    margin-bottom: 5px;
     color: black;
-    font-size: 22px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 28px;
+    line-height: 15px;
     letter-spacing: normal;
   }
   .researcher-map-black .country0 .researchers-go, .researcher-map-black .country1 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country3 .researchers-go {
@@ -507,9 +515,10 @@
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
     grid-area: head;
     color: #fff;
+    width: 140px;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 15px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
@@ -533,20 +542,13 @@
   .researcher-map-black .country0 .researchers-body .researcher-card img, .researcher-map-black .country1 .researchers-body .researcher-card img, .researcher-map-black .country2 .researchers-body .researcher-card img, .researcher-map-black .country3 .researchers-body .researcher-card img {
     width: 54px;
     height: 54px;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 4px;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card span, .researcher-map-black .country1 .researchers-body .researcher-card span, .researcher-map-black .country2 .researchers-body .researcher-card span, .researcher-map-black .country3 .researchers-body .researcher-card span {
-    margin-top: 37px;
-    margin-left: 8px;
-    color: black;
-    font-size: 15px;
-    font-family: Pretendard;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 28px;
-    letter-spacing: normal;
+    width: 55px;
+    font-size: 10px;
+    margin-bottom: 3.5px;
+    line-height: 11px;
   }
   .researcher-map-black .country0 .researchers-go, .researcher-map-black .country1 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country3 .researchers-go {
     grid-area: go;
@@ -601,7 +603,7 @@
     grid-area: head;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 15px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px; /* 127.273% */
@@ -624,21 +626,13 @@
   .researcher-map .country0 .researchers-body .researcher-card img, .researcher-map .country1 .researchers-body .researcher-card img, .researcher-map .country2 .researchers-body .researcher-card img, .researcher-map .country3 .researchers-body .researcher-card img {
     width: 54px;
     height: 54px;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 4px;
   }
   .researcher-map .country0 .researchers-body .researcher-card span, .researcher-map .country1 .researchers-body .researcher-card span, .researcher-map .country2 .researchers-body .researcher-card span, .researcher-map .country3 .researchers-body .researcher-card span {
-    margin-top: 72px;
-    margin-top: 37px;
-    margin-left: 8px;
-    color: white;
-    font-size: 15px;
-    font-family: Pretendard;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 28px;
-    letter-spacing: normal;
+    width: 55px;
+    font-size: 10px;
+    margin-bottom: 3.5px;
+    line-height: 11px;
   }
   .researcher-map .country0 .researchers-go, .researcher-map .country1 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country3 .researchers-go {
     grid-area: go;
@@ -677,17 +671,17 @@
     height: 43.75px;
   }
   .researcher-map-black .country0 .researchers, .researcher-map-black .researcher-map .country1 .researchers, .researcher-map .researcher-map-black .country1 .researchers, .researcher-map-black .researcher-map .country2 .researchers, .researcher-map .researcher-map-black .country2 .researchers, .researcher-map-black .researcher-map .country3 .researchers, .researcher-map .researcher-map-black .country3 .researchers, .researcher-map-black .country1 .researchers, .researcher-map-black .country2 .researchers, .researcher-map-black .country3 .researchers, .researcher-map-black .researcher-map .country0 .researchers-active, .researcher-map .researcher-map-black .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country0 .researchers-active, .researcher-map-black .researcher-map .country0 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country0 .researchers-active, .researcher-map .country0 .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country0 .researchers-active, .researcher-map-black .researcher-map .country0 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country0 .researchers-active, .researcher-map .country0 .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country0 .researchers-active, .researcher-map-black .researcher-map .country0 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country0 .researchers-active, .researcher-map .country0 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country1 .researcher-map .country0 .researchers-active, .researcher-map .country0 .researcher-map-black .country1 .researchers-active, .researcher-map-black .country2 .researcher-map .country0 .researchers-active, .researcher-map .country0 .researcher-map-black .country2 .researchers-active, .researcher-map-black .country3 .researcher-map .country0 .researchers-active, .researcher-map .country0 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country0 .researcher-map .country1 .researchers-active, .researcher-map .country1 .researcher-map-black .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .country2 .researcher-map .country1 .researchers-active, .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .researcher-map-black .country3 .researcher-map .country1 .researchers-active, .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country0 .researcher-map .country2 .researchers-active, .researcher-map .country2 .researcher-map-black .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country1 .researcher-map .country2 .researchers-active, .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .country3 .researcher-map .country2 .researchers-active, .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country0 .researcher-map .country3 .researchers-active, .researcher-map .country3 .researcher-map-black .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .country1 .researcher-map .country3 .researchers-active, .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .researcher-map-black .country2 .researcher-map .country3 .researchers-active, .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country0 .researchers-active, .researcher-map-black .country0 .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country0 .researchers-active, .researcher-map .researcher-map-black .country0 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country0 .researchers-active, .researcher-map-black .country0 .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country0 .researchers-active, .researcher-map .researcher-map-black .country0 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country0 .researchers-active, .researcher-map-black .country0 .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country0 .researchers-active, .researcher-map .researcher-map-black .country0 .country3 .researchers-active, .researcher-map-black .country1 .country0 .researchers-active, .researcher-map-black .country0 .country1 .researchers-active, .researcher-map-black .country2 .country0 .researchers-active, .researcher-map-black .country0 .country2 .researchers-active, .researcher-map-black .country3 .country0 .researchers-active, .researcher-map-black .country0 .country3 .researchers-active, .researcher-map-black .country0 .researcher-map .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map-black .country2 .researcher-map .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .country3 .researcher-map .country1 .researchers-active, .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country0 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country0 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map-black .country0 .researcher-map .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .country1 .researcher-map .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map-black .country3 .researcher-map .country2 .researchers-active, .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country0 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map-black .country0 .researcher-map .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map-black .country1 .researcher-map .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .country2 .researcher-map .country3 .researchers-active, .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country0 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map-black .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .country0 .country1 .researchers-active, .researcher-map-black .country1 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .country1 .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .country1 .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map-black .country1 .researchers-active, .researcher-map-black .country2 .country1 .researchers-active, .researcher-map-black .country1 .country2 .researchers-active, .researcher-map-black .country3 .country1 .researchers-active, .researcher-map-black .country1 .country3 .researchers-active, .researcher-map-black .country0 .country2 .researchers-active, .researcher-map-black .country2 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .country2 .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .country2 .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map-black .country1 .country2 .researchers-active, .researcher-map-black .country2 .country1 .researchers-active, .researcher-map-black .country2 .researchers-active, .researcher-map-black .country3 .country2 .researchers-active, .researcher-map-black .country2 .country3 .researchers-active, .researcher-map-black .country0 .country3 .researchers-active, .researcher-map-black .country3 .country0 .researchers-active, .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .country3 .researcher-map .country1 .researchers-active, .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .country3 .researcher-map .country2 .researchers-active, .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .country1 .country3 .researchers-active, .researcher-map-black .country3 .country1 .researchers-active, .researcher-map-black .country2 .country3 .researchers-active, .researcher-map-black .country3 .country2 .researchers-active, .researcher-map-black .country3 .researchers-active {
-    width: 120px;
+    width: 150px;
     height: 174px;
     top: -10.9px;
     left: 56.58px;
-    grid-template-columns: 10px 100px 10px;
+    grid-template-columns: 10px 130px 10px;
     grid-template-rows: 14px 150px 10px;
   }
   .researcher-map-black .country0 .researchers-head, .researcher-map-black .country1 .researchers-head, .researcher-map-black .country2 .researchers-head, .researcher-map-black .country3 .researchers-head {
     grid-area: head;
     color: #fff;
-    width: 82.86px;
+    width: px;
     /* web. re.22 */
     font-family: Pretendard;
     font-size: 6px;
@@ -701,12 +695,12 @@
     width: 10px;
   }
   .researcher-map-black .country0 .researchers-body, .researcher-map-black .country1 .researchers-body, .researcher-map-black .country2 .researchers-body, .researcher-map-black .country3 .researchers-body {
-    width: 100px;
+    width: 130px;
     height: 150px;
     grid-area: body;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card {
-    width: 100px;
+    width: 130px;
     height: 50px;
     display: flex;
     margin-bottom: 3px;
@@ -715,19 +709,18 @@
   .researcher-map-black .country0 .researchers-body .researcher-card img, .researcher-map-black .country1 .researchers-body .researcher-card img, .researcher-map-black .country2 .researchers-body .researcher-card img, .researcher-map-black .country3 .researchers-body .researcher-card img {
     width: 40px;
     height: 40px;
-    margin-top: 5px;
     margin-left: 5px;
   }
   .researcher-map-black .country0 .researchers-body .researcher-card span, .researcher-map-black .country1 .researchers-body .researcher-card span, .researcher-map-black .country2 .researchers-body .researcher-card span, .researcher-map-black .country3 .researchers-body .researcher-card span {
-    margin-top: 33px;
-    margin-left: 4px;
+    margin-bottom: 5px;
+    width: 60px;
     color: black;
-    font-size: 12px;
+    font-size: 9px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 12px;
+    line-height: 11px;
     letter-spacing: normal;
   }
   .researcher-map-black .country0 .researchers-go, .researcher-map-black .country1 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country3 .researchers-go {
@@ -788,19 +781,19 @@
     height: 43.75px;
   }
   .map-container .researcher-map .country0 .researchers, .map-container .researcher-map .country1 .researchers, .map-container .researcher-map .country2 .researchers, .map-container .researcher-map .country3 .researchers, .map-container .researcher-map .researcher-map-black .country1 .researchers, .researcher-map-black .map-container .researcher-map .country1 .researchers, .map-container .researcher-map .researcher-map-black .country2 .researchers, .researcher-map-black .map-container .researcher-map .country2 .researchers, .map-container .researcher-map .researcher-map-black .country3 .researchers, .researcher-map-black .map-container .researcher-map .country3 .researchers, .map-container .researcher-map .country0 .researchers-active, .map-container .researcher-map .country1 .country0 .researchers-active, .map-container .researcher-map .country0 .country1 .researchers-active, .map-container .researcher-map .country2 .country0 .researchers-active, .map-container .researcher-map .country0 .country2 .researchers-active, .map-container .researcher-map .country3 .country0 .researchers-active, .map-container .researcher-map .country0 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country0 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country0 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country0 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .country3 .researchers-active, .map-container .researcher-map .country0 .country1 .researchers-active, .map-container .researcher-map .country1 .country0 .researchers-active, .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .country2 .country1 .researchers-active, .map-container .researcher-map .country1 .country2 .researchers-active, .map-container .researcher-map .country3 .country1 .researchers-active, .map-container .researcher-map .country1 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .map-container .researcher-map .country0 .country2 .researchers-active, .map-container .researcher-map .country2 .country0 .researchers-active, .map-container .researcher-map .country1 .country2 .researchers-active, .map-container .researcher-map .country2 .country1 .researchers-active, .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .country3 .country2 .researchers-active, .map-container .researcher-map .country2 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .map-container .researcher-map .country0 .country3 .researchers-active, .map-container .researcher-map .country3 .country0 .researchers-active, .map-container .researcher-map .country1 .country3 .researchers-active, .map-container .researcher-map .country3 .country1 .researchers-active, .map-container .researcher-map .country2 .country3 .researchers-active, .map-container .researcher-map .country3 .country2 .researchers-active, .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country0 .researchers-active, .researcher-map-black .country0 .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country0 .researchers-active, .researcher-map-black .country0 .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country0 .researchers-active, .researcher-map-black .country0 .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country0 .researchers-active, .map-container .researcher-map .researcher-map-black .country0 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country0 .researchers-active, .researcher-map-black .country0 .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country0 .researchers-active, .map-container .researcher-map .researcher-map-black .country0 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country0 .researchers-active, .researcher-map-black .country0 .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country0 .researchers-active, .map-container .researcher-map .researcher-map-black .country0 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country0 .researchers-active, .researcher-map-black .country0 .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map-black .researcher-map .country0 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .country1 .researchers-active, .map-container .researcher-map-black .researcher-map .country1 .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country0 .researchers-active, .map-container .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .map-container .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .map-container .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .map-container .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country0 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .map-container .researcher-map-black .researcher-map .country0 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .country2 .researchers-active, .map-container .researcher-map-black .researcher-map .country2 .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country0 .researchers-active, .map-container .researcher-map-black .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .map-container .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .map-container .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .map-container .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country0 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .map-container .researcher-map-black .researcher-map .country0 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country0 .country3 .researchers-active, .map-container .researcher-map-black .researcher-map .country3 .country0 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country0 .researchers-active, .map-container .researcher-map-black .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .map-container .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .map-container .researcher-map-black .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .map-container .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .map-container .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .researcher-map .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country0 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .researcher-map-black .country3 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country1 .researchers-active, .researcher-map-black .country1 .map-container .researcher-map .country0 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country1 .researchers-active, .researcher-map-black .country1 .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country1 .researchers-active, .researcher-map-black .country1 .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country1 .researchers-active, .researcher-map-black .country1 .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country1 .researchers-active, .researcher-map-black .country1 .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country2 .researchers-active, .researcher-map-black .country2 .map-container .researcher-map .country0 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country2 .researchers-active, .researcher-map-black .country2 .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .country3 .researcher-map-black .country2 .researchers-active, .researcher-map-black .country2 .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country2 .researchers-active, .researcher-map-black .country2 .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .country2 .researchers-active, .researcher-map-black .country2 .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .country0 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country3 .map-container .researcher-map .country0 .researchers-active, .map-container .researcher-map .country1 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country3 .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .country2 .researcher-map-black .country3 .researchers-active, .researcher-map-black .country3 .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country1 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country1 .researchers-active, .researcher-map-black .map-container .researcher-map .country1 .country3 .researchers-active, .researcher-map-black .country3 .map-container .researcher-map .country1 .researchers-active, .map-container .researcher-map .researcher-map-black .country2 .country3 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .country2 .researchers-active, .researcher-map-black .map-container .researcher-map .country2 .country3 .researchers-active, .researcher-map-black .country3 .map-container .researcher-map .country2 .researchers-active, .map-container .researcher-map .researcher-map-black .country3 .researchers-active, .researcher-map-black .map-container .researcher-map .country3 .researchers-active {
-    width: 120px;
+    width: 150px;
     height: 174px;
     top: -10.9px;
     left: 56.58px;
-    grid-template-columns: 10px 100px 10px;
+    grid-template-columns: 10px 130px 10px;
     grid-template-rows: 14px 150px 10px;
   }
   .map-container .researcher-map .country0 .researchers-head, .map-container .researcher-map .country1 .researchers-head, .map-container .researcher-map .country2 .researchers-head, .map-container .researcher-map .country3 .researchers-head {
     grid-area: head;
-    width: 82.86px;
+    width: 90px;
     /* web. re.22 */
     font-family: Pretendard;
-    font-size: 10px;
+    font-size: 9px;
     font-style: normal;
     font-weight: 400;
     line-height: 15px; /* 127.273% */
@@ -811,12 +804,12 @@
     width: 10px;
   }
   .map-container .researcher-map .country0 .researchers-body, .map-container .researcher-map .country1 .researchers-body, .map-container .researcher-map .country2 .researchers-body, .map-container .researcher-map .country3 .researchers-body {
-    width: 100px;
+    width: 130px;
     height: 150px;
     grid-area: body;
   }
   .map-container .researcher-map .country0 .researchers-body .researcher-card, .map-container .researcher-map .country1 .researchers-body .researcher-card, .map-container .researcher-map .country2 .researchers-body .researcher-card, .map-container .researcher-map .country3 .researchers-body .researcher-card {
-    width: 100px;
+    width: 130px;
     height: 50px;
     display: flex;
     margin-bottom: 3px;
@@ -824,19 +817,18 @@
   .map-container .researcher-map .country0 .researchers-body .researcher-card img, .map-container .researcher-map .country1 .researchers-body .researcher-card img, .map-container .researcher-map .country2 .researchers-body .researcher-card img, .map-container .researcher-map .country3 .researchers-body .researcher-card img {
     width: 40px;
     height: 40px;
-    margin-top: 5px;
     margin-left: 5px;
   }
   .map-container .researcher-map .country0 .researchers-body .researcher-card span, .map-container .researcher-map .country1 .researchers-body .researcher-card span, .map-container .researcher-map .country2 .researchers-body .researcher-card span, .map-container .researcher-map .country3 .researchers-body .researcher-card span {
-    margin-top: 33px;
-    margin-left: 4px;
+    width: 60px;
+    margin-bottom: 5px;
     color: white;
-    font-size: 10px;
+    font-size: 9px;
     font-family: Pretendard;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 12px;
+    line-height: 11px;
     letter-spacing: normal;
   }
   .map-container .researcher-map .country0 .researchers-go, .map-container .researcher-map .country1 .researchers-go, .map-container .researcher-map .country2 .researchers-go, .map-container .researcher-map .country3 .researchers-go {

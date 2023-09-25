@@ -90,7 +90,7 @@ const gnb = ({
 					</div>
 				</div>
 			)}
-			{gnbColor === '-white' ? <div className='gnb-tiny'>[ˈɔːr.kə]</div> : ''}
+			<div className='gnb-tiny'>[ˈɔːr.kə]</div>
 			<div className='gnb-menu'>
 				{tabTable.slice(0, -1).map((item, idx) => {
 					return (

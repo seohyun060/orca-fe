@@ -1,5 +1,5 @@
 const images = {
-	logo_w: '/assets/images/logo-w.png',
+	logo_w: '/assets/images/logo-w.svg',
 	logo_b: '/assets/images/logo-b.svg',
 	logo_orca: '/assets/images/logo-orca.png',
 	profile: '/assets/images/profile.png',

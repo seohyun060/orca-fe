@@ -91,18 +91,25 @@
 					width: 211px;
 					height: 108px;
 					display: flex;
+					align-items: center;
 					margin-bottom: 10px;
-					background: var(--Dark-gray, #382323);
+
+					background: var(--Dark-gray, #3c3c3c);
 					img {
 						width: 92px;
 						height: 92px;
-						margin-top: 8px;
+
 						margin-left: 8px;
 					}
 					span {
-						margin-top: 72px;
+						width: 45%;
+						height: fit-content;
+						align-self: end;
+						word-wrap: break-word;
+						//margin-top: 72px;
 						margin-left: 8px;
-						@include font-setting(white, 600, 30px, 28px);
+						margin-bottom: 8px;
+						@include font-setting(white, 600, 15px, 20px);
 					}
 				}
 			}
@@ -244,18 +251,22 @@
 					width: 211px;
 					height: 108px;
 					display: flex;
+					align-items: center;
 					margin-bottom: 10px;
 					background-color: #fff;
 					img {
 						width: 92px;
 						height: 92px;
-						margin-top: 8px;
 						margin-left: 8px;
 					}
 					span {
-						margin-top: 72px;
+						width: 45%;
+						height: fit-content;
+						align-self: end;
+						word-wrap: break-word;
 						margin-left: 8px;
-						@include font-setting(black, 600, 30px, 28px);
+						margin-bottom: 8px;
+						@include font-setting(black, 600, 15, 20px);
 					}
 				}
 			}
@@ -371,13 +382,12 @@
 						img {
 							width: 69.5px;
 							height: 69.5px;
-							margin-top: 6px;
-							margin-left: 6px;
+							margin-left: 5px;
 						}
 						span {
-							margin-top: 52px;
 							margin-left: 4px;
-							@include font-setting(white, 600, 22px, 28px);
+							margin-bottom: 5px;
+							@include font-setting(white, 600, 12px, 15px);
 						}
 					}
 				}
@@ -459,13 +469,12 @@
 						img {
 							width: 69.5px;
 							height: 69.5px;
-							margin-top: 6px;
-							margin-left: 6px;
+							margin-left: 5px;
 						}
 						span {
-							margin-top: 52px;
 							margin-left: 4px;
-							@include font-setting(black, 600, 22px, 28px);
+							margin-bottom: 5px;
+							@include font-setting(black, 600, 12px, 15px);
 						}
 					}
 				}
@@ -542,10 +551,10 @@
 				&-head {
 					grid-area: head;
 					color: #fff;
-
+					width: 140px;
 					/* web. re.22 */
 					font-family: Pretendard;
-					font-size: 15px;
+					font-size: 12px;
 					font-style: normal;
 					font-weight: 400;
 					line-height: 28px; /* 127.273% */
@@ -567,13 +576,16 @@
 						img {
 							width: 54px;
 							height: 54px;
-							margin-top: 5px;
-							margin-left: 5px;
+
+							margin-left: 4px;
 						}
 						span {
-							margin-top: 37px;
-							margin-left: 8px;
-							@include font-setting(black, 600, 15px, 28px);
+							width: 55px;
+							//display: flex;
+
+							font-size: 10px;
+							margin-bottom: 3.5px;
+							line-height: 11px;
 						}
 					}
 				}
@@ -641,7 +653,7 @@
 
 					/* web. re.22 */
 					font-family: Pretendard;
-					font-size: 15px;
+					font-size: 13px;
 					font-style: normal;
 					font-weight: 400;
 					line-height: 28px; /* 127.273% */
@@ -663,14 +675,16 @@
 						img {
 							width: 54px;
 							height: 54px;
-							margin-top: 5px;
-							margin-left: 5px;
+
+							margin-left: 4px;
 						}
 						span {
-							margin-top: 72px;
-							margin-top: 37px;
-							margin-left: 8px;
-							@include font-setting(white, 600, 15px, 28px);
+							width: 55px;
+							//display: flex;
+
+							font-size: 10px;
+							margin-bottom: 3.5px;
+							line-height: 11px;
 						}
 					}
 				}
@@ -716,16 +730,16 @@
 				height: 43.75px;
 			}
 			.researchers {
-				width: 120px;
+				width: 150px;
 				height: 174px; //1.69
 				top: -10.9px;
 				left: 56.58px;
-				grid-template-columns: 10px 100px 10px;
+				grid-template-columns: 10px 130px 10px;
 				grid-template-rows: 14px 150px 10px;
 				&-head {
 					grid-area: head;
 					color: #fff;
-					width: 82.86px;
+					width: px;
 					/* web. re.22 */
 					font-family: Pretendard;
 					font-size: 6px;
@@ -739,11 +753,11 @@
 					width: 10px;
 				}
 				&-body {
-					width: 100px;
+					width: 130px;
 					height: 150px;
 					grid-area: body;
 					.researcher-card {
-						width: 100px;
+						width: 130px;
 						height: 50px;
 						display: flex;
 						margin-bottom: 3px;
@@ -751,13 +765,12 @@
 						img {
 							width: 40px;
 							height: 40px;
-							margin-top: 5px;
 							margin-left: 5px;
 						}
 						span {
-							margin-top: 33px;
-							margin-left: 4px;
-							@include font-setting(black, 600, 12px, 12px);
+							margin-bottom: 5px;
+							width: 60px;
+							@include font-setting(black, 600, 9px, 11px);
 						}
 					}
 				}
@@ -828,19 +841,19 @@
 					height: 43.75px;
 				}
 				.researchers {
-					width: 120px;
+					width: 150px;
 					height: 174px; //1.69
 					top: -10.9px;
 					left: 56.58px;
-					grid-template-columns: 10px 100px 10px;
+					grid-template-columns: 10px 130px 10px;
 					grid-template-rows: 14px 150px 10px;
 					&-head {
 						grid-area: head;
 						//color: #fff;
-						width: 82.86px;
+						width: 90px;
 						/* web. re.22 */
 						font-family: Pretendard;
-						font-size: 10px;
+						font-size: 9px;
 						font-style: normal;
 						font-weight: 400;
 						line-height: 15px; /* 127.273% */
@@ -851,11 +864,11 @@
 						width: 10px;
 					}
 					&-body {
-						width: 100px;
+						width: 130px;
 						height: 150px;
 						grid-area: body;
 						.researcher-card {
-							width: 100px;
+							width: 130px;
 							height: 50px;
 							display: flex;
 							margin-bottom: 3px;
@@ -863,13 +876,12 @@
 							img {
 								width: 40px;
 								height: 40px;
-								margin-top: 5px;
 								margin-left: 5px;
 							}
 							span {
-								margin-top: 33px;
-								margin-left: 4px;
-								@include font-setting(white, 600, 10px, 12px);
+								width: 60px;
+								margin-bottom: 5px;
+								@include font-setting(white, 600, 9px, 11px);
 							}
 						}
 					}

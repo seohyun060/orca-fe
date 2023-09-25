@@ -90,7 +90,7 @@
 }
 .researcher-body-list .researcher-info .researcher-info-box {
   position: absolute;
-  width: 280px;
+  width: inherit;
   height: 280px;
 }
 .researcher-body-list .researcher-info .researcher-info-box div {
@@ -203,6 +203,16 @@
     width: 211.4px;
     height: 300.5px;
   }
+  .researcher-body-list .researcher-info .researcher-info-box {
+    height: 211.4px;
+  }
+  .researcher-body-list .researcher-info .researcher-info-box:hover div {
+    width: 144px;
+    height: 33px;
+    font-size: 15px;
+    line-height: 30px; /* 140% */
+    border-radius: 10px;
+  }
   .researcher-body-list .researcher-info img {
     width: 211.4px;
     height: 210px;
@@ -261,6 +271,16 @@
   .researcher-body-list .researcher-info {
     width: 164.42px;
     height: 233.72px;
+  }
+  .researcher-body-list .researcher-info .researcher-info-box {
+    height: 164.42px;
+  }
+  .researcher-body-list .researcher-info .researcher-info-box:hover div {
+    width: 112px;
+    height: 26px;
+    font-size: 12px;
+    line-height: 24px; /* 140% */
+    border-radius: 7px;
   }
   .researcher-body-list .researcher-info img {
     width: 164.42px;
@@ -333,6 +353,16 @@
   .researcher-body-list .researcher-info {
     width: 110px;
     height: 178px;
+  }
+  .researcher-body-list .researcher-info .researcher-info-box {
+    height: 110px;
+  }
+  .researcher-body-list .researcher-info .researcher-info-box:hover div {
+    width: 75px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 24px; /* 140% */
+    border-radius: 6px;
   }
   .researcher-body-list .researcher-info img {
     width: 110px;

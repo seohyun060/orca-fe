@@ -57,40 +57,11 @@ const ResearcherContainer = ({ location }: Props) => {
 					Project: project,
 				},
 			});
+			window.scrollTo(0, 0);
 		},
 		[navigate],
 	);
-	// const handleResize = () => {
-	// 	if (window.innerWidth > 1400) {
-	// 		if (filteredList.length > 16 && !readMore) {
-	// 			setContainerHeight('1742px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	} else if (window.innerWidth > 1024) {
-	// 		if (filteredList.length > 16 && !readMore) {
-	// 			setContainerHeight('1315px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	} else if (window.innerWidth > 768) {
-	// 		if (filteredList.length > 16 && !readMore) {
-	// 			setContainerHeight('1022px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	} else {
-	// 		if (filteredList.length > 16 && !readMore) {
-	// 			setContainerHeight('584px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	}
-	// };
 	useEffect(() => {
-		// const observer = new ResizeObserver(handleResize);
-		// const targetElement = document.querySelector('.researcher')!;
-		// observer.observe(targetElement);
 		setFilteredList(
 			researcherList.filter(
 				(researcher) => researcher.name.indexOf(search) !== -1,

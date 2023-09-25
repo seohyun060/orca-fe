@@ -52,6 +52,18 @@
 			transition: 0.25s;
 		}
 	}
+	.gnb-tiny {
+		position: absolute;
+		left: 188px;
+		top: 17px;
+		color: var(--Dark-gray, white);
+		text-align: center;
+		font-family: Pretendard;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 28px; /* 175% */
+	}
 	.side {
 		position: fixed;
 		display: none;
@@ -151,6 +163,9 @@
 			background: var(--Dark-gray, #3c3c3c);
 			@include font-setting(white, 300, 20px, 2.3);
 		}
+	}
+	&-Kr:hover {
+		cursor: pointer;
 	}
 	&-join {
 		display: flex;
@@ -255,7 +270,9 @@
 			left: 224px;
 			@include font-setting(white, 300, 15px, 32px);
 		}
-
+		.gnb-tiny {
+			display: none;
+		}
 		&-En {
 			right: 201px;
 			width: 102px;

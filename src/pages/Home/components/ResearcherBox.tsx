@@ -19,6 +19,9 @@ type Props = {
 	leftPosition: string;
 	dotList: string[];
 	goTransition: boolean;
+	selectedBoxList: boolean[];
+	index: number;
+	activeList: boolean[];
 };
 
 const ResearcherBox = ({
@@ -34,6 +37,9 @@ const ResearcherBox = ({
 	leftPosition,
 	dotList,
 	goTransition,
+	selectedBoxList,
+	index,
+	activeList,
 }: Props) => {
 	const { t } = useTranslation();
 	return (
@@ -41,16 +47,18 @@ const ResearcherBox = ({
 			<div
 				onClick={(e) => boxClickHandler(e)}
 				className={`${
-					!isSelected || active ? 'country-box' : 'country-box-Off'
+					!selectedBoxList[index] || activeList[index]
+						? 'country-box'
+						: 'country-box-Off'
 				}`}
 				style={{
-					backgroundColor: active ? '#9e9e9e' : '',
+					backgroundColor: activeList[index] ? '#9e9e9e' : '',
 					mixBlendMode: 'multiply',
 				}}
 			></div>
 			{/* {active ? ( */}
 			<div
-				className={`researchers${active ? '-active' : ''}`}
+				className={`researchers${activeList[index] ? '-active' : ''}`}
 				style={{
 					top: topPosition,
 					left: leftPosition,

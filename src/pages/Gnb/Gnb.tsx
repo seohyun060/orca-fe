@@ -131,7 +131,13 @@ const gnb = ({
 					<motion.div className='en-btn'>EN</motion.div>
 				</motion.div>
 			</AnimatePresence>
-			<div className='gnb-join' onClick={() => onItemClicked('/')}>
+			<div
+				className='gnb-join'
+				onClick={() => {
+					onItemClicked('/');
+					window.scrollTo(0, 1000);
+				}}
+			>
 				Join Us
 			</div>
 			<img

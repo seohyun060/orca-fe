@@ -26,7 +26,12 @@ const ResearcherMapContainer = ({ route }: Props) => {
 			setBlack('');
 		}
 	}, [black, route]);
-
+	const [selectedBoxList, setSelectedBoxList] = useState<boolean[]>(
+		Array(32).fill(false),
+	);
+	const [activeList, setActiveList] = useState<boolean[]>(
+		Array(32).fill(false),
+	);
 	const [isSelected, setIsSelected] = useState<boolean>(false);
 	return (
 		<ResearcherMap
@@ -34,6 +39,10 @@ const ResearcherMapContainer = ({ route }: Props) => {
 			isSelected={isSelected}
 			setIsSelected={setIsSelected}
 			black={black}
+			selectedBoxList={selectedBoxList}
+			setSelectedBoxList={setSelectedBoxList}
+			activeList={activeList}
+			setActiveList={setActiveList}
 		/>
 	);
 };

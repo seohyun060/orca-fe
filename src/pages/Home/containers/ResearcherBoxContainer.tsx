@@ -9,6 +9,10 @@ type Props = {
 	isSelected: boolean;
 	setIsSelected: React.Dispatch<React.SetStateAction<boolean>>;
 	black: string;
+	selectedBoxList: boolean[];
+	setSelectedBoxList: React.Dispatch<React.SetStateAction<boolean[]>>;
+	activeList: boolean[];
+	setActiveList: React.Dispatch<React.SetStateAction<boolean[]>>;
 };
 
 const ResearcherBoxContainer = ({
@@ -17,6 +21,10 @@ const ResearcherBoxContainer = ({
 	isSelected,
 	setIsSelected,
 	black,
+	selectedBoxList,
+	setSelectedBoxList,
+	activeList,
+	setActiveList,
 }: Props) => {
 	const [active, setActive] = useState(false);
 	const [boxType, setBoxType] = useState(0);
@@ -118,14 +126,53 @@ const ResearcherBoxContainer = ({
 		setGoTransition(true);
 	};
 
-	const boxClickHandler = (e: React.MouseEvent<HTMLElement>) => {
-		e.preventDefault();
-		e.stopPropagation();
-		if (!(isSelected && !active)) {
-			setIsSelected(active ? false : true);
-			setActive((prev) => !prev);
-		}
-	};
+	const boxClickHandler = useCallback(
+		(e: React.MouseEvent<HTMLElement>) => {
+			e.preventDefault();
+			e.stopPropagation();
+			if (!selectedBoxList[index]) {
+				for (let i = 0; i < 32; i++) {
+					if (selectedBoxList[i]) {
+						setSelectedBoxList((prevList) => {
+							const updatedList = [...prevList];
+							updatedList[i] = false;
+							return updatedList;
+						});
+						setActiveList((prevList) => {
+							const updatedList = [...prevList];
+							updatedList[i] = false;
+							return updatedList;
+						});
+
+						break;
+					}
+				}
+				setSelectedBoxList((prevList) => {
+					const updatedList = [...prevList];
+					updatedList[index] = true;
+					return updatedList;
+				});
+				setActiveList((prevList) => {
+					const updatedList = [...prevList];
+					updatedList[index] = true;
+					return updatedList;
+				});
+			} else {
+				setSelectedBoxList((prevList) => {
+					const updatedList = [...prevList];
+					updatedList[index] = false;
+					return updatedList;
+				});
+				setActiveList((prevList) => {
+					const updatedList = [...prevList];
+					updatedList[index] = false;
+					return updatedList;
+				});
+			}
+		},
+		[index, selectedBoxList, setSelectedBoxList, activeList, setActiveList],
+	);
+
 	return (
 		<ResearcherBox
 			requestedItems={requestedItems}
@@ -140,6 +187,9 @@ const ResearcherBoxContainer = ({
 			leftPosition={leftPosition}
 			dotList={dotList}
 			goTransition={goTransition}
+			selectedBoxList={selectedBoxList}
+			index={index}
+			activeList={activeList}
 		/>
 	);
 };

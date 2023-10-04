@@ -9,6 +9,10 @@ type Props = {
 	isSelected: boolean;
 	setIsSelected: React.Dispatch<React.SetStateAction<boolean>>;
 	black: string;
+	selectedBoxList: boolean[];
+	setSelectedBoxList: React.Dispatch<React.SetStateAction<boolean[]>>;
+	activeList: boolean[];
+	setActiveList: React.Dispatch<React.SetStateAction<boolean[]>>;
 };
 
 const ResearcherMap = ({
@@ -16,6 +20,10 @@ const ResearcherMap = ({
 	isSelected,
 	setIsSelected,
 	black,
+	selectedBoxList,
+	setSelectedBoxList,
+	activeList,
+	setActiveList,
 }: Props) => {
 	return (
 		<div className='map-container'>
@@ -29,6 +37,10 @@ const ResearcherMap = ({
 							isSelected={isSelected}
 							setIsSelected={setIsSelected}
 							black={black}
+							selectedBoxList={selectedBoxList}
+							setSelectedBoxList={setSelectedBoxList}
+							activeList={activeList}
+							setActiveList={setActiveList}
 						/>
 					))}
 				</div>

@@ -60,14 +60,13 @@
   line-height: 28px; /* 93.333% */
 }
 .iDetail-pdf {
-  width: 1196px;
+  width: 1192px;
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
   margin-top: 100px;
 }
 .iDetail-pdf .pageContainer {
-  border: 2px solid black; /* Add border */
   margin-bottom: 50px; /* Add margin between pages */
 }
 
@@ -138,7 +137,6 @@
     margin-top: 100px;
   }
   .iDetail-pdf .pageContainer {
-    border: 2px solid black; /* Add border */
     margin-bottom: 50px; /* Add margin between pages */
   }
 }
@@ -209,7 +207,6 @@
     margin-top: 60px;
   }
   .iDetail-pdf .pageContainer {
-    border: 2px solid black; /* Add border */
     margin-bottom: 50px; /* Add margin between pages */
   }
 }
@@ -280,7 +277,6 @@
     margin-top: 40px;
   }
   .iDetail-pdf .pageContainer {
-    border: 2px solid black; /* Add border */
     margin-bottom: 50px; /* Add margin between pages */
   }
 }/*# sourceMappingURL=insightsdetail.styles.css.map */

@@ -60,4 +60,241 @@
 			@extend .iDetail-typedate-type;
 		}
 	}
+	&-pdf {
+		width: 1196px;
+		height: fit-content;
+		margin: auto;
+		margin-top: 100px;
+		//border: 2px solid black;
+		.pageContainer {
+			border: 2px solid black; /* Add border */
+
+			margin-bottom: 50px; /* Add margin between pages */
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.iDetail {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		&-back {
+			width: 900px;
+			margin: auto;
+			display: flex;
+			flex-direction: row;
+			margin-top: 132px;
+			align-items: center;
+
+			div {
+				color: #000;
+				margin-top: 2px;
+				/* web. re.22 */
+				font-family: Pretendard;
+				font-size: 22px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+				margin-left: 11px;
+			}
+		}
+		.researcherdetail-back:hover {
+			cursor: pointer;
+		}
+		&-title {
+			width: 900px;
+			margin: auto;
+			color: #000;
+			margin-top: 30px;
+			/* Pre.Semi 60 */
+			font-family: Pretendard;
+			font-size: 40px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 50px; /* 46.667% */
+		}
+		&-typedate {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 900px;
+			margin: auto;
+			margin-top: 25px;
+			&-type {
+				color: var(--Midium-gray, #9e9e9e);
+
+				/* web. semi.30 */
+				font-family: Pretendard;
+				font-size: 25px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 28px; /* 93.333% */
+			}
+		}
+		&-pdf {
+			width: 900px;
+			height: fit-content;
+			margin: auto;
+			margin-top: 100px;
+			//border: 2px solid black;
+			.pageContainer {
+				border: 2px solid black; /* Add border */
+
+				margin-bottom: 50px; /* Add margin between pages */
+			}
+		}
+	}
+}
+
+@media (max-width: 1023px) {
+	.iDetail {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		&-back {
+			width: 700px;
+			margin: auto;
+			display: flex;
+			flex-direction: row;
+			margin-top: 132px;
+			align-items: center;
+
+			div {
+				color: #000;
+				margin-top: 2px;
+				/* web. re.22 */
+				font-family: Pretendard;
+				font-size: 15px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+				margin-left: 11px;
+			}
+		}
+		.researcherdetail-back:hover {
+			cursor: pointer;
+		}
+		&-title {
+			width: 700px;
+			margin: auto;
+			color: #000;
+			margin-top: 30px;
+			/* Pre.Semi 60 */
+			font-family: Pretendard;
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 40px; /* 46.667% */
+		}
+		&-typedate {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 700px;
+			margin: auto;
+			margin-top: 25px;
+			&-type {
+				color: var(--Midium-gray, #9e9e9e);
+
+				/* web. semi.30 */
+				font-family: Pretendard;
+				font-size: 20px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 24px; /* 93.333% */
+			}
+		}
+		&-pdf {
+			width: 700px;
+			height: fit-content;
+			margin: auto;
+			margin-top: 60px;
+			//border: 2px solid black;
+			.pageContainer {
+				border: 2px solid black; /* Add border */
+
+				margin-bottom: 50px; /* Add margin between pages */
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.iDetail {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		&-back {
+			width: 350px;
+			margin: auto;
+			display: flex;
+			flex-direction: row;
+			margin-top: 52px;
+			align-items: center;
+
+			div {
+				color: #000;
+				margin-top: 2px;
+				/* web. re.22 */
+				font-family: Pretendard;
+				font-size: 15px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 28px; /* 127.273% */
+				margin-left: 11px;
+			}
+		}
+		.researcherdetail-back:hover {
+			cursor: pointer;
+		}
+		&-title {
+			width: 350px;
+			margin: auto;
+			color: #000;
+			margin-top: 30px;
+			/* Pre.Semi 60 */
+			font-family: Pretendard;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 25px; /* 46.667% */
+		}
+		&-typedate {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 350px;
+			margin: auto;
+			margin-top: 25px;
+			&-type {
+				color: var(--Midium-gray, #9e9e9e);
+
+				/* web. semi.30 */
+				font-family: Pretendard;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 600;
+				line-height: 20px; /* 93.333% */
+			}
+		}
+		&-pdf {
+			width: 350px;
+			height: fit-content;
+			margin: auto;
+			margin-top: 40px;
+			//border: 2px solid black;
+			.pageContainer {
+				border: 2px solid black; /* Add border */
+
+				margin-bottom: 50px; /* Add margin between pages */
+			}
+		}
+	}
 }

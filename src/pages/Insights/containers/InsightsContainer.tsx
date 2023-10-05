@@ -17,7 +17,7 @@ for (let i = 0; i < 20; i++) {
 	} else if (i < 10) {
 		tempType = 'Publication';
 		tempLink =
-			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
+			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
 	} else if (i < 15) {
 		tempType = 'News';
 		tempLink =
@@ -25,7 +25,7 @@ for (let i = 0; i < 20; i++) {
 	} else {
 		tempType = 'Education';
 		tempLink =
-			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
+			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
 	}
 	insightList.push({
 		type: tempType,

@@ -19,7 +19,7 @@ import OrcaContainer from 'src/pages/Orca/containers/OrcaContainer';
 import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherContainer';
 import InsightsContainer from 'src/pages/Insights/containers/InsightsContainer';
 import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
-
+import InsightsDetailContainer from 'src/pages/InsightsDetail/containers/InsightsDetailContainer';
 // /* eslint no-restricted-globals: ["off"] */
 
 const RootNavigation = () => {
@@ -49,6 +49,7 @@ const RootNavigation = () => {
 				<Route path='/events' element={<EventsPage />} />
 				<Route path='/events/default' element={<EventDetails />} />
 				<Route path='/insights' element={<InsightsContainer />} />
+				<Route path='/insightsdetail' element={<InsightsDetailContainer />} />
 			</Routes>
 
 			<FooterContainer />

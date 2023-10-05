@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Insights from '../Insights';
 import { Insight } from '@typedef/types';
+import { useNavigate } from 'react-router-dom';
 type Props = {};
 
 for (let j = 0; j < 18; j++) {}
@@ -8,23 +9,34 @@ const insightList: Insight[] = [];
 
 for (let i = 0; i < 20; i++) {
 	let tempType: string = '';
+	let tempLink: string = '';
 	if (i < 5) {
 		tempType = 'White Paper';
+		tempLink =
+			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
 	} else if (i < 10) {
 		tempType = 'Publication';
+		tempLink =
+			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
 	} else if (i < 15) {
 		tempType = 'News';
+		tempLink =
+			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
 	} else {
 		tempType = 'Education';
+		tempLink =
+			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
 	}
 	insightList.push({
 		type: tempType,
 		title: 'Real-time Decision Support by Light-weighted AI ...',
-		date: '19.August.23',
+		date: new Date(2023, 7, 19),
+		link: tempLink,
 	});
 }
 
 const InsightsContainer = (props: Props) => {
+	const navigate = useNavigate();
 	const [filteredList, setFilteredList] = useState<Insight[]>([]);
 
 	const [readMore, setReadMore] = useState(false);
@@ -43,33 +55,20 @@ const InsightsContainer = (props: Props) => {
 		(type: string) => {
 			switch (type) {
 				case 'all':
-					//setFilteredList(insightList);
 					setSelectedTab(0);
 					break;
 				case 'whitepaper':
-					// setFilteredList(
-					// 	insightList.filter((insight) => insight.type == 'White Paper'),
-					// );
 					setSelectedTab(1);
 					console.log(selectedTab);
 					break;
 				case 'publication':
-					// setFilteredList(
-					// 	insightList.filter((insight) => insight.type == 'Publication'),
-					// );
 					setSelectedTab(2);
 					console.log(selectedTab);
 					break;
 				case 'news':
-					// setFilteredList(
-					// 	insightList.filter((insight) => insight.type == 'News'),
-					// );
 					setSelectedTab(3);
 					break;
 				case 'education':
-					// setFilteredList(
-					// 	insightList.filter((insight) => insight.type == 'Education'),
-					// );
 					setSelectedTab(4);
 					break;
 			}
@@ -79,40 +78,44 @@ const InsightsContainer = (props: Props) => {
 		},
 		[filteredList, selectedTab, slicedList],
 	);
-	// const handleResize = () => {
-	// 	if (window.innerWidth > 1400) {
-	// 		if (filteredList.length > 12 && !readMore) {
-	// 			setContainerHeight('1314px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	} else if (window.innerWidth > 1024) {
-	// 		console.log(readMore, window.innerWidth, containerHeight, 'ddd');
-	// 		if (filteredList.length > 12 && !readMore) {
-	// 			setContainerHeight('992px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	} else if (window.innerWidth > 768) {
-	// 		if (filteredList.length > 12 && !readMore) {
-	// 			setContainerHeight('771.64px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	} else {
-	// 		if (filteredList.length > 12 && !readMore) {
-	// 			setContainerHeight('870px');
-	// 		} else {
-	// 			setContainerHeight('fit-content');
-	// 		}
-	// 	}
-	// };
+	function formatDate(date: Date) {
+		const months = [
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'September',
+			'October',
+			'November',
+			'December',
+		];
 
+		const year = date.getFullYear().toString().substr(-2); // 년도의 마지막 두 자리
+		const month = months[date.getMonth()]; // 월을 문자열로 변환
+		const day = date.getDate(); // 일
+
+		return `${day}.${month}.${year}`;
+	}
+	const onInsightClick = useCallback(
+		(type: string, title: string, link: string, date: Date) => {
+			console.log(type, title, link);
+			navigate('/insightsdetail', {
+				state: {
+					Type: type,
+					Title: title,
+					Link: link,
+					InsightDate: date,
+				},
+			});
+			window.scrollTo(0, 0);
+		},
+		[navigate],
+	);
 	useEffect(() => {
-		//handleResize();
-		// const observer = new ResizeObserver(handleResize);
-		// observer.observe(targetElement);
-
 		switch (selectedTab) {
 			case 0:
 				setFilteredList(insightList);
@@ -139,19 +142,7 @@ const InsightsContainer = (props: Props) => {
 				);
 				break;
 		}
-		// const targetElement = document.querySelector('.insights')!;
-		// if (readMore) {
-		// 	setFilteredList(filteredList);
-		// } else {
-		// 	setFilteredList((prev) => {
-		// 		const newFilteredList = [];
-		// 		for (let i = 0; i < Math.min(12, prev.length); i++) {
-		// 			newFilteredList.push(prev[i]);
-		// 		}
-		// 		return newFilteredList;
-		// 	});
-		// 	// setSlicedList(filteredList.slice(0, 12));
-		// }
+
 		return () => {};
 	}, [readMore, containerHeight, selectedTab]);
 
@@ -165,6 +156,8 @@ const InsightsContainer = (props: Props) => {
 			selectedTab={selectedTab}
 			prevHeight={prevHeight}
 			slicedList={slicedList}
+			formatDate={formatDate}
+			onInsightClick={onInsightClick}
 		/>
 	);
 };

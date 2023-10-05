@@ -1,0 +1,41 @@
+import React from 'react';
+import PdfViewer from './components/PdfViewer';
+import images from 'src/assets/images';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import './styles/insightsdetail.styles.css';
+type Props = {
+	title: string;
+	type: string;
+	link: string;
+	date: Date;
+	formatDate: (date: Date) => string;
+};
+
+const InsightsDetail = ({ title, type, link, date, formatDate }: Props) => {
+	const navigate = useNavigate();
+	const { t } = useTranslation();
+	return (
+		<div className='iDetail'>
+			<div
+				className='iDetail-back'
+				onClick={() => {
+					navigate('/insights');
+				}}
+			>
+				<img src={images.back_arrow} />
+				<div>{t('back')}</div>
+			</div>
+			<div className='iDetail-title'>{title}</div>
+			<div className='iDetail-typedate'>
+				<div className='iDetail-typedate-type'>{`: ${type}`}</div>
+				<div className='iDetail-typedate-date'>{formatDate(date)}</div>
+			</div>
+			<div className='iDetail-pdf'>
+				<PdfViewer link={link} />
+			</div>
+		</div>
+	);
+};
+
+export default InsightsDetail;

@@ -14,6 +14,13 @@ type Props = {
 	selectedTab: number;
 	prevHeight: string;
 	slicedList: Insight[];
+	formatDate: (date: Date) => string;
+	onInsightClick: (
+		type: string,
+		title: string,
+		link: string,
+		date: Date,
+	) => void;
 };
 
 const Insights = ({
@@ -25,6 +32,8 @@ const Insights = ({
 	selectedTab,
 	prevHeight,
 	slicedList,
+	formatDate,
+	onInsightClick,
 }: Props) => {
 	const { t } = useTranslation();
 	return (
@@ -116,11 +125,21 @@ const Insights = ({
 									delay: 0.05 * (readMore ? index - 12 : index),
 								}}
 								key={`insight-${index}`}
+								onClick={() => {
+									onInsightClick(
+										insight.type,
+										insight.title,
+										insight.link,
+										insight.date,
+									);
+								}}
 							>
 								<div className='insight-info-box' />
 								<div className='insight-info-type'>{insight.type}</div>
 								<div className='insight-info-title'>{insight.title}</div>
-								<div className='insight-info-date'>{insight.date}</div>
+								<div className='insight-info-date'>
+									{formatDate(insight.date)}
+								</div>
 							</motion.div>
 						);
 					})}

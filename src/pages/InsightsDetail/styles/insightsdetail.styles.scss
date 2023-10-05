@@ -1,0 +1,63 @@
+.iDetail {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	&-back {
+		width: 1192px;
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		margin-top: 132px;
+		align-items: center;
+
+		div {
+			color: #000;
+			margin-top: 2px;
+			/* web. re.22 */
+			font-family: Pretendard;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 28px; /* 127.273% */
+			margin-left: 11px;
+		}
+	}
+	.researcherdetail-back:hover {
+		cursor: pointer;
+	}
+	&-title {
+		width: 1192px;
+		margin: auto;
+		color: #000;
+		margin-top: 30px;
+		/* Pre.Semi 60 */
+		font-family: Pretendard;
+		font-size: 60px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 70px; /* 46.667% */
+	}
+	&-typedate {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 1192px;
+		margin: auto;
+		margin-top: 30px;
+		&-type {
+			color: var(--Midium-gray, #9e9e9e);
+
+			/* web. semi.30 */
+			font-family: Pretendard;
+			font-size: 30px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 28px; /* 93.333% */
+		}
+		&-date {
+			@extend .iDetail-typedate-type;
+		}
+	}
+}

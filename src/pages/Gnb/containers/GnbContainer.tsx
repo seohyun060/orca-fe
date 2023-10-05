@@ -113,6 +113,8 @@ const GnbContainer = ({ location }: Props) => {
 			setGnbColor('-white');
 		} else if (`/${route}` == '/events') {
 			setGnbColor('-white');
+		} else if (`/${route}` == '/insightsdetail') {
+			setGnbColor('-white');
 		}
 	}, [scrollPosition, route]);
 

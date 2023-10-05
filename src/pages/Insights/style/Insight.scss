@@ -149,7 +149,7 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		column-gap: 24px;
-		row-gap: 12px;
+		row-gap: 32px;
 		overflow: hidden;
 		width: 1192px;
 		max-height: 1314px;
@@ -163,6 +163,9 @@
 			height: 430px;
 
 			&-box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				width: 280px;
 				height: 280px;
 				flex-shrink: 0;
@@ -254,7 +257,7 @@
 		}
 		&-body {
 			column-gap: 18px;
-			row-gap: 9px;
+			row-gap: 22px;
 			width: 900px;
 			//width: 1192px;
 			max-height: 992px;
@@ -351,7 +354,7 @@
 			max-height: 771.64px;
 
 			column-gap: 14.1px;
-			row-gap: 7.05px;
+			row-gap: 22px;
 			.insight-info {
 				width: 164.4px;
 				height: 252.5px;
@@ -367,8 +370,8 @@
 					line-height: 1.5; /* 140% */
 				}
 				&-title {
-					margin-top: 5px;
-					font-size: 13px;
+					margin-top: 2px;
+					font-size: 12px;
 					line-height: 1.2; /* 145.455% */
 				}
 				&-date {
@@ -478,11 +481,12 @@
 					overflow: hidden;
 					white-space: nowrap;
 					text-overflow: ellipsis;
+					margin-top: 5px;
 					font-size: 20px;
 					line-height: 1; /* 145.455% */
 				}
 				&-date {
-					//margin-top: 7.55px;
+					margin-top: 5px;
 					font-size: 15px;
 					line-height: 1.5; /* 140% */
 				}

@@ -3,21 +3,21 @@ import { pdfjs, Document, Page } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import '../../InsightsDetail/styles/insightsdetail.styles.css';
 
-const PdfViewer = ({ link }) => {
+const PdfThumbnail = ({ link }) => {
 	pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 	const [numPages, setNumPages] = useState(null);
-	const [pdfWidth, setPdfWidth] = useState(calculatePdfWidth);
+	const [pdfHeight, setPdfHeight] = useState(calculatePdfWidth);
 
 	function calculatePdfWidth() {
 		if (window.innerWidth > 1400) {
-			return 1190;
+			return 260;
 		} else if (window.innerWidth > 1024) {
-			return 898;
+			return 201;
 		} else if (window.innerWidth > 768) {
-			return 698;
+			return 154;
 		} else {
-			return 348;
+			return 178;
 		}
 	}
 
@@ -26,7 +26,7 @@ const PdfViewer = ({ link }) => {
 	};
 
 	const handleResize = useCallback(() => {
-		setPdfWidth(calculatePdfWidth());
+		setPdfHeight(calculatePdfWidth());
 	}, []);
 
 	useEffect(() => {
@@ -36,22 +36,22 @@ const PdfViewer = ({ link }) => {
 		};
 	}, [handleResize]);
 
-	const renderPages = () => {
-		const pages = [];
-		for (let pageNumber = 1; pageNumber <= numPages; pageNumber++) {
-			pages.push(
-				<div key={pageNumber} className='pageContainer'>
+	const renderThumbnail = () => {
+		if (numPages >= 1) {
+			return (
+				<div className='pageContainer'>
 					<Page
-						key={pageNumber}
-						pageNumber={pageNumber}
-						width={pdfWidth}
+						key={1}
+						pageNumber={1}
+						//width={'fit-content'}
+						height={pdfHeight}
 						renderTextLayer={false}
 						renderAnnotationLayer={false}
 					/>
-				</div>,
+				</div>
 			);
 		}
-		return pages;
+		return null;
 	};
 
 	return (
@@ -60,9 +60,9 @@ const PdfViewer = ({ link }) => {
 			onLoadSuccess={onDocumentLoadSuccess}
 			className='document'
 		>
-			{numPages && renderPages()}
+			{numPages && renderThumbnail()}
 		</Document>
 	);
 };
 
-export default PdfViewer;
+export default PdfThumbnail;

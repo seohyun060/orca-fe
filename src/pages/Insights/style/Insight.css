@@ -140,7 +140,7 @@
   grid-template-columns: repeat(4, 1fr);
   -moz-column-gap: 24px;
        column-gap: 24px;
-  row-gap: 12px;
+  row-gap: 32px;
   overflow: hidden;
   width: 1192px;
   max-height: 1314px;
@@ -153,6 +153,9 @@
   height: 430px;
 }
 .insights-body .insight-info-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 280px;
   height: 280px;
   flex-shrink: 0;
@@ -235,7 +238,7 @@
   .insights-body {
     -moz-column-gap: 18px;
          column-gap: 18px;
-    row-gap: 9px;
+    row-gap: 22px;
     width: 900px;
     max-height: 992px;
   }
@@ -315,7 +318,7 @@
     max-height: 771.64px;
     -moz-column-gap: 14.1px;
          column-gap: 14.1px;
-    row-gap: 7.05px;
+    row-gap: 22px;
   }
   .insights-body .insight-info {
     width: 164.4px;
@@ -331,8 +334,8 @@
     line-height: 1.5; /* 140% */
   }
   .insights-body .insight-info-title {
-    margin-top: 5px;
-    font-size: 13px;
+    margin-top: 2px;
+    font-size: 12px;
     line-height: 1.2; /* 145.455% */
   }
   .insights-body .insight-info-date {
@@ -429,10 +432,12 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-top: 5px;
     font-size: 20px;
     line-height: 1; /* 145.455% */
   }
   .insights-body .insight-info-date {
+    margin-top: 5px;
     font-size: 15px;
     line-height: 1.5; /* 140% */
   }

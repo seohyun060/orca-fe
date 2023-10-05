@@ -4,7 +4,7 @@ import './style/Insight.css';
 import InsightsCard from './components/InsightsCard';
 import { Insight } from '@typedef/types';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import PdfThumbnail from './components/PdfThumbnail';
 type Props = {
 	insightsGnbHandler: (e: string) => void;
 	filteredList: Insight[];
@@ -134,7 +134,9 @@ const Insights = ({
 									);
 								}}
 							>
-								<div className='insight-info-box' />
+								<div className='insight-info-box'>
+									<PdfThumbnail link={insight.link} />
+								</div>
 								<div className='insight-info-type'>{insight.type}</div>
 								<div className='insight-info-title'>{insight.title}</div>
 								<div className='insight-info-date'>

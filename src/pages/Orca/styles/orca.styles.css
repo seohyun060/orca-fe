@@ -4,6 +4,9 @@
   align-items: center;
   width: 100%;
 }
+.orca * {
+  word-break: keep-all;
+}
 .orca-what-background {
   width: 100%;
   background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);

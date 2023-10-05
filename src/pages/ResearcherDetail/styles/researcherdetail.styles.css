@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+.researcherdetail * {
+  word-break: keep-all;
+}
 .researcherdetail-back {
   width: 1192px;
   margin: auto;

@@ -5,6 +5,9 @@
   justify-content: center;
   width: 100%;
 }
+.researcher * {
+  word-break: keep-all;
+}
 .researcher-meet-background {
   z-index: 0;
   width: 100%;

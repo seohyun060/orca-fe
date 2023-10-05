@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+.iDetail * {
+  word-break: keep-all;
+}
 .iDetail-back {
   width: 1192px;
   margin: auto;

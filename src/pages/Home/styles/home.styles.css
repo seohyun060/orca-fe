@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
 }
+.home * {
+  word-break: keep-all;
+}
 .home-anime {
   width: 100%;
   height: 727px;
@@ -51,6 +54,9 @@
   letter-spacing: normal;
   grid-area: head;
   margin-bottom: 42px;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+          hyphens: auto;
 }
 .home-intro-what-about {
   color: white;
@@ -76,6 +82,7 @@
   grid-area: body;
   width: 644px;
   height: 106px;
+  word-wrap: break-word;
 }
 .home-intro-goal {
   width: 1040px;

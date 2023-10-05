@@ -72,6 +72,9 @@
   width: 100%;
   margin-bottom: 150px;
 }
+.insights * {
+  word-break: keep-all;
+}
 .insights-head {
   display: flex;
   flex-direction: column;

@@ -4,6 +4,9 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	& * {
+		word-break: keep-all;
+	}
 	&-meet-background {
 		z-index: 0;
 		width: 100%;
@@ -43,6 +46,8 @@
 			font-style: normal;
 			font-weight: 600;
 			line-height: 36.5px; /* 121.667% */
+			//overflow-wrap: break-word;
+			//word-break: keep-all;
 		}
 		&-search {
 			display: flex;

@@ -24,7 +24,9 @@
 	height: 814px;
 
 	margin: auto;
-
+	& * {
+		word-break: keep-all;
+	}
 	&-news {
 		width: 100%;
 

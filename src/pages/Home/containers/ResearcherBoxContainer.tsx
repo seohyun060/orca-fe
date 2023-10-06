@@ -176,10 +176,8 @@ const ResearcherBoxContainer = ({
 	return (
 		<ResearcherBox
 			requestedItems={requestedItems}
-			active={active}
 			boxType={boxType}
 			black={black}
-			isSelected={isSelected}
 			onBackClick={onBackClick}
 			onGoClick={onGoClick}
 			boxClickHandler={boxClickHandler}

@@ -8,9 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 type Props = {
 	requestedItems: ResearcherList;
-	active: boolean;
 	boxType: number;
-	isSelected: boolean;
 	onBackClick: (e: React.MouseEvent<HTMLImageElement>) => void;
 	onGoClick: (e: React.MouseEvent<HTMLImageElement>) => void;
 	boxClickHandler: (e: React.MouseEvent<HTMLElement>) => void;
@@ -26,9 +24,7 @@ type Props = {
 
 const ResearcherBox = ({
 	requestedItems,
-	active,
 	boxType,
-	isSelected,
 	onBackClick,
 	onGoClick,
 	boxClickHandler,
@@ -56,7 +52,6 @@ const ResearcherBox = ({
 					mixBlendMode: 'multiply',
 				}}
 			></div>
-			{/* {active ? ( */}
 			<div
 				className={`researchers${activeList[index] ? '-active' : ''}`}
 				style={{
@@ -80,7 +75,6 @@ const ResearcherBox = ({
 								exit={{ x: goTransition ? -100 : 100, opacity: 0 }}
 								transition={{ duration: 0.3 }}
 								className='researcher-card'
-								//key={`${requestItem.name}-${index}`}
 								key={`${requestItem.name}`}
 							>
 								<img src={requestItem.profile} />
@@ -100,9 +94,6 @@ const ResearcherBox = ({
 					))}
 				</div>
 			</div>
-			{/* ) : (
-				''
-			)} */}
 		</div>
 	);
 };

@@ -72,6 +72,16 @@ const ProjectExplore = (props) => {
   };
 
   const onSearchChange = () => {
+    {
+      document.getElementById("search").value != ""
+        ? setSearchSentence(
+            <div className="ResultSentence">
+              There are search results for “
+              {document.getElementById("search").value}”.
+            </div>
+          )
+        : setSearchSentence(<></>);
+    }
     dataFiltering();
   };
 
@@ -121,18 +131,7 @@ const ProjectExplore = (props) => {
     setTempData(filterData);
   };
 
-  useEffect(() => {
-    {
-      document.getElementById("search").value != "" ? (
-        setSearchSentence(<div className="ResultSentence">
-        There are search results for “
-        {document.getElementById("search").value}”.
-      </div>)
-      ) : (
-        setSearchSentence(<></>)
-      );
-    }
-  });
+  useEffect(() => {});
 
   useEffect(() => {
     dataFiltering();

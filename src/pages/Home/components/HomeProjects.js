@@ -15,7 +15,13 @@ const HomeProjects = () => {
     <section className="Section">
       <div className="SectionTitle">
         <label>{t("projects")}</label>
-        <button className="ViewButton" onClick={() => navigate("/projects")}>
+        <button
+          className="ViewButton"
+          onClick={() => {
+            navigate("/projects");
+            window.scrollTo(0, 0);
+          }}
+        >
           <label>{t("view_all")}</label>
         </button>
       </div>

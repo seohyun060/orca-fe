@@ -15,11 +15,17 @@ const HomeEvents = () => {
     <section className="Section">
       <div className="SectionTitle">
         <label>{t("events")}</label>
-        <button className="ViewButton" onClick={() => navigate("/events")}>
+        <button
+          className="ViewButton"
+          onClick={() => {
+            navigate("/events");
+            window.scrollTo(0, 0);
+          }}
+        >
           <label className="View">{t("view_all")}</label>
         </button>
       </div>
-      <EventBoxSlide inEvent={false}/>
+      <EventBoxSlide inEvent={false} />
     </section>
   );
 };

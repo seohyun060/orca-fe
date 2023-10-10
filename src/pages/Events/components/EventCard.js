@@ -5,7 +5,7 @@ import images from "src/assets/images";
 
 export default function EventCard(props) {
   const navigate = useNavigate();
-  const { commingSoon, past, inEvent, image, title, eventDate } = props;
+  const { comingSoon, past, inEvent, image, title, eventDate } = props;
 
   const monthNames = [
     "January",
@@ -48,9 +48,9 @@ export default function EventCard(props) {
       </div>
     </article>
   ) : inEvent ? (
-    commingSoon ? (
-      <article className="EventCard InEvent Comming">
-        <div className="EventCardTitle Comming">Comming</div>
+    comingSoon ? (
+      <article className="EventCard InEvent Coming">
+        <div className="EventCardTitle Coming">Coming</div>
       </article>
     ) : (
       <article
@@ -73,9 +73,9 @@ export default function EventCard(props) {
         <div className="EventCardTime">11:00 - 12:00</div>
       </article>
     )
-  ) : commingSoon ? (
-    <article className="EventCard Comming">
-      <div className="EventCardTitle Comming">Comming</div>
+  ) : comingSoon ? (
+    <article className="EventCard Coming">
+      <div className="EventCardTitle Coming">Coming</div>
     </article>
   ) : (
     <article
@@ -101,7 +101,7 @@ export default function EventCard(props) {
 }
 
 EventCard.defaultProps = {
-  commingSoon: false,
+  comingSoon: false,
   inEvent: false,
   past: false,
   image: images.logo_orca,

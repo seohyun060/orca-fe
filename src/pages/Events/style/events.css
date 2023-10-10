@@ -94,7 +94,7 @@ circle {
   padding: 0px;
   margin-bottom: 30px;
 }
-.EventCard.Comming {
+.EventCard.Coming {
   opacity: 0.5;
 }
 
@@ -179,7 +179,7 @@ circle {
   height: 40px;
   margin: 0px;
 }
-.EventCardTitle.Comming {
+.EventCardTitle.Coming {
   margin: 34px 0px;
   font-size: 40px;
   font-style: normal;
@@ -306,7 +306,7 @@ circle {
 .EventMap {
   display: flex;
   flex-direction: column;
-  margin-bottom: 150px;
+  margin-bottom: 70px;
 }
 
 .EventMapLocation {
@@ -440,6 +440,9 @@ circle {
     width: 900px;
     height: 365px;
   }
+  .EventGalleryImages {
+    height: 365px;
+  }
 }
 @media (max-width: 1023px) {
   .Section {
@@ -516,7 +519,7 @@ circle {
     font-size: 16px;
     line-height: 20px;
   }
-  .EventCardTitle.Comming {
+  .EventCardTitle.Coming {
     margin: 26.5px 0px;
     font-size: 31px;
     line-height: 42px;
@@ -568,6 +571,9 @@ circle {
   }
   .EventMapLocation {
     width: 700px;
+    height: 284px;
+  }
+  .EventGalleryImages {
     height: 284px;
   }
 }
@@ -646,7 +652,7 @@ circle {
   .EventCardTitle.InEvent {
     height: 77.5px;
   }
-  .EventCardTitle.Comming {
+  .EventCardTitle.Coming {
     margin: 15px 0px;
     font-size: 15px;
     line-height: 24px;
@@ -720,8 +726,14 @@ circle {
     -o-object-fit: contain;
        object-fit: contain;
   }
+  .EventMap {
+    margin-bottom: 45px;
+  }
   .EventMapLocation {
     width: 330px;
+    height: 142px;
+  }
+  .EventGalleryImages {
     height: 142px;
   }
 }/*# sourceMappingURL=events.css.map */

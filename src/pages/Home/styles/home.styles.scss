@@ -622,6 +622,11 @@
 	font-style: normal;
 	font-weight: 300;
 	line-height: 28px;
+
+	&:hover {
+		cursor: pointer;
+		background: var(--Light-gray, #F0F0F0);
+	}
 }
 
 // Project

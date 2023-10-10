@@ -44,7 +44,6 @@ const EventDetails = (props) => {
   const changeCardSize = (width) => {
     setEventSlideMoving(0);
     setCurrentEventSlide(0);
-    console.log(width)
 
     if (width > 1400) {
       setCardSize(1066);
@@ -64,7 +63,6 @@ const EventDetails = (props) => {
   useEffect(() => {
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     changeCardSize(window.innerWidth);
-    console.log("재실행");
   }, []);
 
   let delay = 50;

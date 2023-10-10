@@ -58,7 +58,6 @@ const PrejectsDetails = (props) => {
       StudyPharagraph.current.style.display = "-webkit-box";
     }
     setIsPharagraphOpen(!isPharagraphOpen);
-    console.log("check");
   };
 
   useEffect(() => {

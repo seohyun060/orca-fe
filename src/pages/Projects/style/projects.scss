@@ -76,7 +76,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: 28px;
-    width: 200px;
+    width: 220px;
   }
 
   img {
@@ -628,6 +628,7 @@
   background-color: white;
   &:hover {
     cursor: pointer;
+    background: var(--Light-gray, #F0F0F0);
   }
 }
 
@@ -789,7 +790,7 @@
     input {
       font-size: 14px;
       line-height: 20px;
-      width: 100px;
+      width: 108px;
     }
 
     img {
@@ -952,7 +953,7 @@
     input {
       font-size: 8px;
       line-height: 11.5px;
-      width: 57px;
+      width: 62px;
     }
 
     img {

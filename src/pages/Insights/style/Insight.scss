@@ -11,7 +11,9 @@
 	flex-shrink: 0;
 	opacity: 0.9;
 	background: var(--Light-gray, #f0f0f0);
-	//   background-image: url("../../../../public/assets/images/logo.png");
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .ResearchCategory {

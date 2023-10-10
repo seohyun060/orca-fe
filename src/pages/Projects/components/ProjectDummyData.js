@@ -47,6 +47,22 @@ const ProjectDummyData = [
     location: "Bukgu, Daegu, Korea",
     projDate: "19.August.18 ",
   },
+  {
+    title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis6",
+    status: "Active",
+    projID: 2.13454835226345,
+    category: "Chat AI",
+    location: "Bukgu, Daegu, Korea",
+    projDate: "19.August.18 ",
+  },
+  {
+    title: "Real-time Decision Support by Light-weighted AI Model Trained with Large-scale Data for Breast Cancer Diagnosis6",
+    status: "Active",
+    projID: 2.13454835226345,
+    category: "Chat AI",
+    location: "Bukgu, Daegu, Korea",
+    projDate: "19.August.18 ",
+  },
 ];
 
 export default ProjectDummyData;

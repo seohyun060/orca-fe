@@ -259,9 +259,13 @@ const ProjectExplore = (props) => {
         </div>
       </div>
       <div className="ButtonArrange">
-        <button className="ReadMoreButton">
-          <label>{t("read_more")}</label>
-        </button>
+        {tempData.length > 7 ? (
+          <button className="ReadMoreButton">
+            <label>{t("read_more")}</label>
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
     </section>
   );

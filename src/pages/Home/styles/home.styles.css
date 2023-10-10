@@ -841,6 +841,10 @@
   font-weight: 300;
   line-height: 28px;
 }
+.ViewButton:hover {
+  cursor: pointer;
+  background: var(--Light-gray, #F0F0F0);
+}
 
 .ProjectBox {
   display: flex;

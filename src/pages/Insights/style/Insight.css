@@ -12,6 +12,9 @@
   opacity: 0.9;
   background: var(--Light-gray, #f0f0f0);
 }
+.ResearchImage:hover {
+  cursor: pointer;
+}
 
 .ResearchCategory {
   color: #000;

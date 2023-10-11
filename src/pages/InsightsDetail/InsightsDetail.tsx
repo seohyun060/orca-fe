@@ -10,21 +10,26 @@ type Props = {
 	link: string;
 	date: Date;
 	formatDate: (date: Date) => string;
+	onBackClick: () => void;
 };
 
-const InsightsDetail = ({ title, type, link, date, formatDate }: Props) => {
+const InsightsDetail = ({
+	title,
+	type,
+	link,
+	date,
+	formatDate,
+	onBackClick,
+}: Props) => {
 	const navigate = useNavigate();
 	const { t } = useTranslation();
 	return (
 		<div className='iDetail'>
-			<div
-				className='iDetail-back'
-				onClick={() => {
-					navigate('/insights');
-				}}
-			>
-				<img src={images.back_arrow} />
-				<div>{t('back')}</div>
+			<div className='iDetail-back' onClick={() => onBackClick()}>
+				<div className='iDetail-back-box'>
+					<img src={images.back_arrow} />
+					<div>{t('back')}</div>
+				</div>
 			</div>
 			<div className='iDetail-title'>{title}</div>
 			<div className='iDetail-typedate'>
@@ -33,6 +38,11 @@ const InsightsDetail = ({ title, type, link, date, formatDate }: Props) => {
 			</div>
 			<div className='iDetail-pdf'>
 				<PdfViewer link={link} />
+			</div>
+			<div className='iDetail-back-container'>
+				<div className='readmore' onClick={() => onBackClick()}>
+					Back
+				</div>
 			</div>
 		</div>
 	);

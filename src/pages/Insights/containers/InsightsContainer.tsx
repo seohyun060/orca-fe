@@ -104,9 +104,16 @@ const InsightsContainer = (props: Props) => {
 
 		return `${day}.${month}.${year}`;
 	}
+	const saveScrollPosition = () => {
+		const scrollPosition = window.scrollY;
+
+		console.log(scrollPosition);
+		localStorage.setItem('scrollPosition', scrollPosition.toString());
+	};
 	const onInsightClick = useCallback(
 		(type: string, title: string, link: string, date: Date) => {
 			console.log(type, title, link);
+			saveScrollPosition();
 			navigate('/insightsdetail', {
 				state: {
 					Type: type,
@@ -119,6 +126,7 @@ const InsightsContainer = (props: Props) => {
 		},
 		[navigate],
 	);
+
 	useEffect(() => {
 		switch (selectedTab) {
 			case 0:

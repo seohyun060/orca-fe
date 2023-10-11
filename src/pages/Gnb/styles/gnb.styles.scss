@@ -22,9 +22,14 @@
 	flex-direction: row;
 	position: fixed;
 	z-index: 100;
+	&-newlogo {
+		position: absolute;
+		left: 50px;
+		width: 150px;
+	}
 	&-logo {
 		position: absolute;
-		left: 60px;
+		left: 225px;
 	}
 	&-logo:hover {
 		cursor: pointer;
@@ -41,7 +46,7 @@
 		width: 554px;
 		height: 31px;
 		position: absolute;
-		left: 324px;
+		left: 434px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -54,7 +59,7 @@
 	}
 	.gnb-tiny {
 		position: absolute;
-		left: 188px;
+		left: 360px;
 		top: 17px;
 		color: var(--Dark-gray, white);
 		text-align: center;
@@ -119,22 +124,22 @@
 		height: 44px;
 		border-radius: 9px;
 		display: flex;
-		background: var(--Light-gray, #f0f0f0);
+		background: var(--Midium-gray, #9e9e9e);
 		transition: 0.5s ease;
 
 		.kr-btn {
 			width: 61px;
 			height: 44px;
-			background: var(--Light-gray, #f0f0f0);
+			background: var(--Midium-gray, #9e9e9e);
 			border-radius: 7px;
-			@include font-setting(#9e9e9e, 300, 20px, 2.3);
+			@include font-setting(#f0f0f0, 300, 20px, 2.3);
 			text-align: center;
 		}
 		.en-btn {
 			@extend .kr-btn;
 			border-radius: 7px;
-			background: var(--Dark-gray, #3c3c3c);
-			@include font-setting(white, 300, 20px, 2.3);
+			background: var(--Light-gray, #f0f0f0);
+			@include font-setting(black, 300, 20px, 2.3);
 		}
 	}
 	&-En:hover {
@@ -147,21 +152,21 @@
 		height: 44px;
 		border-radius: 9px;
 		display: flex;
-		background: var(--Light-gray, #f0f0f0);
+		background: var(--Light-gray, #9e9e9e);
 
 		.en-btn {
 			width: 61px;
 			height: 44px;
 			border-radius: 7px;
-			background: var(--Light-gray, #f0f0f0);
-			@include font-setting(#9e9e9e, 300, 20px, 2.3);
+			background: var(--Light-gray, #9e9e9e);
+			@include font-setting(#f0f0f0, 300, 20px, 2.3);
 			text-align: center;
 		}
 		.kr-btn {
 			@extend .en-btn;
 			border-radius: 7px;
-			background: var(--Dark-gray, #3c3c3c);
-			@include font-setting(white, 300, 20px, 2.3);
+			background: var(--Dark-gray, #f0f0f0);
+			@include font-setting(black, 300, 20px, 2.3);
 		}
 	}
 	&-Kr:hover {
@@ -182,6 +187,7 @@
 	}
 	&-join:hover {
 		cursor: pointer;
+		background: var(--Light-gray-Hovered, #e1e1e1);
 	}
 	&-language {
 		display: none;
@@ -238,7 +244,7 @@
 	}
 	.gnb-tiny {
 		position: absolute;
-		left: 188px;
+		left: 360px;
 		top: 17px;
 		color: var(--Dark-gray, #3c3c3c);
 		text-align: center;
@@ -262,57 +268,58 @@
 		position: fixed;
 		z-index: 100;
 		&-logo {
-			left: 50px;
+			//left: 50px;
+			width: 110px;
 		}
 		&-menu {
-			width: 424px;
+			width: 354px;
 			height: 31px;
-			left: 224px;
-			@include font-setting(white, 300, 15px, 32px);
+			left: 374px;
+			@include font-setting(white, 300, 13px, 32px);
 		}
 		.gnb-tiny {
 			display: none;
 		}
 		&-En {
-			right: 201px;
-			width: 102px;
-			height: 34px;
-			border-radius: 6px;
+			right: 151px;
+			width: 60px;
+			height: 25px;
+			border-radius: 5px;
 
 			.kr-btn {
-				width: 51px;
-				height: 34px;
-				@include font-setting(#9e9e9e, 300, 15px, 2.5);
+				width: 30px;
+				height: 25px;
+				@include font-setting(#9e9e9e, 300, 12px, 2.3);
 			}
 			.en-btn {
-				border-radius: 6px;
-				@include font-setting(white, 300, 15px, 2.5);
+				border-radius: 5px;
+				@include font-setting(white, 300, 12px, 2.3);
 			}
 		}
 		&-Kr {
-			right: 201px;
-			width: 102px;
-			height: 34px;
-			border-radius: 6px;
+			right: 151px;
+			width: 60px;
+			height: 25px;
+			border-radius: 5px;
 
 			.en-btn {
-				width: 51px;
-				height: 34px;
+				width: 30px;
+				height: 25px;
 				border-radius: 6px;
-				@include font-setting(#9e9e9e, 300, 15px, 2.5);
+				@include font-setting(#9e9e9e, 300, 12px, 2.3);
 			}
 			.kr-btn {
 				border-radius: 6px;
-				@include font-setting(white, 300, 15px, 2.5);
+				@include font-setting(white, 300, 12px, 2.3);
 			}
 		}
 		&-join {
-			width: 128px;
-			height: 34px;
+			width: 68px;
+			height: 25px;
 			right: 50px;
 
-			border-radius: 10px;
-			@include font-setting(black, 300, 20px, 2.3);
+			border-radius: 5px;
+			@include font-setting(black, 300, 12px, 2.3);
 		}
 	}
 
@@ -347,14 +354,18 @@
 		flex-direction: row;
 		position: fixed;
 		z-index: 100;
-		&-logo {
+		&-newlogo {
 			left: 30px;
+			width: 80px;
+		}
+		&-logo {
+			left: 130px;
 			width: 80px;
 		}
 		&-menu {
 			width: 304px;
 			height: 31px;
-			left: 144px;
+			left: 244px;
 			@include font-setting(white, 300, 13px, 32px);
 		}
 		.side {
@@ -432,6 +443,9 @@
 		position: fixed;
 		z-index: 100;
 		justify-content: center;
+		&-newlogo {
+			display: none;
+		}
 		&-logo {
 			position: relative;
 			left: 0px;

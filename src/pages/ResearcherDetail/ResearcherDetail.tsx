@@ -11,6 +11,7 @@ type Props = {
 	project: string;
 	publist: number[];
 	navigate: (e: string) => void;
+	onBackClick: () => void;
 };
 
 const ResearcherDetail = ({
@@ -20,6 +21,7 @@ const ResearcherDetail = ({
 	project,
 	publist,
 	navigate,
+	onBackClick,
 }: Props) => {
 	const { t } = useTranslation();
 	return (
@@ -27,11 +29,13 @@ const ResearcherDetail = ({
 			<div
 				className='researcherdetail-back'
 				onClick={() => {
-					navigate('/researcher');
+					onBackClick();
 				}}
 			>
-				<img src={images.back_arrow} />
-				<div>{t('back')}</div>
+				<div className='researcherdetail-back-box'>
+					<img src={images.back_arrow} />
+					<div>{t('back')}</div>
+				</div>
 			</div>
 			<div className='researcherdetail-individual'>
 				{t('individual_esearcher')}
@@ -70,6 +74,11 @@ const ResearcherDetail = ({
 				{publist.map((index) => (
 					<ProjectCard shortForm={true} />
 				))}
+			</div>
+			<div className='researcherdetail-back-container'>
+				<div className='readmore' onClick={() => onBackClick()}>
+					Back
+				</div>
 			</div>
 			{/* //<ProjectCard shortForm={true} /> */}
 		</div>

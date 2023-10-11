@@ -52,7 +52,7 @@ const RootNavigation = () => {
 				<Route path='/insightsdetail' element={<InsightsDetailContainer />} />
 			</Routes>
 
-			<FooterContainer />
+			<FooterContainer location={location.pathname} />
 		</>
 	);
 };

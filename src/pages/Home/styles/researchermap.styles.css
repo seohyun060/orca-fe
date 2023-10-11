@@ -16,6 +16,7 @@
   height: 575px;
   margin-top: 16.8px;
   margin-left: 42px;
+  opacity: 0.5;
 }
 .researcher-map .research-box-container {
   position: absolute;
@@ -162,6 +163,7 @@
   height: 636px;
   margin-top: 16.8px;
   margin-left: 42px;
+  opacity: 0.5;
 }
 .researcher-map-black .research-box-container {
   position: absolute;

@@ -102,6 +102,40 @@ circle {
   opacity: 0.2;
 }
 
+.EventCardHoverAction {
+  display: flex;
+  position: absolute;
+  width: inherit;
+  height: 278px;
+  opacity: 0;
+}
+.EventCardHoverAction:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(60, 60, 60, 0.8);
+  transition: 0.3s;
+  opacity: 1;
+}
+.EventCardHoverAction:hover div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 192px;
+  height: 44px;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 45px;
+  border: 1px solid white;
+  border-radius: 10px;
+  align-items: center;
+}
+
 .EventCardImage {
   width: 584px;
   height: 278px;
@@ -176,6 +210,8 @@ circle {
   font-size: 30px;
   line-height: 35px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   height: 40px;
   margin: 0px;
 }
@@ -369,6 +405,13 @@ circle {
     margin-bottom: 30px;
     margin-right: 20px;
   }
+  .EventCardHoverAction {
+    height: 210px;
+  }
+  .EventCardHoverAction:hover div {
+    width: 192px;
+    height: 44px;
+  }
   .EventCardImage {
     width: 440px;
     height: 210px;
@@ -463,6 +506,9 @@ circle {
     line-height: 28px;
     margin-bottom: 30px;
   }
+  .ButtonArrange {
+    margin-top: 50px;
+  }
   .EventCardPaging {
     width: 700px;
   }
@@ -479,6 +525,14 @@ circle {
     height: 210px;
     margin-bottom: 20px;
     margin-right: 20px;
+  }
+  .EventCardHoverAction {
+    height: 157px;
+  }
+  .EventCardHoverAction:hover div {
+    width: 144px;
+    height: 33px;
+    font-size: 15px;
   }
   .EventCardImage {
     width: 340px;
@@ -596,6 +650,9 @@ circle {
     line-height: 25px;
     margin-bottom: 20px;
   }
+  .ButtonArrange {
+    margin-top: 20px;
+  }
   .EventCardPaging {
     width: 350px;
     margin-top: 25px;
@@ -623,7 +680,11 @@ circle {
     height: 155px;
   }
   .EventCard.Past {
+    width: 350px;
     height: 225px;
+  }
+  .EventCard.Past img {
+    width: 350px;
   }
   .EventCardPeriod.Past {
     height: 120px;

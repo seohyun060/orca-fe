@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './styles/researcherdetail.styles.css';
 import images from 'src/assets/images';
-import ProjectCard from '../Projects/components/ProjectCard';
+import PublicationCard from '../Projects/components/PublicationCard';
 type Props = {
 	name: string;
 	profile: string;
@@ -68,10 +68,9 @@ const ResearcherDetail = ({
 			<div className='researcherdetail-publication'>
 				<div className='head'>{t('publications')}</div>
 				{publist.map((index) => (
-					<ProjectCard shortForm={true} />
+					<PublicationCard />
 				))}
 			</div>
-			{/* //<ProjectCard shortForm={true} /> */}
 		</div>
 	);
 };

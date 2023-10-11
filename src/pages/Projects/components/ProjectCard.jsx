@@ -10,7 +10,6 @@ export default function ProjectCard(props) {
 
   // projID를 통해 project정보 가져온 후 내용출력
   const {
-    shortForm,
     inProject,
     title,
     status,
@@ -43,13 +42,6 @@ export default function ProjectCard(props) {
     "." +
     projectDate.getFullYear();
 
-  const projectDateFormatShortForm =
-    projectDate.getDate() +
-    "." +
-    monthNames[projectDate.getMonth()] +
-    "." +
-    projectDate.getFullYear();
-
   const [statusSector, setStatusSector] = useState(<></>);
 
   const makeStatusSector = () => {
@@ -70,16 +62,7 @@ export default function ProjectCard(props) {
     makeStatusSector();
   }, [status]);
 
-  return shortForm ? (
-    // 추후 projID 받아 이동
-    <article
-      className="ProjectCardContent shortForm"
-      onClick={() => navigate("/projects/default")}
-    >
-      <div className="ProjectCardTitle shortForm">{title}</div>
-      <div className="ProjectDate ShortForm">{projectDateFormatShortForm}</div>
-    </article>
-  ) : (
+  return(
     <article
       className={
         inProject ? "ProjectCardContent inProject" : "ProjectCardContent"

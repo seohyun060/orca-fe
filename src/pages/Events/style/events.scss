@@ -110,6 +110,40 @@ circle {
   opacity: 0.2;
 }
 
+.EventCardHoverAction {
+  display: flex;
+  position: absolute;
+  width: inherit;
+  height: 278px;
+  opacity: 0;
+  &:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(60, 60, 60, 0.8);
+    transition: 0.3s;
+    opacity: 1;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 192px;
+      height: 44px;
+      color: #fff;
+      text-align: center;
+      font-family: Pretendard;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 45px;
+      border: 1px solid white;
+      border-radius: 10px;
+      align-items: center;
+    }
+  }
+}
+
 .EventCardImage {
   width: 584px;
   height: 278px;
@@ -185,6 +219,8 @@ circle {
     font-size: 30px;
     line-height: 35px;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     height: 40px;
     margin: 0px;
   }
@@ -392,6 +428,16 @@ circle {
     }
   }
 
+  .EventCardHoverAction {
+    height: 210px;
+    &:hover {
+      div {
+        width: 192px;
+        height: 44px;
+      }
+    }
+  }
+
   .EventCardImage {
     width: 440px;
     height: 210px;
@@ -425,7 +471,7 @@ circle {
       font-size: 22px;
       line-height: 21px;
     }
-  
+
     .DescriptFont {
       font-size: 16px;
       line-height: 21px;
@@ -485,7 +531,7 @@ circle {
 
   .EventGalleryImages {
     height: 365px;
-  
+
     // img {
     //   object-fit: contain;
     //   width: 200px;
@@ -515,6 +561,10 @@ circle {
     margin-bottom: 30px;
   }
 
+  .ButtonArrange {
+    margin-top: 50px;
+  }
+
   .EventCardPaging {
     width: 700px;
   }
@@ -533,6 +583,17 @@ circle {
       height: 210px;
       margin-bottom: 20px;
       margin-right: 20px;
+    }
+  }
+
+  .EventCardHoverAction {
+    height: 157px;
+    &:hover {
+      div {
+        width: 144px;
+        height: 33px;
+        font-size: 15px;
+      }
     }
   }
 
@@ -649,7 +710,7 @@ circle {
 
   .EventGalleryImages {
     height: 284px;
-  
+
     // img {
     //   object-fit: contain;
     //   width: 200px;
@@ -677,6 +738,10 @@ circle {
     font-size: 20px;
     line-height: 25px;
     margin-bottom: 20px;
+  }
+
+  .ButtonArrange {
+    margin-top:20px;
   }
 
   .EventCardPaging {
@@ -708,7 +773,11 @@ circle {
       height: 155px;
     }
     &.Past {
+      width: 350px;
       height: 225px;
+      img {
+        width: 350px;
+      }
     }
   }
 
@@ -761,7 +830,7 @@ circle {
       font-size: 11px;
       line-height: 12px;
     }
-  
+
     .DescriptFont {
       font-size: 8px;
       line-height: 12px;
@@ -841,10 +910,10 @@ circle {
     width: 330px;
     height: 142px;
   }
-  
+
   .EventGalleryImages {
     height: 142px;
-  
+
     // img {
     //   object-fit: contain;
     //   width: 200px;

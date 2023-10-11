@@ -12,6 +12,7 @@ const ProjectExplore = (props) => {
 
   const { projStatus, projID, projTitle, projCategory, projLocation } = props;
   const [tempData, setTempData] = useState(ProjectDummyData);
+  const [numberToShow, setNumberToShow] = useState(7);
   const [isYearlySelectionBar, setIsYearlySelectionBar] = useState(true);
   const [isStatusSelectionBar, setIsStatusSelectionBar] = useState(true);
 
@@ -28,14 +29,30 @@ const ProjectExplore = (props) => {
     false,
   ]);
   const [yearly, setYearly] = useState([
+    "All",
     "The past year",
     "The past 3 years",
     "The past 5 years",
   ]);
-  const [yearlyCriteria, setyearlyCrieria] = useState([1, 3, 5]);
-  const [isYearlyChecked, setIsYearlyChecked] = useState([false, false, false]);
-  const [status, setStatus] = useState(["Active", "Completed", "Terminated"]);
-  const [isStatusChecked, setIsStatusChecked] = useState([true, true, true]);
+  const [yearlyCriteria, setyearlyCrieria] = useState([0, 1, 3, 5]);
+  const [isYearlyChecked, setIsYearlyChecked] = useState([
+    true,
+    false,
+    false,
+    false,
+  ]);
+  const [status, setStatus] = useState([
+    "All",
+    "Active",
+    "Completed",
+    "Terminated",
+  ]);
+  const [isStatusChecked, setIsStatusChecked] = useState([
+    true,
+    true,
+    true,
+    true,
+  ]);
   const [searchSentence, setSearchSentence] = useState();
 
   const getProjectData = () => {
@@ -54,21 +71,36 @@ const ProjectExplore = (props) => {
   };
 
   const filterYearly = (yearlyNum) => {
-    if (isYearlyChecked[yearlyNum] == true) {
-      let temp = [...isYearlyChecked];
-      temp[yearlyNum] = false;
-      setIsYearlyChecked(temp);
+    if (yearlyNum == 0) {
+      setIsYearlyChecked([true, false, false, false]);
+    } else if (isYearlyChecked[yearlyNum] == true) {
+      setIsYearlyChecked([true, false, false, false]);
     } else {
-      let temp = [false, false, false];
+      let temp = [false, false, false, false];
       temp[yearlyNum] = true;
       setIsYearlyChecked(temp);
     }
   };
 
   const filterStatus = (statusNum) => {
-    let temp = [...isStatusChecked];
-    temp[statusNum] = !temp[statusNum];
-    setIsStatusChecked(temp);
+    if (statusNum === 0) {
+      if (isStatusChecked[0] === true) {
+        setIsStatusChecked([false, false, false, false]);
+      } else {
+        setIsStatusChecked([true, true, true, true]);
+      }
+    } else {
+      let temp = [...isStatusChecked];
+      temp[statusNum] = !temp[statusNum];
+      if (temp[statusNum] === false) {
+        temp[0] = false;
+      }
+      if (JSON.stringify(temp) == JSON.stringify([false, true, true, true])) {
+        temp[0] = true;
+      }
+
+      setIsStatusChecked(temp);
+    }
   };
 
   const onSearchChange = () => {
@@ -102,7 +134,8 @@ const ProjectExplore = (props) => {
       });
     }
 
-    if (isYearlyChecked.indexOf(true) != -1) {
+    if (isYearlyChecked[0] == true) {
+    } else if (isYearlyChecked.indexOf(true) != -1) {
       const yearlyNum = isYearlyChecked.indexOf(true);
       filterData = filterData.filter((data) => {
         const projectDate = new Date(data.projDate);
@@ -129,6 +162,27 @@ const ProjectExplore = (props) => {
     });
     filterData = tempStatsus;
     setTempData(filterData);
+  };
+
+  const makeProjectList = () => {
+    let list = [];
+    let listlen = tempData.length;
+    if (tempData.length > numberToShow) {
+      listlen = numberToShow;
+    }
+    for (let i = 0; i < listlen; i++)
+      list.push(
+        <ProjectCard
+          inProject={true}
+          title={tempData[i].title}
+          status={tempData[i].status}
+          projID={tempData[i].projID}
+          category={tempData[i].category}
+          location={tempData[i].location}
+          projDate={tempData[i].projDate}
+        />
+      );
+    return list;
   };
 
   useEffect(() => {});
@@ -168,7 +222,8 @@ const ProjectExplore = (props) => {
         {tempData.length != 0 ? (
           <div className="ProjectList">
             {searchSentence}
-            {tempData.map((temp) => (
+            {makeProjectList()}
+            {/* {tempData.map((temp) => (
               <ProjectCard
                 inProject={true}
                 title={temp.title}
@@ -178,7 +233,7 @@ const ProjectExplore = (props) => {
                 location={temp.location}
                 projDate={temp.projDate}
               />
-            ))}
+            ))} */}
           </div>
         ) : (
           <div className="ResultEmpty">
@@ -259,9 +314,12 @@ const ProjectExplore = (props) => {
         </div>
       </div>
       <div className="ButtonArrange">
-        {tempData.length > 7 ? (
-          <button className="ReadMoreButton">
-            <label>{t("read_more")}</label>
+        {tempData.length > numberToShow ? (
+          <button
+            className="ReadMoreButton"
+            onClick={() => setNumberToShow(numberToShow + 7)}
+          >
+            {t("read_more")}
           </button>
         ) : (
           <></>

@@ -41,6 +41,9 @@ export default function EventCard(props) {
         window.scrollTo(0, 0);
       }}
     >
+      <div className="EventCardHoverAction">
+        <div>Read more</div>
+      </div>
       <img className="EventCardImage" src={image}></img>
       <div className="EventCardPeriod Past">
         <div className="EventCardTitle Past">{title}</div>

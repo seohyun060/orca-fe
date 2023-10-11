@@ -9,6 +9,7 @@ import images from "src/assets/images";
 import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";
 import ProjectCard from "./components/ProjectCard";
+import PublicationCard from "./components/PublicationCard";
 
 import ProjectDummyData from "./components/ProjectDummyData";
 
@@ -68,11 +69,16 @@ const PrejectsDetails = (props) => {
   return (
     <div className="Projects">
       <section className="ProjectDetailsSection">
-        <img
-          className="BackImage"
-          src={images.backwithletter}
-          onClick={() => navigate(-1)}
-        />
+        <div className="">
+          <div
+            className="BackImage"
+            // src={images.backwithletter}
+            onClick={() => navigate(-1)}
+          >
+            <img className="arrow" src={images.back_arrow} />
+            <div>Back</div>
+          </div>
+        </div>
         <div className="ProjectStatus">{statusSector}</div>
         <div className="ProjectTitle">
           Real-time Decision Support by Light-weighted AI Model Trained with
@@ -205,8 +211,7 @@ const PrejectsDetails = (props) => {
           </article>
           <article className="Publications Article">
             <div className="ArticleTitle">{t("related_publications")}</div>
-            <ProjectCard
-              shortForm={true}
+            <PublicationCard
               title={ProjectDummyData[0].title}
               projDate={ProjectDummyData[0].projDate}
             />

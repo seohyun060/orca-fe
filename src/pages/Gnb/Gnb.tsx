@@ -48,6 +48,11 @@ const gnb = ({
 	return (
 		<div className={`gnb${gnbColor}`} style={{ width: '100vw' }}>
 			<img
+				src={gnbColor === '-white' ? images.newlogo_b : images.newlogo_w}
+				// src={images.logo_w}
+				className='gnb-newlogo'
+			/>
+			<img
 				src={gnbColor === '-white' ? images.logo_b : images.logo_w}
 				// src={images.logo_w}
 				className='gnb-logo'

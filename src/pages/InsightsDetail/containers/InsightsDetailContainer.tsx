@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import InsightsDetail from '../InsightsDetail';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 type Props = {};
 
 const InsightsDetailContainer = (props: Props) => {
 	const location = useLocation();
+	const navigate = useNavigate();
 	const title = location.state.Title;
 	const type = location.state.Type;
 	const link = location.state.Link;
@@ -16,6 +17,24 @@ const InsightsDetailContainer = (props: Props) => {
 
 		return `${year}.${month}.${day}`;
 	}
+	const onBackClick = useCallback(() => {
+		let scrollPosition = localStorage.getItem('scrollPosition');
+		localStorage.removeItem('scrollPosition');
+		if (!scrollPosition) {
+			scrollPosition = '0';
+		}
+		// Get the maximum scroll height of the document
+		let targetScrollPosition = parseFloat(scrollPosition) || 0;
+
+		// If the target scroll position is beyond the maximum scroll height, set it to the maximum scroll height
+		navigate('/insights');
+
+		setTimeout(() => {
+			window.scrollTo({ top: targetScrollPosition });
+		}, 150);
+
+		console.log(targetScrollPosition);
+	}, [location.pathname]);
 	return (
 		<InsightsDetail
 			title={title}
@@ -23,6 +42,7 @@ const InsightsDetailContainer = (props: Props) => {
 			link={link}
 			date={date}
 			formatDate={formatDate}
+			onBackClick={onBackClick}
 		/>
 	);
 };

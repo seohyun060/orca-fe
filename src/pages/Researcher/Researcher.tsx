@@ -51,7 +51,7 @@ const Researcher = ({
 						required
 						value={search}
 					></input>
-					<img src={images.search} />
+					{search ? <img src={images.search_b} /> : <img src={images.search} />}
 				</div>
 				<AnimatePresence>
 					<motion.div
@@ -89,6 +89,7 @@ const Researcher = ({
 											researcher.profile,
 											researcher.department,
 											researcher.project,
+											index,
 										);
 										console.log('onResearcherClick');
 									}}
@@ -96,7 +97,7 @@ const Researcher = ({
 									<div className='researcher-info-box'>
 										<div>Learn More</div>
 									</div>
-									<img src={images.profile}></img>
+									<img src={researcher.profile}></img>
 									<div className='researcher-info-name'>{researcher.name}</div>
 									<div className='researcher-info-department'>
 										{researcher.department}

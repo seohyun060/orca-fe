@@ -145,6 +145,10 @@
 			}
 		}
 	}
+	.waitPlease {
+		width: 1192px;
+		margin: auto;
+	}
 	&-body {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -170,6 +174,34 @@
 				height: 280px;
 				flex-shrink: 0;
 				background: var(--Light-gray, #f0f0f0);
+			}
+			.learnMore {
+				@extend .insight-info-box;
+				background-color: #3c3c3c;
+				position: absolute;
+				opacity: 0;
+				z-index: 40;
+				.text {
+					display: flex;
+					padding: 8px 46px;
+					justify-content: center;
+					align-items: center;
+					gap: 10px;
+					border-radius: 10px;
+					color: white;
+					border: 1px solid var(--Light-gray, #f0f0f0);
+					text-align: center;
+					/* web. light.20 */
+					font-family: Pretendard;
+					font-size: 20px;
+					font-style: normal;
+					font-weight: 300;
+					line-height: 28px; /* 140% */
+				}
+			}
+			.learnMore:hover {
+				cursor: pointer;
+				opacity: 0.8;
 			}
 			&-type {
 				margin-top: 10px;
@@ -226,6 +258,7 @@
 	}
 	&-readmore:hover {
 		cursor: pointer;
+		background: var(--Light-gray, #f0f0f0);
 	}
 }
 
@@ -255,6 +288,10 @@
 		&-gnb {
 			width: 900px;
 		}
+		.waitPlease {
+			width: 900px;
+			margin: auto;
+		}
 		&-body {
 			column-gap: 18px;
 			row-gap: 22px;
@@ -269,6 +306,13 @@
 				&-box {
 					width: 211.4px;
 					height: 211.4px;
+				}
+				.learnMore {
+					.text {
+						padding: 4px 26px;
+						gap: 10px;
+						font-size: 15px;
+					}
 				}
 				&-type {
 					margin-top: 7.55px;
@@ -348,6 +392,10 @@
 				}
 			}
 		}
+		.waitPlease {
+			width: 700px;
+			margin: auto;
+		}
 		&-body {
 			width: 700px;
 			//width: 1192px;
@@ -362,6 +410,13 @@
 				&-box {
 					width: 164.4px;
 					height: 164.4px;
+				}
+				.learnMore {
+					.text {
+						padding: 2px 15px;
+
+						font-size: 12px;
+					}
 				}
 				&-type {
 					margin-top: 5px;
@@ -454,6 +509,11 @@
 				}
 			}
 		}
+		.waitPlease {
+			width: 350px;
+			font-size: 18px;
+			margin: auto;
+		}
 		&-body {
 			grid-template-columns: repeat(2, 1fr);
 
@@ -468,6 +528,13 @@
 				&-box {
 					width: 170px;
 					height: 188px;
+				}
+				.learnMore {
+					.text {
+						padding: 2px 15px;
+						gap: 0px;
+						font-size: 12px;
+					}
 				}
 				&-type {
 					margin-top: 10px;

@@ -135,17 +135,22 @@
 					background-color: black;
 					@include font-setting(#f0f0f0, 300, 20px, 28px);
 					padding-left: 21px;
+					padding-right: 21px;
 					margin-right: 21px;
 				}
-				button {
+				.button {
 					border-radius: 10px;
 					width: 184px;
 					height: 44px;
 					background: var(--Light-gray, #f0f0f0);
 					@include font-setting(#3c3c3c, 300, 20px, 28px);
 				}
-				button:hover {
+				.button-active {
+					@extend .button;
+				}
+				.button-active:hover {
 					cursor: pointer;
+					background: var(--Light-gray, #e1e1e1);
 				}
 				margin-bottom: 16px;
 			}
@@ -185,6 +190,7 @@
 			}
 			button:hover {
 				cursor: pointer;
+				background-color: #f0f0f0;
 			}
 		}
 	}
@@ -273,7 +279,7 @@
 						padding-left: 21px;
 						margin-right: 20px;
 					}
-					button {
+					.button {
 						border-radius: 10px;
 						width: 184px;
 						height: 44px;
@@ -405,7 +411,7 @@
 						padding-left: 21px;
 						margin-right: 20px;
 					}
-					button {
+					.button {
 						border-radius: 10px;
 						width: 184px;
 						height: 44px;
@@ -538,7 +544,7 @@
 						padding-left: 20px;
 						margin-right: 20px;
 					}
-					button {
+					.button {
 						border-radius: 10px;
 						width: 90px;
 						height: 44px;

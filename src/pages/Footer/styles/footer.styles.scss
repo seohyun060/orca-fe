@@ -65,7 +65,7 @@
 				margin-right: 21px;
 
 				padding-left: 21px;
-
+				padding-right: 21px;
 				border-radius: 10px;
 
 				border: 1px solid var(--Dark-gray, #3c3c3c);
@@ -73,19 +73,20 @@
 				@include font-setting(black, 300, 20px, 28px);
 			}
 
-			button {
-				width: 184px;
-
-				height: 44px;
-
+			.button {
 				border-radius: 10px;
-
+				width: 184px;
+				height: 44px;
 				background: var(--Dark-gray, #3c3c3c);
 
-				@include font-setting(#f0f0f0, 300, 20px, 28px);
+				@include font-setting(#3c3c3c, 300, 20px, 28px);
 			}
-			button:hover {
+			.button-active {
+				@extend .button;
+			}
+			.button-active:hover {
 				cursor: pointer;
+				background-color: black;
 			}
 		}
 

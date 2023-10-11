@@ -7,10 +7,32 @@ const globalLists: ResearcherList[] = [];
 
 for (let i = 0; i < 32; i++) {
 	const tempList: Researchers[] = [];
-	for (let j = 0; j < 18; j++) {
+	for (let j = 0; j < 6; j++) {
+		//const profileImage = eval(`images.profile${j}`);
+		let randomProfile = '';
+		switch (j) {
+			case 0:
+				randomProfile = images.profile0;
+				break;
+			case 1:
+				randomProfile = images.profile1;
+				break;
+			case 2:
+				randomProfile = images.profile2;
+				break;
+			case 3:
+				randomProfile = images.profile3;
+				break;
+			case 4:
+				randomProfile = images.profile4;
+				break;
+			case 5:
+				randomProfile = images.profile5;
+				break;
+		}
 		tempList.push({
-			profile: images.profile,
-			name: `${j}longname researcher`,
+			profile: randomProfile,
+			name: `${j}longnamed researcher`,
 			department: 'Radiology Department',
 			project: 'CadAI-B projects',
 		});

@@ -16,7 +16,13 @@
   margin-top: 132px;
   align-items: center;
 }
-.iDetail-back div {
+.iDetail-back-box {
+  display: flex;
+  flex-direction: row;
+  width: 98px;
+  justify-content: end;
+}
+.iDetail-back-box div {
   color: #000;
   margin-top: 2px;
   /* web. re.22 */
@@ -27,8 +33,12 @@
   line-height: 28px; /* 127.273% */
   margin-left: 11px;
 }
-.iDetail .researcherdetail-back:hover {
+.iDetail-back-box:hover {
   cursor: pointer;
+}
+.iDetail-back-box:hover div {
+  margin-left: 21px;
+  transition: 0.2s ease-in-out;
 }
 .iDetail-title {
   width: 1192px;
@@ -68,6 +78,34 @@
 }
 .iDetail-pdf .pageContainer {
   margin-bottom: 50px; /* Add margin between pages */
+}
+.iDetail-back-container {
+  width: 1196px;
+  height: 200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iDetail-back-container .readmore {
+  width: 186px;
+  height: 44px;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  background-color: white;
+  color: var(--Dark-gray, #3c3c3c);
+  text-align: center;
+  /* web. light.20 */
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px; /* 140% */
+}
+.iDetail-back-container .readmore:hover {
+  cursor: pointer;
+  background: var(--Light-gray, #f0f0f0);
 }
 
 @media (max-width: 1400px) {
@@ -139,6 +177,9 @@
   .iDetail-pdf .pageContainer {
     margin-bottom: 50px; /* Add margin between pages */
   }
+  .iDetail-back-container {
+    width: 900px;
+  }
 }
 @media (max-width: 1023px) {
   .iDetail {
@@ -209,6 +250,9 @@
   .iDetail-pdf .pageContainer {
     margin-bottom: 50px; /* Add margin between pages */
   }
+  .iDetail-back-container {
+    width: 700px;
+  }
 }
 @media (max-width: 767px) {
   .iDetail {
@@ -278,5 +322,15 @@
   }
   .iDetail-pdf .pageContainer {
     margin-bottom: 50px; /* Add margin between pages */
+  }
+  .iDetail-back-container {
+    width: 350px;
+  }
+  .iDetail-back-container .readmore {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 30px;
   }
 }/*# sourceMappingURL=insightsdetail.styles.css.map */

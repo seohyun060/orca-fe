@@ -12,9 +12,14 @@
   position: fixed;
   z-index: 100;
 }
+.gnb-newlogo {
+  position: absolute;
+  left: 50px;
+  width: 150px;
+}
 .gnb-logo {
   position: absolute;
-  left: 60px;
+  left: 225px;
 }
 .gnb-logo:hover {
   cursor: pointer;
@@ -31,7 +36,7 @@
   width: 554px;
   height: 31px;
   position: absolute;
-  left: 324px;
+  left: 434px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -51,7 +56,7 @@
 }
 .gnb .gnb-tiny, .gnb-white .gnb-tiny {
   position: absolute;
-  left: 188px;
+  left: 360px;
   top: 17px;
   color: var(--Dark-gray, white);
   text-align: center;
@@ -105,15 +110,15 @@
   height: 44px;
   border-radius: 9px;
   display: flex;
-  background: var(--Light-gray, #f0f0f0);
+  background: var(--Midium-gray, #9e9e9e);
   transition: 0.5s ease;
 }
 .gnb-En .kr-btn, .gnb-En .en-btn {
   width: 61px;
   height: 44px;
-  background: var(--Light-gray, #f0f0f0);
+  background: var(--Midium-gray, #9e9e9e);
   border-radius: 7px;
-  color: #9e9e9e;
+  color: #f0f0f0;
   font-size: 20px;
   font-family: Pretendard;
   font-weight: 300;
@@ -125,8 +130,8 @@
 }
 .gnb-En .en-btn, .gnb-En .gnb-Kr .kr-btn, .gnb-Kr .gnb-En .kr-btn {
   border-radius: 7px;
-  background: var(--Dark-gray, #3c3c3c);
-  color: white;
+  background: var(--Light-gray, #f0f0f0);
+  color: black;
   font-size: 20px;
   font-family: Pretendard;
   font-weight: 300;
@@ -145,14 +150,14 @@
   height: 44px;
   border-radius: 9px;
   display: flex;
-  background: var(--Light-gray, #f0f0f0);
+  background: var(--Light-gray, #9e9e9e);
 }
 .gnb-Kr .en-btn, .gnb-Kr .kr-btn {
   width: 61px;
   height: 44px;
   border-radius: 7px;
-  background: var(--Light-gray, #f0f0f0);
-  color: #9e9e9e;
+  background: var(--Light-gray, #9e9e9e);
+  color: #f0f0f0;
   font-size: 20px;
   font-family: Pretendard;
   font-weight: 300;
@@ -164,8 +169,8 @@
 }
 .gnb-Kr .kr-btn, .gnb-Kr .gnb-En .en-btn, .gnb-En .gnb-Kr .en-btn {
   border-radius: 7px;
-  background: var(--Dark-gray, #3c3c3c);
-  color: white;
+  background: var(--Dark-gray, #f0f0f0);
+  color: black;
   font-size: 20px;
   font-family: Pretendard;
   font-weight: 300;
@@ -198,6 +203,7 @@
 }
 .gnb-join:hover {
   cursor: pointer;
+  background: var(--Light-gray-Hovered, #e1e1e1);
 }
 .gnb-language {
   display: none;
@@ -251,7 +257,7 @@
 }
 .gnb-white .gnb-tiny {
   position: absolute;
-  left: 188px;
+  left: 360px;
   top: 17px;
   color: var(--Dark-gray, #3c3c3c);
   text-align: center;
@@ -276,14 +282,14 @@
     z-index: 100;
   }
   .gnb-logo {
-    left: 50px;
+    width: 110px;
   }
   .gnb-menu {
-    width: 424px;
+    width: 354px;
     height: 31px;
-    left: 224px;
+    left: 374px;
     color: white;
-    font-size: 15px;
+    font-size: 13px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
@@ -295,71 +301,71 @@
     display: none;
   }
   .gnb-En {
-    right: 201px;
-    width: 102px;
-    height: 34px;
-    border-radius: 6px;
+    right: 151px;
+    width: 60px;
+    height: 25px;
+    border-radius: 5px;
   }
   .gnb-En .kr-btn, .gnb-En .en-btn {
-    width: 51px;
-    height: 34px;
+    width: 30px;
+    height: 25px;
     color: #9e9e9e;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.5;
+    line-height: 2.3;
     letter-spacing: normal;
   }
   .gnb-En .en-btn, .gnb-En .gnb-Kr .kr-btn, .gnb-Kr .gnb-En .kr-btn {
-    border-radius: 6px;
+    border-radius: 5px;
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.5;
+    line-height: 2.3;
     letter-spacing: normal;
   }
   .gnb-Kr {
-    right: 201px;
-    width: 102px;
-    height: 34px;
-    border-radius: 6px;
+    right: 151px;
+    width: 60px;
+    height: 25px;
+    border-radius: 5px;
   }
   .gnb-Kr .en-btn, .gnb-Kr .kr-btn {
-    width: 51px;
-    height: 34px;
+    width: 30px;
+    height: 25px;
     border-radius: 6px;
     color: #9e9e9e;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.5;
+    line-height: 2.3;
     letter-spacing: normal;
   }
   .gnb-Kr .kr-btn, .gnb-Kr .gnb-En .en-btn, .gnb-En .gnb-Kr .en-btn {
     border-radius: 6px;
     color: white;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 2.5;
+    line-height: 2.3;
     letter-spacing: normal;
   }
   .gnb-join {
-    width: 128px;
-    height: 34px;
+    width: 68px;
+    height: 25px;
     right: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: black;
-    font-size: 20px;
+    font-size: 12px;
     font-family: Pretendard;
     font-weight: 300;
     font-stretch: normal;
@@ -399,14 +405,18 @@
     position: fixed;
     z-index: 100;
   }
-  .gnb-logo {
+  .gnb-newlogo {
     left: 30px;
+    width: 80px;
+  }
+  .gnb-logo {
+    left: 130px;
     width: 80px;
   }
   .gnb-menu {
     width: 304px;
     height: 31px;
-    left: 144px;
+    left: 244px;
     color: white;
     font-size: 13px;
     font-family: Pretendard;
@@ -521,6 +531,9 @@
     position: fixed;
     z-index: 100;
     justify-content: center;
+  }
+  .gnb-newlogo {
+    display: none;
   }
   .gnb-logo {
     position: relative;

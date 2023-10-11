@@ -30,6 +30,7 @@
   height: 44px;
   margin-right: 21px;
   padding-left: 21px;
+  padding-right: 21px;
   border-radius: 10px;
   border: 1px solid var(--Dark-gray, #3c3c3c);
   color: black;
@@ -41,12 +42,12 @@
   line-height: 28px;
   letter-spacing: normal;
 }
-.footer-news form button {
+.footer-news form .button, .footer-news form .button-active {
+  border-radius: 10px;
   width: 184px;
   height: 44px;
-  border-radius: 10px;
   background: var(--Dark-gray, #3c3c3c);
-  color: #f0f0f0;
+  color: #3c3c3c;
   font-size: 20px;
   font-family: Pretendard;
   font-weight: 300;
@@ -55,8 +56,9 @@
   line-height: 28px;
   letter-spacing: normal;
 }
-.footer-news form button:hover {
+.footer-news form .button-active:hover {
   cursor: pointer;
+  background-color: black;
 }
 .footer-news-please {
   width: 762px;

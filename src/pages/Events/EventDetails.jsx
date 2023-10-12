@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import images from "src/assets/images";
-import MapContainer from "./MapContainer";
+import MapContainer from "./components/MapContainer";
 
 const EventDetails = (props) => {
   const { t } = useTranslation();
@@ -80,11 +80,10 @@ const EventDetails = (props) => {
   return (
     <div className="Projects">
       <section className="ProjectDetailsSection">
-        <img
-          className="BackImage"
-          src={images.backwithletter}
-          onClick={() => navigate(-1)}
-        />
+        <div className="BackImage" onClick={() => navigate(-1)}>
+          <img className="arrow" src={images.back_arrow} />
+          <div>Back</div>
+        </div>
         <div className="EventInformation">
           <img className="EventImage" src={images.profile}></img>
 

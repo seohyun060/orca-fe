@@ -69,15 +69,9 @@ const PrejectsDetails = (props) => {
   return (
     <div className="Projects">
       <section className="ProjectDetailsSection">
-        <div className="">
-          <div
-            className="BackImage"
-            // src={images.backwithletter}
-            onClick={() => navigate(-1)}
-          >
-            <img className="arrow" src={images.back_arrow} />
-            <div>Back</div>
-          </div>
+        <div className="BackImage" onClick={() => navigate(-1)}>
+          <img className="arrow" src={images.back_arrow} />
+          <div>Back</div>
         </div>
         <div className="ProjectStatus">{statusSector}</div>
         <div className="ProjectTitle">

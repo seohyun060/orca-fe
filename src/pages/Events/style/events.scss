@@ -56,10 +56,16 @@
 
   img:first-child {
     margin-right: 40px;
+    :hover {
+      cursor: pointer;
+    }
   }
 
   img:last-child {
     margin-left: 40px;
+    :hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -741,7 +747,7 @@ circle {
   }
 
   .ButtonArrange {
-    margin-top:20px;
+    margin-top: 20px;
   }
 
   .EventCardPaging {

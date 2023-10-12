@@ -44,14 +44,6 @@ const EventsPage = (props) => {
         <div className="SubPhrase">{t("past_events_phrase")}</div>
         <div className="EventBox__past">
           {makePastEventList()}
-          {/* {EventDummyData.map((data) => (
-            <EventCard
-              title={data.title}
-              eventDate={data.eventDate}
-              past={true}
-              inEvent={true}
-            />
-          ))} */}
         </div>
         <div className="ButtonArrange">
           {EventDummyData.length > numberToShow ? (

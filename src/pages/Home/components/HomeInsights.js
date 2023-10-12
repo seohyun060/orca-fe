@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "../styles/home.styles.scss";
-import ResearchCard from "../../Insights/components/InsightsCard";
+import InsightsCard from "../../Insights/components/InsightsCard";
 
 const HomeInsights = () => {
   const navigate = useNavigate();
@@ -24,10 +24,10 @@ const HomeInsights = () => {
         </button>
       </div>
       <div className="EventBoxSlide">
-        <ResearchCard />
-        <ResearchCard />
-        <ResearchCard />
-        <ResearchCard />
+        <InsightsCard />
+        <InsightsCard />
+        <InsightsCard />
+        <InsightsCard />
       </div>
     </section>
   );

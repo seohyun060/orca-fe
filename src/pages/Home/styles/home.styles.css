@@ -866,11 +866,17 @@
 }
 
 .EventBoxSlide {
+  width: "100%";
+  overflow-x: "hidden";
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   transform: translate(0px);
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 @media (max-width: 1400px) {

@@ -185,6 +185,14 @@
   flex-shrink: 0;
   border: 1px solid var(--Dark-gray, #3c3c3c);
   background: #fff;
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .checkboxChecked {
@@ -194,6 +202,14 @@
   border: 1px solid var(--Dark-gray, #3c3c3c);
   background: var(--Dark-gray, #3c3c3c);
   padding: 7px 3px 7px 3.5px;
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .ButtonArrange {
@@ -245,10 +261,12 @@
   width: 88px;
   height: 28px;
   flex-shrink: 0;
-  margin-left: 6px;
+  margin-left: 10px;
   margin-bottom: 20px;
+  transition: 0.3s;
 
   div {
+    width: 49px;
     color: #000;
     font-family: Pretendard;
     font-size: 22px;
@@ -265,8 +283,8 @@
 
   &:hover {
     cursor: pointer;
-    transition: 0.3s;
     width: 98px;
+    margin-left: 0px;
   }
 }
 
@@ -760,6 +778,10 @@
     width: 900px;
   }
 
+  .BackImage {
+    margin-bottom: 10px;
+  }
+
   .ProjectStatus {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -930,6 +952,26 @@
     width: 700px;
   }
 
+  .BackImage {
+    width: 80px;
+    height: 25px;
+
+    div {
+      width: fit-content;
+      font-size: 20px;
+      line-height: 25px;
+    }
+    
+    .arrow {
+      width: 25px;
+      height: 25px;
+    }
+
+    &:hover {
+      width: 90px;
+    }
+  }
+
   .ProjectStatus {
     margin-top: 10px;
     margin-bottom: 5px;
@@ -939,11 +981,15 @@
   }
 
   .ProjectTitle {
+    font-size: 35px;
     width: 498px;
   }
 
   .ProjectGird {
     grid-template-columns: 498px 1fr;
+    .Contents {
+      font-size: 18px;
+    }
   }
 
   .StudyInformation {
@@ -962,6 +1008,22 @@
       font-size: 12px;
       line-height: 18px;
     }
+  }
+
+  .ShowMoreButton {
+    font-size: 18px;
+  }
+
+  .MenuBarContent {
+    font-size: 18px;
+  }
+
+  .MenuBar {
+    font-size: 20px;
+  }
+
+  .CandIInfo {
+    font-size: 20px;
   }
 
   .PublicationCard {
@@ -1144,8 +1206,23 @@
   }
 
   .BackImage {
-    width: 44px;
-    height: 14px;
+    width: 60px;
+    height: 18px;
+    margin-left: 5px;
+
+    div {
+      font-size: 15px;
+      line-height: 18px;
+    }
+    
+    .arrow {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      width: 65px;
+    }
   }
 
   .ProjectStatus {
@@ -1186,7 +1263,7 @@
   }
 
   .ProjectOfficial {
-    margin-top: 50px;
+    margin-top: 30px;
 
     .Contents {
       font-size: 15px;
@@ -1196,6 +1273,7 @@
   }
 
   .ProjectCondition {
+    margin-top: 20px;
     button {
       label {
         font-size: 15px;

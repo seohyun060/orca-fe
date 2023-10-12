@@ -60,7 +60,6 @@ export default function EventCard(props) {
       <article
         className="EventCard InEvent"
         onClick={() => {
-          console.log(preventClick);
           if (!preventClick) {
             navigate("/events/default", { state: { past: past } });
             window.scrollTo(0, 0);

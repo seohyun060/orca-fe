@@ -55,13 +55,13 @@
 .EventCardPaging img:first-child {
   margin-right: 40px;
 }
-.EventCardPaging img:first-child :hover {
+.EventCardPaging img:first-child:hover {
   cursor: pointer;
 }
 .EventCardPaging img:last-child {
   margin-left: 40px;
 }
-.EventCardPaging img:last-child :hover {
+.EventCardPaging img:last-child:hover {
   cursor: pointer;
 }
 

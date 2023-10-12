@@ -60,7 +60,6 @@ const EventBoxSlide = (props) => {
   };
 
   const handleMouseDown = (e) => {
-    console.log("handleMouseDown");
     setXPosition(0);
     eventSlideRef.current.style.transition = "transform ease-in-out";
     setDragging(true);
@@ -72,7 +71,6 @@ const EventBoxSlide = (props) => {
       const currentTime = Date.now();
       // 60 FPS, 대략 16ms
       if (currentTime - lastUpdateTime > 16) {
-        console.log(xPosition);
         const offsetX = e.clientX - startX;
         setXPosition(offsetX);
         eventSlideRef.current.style.transform = `translateX(${
@@ -84,9 +82,7 @@ const EventBoxSlide = (props) => {
   };
 
   const handleMouseUp = (e) => {
-    console.log("handleMouseUp");
     const offsetX = e.clientX - startX;
-    console.log(offsetX);
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     if (offsetX == 0) {
       setDragging(false);
@@ -102,15 +98,12 @@ const EventBoxSlide = (props) => {
     setXPosition(0);
     setTimeout(() => {
       setDragging(false);
-      console.log(dragging);
     }, 0);
   };
 
   const handleMouseLeave = (e) => {
-    console.log("handleMouseLeave");
     if (dragging) {
       const offsetX = e.clientX - startX;
-      console.log(offsetX);
       eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
       if (offsetX == 0) {
         setDragging(false);
@@ -126,7 +119,6 @@ const EventBoxSlide = (props) => {
       setXPosition(0);
       setTimeout(() => {
         setDragging(false);
-        console.log(dragging);
       }, 0);
     }
   };

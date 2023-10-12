@@ -56,14 +56,14 @@
 
   img:first-child {
     margin-right: 40px;
-    :hover {
+    &:hover {
       cursor: pointer;
     }
   }
 
   img:last-child {
     margin-left: 40px;
-    :hover {
+    &:hover {
       cursor: pointer;
     }
   }

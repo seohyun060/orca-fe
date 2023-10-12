@@ -5,7 +5,8 @@ import images from "src/assets/images";
 
 export default function EventCard(props) {
   const navigate = useNavigate();
-  const { comingSoon, past, inEvent, image, title, eventDate } = props;
+  const { preventClick, comingSoon, past, inEvent, image, title, eventDate } =
+    props;
 
   const monthNames = [
     "January",
@@ -41,6 +42,9 @@ export default function EventCard(props) {
         window.scrollTo(0, 0);
       }}
     >
+      <div className="EventCardHoverAction">
+        <div>Read more</div>
+      </div>
       <img className="EventCardImage" src={image}></img>
       <div className="EventCardPeriod Past">
         <div className="EventCardTitle Past">{title}</div>
@@ -56,8 +60,11 @@ export default function EventCard(props) {
       <article
         className="EventCard InEvent"
         onClick={() => {
-          navigate("/events/default", { state: { past: past } });
-          window.scrollTo(0, 0);
+          console.log(preventClick);
+          if (!preventClick) {
+            navigate("/events/default", { state: { past: past } });
+            window.scrollTo(0, 0);
+          }
         }}
       >
         <div className="EventCardPeriod">
@@ -81,8 +88,11 @@ export default function EventCard(props) {
     <article
       className="EventCard"
       onClick={() => {
-        navigate("/events/default", { state: { past: past } });
-        window.scrollTo(0, 0);
+        console.log(preventClick);
+        if (!preventClick) {
+          navigate("/events/default", { state: { past: past } });
+          window.scrollTo(0, 0);
+        }
       }}
     >
       <div className="EventCardPeriod">

@@ -1,19 +1,56 @@
-.ResearchCard {
+.InsightCard {
   width: 280px;
   height: 546px;
   flex-shrink: 0;
-  margin-right: 24px;
 }
 
-.ResearchImage {
+.InsightCardHoverAction {
+  display: flex;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  z-index: 200;
+}
+.InsightCardHoverAction:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(60, 60, 60, 0.8);
+  transition: 0.3s;
+  opacity: 1;
+}
+.InsightCardHoverAction:hover div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 192px;
+  height: 44px;
+  color: #fff;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 45px;
+  border: 1px solid white;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.InsightImage {
   width: 280px;
   height: 339px;
   flex-shrink: 0;
   opacity: 0.9;
   background: var(--Light-gray, #f0f0f0);
 }
+.InsightImage:hover {
+  cursor: pointer;
+}
 
-.ResearchCategory {
+.InsightCategory {
   color: #000;
   font-family: Pretendard;
   font-size: 20px;
@@ -24,7 +61,7 @@
   margin-top: 14px;
 }
 
-.ResearchTitle {
+.InsightTitle {
   color: #000;
   font-family: Pretendard;
   font-size: 22px;
@@ -247,19 +284,23 @@
 }
 
 @media (max-width: 1400px) {
-  .ResearchCard {
+  .InsightCard {
     width: 210px;
     height: 458px;
   }
-  .ResearchImage {
+  .InsightImage {
     width: 210px;
     height: 254px;
   }
-  .ResearchCategory {
+  .InsightCategory {
     font-size: 17px;
   }
-  .ResearchTitle {
+  .InsightTitle {
     font-size: 18.5px;
+    line-height: 22px;
+  }
+  .ViewCount {
+    margin-top: 10px;
   }
   .insights-head {
     width: 900px;
@@ -312,23 +353,36 @@
   }
 }
 @media (max-width: 1023px) {
-  .ResearchCard {
+  .InsightCard {
     width: 162px;
     height: 356px;
-    margin-right: 18px;
   }
-  .ResearchImage {
-    width: 163px;
+  .InsightImage {
+    width: 162px;
     height: 197.5px;
   }
-  .ResearchCategory {
+  .InsightCategory {
     font-size: 13px;
+    line-height: 20px;
     margin-top: 10px;
   }
-  .ResearchTitle {
+  .InsightTitle {
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 8px;
     line-height: 20px;
+  }
+  .ViewCount {
+    margin-top: 10px;
+  }
+  .ViewCount img {
+    width: 12px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+  .ViewCount label {
+    font-size: 12px;
+    line-height: 15px;
+    margin-left: 5px;
   }
   .insights {
     padding-left: 0px;
@@ -396,28 +450,25 @@
   }
 }
 @media (max-width: 767px) {
-  .ResearchCard {
+  .InsightCard {
     width: 81px;
     height: 225px;
-    margin-right: 9px;
   }
-  .ResearchImage {
+  .InsightImage {
     width: 80px;
     height: 98px;
   }
-  .ResearchCategory {
+  .InsightCategory {
     font-size: 7.5px;
     margin-top: 5.5px;
     line-height: 10px;
   }
-  .ResearchTitle {
+  .InsightTitle {
     font-size: 8px;
     margin-top: 6px;
     line-height: 11.5px;
   }
   .ViewCount {
-    display: flex;
-    align-items: center;
     margin-top: 5px;
   }
   .ViewCount img {

@@ -22,7 +22,7 @@ const HomeEvents = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <label className="View">{t("view_all")}</label>
+          {t("view_all")}
         </button>
       </div>
       <EventBoxSlide inEvent={false} />

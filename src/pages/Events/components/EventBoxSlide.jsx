@@ -16,7 +16,11 @@ const EventBoxSlide = (props) => {
   const [cardHiddenSize, setCardHiddenSize] = useState(0);
   const totalSides = EventDummyData.length - 1;
 
+  const [xPosition, setXPosition] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
 
+  const [lastUpdateTime, setLastUpdateTime] = useState(0);
 
   const onBackButtonClick = () => {
     // eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
@@ -27,7 +31,7 @@ const EventBoxSlide = (props) => {
         eventSlideMoving + cardHiddenSize
       }px)`;
     } else if (currentEventSlide <= 0) {
-      return;
+      eventSlideRef.current.style.transform = `translateX(${eventSlideMoving}px)`;
     } else {
       setEventSlideMoving(eventSlideMoving + cardSize);
       setCurrentEventSlide(currentEventSlide - 1);
@@ -45,13 +49,85 @@ const EventBoxSlide = (props) => {
       }px)`;
       // dotBarRef.current.img.src = "images.paging_dot_dark"
     } else if (currentEventSlide >= totalSides) {
-      return;
+      eventSlideRef.current.style.transform = `translateX(${eventSlideMoving}px)`;
     } else {
       setEventSlideMoving(eventSlideMoving - cardSize);
       setCurrentEventSlide(currentEventSlide + 1);
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving - cardSize
       }px)`;
+    }
+  };
+
+  const handleMouseDown = (e) => {
+    console.log("handleMouseDown");
+    setXPosition(0);
+    eventSlideRef.current.style.transition = "transform ease-in-out";
+    setDragging(true);
+    setStartX(e.clientX);
+  };
+
+  const handleMouseMove = (e) => {
+    if (dragging) {
+      const currentTime = Date.now();
+      // 60 FPS, 대략 16ms
+      if (currentTime - lastUpdateTime > 16) {
+        console.log(xPosition);
+        const offsetX = e.clientX - startX;
+        setXPosition(offsetX);
+        eventSlideRef.current.style.transform = `translateX(${
+          eventSlideMoving + xPosition
+        }px)`;
+        setLastUpdateTime(currentTime);
+      }
+    }
+  };
+
+  const handleMouseUp = (e) => {
+    console.log("handleMouseUp");
+    const offsetX = e.clientX - startX;
+    console.log(offsetX);
+    eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
+    if (offsetX == 0) {
+      setDragging(false);
+      return;
+    }
+    if (offsetX > 100) {
+      onBackButtonClick();
+    } else if (offsetX < -100) {
+      onGoButtonClick();
+    } else {
+      eventSlideRef.current.style.transform = `translateX(${eventSlideMoving}px)`;
+    }
+    setXPosition(0);
+    setTimeout(() => {
+      setDragging(false);
+      console.log(dragging);
+    }, 0);
+  };
+
+  const handleMouseLeave = (e) => {
+    console.log("handleMouseLeave");
+    if (dragging) {
+      const offsetX = e.clientX - startX;
+      console.log(offsetX);
+      eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
+      if (offsetX == 0) {
+        setDragging(false);
+        return;
+      }
+      if (offsetX > 100) {
+        onBackButtonClick();
+      } else if (offsetX < -100) {
+        onGoButtonClick();
+      } else {
+        eventSlideRef.current.style.transform = `translateX(${eventSlideMoving}px)`;
+      }
+      setXPosition(0);
+      setTimeout(() => {
+        setDragging(false);
+        console.log(dragging);
+      }, 0);
     }
   };
 
@@ -107,33 +183,36 @@ const EventBoxSlide = (props) => {
     }, delay);
   });
 
-
   useEffect(() => {
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     changeCardSize(window.innerWidth);
   }, []);
 
+  useEffect(() => {}, [startX, xPosition]);
+
   useEffect(() => {
     makeDotbar();
   }, [currentEventSlide]);
 
-  
   return (
     <>
-      <div className="EventBox">
+      <div
+        className="EventBox"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className="EventBoxSlide" ref={eventSlideRef}>
           {EventDummyData.map((data) => (
             <EventCard
+              preventClick={dragging}
               inEvent={inEvent}
               title={data.title}
               eventDate={data.eventDate}
             />
           ))}
-          <EventCard
-            inEvent={inEvent}
-            title="Coming"
-            comingSoon={true}
-          />
+          <EventCard inEvent={inEvent} title="Coming" comingSoon={true} />
         </div>
       </div>
       <div className="EventCardPaging">

@@ -22,7 +22,7 @@ const HomeProjects = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <label>{t("view_all")}</label>
+          {t("view_all")}
         </button>
       </div>
       <div className="ProjectBox">

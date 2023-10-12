@@ -38,7 +38,6 @@ function MapContainer() {
     }, delay);
   });
 
-  console.log(process.env.REACT_APP_GOOGLE_MAP_API_KEY);
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
       <GoogleMap mapContainerStyle={mapStyle} center={center} zoom={14}>

@@ -628,6 +628,11 @@
 	font-style: normal;
 	font-weight: 300;
 	line-height: 28px;
+
+	&:hover {
+		cursor: pointer;
+		background: var(--Light-gray, #F0F0F0);
+	}
 }
 
 // Project
@@ -654,12 +659,19 @@
 }
 
 .EventBoxSlide {
+	width: '100%';
+	overflow-x: 'hidden';
 	position: relative;
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
 	transform: translate(0px);
-	//나중에 디자인팀 질문
+	-ms-user-select: none; 
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 @media (max-width: 1400px) {

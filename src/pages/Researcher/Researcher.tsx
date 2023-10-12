@@ -91,7 +91,6 @@ const Researcher = ({
 											researcher.project,
 											index,
 										);
-										console.log('onResearcherClick');
 									}}
 								>
 									<div className='researcher-info-box'>

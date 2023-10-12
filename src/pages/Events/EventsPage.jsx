@@ -25,6 +25,7 @@ const EventsPage = (props) => {
           inProject={true}
           title={EventDummyData[i].title}
           eventDate={EventDummyData[i].eventDate}
+          image={EventDummyData[i].image}
           past={true}
           inEvent={true}
         />

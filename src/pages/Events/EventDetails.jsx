@@ -10,7 +10,7 @@ const EventDetails = (props) => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  const past = location.state.past;
+  const { past, image } = location.state;
 
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
@@ -85,7 +85,7 @@ const EventDetails = (props) => {
           <div>Back</div>
         </div>
         <div className="EventInformation">
-          <img className="EventImage" src={images.profile}></img>
+          <img className="EventImage" src={images[image]}></img>
 
           <div className="EventOverview">
             <div className="EventTitle">
@@ -133,9 +133,9 @@ const EventDetails = (props) => {
           <img src={images.back_b} onClick={onBackButtonClick}></img>
           <div className="EventCarouselImages">
             <div className="EventCarouselSlide" ref={eventSlideRef}>
-              <img className="CarouselImage" src={images.profile}></img>
-              <img className="CarouselImage" src={images.profile}></img>
-              <img className="CarouselImage" src={images.profile}></img>
+              <img className="CarouselImage" src={images.profile0}></img>
+              <img className="CarouselImage" src={images.profile1}></img>
+              <img className="CarouselImage" src={images.profile2}></img>
             </div>
           </div>
           <img src={images.go_b} onClick={onGoButtonClick}></img>
@@ -151,10 +151,10 @@ const EventDetails = (props) => {
           <div className="EventGallery">
             <label className="SubtitleFont">Gallery</label>
             <div className="EventGalleryImages">
-              <img src={images.profile}></img>
-              <img src={images.profile}></img>
-              <img src={images.profile}></img>
-              <img src={images.profile}></img>
+              <img src={images.profile0}></img>
+              <img src={images.profile1}></img>
+              <img src={images.profile2}></img>
+              <img src={images.profile3}></img>
             </div>
           </div>
         ) : (

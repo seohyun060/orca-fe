@@ -38,14 +38,14 @@ export default function EventCard(props) {
     <article
       className="EventCard Past"
       onClick={() => {
-        navigate("/events/default", { state: { past: past } });
+        navigate("/events/default", { state: { past: past, image: image } });
         window.scrollTo(0, 0);
       }}
     >
       <div className="EventCardHoverAction">
         <div>Read more</div>
       </div>
-      <img className="EventCardImage" src={image}></img>
+      <img className="EventCardImage" src={images[image]}></img>
       <div className="EventCardPeriod Past">
         <div className="EventCardTitle Past">{title}</div>
         <div className="EventCardDate Past">{makeFullDateFormat()}</div>
@@ -113,7 +113,7 @@ EventCard.defaultProps = {
   comingSoon: false,
   inEvent: false,
   past: false,
-  image: images.logo_orca,
+  image: "logo_orca",
   title: "The Annual Meeting of the Korean Breast Cancer Society",
   eventDate: "",
 };

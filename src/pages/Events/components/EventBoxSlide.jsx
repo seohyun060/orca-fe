@@ -20,8 +20,6 @@ const EventBoxSlide = (props) => {
   const [dragging, setDragging] = useState(false);
   const [startX, setStartX] = useState(0);
 
-  const [lastUpdateTime, setLastUpdateTime] = useState(0);
-
   const onBackButtonClick = () => {
     // eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     if (currentEventSlide == totalSides) {
@@ -68,16 +66,11 @@ const EventBoxSlide = (props) => {
 
   const handleMouseMove = (e) => {
     if (dragging) {
-      const currentTime = Date.now();
-      // 60 FPS, 대략 16ms
-      if (currentTime - lastUpdateTime > 16) {
-        const offsetX = e.clientX - startX;
-        setXPosition(offsetX);
-        eventSlideRef.current.style.transform = `translateX(${
-          eventSlideMoving + xPosition
-        }px)`;
-        setLastUpdateTime(currentTime);
-      }
+      const offsetX = e.clientX - startX;
+      setXPosition(offsetX);
+      eventSlideRef.current.style.transform = `translateX(${
+        eventSlideMoving + xPosition
+      }px)`;
     }
   };
 

@@ -154,7 +154,7 @@ const EventDetails = (props) => {
               <img src={images.profile0}></img>
               <img src={images.profile1}></img>
               <img src={images.profile2}></img>
-              <img src={images.profile3}></img>
+              <img src={images.profile4}></img>
             </div>
           </div>
         ) : (

@@ -61,7 +61,7 @@ export default function EventCard(props) {
         className="EventCard InEvent"
         onClick={() => {
           if (!preventClick) {
-            navigate("/events/default", { state: { past: past } });
+            navigate("/events/default", { state: { past: past, image: image } });
             window.scrollTo(0, 0);
           }
         }}
@@ -89,7 +89,7 @@ export default function EventCard(props) {
       onClick={() => {
         console.log(preventClick);
         if (!preventClick) {
-          navigate("/events/default", { state: { past: past } });
+          navigate("/events/default", { state: { past: past, image: image } });
           window.scrollTo(0, 0);
         }
       }}

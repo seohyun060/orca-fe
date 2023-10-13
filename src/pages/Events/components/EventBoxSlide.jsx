@@ -195,6 +195,7 @@ const EventBoxSlide = (props) => {
               inEvent={inEvent}
               title={data.title}
               eventDate={data.eventDate}
+              image={data.image}
             />
           ))}
           <EventCard inEvent={inEvent} title="Coming" comingSoon={true} />

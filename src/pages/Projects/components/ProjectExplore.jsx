@@ -7,6 +7,8 @@ import images from "src/assets/images";
 
 import ProjectDummyData from "./ProjectDummyData";
 
+import getProjectData from "src/api/projectsAPI";
+
 const ProjectExplore = (props) => {
   const { t } = useTranslation();
 
@@ -54,10 +56,7 @@ const ProjectExplore = (props) => {
     true,
   ]);
   const [searchSentence, setSearchSentence] = useState();
-
-  const getProjectData = () => {
-    // 백엔드 생성시 데이터를 받을 함수
-  };
+  const [search, setSearch] = useState();
 
   const onCategoryClick = (categoryNum) => {
     if (categoryNum == 0) {
@@ -185,7 +184,9 @@ const ProjectExplore = (props) => {
     return list;
   };
 
-  useEffect(() => {});
+  useEffect(() => {
+    getProjectData();
+  });
 
   useEffect(() => {
     dataFiltering();
@@ -212,11 +213,17 @@ const ProjectExplore = (props) => {
               placeholder="search"
               name="search"
               id="search"
-              onChange={() => {
+              value={search}
+              onChange={(e) => {
                 onSearchChange();
+                setSearch(e.target.value);
               }}
             />
-            <img src={images.search}></img>
+            {search ? (
+              <img src={images.search_b} />
+            ) : (
+              <img src={images.search} />
+            )}
           </div>
         </div>
         {tempData.length != 0 ? (

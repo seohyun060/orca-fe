@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ResearcherMap from '../components/ResearcherMap';
 import { ResearcherList, Researchers } from '@typedef/types';
-import getResearchers from 'src/api/ResearcherAPI';
+import { getResearchers } from 'src/api/ResearcherAPI';
 
 import images from 'src/assets/images';
 type Props = { route: string };

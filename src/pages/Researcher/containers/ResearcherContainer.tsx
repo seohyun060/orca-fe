@@ -3,7 +3,7 @@ import Researcher from '../Researcher';
 import { EChange, ResearcherList, Researchers } from '@typedef/types';
 import images from 'src/assets/images';
 import { useLocation, useNavigate } from 'react-router-dom';
-import getResearchers from 'src/api/ResearcherAPI';
+import { getResearchers } from 'src/api/ResearcherAPI';
 type Props = {
 	location: string;
 };
@@ -47,7 +47,7 @@ const ResearcherContainer = ({ location }: Props) => {
 	const fromDetail = useLocation();
 	const [researcherAPI, setResearcherAPI] = useState<ResearcherList>([]);
 	const [search, setSearch] = useState('');
-
+	const [navigateID, setNavigateID] = useState(1);
 	const [researcherIndex, setResearcherIndex] = useState(0);
 	const [readMore, setReadMore] = useState(false);
 	const [containerHeight, setContainerHeight] = useState('1742px');
@@ -93,11 +93,12 @@ const ResearcherContainer = ({ location }: Props) => {
 			department: string,
 			project: string,
 			index: number,
+			id: number,
 		) => {
 			setResearcherIndex(index);
 			saveScrollPosition();
 
-			navigate('/researcherDetail', {
+			navigate(`/researcher/${id}`, {
 				state: {
 					Name: name,
 					Profile: profile,

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Insights from '../Insights';
 import { Insight } from '@typedef/types';
 import { useNavigate } from 'react-router-dom';
-import getInsights from 'src/api/InsightAPI';
+import { getInsights } from 'src/api/InsightAPI';
 type Props = {};
 
 for (let j = 0; j < 18; j++) {}
@@ -112,10 +112,10 @@ const InsightsContainer = (props: Props) => {
 		localStorage.setItem('scrollPosition', scrollPosition.toString());
 	};
 	const onInsightClick = useCallback(
-		(type: string, title: string, link: string, date: Date) => {
+		(type: string, title: string, link: string, date: Date, id: number) => {
 			console.log(type, title, link);
 			saveScrollPosition();
-			navigate('/insightsdetail', {
+			navigate(`/insights/${id}`, {
 				state: {
 					Type: type,
 					Title: title,

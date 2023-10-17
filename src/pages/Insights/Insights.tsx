@@ -20,6 +20,7 @@ type Props = {
 		title: string,
 		link: string,
 		date: Date,
+		id: number,
 	) => void;
 };
 
@@ -136,6 +137,7 @@ const Insights = ({
 											insight.title,
 											insight.link,
 											insight.date,
+											insight.id,
 										);
 									}}
 								>

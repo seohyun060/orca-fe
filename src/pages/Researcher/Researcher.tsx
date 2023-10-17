@@ -91,6 +91,7 @@ const Researcher = ({
 											researcher.department,
 											researcher.project,
 											index,
+											researcher.id,
 										);
 									}}
 								>

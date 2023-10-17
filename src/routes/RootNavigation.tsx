@@ -37,10 +37,7 @@ const RootNavigation = () => {
 					path='/researcher'
 					element={<ResearcherContainer location={location.pathname} />}
 				/>
-				<Route
-					path='/researcherdetail'
-					element={<ResearcherDetailContainer />}
-				/>
+				<Route path='/researcher/:id' element={<ResearcherDetailContainer />} />
 				<Route path='/projects' element={<ProjectsPage />} />
 				<Route
 					path='/projects/default'
@@ -49,7 +46,7 @@ const RootNavigation = () => {
 				<Route path='/events' element={<EventsPage />} />
 				<Route path='/events/default' element={<EventDetails />} />
 				<Route path='/insights' element={<InsightsContainer />} />
-				<Route path='/insightsdetail' element={<InsightsDetailContainer />} />
+				<Route path='/insights/:id' element={<InsightsDetailContainer />} />
 			</Routes>
 
 			<FooterContainer location={location.pathname} />

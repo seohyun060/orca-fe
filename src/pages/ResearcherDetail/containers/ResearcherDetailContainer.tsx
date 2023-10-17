@@ -1,18 +1,28 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import ResearcherDetail from '../ResearcherDetail';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { getResearcherDetail } from 'src/api/ResearcherAPI';
+import { ResearcherList, Researchers } from '@typedef/types';
 type Props = {};
 
 const ResearcherDetailContainer = ({}: Props) => {
 	const publist = [1, 2, 3, 4, 5, 6, 7];
 	const location = useLocation();
 	const navigate = useNavigate();
-	const name = location.state.Name;
-	const profile = location.state.Profile;
-	const department = location.state.Department;
-	const project = location.state.Project;
-	const readMore = location.state.ReadMore;
-	const index = location.state.Index;
+	// const name = location.state.Name;
+	// const profile = location.state.Profile;
+	// const department = location.state.Department;
+	// const project = location.state.Project;
+	const [name, setName] = useState('');
+	const [profile, setProfile] = useState('');
+	const [department, setDepartment] = useState('');
+	const [project, setProject] = useState('');
+	let index = 0;
+	if (location.state) {
+		index = location.state.Index;
+	}
+
+	const params = useParams();
 	const onBackClick = useCallback(() => {
 		let scrollPosition = localStorage.getItem('scrollPosition');
 		localStorage.removeItem('scrollPosition');
@@ -36,16 +46,32 @@ const ResearcherDetailContainer = ({}: Props) => {
 		console.log(targetScrollPosition);
 	}, [location.pathname]);
 
+	useEffect(() => {
+		getResearcherDetail(params.id).then((data) => {
+			console.log(data.data); // 나옴
+			setName(data.data.name);
+			setProfile(data.data.image);
+			setDepartment(data.data.affiliation);
+			setProject(data.data.projectType);
+		});
+		return () => {};
+	}, []);
 	return (
-		<ResearcherDetail
-			name={name}
-			profile={profile}
-			department={department}
-			project={project}
-			publist={publist}
-			navigate={navigate}
-			onBackClick={onBackClick}
-		/>
+		<>
+			{profile ? (
+				<ResearcherDetail
+					name={name}
+					profile={profile}
+					department={department}
+					project={project}
+					publist={publist}
+					navigate={navigate}
+					onBackClick={onBackClick}
+				/>
+			) : (
+				''
+			)}
+		</>
 	);
 };
 

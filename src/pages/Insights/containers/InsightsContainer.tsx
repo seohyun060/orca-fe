@@ -2,47 +2,48 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Insights from '../Insights';
 import { Insight } from '@typedef/types';
 import { useNavigate } from 'react-router-dom';
+import getInsights from 'src/api/InsightAPI';
 type Props = {};
 
 for (let j = 0; j < 18; j++) {}
-const insightList: Insight[] = [];
+//const insightList: Insight[] = [];
 
-for (let i = 0; i < 2; i++) {
-	let tempType: string = '';
-	let tempLink: string = '';
-	let tempTitle: string = '';
-	if (i == 0) {
-		tempType = 'White Paper';
-		tempLink =
-			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
-		tempTitle = 'CadAI-B Initial Clinical Validation';
-	} else if (i == 1) {
-		tempType = 'White Paper';
-		tempLink =
-			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
-		tempTitle = 'CadAI-B Technical Perspective';
-	}
-	//  else if (i < 15) {
-	// 	tempType = 'News';
-	// 	tempLink =
-	// 		'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
-	// } else {
-	// 	tempType = 'Education';
-	// 	tempLink =
-	// 		'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
-	// }
-	insightList.push({
-		type: tempType,
-		title: tempTitle,
-		date: new Date(2023, 7, 19),
-		link: tempLink,
-	});
-}
+// for (let i = 0; i < 2; i++) {
+// 	let tempType: string = '';
+// 	let tempLink: string = '';
+// 	let tempTitle: string = '';
+// 	if (i == 0) {
+// 		tempType = 'White Paper';
+// 		tempLink =
+// 			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
+// 		tempTitle = 'CadAI-B Initial Clinical Validation';
+// 	} else if (i == 1) {
+// 		tempType = 'White Paper';
+// 		tempLink =
+// 			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
+// 		tempTitle = 'CadAI-B Technical Perspective';
+// 	}
+// 	//  else if (i < 15) {
+// 	// 	tempType = 'News';
+// 	// 	tempLink =
+// 	// 		'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
+// 	// } else {
+// 	// 	tempType = 'Education';
+// 	// 	tempLink =
+// 	// 		'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
+// 	// }
+// 	insightList.push({
+// 		type: tempType,
+// 		title: tempTitle,
+// 		date: new Date(2023, 7, 19),
+// 		link: tempLink,
+// 	});
+// }
 
 const InsightsContainer = (props: Props) => {
 	const navigate = useNavigate();
 	const [filteredList, setFilteredList] = useState<Insight[]>([]);
-
+	const [insightList, setInsightList] = useState<Insight[]>([]);
 	const [readMore, setReadMore] = useState(false);
 	const [containerHeight, setContainerHeight] = useState('1314px');
 	const [prevHeight, setPrevHeight] = useState('1314px');
@@ -126,7 +127,45 @@ const InsightsContainer = (props: Props) => {
 		},
 		[navigate],
 	);
+	useEffect(() => {
+		getInsights().then((data) => {
+			console.log(typeof data.data[0].createDate); // 나옴
+			const updatedList: Insight[] = [];
+			data.data.map((d: any) => {
+				const tempData: Insight = {
+					id: d.id,
+					title: d.title,
+					date: new Date(d.createDate),
+					type: 'White Paper',
+					link: 'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf',
+				};
+				updatedList.push(tempData);
+			});
+			setInsightList(updatedList);
+			//setResearcherList(updatedList);
+			//console.log(researcherList); // 안나옴
+		});
+		//console.log(researcherList); // 안나옴
+		//console.log(tempData);
 
+		// for (let i = 0; i < ResearcherAPI.length; i++){
+		// 	researcherList.push({
+		// 		id: ResearcherAPI[i].id,
+		// 		name: ResearcherAPI[i].name,
+		// 		location: ResearcherAPI[i].name,
+		// 		profile: ResearcherAPI[i].name,
+		// 		project: ResearcherAPI[i].name,
+		// 		department: ResearcherAPI[i].name,
+		// 	});
+		// }
+		// 	researcherList.push({
+		// 		name: `${j}Name`,
+		// 		profile: randomProfile,
+		// 		department: 'Radiology Department',
+		// 		project: 'CadAI-B projects',
+		// 	});
+		return () => {};
+	}, []);
 	useEffect(() => {
 		switch (selectedTab) {
 			case 0:
@@ -156,7 +195,7 @@ const InsightsContainer = (props: Props) => {
 		}
 
 		return () => {};
-	}, [readMore, containerHeight, selectedTab]);
+	}, [readMore, containerHeight, selectedTab, insightList]);
 
 	return (
 		<Insights

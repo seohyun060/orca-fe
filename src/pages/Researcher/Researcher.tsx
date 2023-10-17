@@ -34,6 +34,7 @@ const Researcher = ({
 	prevHeight,
 }: Props) => {
 	const { t } = useTranslation();
+	console.log(slicedList);
 	return (
 		<div className='researcher'>
 			<div className='researcher-meet-background'>

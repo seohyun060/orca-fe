@@ -20,6 +20,8 @@ type Props = {
 	selectedBoxList: boolean[];
 	index: number;
 	activeList: boolean[];
+	currentPage: number;
+	totalPage: number;
 };
 
 const ResearcherBox = ({
@@ -36,6 +38,8 @@ const ResearcherBox = ({
 	selectedBoxList,
 	index,
 	activeList,
+	currentPage,
+	totalPage,
 }: Props) => {
 	const { t } = useTranslation();
 	return (
@@ -53,7 +57,9 @@ const ResearcherBox = ({
 				}}
 			></div>
 			<div
-				className={`researchers${activeList[index] ? '-active' : ''}`}
+				className={`researchers${
+					activeList[index] && requestedItems.length != 0 ? '-active' : ''
+				}`}
 				style={{
 					top: topPosition,
 					left: leftPosition,
@@ -64,6 +70,9 @@ const ResearcherBox = ({
 					className='researchers-back'
 					src={black === '' ? images.back_b : images.back_w}
 					onClick={onBackClick}
+					style={{
+						display: currentPage == 1 ? 'none' : 'block',
+					}}
 				/>
 				<AnimatePresence>
 					<div className='researchers-body'>
@@ -87,8 +96,16 @@ const ResearcherBox = ({
 					className='researchers-go'
 					src={black === '' ? images.go_b : images.go_w}
 					onClick={onGoClick}
+					style={{
+						display: currentPage == totalPage ? 'none' : 'block',
+					}}
 				/>
-				<div className='researchers-dot'>
+				<div
+					className='researchers-dot'
+					style={{
+						display: totalPage === 1 ? 'none' : 'block',
+					}}
+				>
 					{dotList.map((dot, index) => (
 						<img src={dot} />
 					))}

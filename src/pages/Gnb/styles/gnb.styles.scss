@@ -24,12 +24,13 @@
 	z-index: 100;
 	&-newlogo {
 		position: absolute;
-		left: 50px;
-		width: 150px;
+		left: 39px;
+		width: 10.6%;
 	}
 	&-logo {
 		position: absolute;
-		left: 225px;
+		width: 6.4%;
+		left: 15%;
 	}
 	&-logo:hover {
 		cursor: pointer;
@@ -46,7 +47,7 @@
 		width: 554px;
 		height: 31px;
 		position: absolute;
-		left: 434px;
+		left: 28.8%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
@@ -59,7 +60,8 @@
 	}
 	.gnb-tiny {
 		position: absolute;
-		left: 360px;
+		width: 2.7%;
+		left: 21.75%;
 		top: 17px;
 		color: var(--Dark-gray, white);
 		text-align: center;
@@ -147,6 +149,7 @@
 	}
 	&-Kr {
 		position: absolute;
+		transition: 0.5s ease;
 		right: 271px;
 		width: 122px;
 		height: 44px;
@@ -243,9 +246,6 @@
 		line-height: 28px; /* 140% */
 	}
 	.gnb-tiny {
-		position: absolute;
-		left: 360px;
-		top: 17px;
 		color: var(--Dark-gray, #3c3c3c);
 		text-align: center;
 		font-family: Pretendard;
@@ -268,14 +268,14 @@
 		position: fixed;
 		z-index: 100;
 		&-logo {
-			//left: 50px;
+			left: 16.5%;
 			width: 110px;
 		}
 		&-menu {
-			width: 354px;
+			width: 454px;
 			height: 31px;
-			left: 374px;
-			@include font-setting(white, 300, 13px, 32px);
+			left: 28%;
+			@include font-setting(white, 300, 15px, 32px);
 		}
 		.gnb-tiny {
 			display: none;
@@ -289,11 +289,11 @@
 			.kr-btn {
 				width: 30px;
 				height: 25px;
-				@include font-setting(#9e9e9e, 300, 12px, 2.3);
+				@include font-setting(white, 300, 12px, 2.3);
 			}
 			.en-btn {
 				border-radius: 5px;
-				@include font-setting(white, 300, 12px, 2.3);
+				@include font-setting(black, 300, 12px, 2.3);
 			}
 		}
 		&-Kr {
@@ -306,11 +306,11 @@
 				width: 30px;
 				height: 25px;
 				border-radius: 6px;
-				@include font-setting(#9e9e9e, 300, 12px, 2.3);
+				@include font-setting(white, 300, 12px, 2.3);
 			}
 			.kr-btn {
 				border-radius: 6px;
-				@include font-setting(white, 300, 12px, 2.3);
+				@include font-setting(black, 300, 12px, 2.3);
 			}
 		}
 		&-join {
@@ -380,11 +380,11 @@
 			.kr-btn {
 				width: 30px;
 				height: 25px;
-				@include font-setting(#9e9e9e, 300, 11px, 2.5);
+				@include font-setting(white, 300, 11px, 2.5);
 			}
 			.en-btn {
 				border-radius: 6px;
-				@include font-setting(white, 300, 11px, 2.5);
+				@include font-setting(black, 300, 11px, 2.5);
 			}
 		}
 		&-Kr {
@@ -395,13 +395,13 @@
 
 			.en-btn {
 				width: 30px;
-				height: 30px;
+				height: 25px;
 				border-radius: 6px;
-				@include font-setting(#9e9e9e, 300, 12px, 2.5);
+				@include font-setting(white, 300, 11px, 2.5);
 			}
 			.kr-btn {
 				border-radius: 6px;
-				@include font-setting(white, 300, 12px, 2.5);
+				@include font-setting(black, 300, 11px, 2.5);
 			}
 		}
 		&-join {

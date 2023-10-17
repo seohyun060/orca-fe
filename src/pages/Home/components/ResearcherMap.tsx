@@ -25,6 +25,7 @@ const ResearcherMap = ({
 	activeList,
 	setActiveList,
 }: Props) => {
+	console.log(globalLists);
 	return (
 		<div className='map-container'>
 			<div className={`researcher-map${black}`}>

@@ -36,11 +36,15 @@ const ResearcherBoxContainer = ({
 	const [dotList, setDotList] = useState<string[]>([]);
 	const requestedItems = useMemo(
 		() => researcherList.slice(firstIndex, lastIndex),
-		[currentPage],
+		[currentPage, researcherList],
 	);
-	const totalPosts = useMemo(() => researcherList.length, [currentPage]);
+	const totalPosts = useMemo(
+		() => researcherList.length,
+		[currentPage, researcherList],
+	);
 	const totalPage = Math.ceil(totalPosts / 3);
 	const [goTransition, setGoTransition] = useState(true);
+
 	useEffect(() => {
 		if (index === 31) {
 			setBoxType(3);
@@ -52,10 +56,10 @@ const ResearcherBoxContainer = ({
 		if (black == '') {
 			if (index < 16) {
 				if (index % 8 < 4) {
-					setTopPosition('-42%');
+					setTopPosition('-22%');
 					setLeftPosition('100%');
 				} else {
-					setTopPosition('-42%');
+					setTopPosition('-22%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			} else {
@@ -102,6 +106,8 @@ const ResearcherBoxContainer = ({
 		topPosition,
 		leftPosition,
 		currentPage,
+		totalPage,
+		researcherList,
 		window.innerWidth,
 	]);
 
@@ -114,7 +120,7 @@ const ResearcherBoxContainer = ({
 			}
 			setGoTransition(false);
 		},
-		[currentPage],
+		[currentPage, researcherList],
 	);
 
 	const onGoClick = (e: any) => {
@@ -128,6 +134,8 @@ const ResearcherBoxContainer = ({
 
 	const boxClickHandler = useCallback(
 		(e: React.MouseEvent<HTMLElement>) => {
+			console.log(researcherList);
+			console.log(requestedItems);
 			e.preventDefault();
 			e.stopPropagation();
 			if (!selectedBoxList[index]) {
@@ -188,6 +196,8 @@ const ResearcherBoxContainer = ({
 			selectedBoxList={selectedBoxList}
 			index={index}
 			activeList={activeList}
+			currentPage={currentPage}
+			totalPage={totalPage}
 		/>
 	);
 };

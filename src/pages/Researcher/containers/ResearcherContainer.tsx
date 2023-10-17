@@ -1,49 +1,51 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Researcher from '../Researcher';
-import { EChange, ResearcherList } from '@typedef/types';
+import { EChange, ResearcherList, Researchers } from '@typedef/types';
 import images from 'src/assets/images';
 import { useLocation, useNavigate } from 'react-router-dom';
+import getResearchers from 'src/api/ResearcherAPI';
 type Props = {
 	location: string;
 };
-const researcherList: ResearcherList = [];
-for (let j = 0; j < 20; j++) {
-	const remainder = j % 6;
-	let randomProfile = '';
-	switch (remainder) {
-		case 0:
-			randomProfile = images.profile0;
-			break;
-		case 1:
-			randomProfile = images.profile1;
-			break;
-		case 2:
-			randomProfile = images.profile2;
-			break;
-		case 3:
-			randomProfile = images.profile3;
-			break;
-		case 4:
-			randomProfile = images.profile4;
-			break;
-		case 5:
-			randomProfile = images.profile5;
-			break;
-	}
+//const researcherList: ResearcherList = [];
+// for (let j = 0; j < 20; j++) {
+// 	const remainder = j % 6;
+// 	let randomProfile = '';
+// 	switch (remainder) {
+// 		case 0:
+// 			randomProfile = images.profile0;
+// 			break;
+// 		case 1:
+// 			randomProfile = images.profile1;
+// 			break;
+// 		case 2:
+// 			randomProfile = images.profile2;
+// 			break;
+// 		case 3:
+// 			randomProfile = images.profile3;
+// 			break;
+// 		case 4:
+// 			randomProfile = images.profile4;
+// 			break;
+// 		case 5:
+// 			randomProfile = images.profile5;
+// 			break;
+// 	}
 
-	researcherList.push({
-		name: `${j}Name`,
-		profile: randomProfile,
-		department: 'Radiology Department',
-		project: 'CadAI-B projects',
-	});
-}
-const listLength = researcherList.length;
+// 	researcherList.push({
+// 		name: `${j}Name`,
+// 		profile: randomProfile,
+// 		department: 'Radiology Department',
+// 		project: 'CadAI-B projects',
+// 	});
+// }
+//const listLength = researcherList.length;
 const ResearcherContainer = ({ location }: Props) => {
+	const [researcherList, setResearcherList] = useState<ResearcherList>([]);
 	const route = location.split('/')[1];
 	const navigate = useNavigate();
 	const fromDetail = useLocation();
-
+	const [researcherAPI, setResearcherAPI] = useState<ResearcherList>([]);
 	const [search, setSearch] = useState('');
 
 	const [researcherIndex, setResearcherIndex] = useState(0);
@@ -109,6 +111,48 @@ const ResearcherContainer = ({ location }: Props) => {
 		[navigate, readMore],
 	);
 	useEffect(() => {
+		getResearchers().then((data) => {
+			console.log(data.data); // 나옴
+			const updatedList: ResearcherList = [];
+			data.data.map((d: any) => {
+				const tempData: Researchers = {
+					id: d.id,
+					name: d.name,
+					profile: d.image,
+					location: d.locationNumber,
+					department: d.affiliation,
+					project: d.projectType,
+				};
+				updatedList.push(tempData);
+			});
+			setResearcherList(updatedList);
+			console.log(researcherList); // 안나옴
+		});
+		console.log(researcherList); // 안나옴
+		//console.log(tempData);
+
+		// for (let i = 0; i < ResearcherAPI.length; i++){
+		// 	researcherList.push({
+		// 		id: ResearcherAPI[i].id,
+		// 		name: ResearcherAPI[i].name,
+		// 		location: ResearcherAPI[i].name,
+		// 		profile: ResearcherAPI[i].name,
+		// 		project: ResearcherAPI[i].name,
+		// 		department: ResearcherAPI[i].name,
+		// 	});
+		// }
+		// 	researcherList.push({
+		// 		name: `${j}Name`,
+		// 		profile: randomProfile,
+		// 		department: 'Radiology Department',
+		// 		project: 'CadAI-B projects',
+		// 	});
+		return () => {};
+	}, []);
+	//console.log(researcherAPI);
+	console.log(researcherList); //나옴
+
+	useEffect(() => {
 		console.log(researcherIndex);
 		if (researcherIndex > 11) {
 			setReadMore(true);
@@ -119,6 +163,7 @@ const ResearcherContainer = ({ location }: Props) => {
 	useEffect(() => {
 		//setResearcherIndex(0);
 		//setReadMore(initReadMoreState);
+
 		if (fromDetail.state) {
 			setResearcherIndex(fromDetail.state.Index);
 		}
@@ -137,7 +182,7 @@ const ResearcherContainer = ({ location }: Props) => {
 					.slice(0, 12),
 			);
 		}
-		//console.log(slicedList);
+
 		return () => {};
 	}, [
 		search,
@@ -145,7 +190,8 @@ const ResearcherContainer = ({ location }: Props) => {
 		location,
 		readMore,
 		navigate,
-
+		researcherList,
+		//slicedList,
 		setResearcherIndex,
 		researcherIndex,
 	]);

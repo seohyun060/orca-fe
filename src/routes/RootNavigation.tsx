@@ -43,8 +43,8 @@ const RootNavigation = () => {
 				/>
 				<Route path='/projects' element={<ProjectsPage />} />
 				<Route
-					path='/projects/default'
-					element={<ProjectDetails projID='default' />}
+					path='/projects/:id'
+					element={<ProjectDetails/>}
 				/>
 				<Route path='/events' element={<EventsPage />} />
 				<Route path='/events/default' element={<EventDetails />} />

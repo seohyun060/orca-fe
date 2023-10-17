@@ -24,11 +24,11 @@
   justify-content: space-between;
 }
 
-.CategoryBar {
+.StudyTypeBar {
   display: flex;
   flex-direction: row;
 }
-.CategoryBar button {
+.StudyTypeBar button {
   border-bottom: 1px solid;
   padding: 4px 30px;
   background: #fff;
@@ -39,11 +39,11 @@
   font-weight: 400;
   line-height: 28px;
 }
-.CategoryBar button:hover {
+.StudyTypeBar button:hover {
   background: var(--Light-gray, #f0f0f0);
   color: #000;
 }
-.CategoryBar button.true {
+.StudyTypeBar button.true {
   background: var(--Dark-gray, #3c3c3c);
   color: #fff;
 }

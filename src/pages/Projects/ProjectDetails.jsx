@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import moment from "moment";
 
 import "./style/projects.css";
 
@@ -8,24 +9,33 @@ import images from "src/assets/images";
 
 import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";
-import ProjectCard from "./components/ProjectCard";
 import PublicationCard from "./components/PublicationCard";
 
 import ProjectDummyData from "./components/ProjectDummyData";
+
+import { getOneProjectData } from "src/api/projectsAPI";
 
 const PrejectsDetails = (props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const StudyPharagraph = useRef();
+  const params = useParams();
 
-  const { projID } = props;
+  const projID = params.id;
 
-  const [isOpen, setIsopen] = useState(true);
+  const [projectData, setProjectData] = useState();
+
   const [isPharagraphOpen, setIsPharagraphOpen] = useState(false);
   const [isInclCriteriaOpen, setIsInclCriteriaOpen] = useState(false);
   const [isExclCriteriaOpen, setIsExclCriteriaOpen] = useState(false);
   const [isInvTreatOpen, setIsInvTreatOpen] = useState(false);
   const [isStudyResultOpen, setStudyResultOpen] = useState(false);
+
+  const studyTypes = {
+    CADAI_B: "CadAI-B",
+    CADAI_T: "CadAI-T",
+    CHAT_AI: "Chat AI",
+  };
 
   const samplePharagraph =
     "Lorem ipsum dolor sit amet, cosectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation Lorem ipsum dolor sit amet, cosectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation";
@@ -63,6 +73,10 @@ const PrejectsDetails = (props) => {
 
   useEffect(() => {
     makeStatusSector();
+    getOneProjectData(projID).then((data) => {
+      console.log(data.data);
+      setProjectData(data.data);
+    });
   }, []);
 
   // 백엔드 데이터 확인 후 어떤식으로 나눌껀지 생각
@@ -75,8 +89,7 @@ const PrejectsDetails = (props) => {
         </div>
         <div className="ProjectStatus">{statusSector}</div>
         <div className="ProjectTitle">
-          Real-time Decision Support by Light-weighted AI Model Trained with
-          Large-scale Data for Breast Cancer Diagnosis
+          {projectData ? projectData.projectTitle : ""}
         </div>
         <div className="ProjectGird">
           <article className="StudyOverviewContents Article">
@@ -84,21 +97,24 @@ const PrejectsDetails = (props) => {
               {t("study_overview")}
             </div>
             <div className="Contents" ref={StudyPharagraph}>
-              {samplePharagraph}
+              {projectData ? projectData.overview : ""}
             </div>
-            {!isPharagraphOpen ? (
-              <button className="ShowMoreButton" onClick={openPharagraph}>
-                + {t("show_more")}
-              </button>
-            ) : (
-              <button className="ShowMoreButton" onClick={openPharagraph}>
-                - {t("fold")}
-              </button>
-            )}
+            {StudyPharagraph.offsetWidth &&
+              (!isPharagraphOpen ? (
+                <button className="ShowMoreButton" onClick={openPharagraph}>
+                  + {t("show_more")}
+                </button>
+              ) : (
+                <button className="ShowMoreButton" onClick={openPharagraph}>
+                  - {t("fold")}
+                </button>
+              ))}
 
             <div className="ProjectOfficial">
               <div className="SubjectName">{t("study_title")}</div>
-              <div className="Contents">{sampleQautation}</div>
+              <div className="Contents">
+                {projectData ? projectData.officialTitle : ""}
+              </div>
             </div>
             <div className="ProjectCondition">
               <div className="SubjectName">{t("study_condition")}</div>
@@ -110,31 +126,46 @@ const PrejectsDetails = (props) => {
           <article className="StudyInformation Article">
             <div className="Information">
               <div className="SubjectName">Study Start (Actual)</div>
-              <div className="Content">23.00.00</div>
+              <div className="Content">
+                {projectData
+                  ? moment(projectData.startDate).format("YY.MM.DD")
+                  : ""}
+              </div>
             </div>
             <div className="Information">
               <div className="SubjectName">Study Completion (Estimated)</div>
-              <div className="Content">23.00.00</div>
+              <div className="Content">
+                {projectData
+                  ? moment(projectData.endDate).format("YY.MM.DD")
+                  : ""}
+              </div>
             </div>
             <div className="Information">
               <div className="SubjectName">Enrollment (Estimated)</div>
-              <div className="Content">23.00.00</div>
+              <div className="Content">
+                {projectData ? projectData.enrollment : ""}
+              </div>
             </div>
             <div className="Information">
               <div className="SubjectName">Study Type</div>
-              <div className="Content">CadAI-B</div>
+              <div className="Content">
+                {projectData ? studyTypes[projectData.studyType] : ""}
+              </div>
             </div>
             <div className="Information">
               <div className="SubjectName">Other Study ID Numbers</div>
-              <div className="Content">NCC2962</div>
+              <div className="Content">
+                {projectData ? projectData.otherStudyId : ""}
+              </div>
             </div>
           </article>
           <article className="Contact Article">
             <div className="ArticleTitle">{t("contacts_location")}</div>
             <div className="Information">
-              <div>Name</div>
-              <div>Number</div>
-              <div>Email</div>
+              <div>{projectData ? projectData.name : ""}</div>
+              <div>{projectData ? projectData.phoneNumber : ""}</div>
+              <div>{projectData ? projectData.email : ""}</div>
+              <div>{projectData ? projectData.location : ""}</div>
             </div>
           </article>
           <article className="ParticipationCreteria Article">
@@ -144,40 +175,63 @@ const PrejectsDetails = (props) => {
               isMenubarOpen={isInclCriteriaOpen}
               setisMenubarOpen={setIsInclCriteriaOpen}
               Name={t("inclusion_criteria")}
-              Content={sampleContents}
+              Content={
+                <div className="MenuBarContent">
+                  {projectData ? projectData.inclusionCriteria : ""}
+                </div>
+              }
             />
             <ProjectMenuBar
               isMenubarOpen={isExclCriteriaOpen}
               setisMenubarOpen={setIsExclCriteriaOpen}
               Name={t("exclusion_criteria")}
-              Content={sampleContents}
+              Content={
+                <div className="MenuBarContent">
+                  {projectData ? projectData.exclusionCriteria : ""} <br />
+                  {projectData ? projectData.ageEligible : ""} <br />
+                  {projectData ? projectData.sexEligible : ""} <br />
+                  {projectData ? projectData.acceptedHealthy : ""} <br />
+                  {projectData ? projectData.samplingMethod : ""}
+                </div>
+              }
             />
           </article>
           <article className="StudyPlan Article">
             <div className="ArticleTitle">{t("study_plan")}</div>
             <div className="SubjectName">{t("design_details")}</div>
             <div className="Content">
-              Observational Model : Other Time
+              Observational Model :{" "}
+              {projectData ? projectData.observationalModel : ""}
               <br />
-              Perspective : Prospective
+              Perspective : {projectData ? projectData.timePerspective : ""}
             </div>
             <ProjectMenuBar
               isMenubarOpen={isInvTreatOpen}
               setisMenubarOpen={setIsInvTreatOpen}
               Name="Intervention / Treatment"
-              Content={sampleContents}
+              Content={
+                <div className="MenuBarContent">
+                  {projectData ? projectData.interventionTreatment : ""}
+                </div>
+              }
             />
             <ProjectMenuBar
               isMenubarOpen={isStudyResultOpen}
               setisMenubarOpen={setStudyResultOpen}
               Name={t("measures")}
-              Content={sampleContents}
+              Content={
+                <div className="MenuBarContent">
+                  {projectData ? projectData.primaryOutcome : ""} <br />
+                  {projectData ? projectData.secondaryOutcome : ""}
+                </div>
+              }
             />
           </article>
           <article className="CandI Article">
             <div className="ArticleTitle">{t("CandI")}</div>
             <div className="SubjectName">{t("principal_investigator")}</div>
             <CandIInfo
+              link={projectData ? projectData.pi : ""}
               Name="Name"
               AffiliatedInstitution="Affiliated Institution"
             />

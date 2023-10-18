@@ -1,5 +1,7 @@
+import client from './client.js';
+
 export async function getAllProjectData() {
-  return fetch("/api/projects", {
+  return fetch(`${client()}/api/projects`, {
     method: "GET",
   })
     .then((res) => res.json())
@@ -9,7 +11,7 @@ export async function getAllProjectData() {
 };
 
 export async function getOneProjectData(id) {
-  return fetch(`/api/projects/${id}`, {
+  return fetch(`${client()}/api/projects/${id}`, {
     method: "GET",
   })
     .then((res) => res.json())

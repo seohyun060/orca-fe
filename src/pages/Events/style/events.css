@@ -209,7 +209,7 @@ circle {
   margin-bottom: 30px;
 }
 .EventCardTitle.InEvent {
-  height: 175px;
+  height: 205px;
 }
 .EventCardTitle.Past {
   color: #000;
@@ -435,7 +435,7 @@ circle {
     line-height: 28px;
   }
   .EventCardTitle.InEvent {
-    height: 120px;
+    height: 150px;
   }
   .EventInformation .SubtitleFont {
     font-size: 22px;
@@ -574,7 +574,7 @@ circle {
     margin-bottom: 10px;
   }
   .EventCardTitle.InEvent {
-    height: 100px;
+    height: 120px;
   }
   .EventCardTitle.Past {
     font-size: 16px;
@@ -718,7 +718,7 @@ circle {
     margin-bottom: 5.5px;
   }
   .EventCardTitle.InEvent {
-    height: 77.5px;
+    height: 80px;
   }
   .EventCardTitle.Coming {
     margin: 15px 0px;

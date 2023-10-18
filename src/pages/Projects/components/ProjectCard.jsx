@@ -44,7 +44,7 @@ export default function ProjectCard(props) {
     "December",
   ];
   
-  const projectDateFormat = moment(startDate).format("DD.MM.YYYY");
+  const projectDateFormat = moment(startDate).format("D.M.YYYY");
   // const projectDateFormat =
   //   projectDate.getDate() +
   //   "." +

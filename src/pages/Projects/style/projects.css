@@ -420,6 +420,40 @@
   margin-bottom: 30px;
 }
 
+.MeasuresTable {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 20px 0px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  overflow-x: auto;
+}
+.MeasuresTable th {
+  width: 10%;
+  height: 97px;
+  flex-shrink: 0;
+  border: 1px solid #000;
+}
+.MeasuresTable td {
+  width: 30%;
+  border: 1px solid #000;
+}
+.MeasuresTable .element {
+  height: 161px;
+  flex-shrink: 0;
+  resize: none;
+  padding: 9px 10px;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
 .CandI {
   grid-column-start: 1;
   grid-row-start: 5;
@@ -923,11 +957,20 @@
   .ShowMoreButton {
     font-size: 18px;
   }
+  .MenuBar {
+    font-size: 20px;
+  }
   .MenuBarContent {
     font-size: 18px;
   }
-  .MenuBar {
+  .MeasuresTable {
+    padding: 20px 0px;
     font-size: 20px;
+    line-height: 24px;
+  }
+  .MeasuresTable .element {
+    font-size: 20px;
+    line-height: 24px;
   }
   .CandIInfo {
     font-size: 20px;
@@ -1183,6 +1226,15 @@
     padding: 10px 0px;
     font-size: 15px;
     line-height: 28px;
+  }
+  .MeasuresTable {
+    padding: 20px 0px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .MeasuresTable .element {
+    font-size: 15px;
+    line-height: 20px;
   }
   .StudyPlan .ArticleTitle {
     margin-bottom: 10px;

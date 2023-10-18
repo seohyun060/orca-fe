@@ -186,7 +186,6 @@ const ProjectExplore = (props) => {
   useEffect(() => {
     getAllProjectData().then((data) => {
       setProjectData(data.data);
-      console.log(data.data)
     });
   }, []);
 

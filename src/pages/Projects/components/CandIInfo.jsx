@@ -6,24 +6,32 @@ import images from "src/assets/images";
 const CandIInfo = (props) => {
   const navigate = useNavigate();
 
-  const { link, Name, AffiliatedInstitution } = props;
+  const { id, name, affiliation } = props;
 
   return (
     <div className="CandIInfo">
       <div
         className="Link"
         onClick={() => {
-          navigate(link);
-          window.scrollTo(0, 0);
+          if (id) {
+            navigate(`/researcher/${id}`);
+            window.scrollTo(0, 0);
+          }
         }}
       >
         Link
       </div>
-      <div>{Name}</div>
+      <div>{name}</div>
       <img src={images.vector36} className="SeparateLine"></img>
-      <div>{AffiliatedInstitution}</div>
+      <div>{affiliation}</div>
     </div>
   );
 };
 
 export default CandIInfo;
+
+CandIInfo.defaultProps = {
+  id: null,
+  name: "name",
+  affiliation: "Affiliation Institution",
+};

@@ -74,7 +74,6 @@ const PrejectsDetails = (props) => {
   useEffect(() => {
     makeStatusSector();
     getOneProjectData(projID).then((data) => {
-      console.log(data.data);
       setProjectData(data.data);
     });
   }, []);
@@ -220,9 +219,57 @@ const PrejectsDetails = (props) => {
               setisMenubarOpen={setStudyResultOpen}
               Name={t("measures")}
               Content={
-                <div className="MenuBarContent">
-                  {projectData ? projectData.primaryOutcome : ""} <br />
-                  {projectData ? projectData.secondaryOutcome : ""}
+                <div className="MeasuresTable">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Outcome Measure</th>
+                      <th>Measure Description</th>
+                      <th>Time frame</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Primary</th>
+                      <td>
+                        <div className="element">
+                          {projectData ? projectData.primaryOutcome[0] : null}
+                        </div>
+                      </td>
+                      <td>
+                        <div className="element">
+                          {projectData ? projectData.primaryOutcome[1] : null}
+                        </div>
+                      </td>
+                      <td>
+                        <div className="element">
+                          {projectData ? projectData.primaryOutcome[2] : null}
+                        </div>
+                      </td>
+                    </tr>
+                    {projectData ? (
+                      projectData.secondaryOutcome ? (
+                        <tr>
+                          <th>Secondary</th>
+                          <td>
+                            <div className="element">
+                              {projectData.secondaryOutcome[0]}
+                            </div>
+                          </td>
+                          <td>
+                            <div className="element">
+                              {projectData.secondaryOutcome[1]}
+                            </div>
+                          </td>
+                          <td>
+                            <div className="element">
+                              {projectData.secondaryOutcome[2]}
+                            </div>
+                          </td>
+                        </tr>
+                      ) : null
+                    ) : null}
+                  </tbody>
                 </div>
               }
             />
@@ -230,36 +277,38 @@ const PrejectsDetails = (props) => {
           <article className="CandI Article">
             <div className="ArticleTitle">{t("CandI")}</div>
             <div className="SubjectName">{t("principal_investigator")}</div>
-            <CandIInfo
-              link={projectData ? projectData.pi : ""}
-              Name="Name"
-              AffiliatedInstitution="Affiliated Institution"
-            />
+            {projectData ? (
+              <CandIInfo
+                id={projectData.pi ? projectData.pi.id : null}
+                name={projectData.pi ? projectData.pi.name : "None"}
+                affiliation={
+                  projectData.pi ? projectData.pi.affiliation : "None"
+                }
+              />
+            ) : (
+              <CandIInfo />
+            )}
             <div className="SubjectName">{t("collaborators")}</div>
-            <CandIInfo
-              Name="Name"
-              AffiliatedInstitution="Affiliated Institution"
-            />
-            <CandIInfo
-              Name="Name"
-              AffiliatedInstitution="Affiliated Institution"
-            />
-            <CandIInfo
-              Name="Name"
-              AffiliatedInstitution="Affiliated Institution"
-            />
-            <CandIInfo
-              Name="Name"
-              AffiliatedInstitution="Affiliated Institution"
-            />
-            <CandIInfo
-              Name="Name"
-              AffiliatedInstitution="Affiliated Institution"
-            />
+            {projectData ? (
+              projectData.collaborators.length !== 0 ? (
+                projectData.collaborators.map((data) => (
+                  <CandIInfo
+                    id={data.pi.id}
+                    name={data.pi.name}
+                    affiliation={data.pi.affiliation}
+                  />
+                ))
+              ) : (
+                <CandIInfo id={null} name="None" affiliation="None" />
+              )
+            ) : (
+              <CandIInfo />
+            )}
           </article>
           <article className="Publications Article">
             <div className="ArticleTitle">{t("related_publications")}</div>
             <PublicationCard
+              // Publication API 연동
               title={ProjectDummyData[0].title}
               projDate={ProjectDummyData[0].projDate}
             />

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Routes, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import moment from "moment";
+
 import "../style/projects.css";
 
 export default function ProjectCard(props) {
@@ -10,14 +12,22 @@ export default function ProjectCard(props) {
 
   // projID를 통해 project정보 가져온 후 내용출력
   const {
+    id,
     inProject,
-    title,
+    projectTitle,
     status,
-    projID,
-    category,
+    projectId,
+    studyType,
     location,
-    projDate,
+    startDate,
   } = props;
+
+  const categorytest = {
+    ALL : "ORCA Projects",
+    CADAI_B : "CadAI-B",
+    CADAI_T : "CadAI-T",
+    CHAT_AI : "Chat AI",
+  }
 
   const monthNames = [
     "January",
@@ -33,27 +43,27 @@ export default function ProjectCard(props) {
     "November",
     "December",
   ];
-
-  const projectDate = new Date(projDate);
-  const projectDateFormat =
-    projectDate.getDate() +
-    "." +
-    (projectDate.getMonth() + 1) +
-    "." +
-    projectDate.getFullYear();
+  
+  const projectDateFormat = moment(startDate).format("D.M.YYYY");
+  // const projectDateFormat =
+  //   projectDate.getDate() +
+  //   "." +
+  //   (projectDate.getMonth() + 1) +
+  //   "." +
+  //   projectDate.getFullYear();
 
   const [statusSector, setStatusSector] = useState(<></>);
 
   const makeStatusSector = () => {
-    if (status === "Completed") {
+    if (status === "COMPLETED") {
       setStatusSector(
         <p className="ProjectCardProgress Completed">• Completed</p>
       );
-    } else if (status === "Terminated") {
+    } else if (status === "TERMINATED") {
       setStatusSector(
         <p className="ProjectCardProgress Terminated">• Terminated</p>
       );
-    } else if (status === "Active") {
+    } else if (status === "ACTIVE") {
       setStatusSector(<p className="ProjectCardProgress Active">• Active</p>);
     }
   };
@@ -71,15 +81,15 @@ export default function ProjectCard(props) {
       <div className="RowBox">
         {statusSector}
         <p className="ProjectCardID">
-          {t("project_id")}: {projID}
+          {t("project_id")}: {projectId}
         </p>
       </div>
       <div className="RowBox">
-        <div className="ProjectCardTitle">{title}</div>
+        <div className="ProjectCardTitle">{projectTitle}</div>
         <div className="ProjectDate">{projectDateFormat}</div>
       </div>
       <div className="RowBox">
-        <label className="ProjectCardCategory">{category}</label>
+        <label className="ProjectCardCategory">{categorytest[studyType]}</label>
       </div>
       <div className="RowBox">
         <p className="ProjectCardLocation">
@@ -89,7 +99,7 @@ export default function ProjectCard(props) {
           className="ReadMoreButton"
           // 추후 projID를 받아와 변경
           onClick={() => {
-            navigate("/projects/default");
+            navigate(`/projects/${id}`);
             window.scrollTo(0, 0);
           }}
           // onClick={() => navigate("/project/" + {projID})}
@@ -103,10 +113,10 @@ export default function ProjectCard(props) {
 
 // 추후 삭제
 ProjectCard.defaultProps = {
-  title: "test",
-  status: "test",
-  projID: "test",
-  category: "test",
-  location: "test",
-  projDate: "test",
+  projectTitle: "N/A",
+  status: "N/A",
+  projectId: "N/A",
+  studyType: "N/A",
+  location: "N/A",
+  startDate: "1900.01.01",
 };

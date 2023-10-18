@@ -5,26 +5,25 @@ import ProjectCard from "./ProjectCard";
 
 import images from "src/assets/images";
 
-import ProjectDummyData from "./ProjectDummyData";
-
-import getProjectData from "src/api/projectsAPI";
+import { getAllProjectData } from "src/api/projectsAPI";
 
 const ProjectExplore = (props) => {
   const { t } = useTranslation();
 
-  const { projStatus, projID, projTitle, projCategory, projLocation } = props;
-  const [tempData, setTempData] = useState(ProjectDummyData);
+  const { projStatus, projID, projTitle, projStudyType, projLocation } = props;
+
+  const [projectData, setProjectData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [numberToShow, setNumberToShow] = useState(7);
   const [isYearlySelectionBar, setIsYearlySelectionBar] = useState(true);
   const [isStatusSelectionBar, setIsStatusSelectionBar] = useState(true);
 
-  const [category, setCategory] = useState([
-    "ORCA Projects",
-    "CadAI-B",
-    "CadAI-T",
-    "Chat AI",
-  ]);
-  const [isCategoryChecked, setIsCategoryChecked] = useState([
+  const studyType = [
+    ["ORCA Projects", "CadAI-B", "CadAI-T", "Chat AI"],
+    ["", "CADAI_B", "CADAI_T", "CHAT_AI"],
+  ];
+
+  const [isStudyTypeChecked, setIsStudyTypeChecked] = useState([
     true,
     false,
     false,
@@ -43,12 +42,10 @@ const ProjectExplore = (props) => {
     false,
     false,
   ]);
-  const [status, setStatus] = useState([
-    "All",
-    "Active",
-    "Completed",
-    "Terminated",
-  ]);
+  const status = [
+    ["All", "Active", "Completed", "Terminated"],
+    ["", "ACTIVE", "COMPLETED", "TERMINATED"],
+  ];
   const [isStatusChecked, setIsStatusChecked] = useState([
     true,
     true,
@@ -58,14 +55,14 @@ const ProjectExplore = (props) => {
   const [searchSentence, setSearchSentence] = useState();
   const [search, setSearch] = useState();
 
-  const onCategoryClick = (categoryNum) => {
-    if (categoryNum == 0) {
+  const onStudyTypeClick = (studyTypeNum) => {
+    if (studyTypeNum == 0) {
       const temp = [true, false, false, false];
-      setIsCategoryChecked(temp);
+      setIsStudyTypeChecked(temp);
     } else {
       let temp = [false, false, false, false];
-      temp[categoryNum] = true;
-      setIsCategoryChecked(temp);
+      temp[studyTypeNum] = true;
+      setIsStudyTypeChecked(temp);
     }
   };
 
@@ -118,16 +115,16 @@ const ProjectExplore = (props) => {
 
   const dataFiltering = () => {
     const value = document.getElementById("search").value;
-    let filterData = ProjectDummyData.filter((data) => {
-      if (data.title.includes(value)) {
+    let filterData = projectData.filter((data) => {
+      if (data.projectTitle.includes(value)) {
         return true;
       }
     });
 
-    if (isCategoryChecked[0] == false) {
-      const categoryNum = isCategoryChecked.indexOf(true);
+    if (isStudyTypeChecked[0] == false) {
+      const studyTypeNum = isStudyTypeChecked.indexOf(true);
       filterData = filterData.filter((data) => {
-        if (data.category == category[categoryNum]) {
+        if (data.studyType == studyType[1][studyTypeNum]) {
           return true;
         }
       });
@@ -137,7 +134,7 @@ const ProjectExplore = (props) => {
     } else if (isYearlyChecked.indexOf(true) != -1) {
       const yearlyNum = isYearlyChecked.indexOf(true);
       filterData = filterData.filter((data) => {
-        const projectDate = new Date(data.projDate);
+        const projectDate = new Date(data.startDate);
         if (
           (new Date() - projectDate) / (1000 * 60 * 60 * 24) <
           yearlyCriteria[yearlyNum] * 365
@@ -152,7 +149,7 @@ const ProjectExplore = (props) => {
       let temp = [];
       if (isStatus) {
         temp = filterData.filter((data) => {
-          if (data.status == status[index]) {
+          if (data.status == status[1][index]) {
             return true;
           }
         });
@@ -160,50 +157,54 @@ const ProjectExplore = (props) => {
       }
     });
     filterData = tempStatsus;
-    setTempData(filterData);
+
+    setFilteredData(filterData);
   };
 
   const makeProjectList = () => {
     let list = [];
-    let listlen = tempData.length;
-    if (tempData.length > numberToShow) {
+    let listlen = filteredData.length;
+    if (filteredData.length > numberToShow) {
       listlen = numberToShow;
     }
     for (let i = 0; i < listlen; i++)
       list.push(
         <ProjectCard
+          id={filteredData[i].id}
           inProject={true}
-          title={tempData[i].title}
-          status={tempData[i].status}
-          projID={tempData[i].projID}
-          category={tempData[i].category}
-          location={tempData[i].location}
-          projDate={tempData[i].projDate}
+          projectId={filteredData[i].projectId}
+          projectTitle={filteredData[i].projectTitle}
+          status={filteredData[i].status}
+          studyType={filteredData[i].studyType}
+          location={filteredData[i].location}
+          startDate={filteredData[i].startDate}
         />
       );
     return list;
   };
 
   useEffect(() => {
-    getProjectData();
-  });
+    getAllProjectData().then((data) => {
+      setProjectData(data.data);
+    });
+  }, []);
 
   useEffect(() => {
     dataFiltering();
-  }, [isCategoryChecked, isYearlyChecked, isStatusChecked]);
+  }, [projectData, isStudyTypeChecked, isYearlyChecked, isStatusChecked]);
 
   return (
     <section className="ProjectSection">
       <div className="SectionTitle">{t("project_explore")}</div>
       <div className="ProjectExplore">
         <div className="ProjectExploreUpperBar">
-          <div className="CategoryBar">
-            {category.map((category, index) => (
+          <div className="StudyTypeBar">
+            {studyType[0].map((studyType, index) => (
               <button
-                className={isCategoryChecked[index].toString()}
-                onClick={(e) => onCategoryClick(index)}
+                className={isStudyTypeChecked[index].toString()}
+                onClick={(e) => onStudyTypeClick(index)}
               >
-                {category}
+                {studyType}
               </button>
             ))}
           </div>
@@ -226,25 +227,14 @@ const ProjectExplore = (props) => {
             )}
           </div>
         </div>
-        {tempData.length != 0 ? (
+        {filteredData.length != 0 ? (
           <div className="ProjectList">
             {searchSentence}
             {makeProjectList()}
-            {/* {tempData.map((temp) => (
-              <ProjectCard
-                inProject={true}
-                title={temp.title}
-                status={temp.status}
-                projID={temp.projID}
-                category={temp.category}
-                location={temp.location}
-                projDate={temp.projDate}
-              />
-            ))} */}
           </div>
         ) : (
           <div className="ResultEmpty">
-            No search results match '{document.getElementById("search").value}'
+            No search results match "{search}"
             <br />
             Please try a new search
           </div>
@@ -296,7 +286,7 @@ const ProjectExplore = (props) => {
               ></img>
             </div>
             {isStatusSelectionBar &&
-              status.map((status, index) => (
+              status[0].map((status, index) => (
                 <div className="sub">
                   {status}
                   {!isStatusChecked[index] ? (
@@ -321,7 +311,7 @@ const ProjectExplore = (props) => {
         </div>
       </div>
       <div className="ButtonArrange">
-        {tempData.length > numberToShow ? (
+        {filteredData.length > numberToShow ? (
           <button
             className="ReadMoreButton"
             onClick={() => setNumberToShow(numberToShow + 7)}

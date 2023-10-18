@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 
-.CategoryBar {
+.StudyTypeBar {
   display: flex;
   flex-direction: row;
 
@@ -185,7 +185,7 @@
   flex-shrink: 0;
   border: 1px solid var(--Dark-gray, #3c3c3c);
   background: #fff;
-  -ms-user-select: none; 
+  -ms-user-select: none;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -202,7 +202,7 @@
   border: 1px solid var(--Dark-gray, #3c3c3c);
   background: var(--Dark-gray, #3c3c3c);
   padding: 7px 3px 7px 3.5px;
-  -ms-user-select: none; 
+  -ms-user-select: none;
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -451,6 +451,43 @@
 
   .Content {
     margin-bottom: 30px;
+  }
+}
+
+.MeasuresTable {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 20px 0px;
+  color: #000;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  overflow-x: auto;
+
+  th {
+    width: 10%;
+    height: 97px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+  }
+
+  td {
+    width: 30%;
+    border: 1px solid #000;
+  }
+
+  .element {
+    height: 161px;
+    flex-shrink: 0;
+    resize: none;
+    padding: 9px 10px;
+    font-family: Pretendard;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
   }
 }
 
@@ -961,7 +998,7 @@
       font-size: 20px;
       line-height: 25px;
     }
-    
+
     .arrow {
       width: 25px;
       height: 25px;
@@ -1014,12 +1051,25 @@
     font-size: 18px;
   }
 
+  .MenuBar {
+    font-size: 20px;
+  }
+
   .MenuBarContent {
     font-size: 18px;
   }
 
-  .MenuBar {
+  .MeasuresTable {
+    padding: 20px 0px;
     font-size: 20px;
+    line-height: 24px;
+  
+    .element {
+      // height: 161px;
+      // padding: 9px 10px;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 
   .CandIInfo {
@@ -1214,7 +1264,7 @@
       font-size: 15px;
       line-height: 18px;
     }
-    
+
     .arrow {
       width: 18px;
       height: 18px;
@@ -1333,6 +1383,19 @@
     padding: 10px 0px;
     font-size: 15px;
     line-height: 28px;
+  }
+
+  .MeasuresTable {
+    padding: 20px 0px;
+    font-size: 15px;
+    line-height: 20px;
+  
+    .element {
+      // height: 161px;
+      // padding: 9px 10px;
+      font-size: 15px;
+      line-height: 20px;
+    }
   }
 
   .StudyPlan {

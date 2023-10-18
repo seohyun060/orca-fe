@@ -8,7 +8,10 @@ import EventCard from "./components/EventCard";
 import EventBoxSlide from "./components/EventBoxSlide";
 import EventDummyData from "./components/EventDummyData";
 
+import { getOneEventData } from "src/api/eventsAPI";
+
 const EventsPage = (props) => {
+
   const { t } = useTranslation();
 
   const [numberToShow, setNumberToShow] = useState(6);

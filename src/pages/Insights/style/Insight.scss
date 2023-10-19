@@ -8,7 +8,7 @@
 	display: flex;
 	position: absolute;
 	width: inherit;
-	height: inherit;
+	height: 339px;
 	opacity: 0;
 	z-index: 200;
 	&:hover {
@@ -40,6 +40,9 @@
   }
 
 .InsightImage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 280px;
 	height: 339px;
 	flex-shrink: 0;
@@ -304,6 +307,10 @@
 		height: 458px;
 	}
 
+	.InsightCardHoverAction {
+		height: 254px;
+	}
+
 	.InsightImage {
 		width: 210px;
 		height: 254px;
@@ -389,6 +396,10 @@
 	.InsightCard {
 		width: 162px;
 		height: 356px;
+	}
+
+	.InsightCardHoverAction {
+		height: 197.5px;
 	}
 
 	.InsightImage {
@@ -505,9 +516,17 @@
 		height: 225px;
 	}
 
+	.InsightCardHoverAction {
+		height: 98px;
+	}
+
 	.InsightImage {
 		width: 80px;
 		height: 98px;
+		.react-pdf__Page__canvas {
+			width: 56px !important;
+			height: 80px !important;
+		}
 	}
 
 	.InsightCategory {

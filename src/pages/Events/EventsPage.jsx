@@ -3,32 +3,34 @@ import { useTranslation } from "react-i18next";
 
 // import { ReactComponent as pagingBar } from 'src/assets/images/paging_bar';
 import "./style/events.css";
-import images from "src/assets/images";
 import EventCard from "./components/EventCard";
 import EventBoxSlide from "./components/EventBoxSlide";
-import EventDummyData from "./components/EventDummyData";
 
-import { getOneEventData } from "src/api/eventsAPI";
+import { getAllEventData } from "src/api/eventsAPI";
 
 const EventsPage = (props) => {
-
   const { t } = useTranslation();
 
+  const [pastEventsData, setPastEventsData] = useState([]);
+  const [comingEventsData, setComingEventsData] = useState([]);
   const [numberToShow, setNumberToShow] = useState(6);
 
   const makePastEventList = () => {
     let list = [];
-    let listlen = EventDummyData.length;
-    if (EventDummyData.length > numberToShow) {
+    let listlen = pastEventsData.length;
+    if (pastEventsData.length > numberToShow) {
       listlen = numberToShow;
     }
     for (let i = 0; i < listlen; i++)
       list.push(
         <EventCard
-          inProject={true}
-          title={EventDummyData[i].title}
-          eventDate={EventDummyData[i].eventDate}
-          image={EventDummyData[i].image}
+          id={pastEventsData[i].id}
+          thumbnail={pastEventsData[i].thumbnail}
+          title={pastEventsData[i].title}
+          startDate={pastEventsData[i].startDate}
+          endDate={pastEventsData[i].endDate}
+          openingHour={pastEventsData[i].openingHour}
+          dday={pastEventsData[i].dday}
           past={true}
           inEvent={true}
         />
@@ -36,21 +38,39 @@ const EventsPage = (props) => {
     return list;
   };
 
+  useEffect(() => {
+    getAllEventData().then((data) => {
+      let coming = [];
+      let past = [];
+
+      data.data.map((event) => {
+        if (event.dday >= 0) {
+          coming.push(event);
+        } else {
+          past.push(event);
+        }
+      });
+      coming = coming.sort((a, b) => (a.dday - b.dday))
+      console.log(coming)
+      console.log(past)
+      setComingEventsData(coming);
+      setPastEventsData(past);
+    });
+  }, []);
+
   return (
     <div className="Events">
       <section className="Section">
         <div className="SectionTitle">{t("events")}</div>
         <div className="SubPhrase">{t("events_phrase")}</div>
-        <EventBoxSlide inEvent={true} />
+        {comingEventsData ? <EventBoxSlide inEvent={true} eventsData={comingEventsData} /> : <></>}
       </section>
       <section className="Section">
         <div className="SectionTitle">{t("past_events")}</div>
         <div className="SubPhrase">{t("past_events_phrase")}</div>
-        <div className="EventBox__past">
-          {makePastEventList()}
-        </div>
+        <div className="EventBox__past">{makePastEventList()}</div>
         <div className="ButtonArrange">
-          {EventDummyData.length > numberToShow ? (
+          {pastEventsData.length > numberToShow ? (
             <button
               className="ReadMoreButton"
               onClick={() => setNumberToShow(numberToShow + 7)}

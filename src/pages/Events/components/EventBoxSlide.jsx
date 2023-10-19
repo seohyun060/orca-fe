@@ -3,10 +3,10 @@ import "../style/events.css";
 import images from "src/assets/images";
 import EventCard from "./EventCard";
 
-import EventDummyData from "./EventDummyData";
+// import eventsData from "./eventsData";
 
 const EventBoxSlide = (props) => {
-  const { inEvent } = props;
+  const { inEvent, eventsData } = props;
 
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
@@ -14,7 +14,7 @@ const EventBoxSlide = (props) => {
   const [dotBar, setDotBar] = useState([]);
   const [cardSize, setCardSize] = useState(0);
   const [cardHiddenSize, setCardHiddenSize] = useState(0);
-  const totalSides = EventDummyData.length - 1;
+  const totalSides = eventsData.length - 1;
 
   const [xPosition, setXPosition] = useState(0);
   const [dragging, setDragging] = useState(false);
@@ -118,7 +118,7 @@ const EventBoxSlide = (props) => {
 
   const makeDotbar = () => {
     let dotBarImage = [];
-    for (var i = 0; i < EventDummyData.length; i++) {
+    for (var i = 0; i < eventsData.length; i++) {
       if (i == currentEventSlide) {
         dotBarImage.push(images.paging_dot_dark);
       } else {
@@ -127,7 +127,7 @@ const EventBoxSlide = (props) => {
     }
 
     let temp = [];
-    for (var i = 0; i < EventDummyData.length; i++) {
+    for (var i = 0; i < eventsData.length; i++) {
       temp.push(<img id={i} src={dotBarImage[i]}></img>);
     }
     setDotBar(temp);
@@ -171,9 +171,12 @@ const EventBoxSlide = (props) => {
   useEffect(() => {
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     changeCardSize(window.innerWidth);
+    makeDotbar();
   }, []);
 
-  useEffect(() => {}, [startX, xPosition]);
+  useEffect(() => {
+    makeDotbar();
+  }, [eventsData]);
 
   useEffect(() => {
     makeDotbar();
@@ -189,13 +192,17 @@ const EventBoxSlide = (props) => {
         onMouseLeave={handleMouseLeave}
       >
         <div className="EventBoxSlide" ref={eventSlideRef}>
-          {EventDummyData.map((data) => (
+          {eventsData.map((data) => (
             <EventCard
               preventClick={dragging}
-              inEvent={inEvent}
+              id={data.id}
+              thumbnail={data.thumbnail}
               title={data.title}
-              eventDate={data.eventDate}
-              image={data.image}
+              startDate={data.startDate}
+              endDate={data.endDate}
+              openingHour={data.openingHour}
+              dday={data.dday}
+              inEvent={inEvent}
             />
           ))}
           <EventCard inEvent={inEvent} title="Coming" comingSoon={true} />

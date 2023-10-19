@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -7,9 +7,28 @@ import ProjectCard from "../../Projects/components/ProjectCard";
 
 import ProjectDummyData from "../../Projects/components/ProjectDummyData";
 
+import { getAllProjectData } from "src/api/projectsAPI";
+
 const HomeProjects = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const [projectData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    getAllProjectData().then((data) => {
+      let dummy = [];
+      for (let i = 0; i < 3; i++) {
+        dummy.push(data.data[i]);
+      }
+      setProjectData(dummy);
+    });
+
+    let dummy = [];
+    for (let i = 0; i < 3; i++) {
+      dummy.push(projectData[i]);
+    }
+  }, []);
 
   return (
     <section className="Section">
@@ -26,30 +45,19 @@ const HomeProjects = () => {
         </button>
       </div>
       <div className="ProjectBox">
-        <ProjectCard
-          title={ProjectDummyData[0].title}
-          status={ProjectDummyData[0].status}
-          projID={ProjectDummyData[0].projID}
-          category={ProjectDummyData[0].category}
-          location={ProjectDummyData[0].location}
-          projDate={ProjectDummyData[0].projDate}
-        />
-        <ProjectCard
-          title={ProjectDummyData[1].title}
-          status={ProjectDummyData[1].status}
-          projID={ProjectDummyData[1].projID}
-          category={ProjectDummyData[1].category}
-          location={ProjectDummyData[1].location}
-          projDate={ProjectDummyData[1].projDate}
-        />
-        <ProjectCard
-          title={ProjectDummyData[2].title}
-          status={ProjectDummyData[2].status}
-          projID={ProjectDummyData[2].projID}
-          category={ProjectDummyData[2].category}
-          location={ProjectDummyData[2].location}
-          projDate={ProjectDummyData[2].projDate}
-        />
+        {/* 우선 앞에서 세개 가져옴 */}
+        {projectData.map((data) => (
+          <ProjectCard
+            id={data.id}
+            inProject={false}
+            projectId={data.projectId}
+            projectTitle={data.projectTitle}
+            status={data.status}
+            studyType={data.studyType}
+            location={data.location}
+            startDate={data.startDate}
+          />
+        ))}
       </div>
     </section>
   );

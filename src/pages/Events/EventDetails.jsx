@@ -1,22 +1,32 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import images from "src/assets/images";
 import MapContainer from "./components/MapContainer";
 
+import moment from "moment";
+
+import { getOneEventData } from "src/api/eventsAPI";
+import { Thumbnail } from "react-pdf";
+
 const EventDetails = (props) => {
   const { t } = useTranslation();
+  const params = useParams();
+
+  const eventID = params.id;
 
   const location = useLocation();
   const navigate = useNavigate();
   const { past, image } = location.state;
 
+  const [eventData, setEventData] = useState();
+
   const [currentEventSlide, setCurrentEventSlide] = useState(0);
   const [eventSlideMoving, setEventSlideMoving] = useState(0);
   const [cardSize, setCardSize] = useState(0);
   const eventSlideRef = useRef();
-  const totalSides = 3; // 추후 갯수만큼 불러오기
+  const [totalSlideNum, setTotalSlideNum] = useState(0);
 
   const onBackButtonClick = () => {
     if (currentEventSlide <= 0) {
@@ -30,7 +40,7 @@ const EventDetails = (props) => {
     }
   };
   const onGoButtonClick = () => {
-    if (currentEventSlide >= totalSides - 1) {
+    if (currentEventSlide >= totalSlideNum - 1) {
       return;
     } else {
       setEventSlideMoving(eventSlideMoving - cardSize);
@@ -63,6 +73,11 @@ const EventDetails = (props) => {
   useEffect(() => {
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     changeCardSize(window.innerWidth);
+    getOneEventData(eventID).then((data) => {
+      setEventData(data.data);
+      console.log(data.data);
+      setTotalSlideNum(data.data.mainImages.length)
+    });
   }, []);
 
   let delay = 50;
@@ -85,57 +100,82 @@ const EventDetails = (props) => {
           <div>Back</div>
         </div>
         <div className="EventInformation">
-          <img className="EventImage" src={images[image]}></img>
+          <img
+            className="EventImage"
+            src={eventData ? eventData.thumbnail : null}
+          ></img>
 
           <div className="EventOverview">
             <div className="EventTitle">
-              The Annual Meeting of the Korean Breast Cancer Society
+              {eventData ? eventData.title : null}
             </div>
             <div className="EventPeriod">
-              <label className="SubtitleFont">2023</label>
-              <label className="SubtitleFont">08.18-19</label>
+              <label className="SubtitleFont">
+                {eventData
+                  ? new Date(
+                      moment(eventData.startDate).format("YYYY.M.D")
+                    ).getFullYear()
+                  : null}
+              </label>
+              <label className="SubtitleFont">
+                {eventData
+                  ? new Date(
+                      moment(eventData.startDate).format("YYYY.M.D")
+                    ).getMonth() +
+                    "." +
+                    new Date(
+                      moment(eventData.startDate).format("YYYY.M.D")
+                    ).getDate() +
+                    (eventData.endDate
+                      ? "-" +
+                        new Date(
+                          moment(eventData.endDate).format("YYYY.M.D")
+                        ).getDate()
+                      : null)
+                  : null}
+              </label>
             </div>
             <div className="EventVenue">
               <label className="SubtitleFont">{t("venue")}</label>
-              <label className="DescriptFont">ipsum dolor sit</label>
+              <label className="DescriptFont">
+                {eventData ? eventData.venue : null}
+              </label>
             </div>
             <div className="EventTime">
               <label className="SubtitleFont">{t("opening_hours")}</label>
-              <label className="DescriptFont">ipsum dolor sit</label>
+              <label className="DescriptFont">
+                {eventData ? eventData.openingHour : null}
+              </label>
             </div>
             <div className="EventWebsite">
               <label className="SubtitleFont">{t("related_website")}</label>
-              <label className="DescriptFont">ipsum dolor sit</label>
+              <label className="DescriptFont">
+                {eventData ? eventData.relatedWebsite : null}
+              </label>
             </div>
           </div>
         </div>
         <div className="EventPurpose">
           <label className="SubtitleFont">{t("event_purpose")}</label>
           <label className="DescriptFont">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-            consequat.
+            {eventData ? eventData.purpose : null}
           </label>
         </div>
         <div className="EventDetail">
           <label className="SubtitleFont">{t("detailed_explanation")}</label>
           <label className="DescriptFont">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-            consequat.
+            {eventData ? eventData.explanation : null}
           </label>
         </div>
         <div className="EventCarousel">
           <img src={images.back_b} onClick={onBackButtonClick}></img>
           <div className="EventCarouselImages">
             <div className="EventCarouselSlide" ref={eventSlideRef}>
-              <img className="CarouselImage" src={images.profile0}></img>
-              <img className="CarouselImage" src={images.profile1}></img>
-              <img className="CarouselImage" src={images.profile2}></img>
+              {eventData
+                ? eventData.mainImages.map((data) => (
+                    <img className="CarouselImage" src={data} />
+                  ))
+                : null}
             </div>
           </div>
           <img src={images.go_b} onClick={onGoButtonClick}></img>
@@ -143,7 +183,10 @@ const EventDetails = (props) => {
         <div className="EventMap">
           <label className="SubtitleFont">Map</label>
           <div className="EventMapLocation">
-            <MapContainer />
+            <MapContainer
+              latitude={eventData ? eventData.latitude : null}
+              longitude={eventData ? eventData.longitude : null}
+            />
           </div>
         </div>
         {/* 지난 이벤트의 경우 Gallery 표현 */}
@@ -151,10 +194,9 @@ const EventDetails = (props) => {
           <div className="EventGallery">
             <label className="SubtitleFont">Gallery</label>
             <div className="EventGalleryImages">
-              <img src={images.profile0}></img>
-              <img src={images.profile1}></img>
-              <img src={images.profile2}></img>
-              <img src={images.profile4}></img>
+              {eventData
+                ? eventData.galleries.map((data) => <img src={data} />)
+                : null}
             </div>
           </div>
         ) : (

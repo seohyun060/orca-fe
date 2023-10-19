@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
-function MapContainer() {
+function MapContainer(props) {
+  const { latitude, longitude } = props;
+
   const [mapStyle, setMapStyle] = useState({
     width: "1192px",
     height: "475px",
@@ -20,10 +22,10 @@ function MapContainer() {
   };
 
   const center = {
-    lat: 35.8714, // 위도
-    lng: 128.6014, // 경도
+    lat: latitude, // 위도
+    lng: longitude, // 경도
   };
-  
+
   useEffect(() => {
     changeMapSize(window.innerWidth);
   }, []);
@@ -45,7 +47,7 @@ function MapContainer() {
         <Marker
           title={"Daegu, Korea"}
           name={"Daegu, Korea"}
-          position={{ lat: 35.8714, lng: 128.6014 }}
+          position={{ lat: latitude, lng: longitude }}
         />
       </GoogleMap>
     </LoadScript>
@@ -53,3 +55,8 @@ function MapContainer() {
 }
 
 export default MapContainer;
+
+MapContainer.defaultProps = {
+  latitude: 35.8714,
+  longitude: 128.6014,
+};

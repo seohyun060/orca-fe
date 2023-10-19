@@ -13,7 +13,7 @@ import PublicationCard from "./components/PublicationCard";
 
 import ProjectDummyData from "./components/ProjectDummyData";
 
-import { getOneProjectData } from "src/api/projectsAPI";
+import { getOneProjectData, postProjectForm } from "src/api/projectsAPI";
 
 const PrejectsDetails = (props) => {
   const { t } = useTranslation();
@@ -73,6 +73,8 @@ const PrejectsDetails = (props) => {
 
   useEffect(() => {
     makeStatusSector();
+    postProjectForm();
+    console.log('good')
     getOneProjectData(projID).then((data) => {
       setProjectData(data.data);
     });

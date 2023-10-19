@@ -37,6 +37,7 @@ const Insights = ({
 	onInsightClick,
 }: Props) => {
 	const { t } = useTranslation();
+	console.log(filteredList)
 	return (
 		<div className='insights'>
 			<div className='insights-head'>

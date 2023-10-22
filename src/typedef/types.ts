@@ -22,3 +22,14 @@ export type Insight = {
 	link: string;
 };
 export type ResearcherList = Researchers[];
+
+export type Publication = {
+	link: string;
+	title: string;
+	author: string;
+	year: string;
+	journal: string;
+	conference: string;
+	ho: string;
+	editable: boolean;
+};

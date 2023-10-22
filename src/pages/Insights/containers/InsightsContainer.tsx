@@ -129,7 +129,7 @@ const InsightsContainer = (props: Props) => {
 	);
 	useEffect(() => {
 		getInsights().then((data) => {
-			console.log(typeof data.data[0].createDate); // 나옴
+			console.log(data); // 나옴
 			const updatedList: Insight[] = [];
 			data.data.map((d: any) => {
 				const tempData: Insight = {

@@ -18,6 +18,9 @@ const ResearcherDetailContainer = ({}: Props) => {
 	const [profile, setProfile] = useState('');
 	const [department, setDepartment] = useState('');
 	const [project, setProject] = useState('');
+	const [biography, setBiography] = useState('');
+	const [linkedIn, setLinkedIn] = useState('');
+	const [twitter, setTwitter] = useState('');
 	const [publication, setPublication] = useState<Publication[]>([]);
 	let index = 0;
 	if (location.state) {
@@ -61,6 +64,9 @@ const ResearcherDetailContainer = ({}: Props) => {
 			setDepartment(data.data.affiliation);
 			setProject(data.data.projectType);
 			setPublication(data.data.publications);
+			setBiography(data.data.biography);
+			setTwitter(data.data.twitter);
+			setLinkedIn(data.data.linkedIn);
 			console.log(data);
 		});
 		return () => {};
@@ -76,6 +82,10 @@ const ResearcherDetailContainer = ({}: Props) => {
 					publist={publist}
 					navigate={navigate}
 					onBackClick={onBackClick}
+					publication={publication}
+					linkedIn={linkedIn}
+					twitter={twitter}
+					biography={biography}
 				/>
 			) : (
 				''

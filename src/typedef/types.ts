@@ -27,9 +27,9 @@ export type Publication = {
 	link: string;
 	title: string;
 	author: string;
-	year: string;
+	pubYear: string;
 	journal: string;
 	conference: string;
-	ho: string;
-	editable: boolean;
+	volume: string;
+	//editable: boolean;
 };

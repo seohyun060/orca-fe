@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './styles/researcherdetail.styles.css';
 import images from 'src/assets/images';
+import { Publication } from '@typedef/types';
 import PublicationCard from '../Projects/components/PublicationCard';
 type Props = {
 	name: string;
@@ -12,6 +13,10 @@ type Props = {
 	publist: number[];
 	navigate: (e: string) => void;
 	onBackClick: () => void;
+	publication: Publication[];
+	linkedIn: string;
+	twitter: string;
+	biography: string;
 };
 
 const ResearcherDetail = ({
@@ -22,6 +27,10 @@ const ResearcherDetail = ({
 	publist,
 	navigate,
 	onBackClick,
+	publication,
+	linkedIn,
+	twitter,
+	biography,
 }: Props) => {
 	const { t } = useTranslation();
 	return (
@@ -46,33 +55,33 @@ const ResearcherDetail = ({
 				<div className='researcherdetail-profile-department'>{department}</div>
 				<div className='researcherdetail-profile-project'>{project}</div>
 				<div className='researcherdetail-profile-icon'>
-					<div></div>
-					<div></div>
-					<div></div>
+					<div
+						onClick={() => {
+							window.location.href = linkedIn;
+						}}
+					>
+						L
+					</div>
+					<div
+						onClick={() => {
+							window.location.href = twitter;
+						}}
+					>
+						T
+					</div>
 				</div>
 			</div>
 			<div className='researcherdetail-biography'>
 				<div className='researcherdetail-biography-head'>{t('biography')}</div>
-				<div className='researcherdetail-biography-body'>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-					nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-					volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-					ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-					Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-					molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-					vero eros et accumsan et iusto odio dignissim qui blandit praesent
-					luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-					Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam
-					nonummy nibh euismod tincidunt ut laoree
-				</div>
+				<div className='researcherdetail-biography-body'>{biography}</div>
 			</div>
 			<div className='researcherdetail-line'>
 				<div></div>
 			</div>
 			<div className='researcherdetail-publication'>
 				<div className='head'>{t('publications')}</div>
-				{publist.map((index) => (
-					<PublicationCard />
+				{publication.map((pub, index) => (
+					<PublicationCard title={pub.title} check={pub} />
 				))}
 			</div>
 			<div className='researcherdetail-back-container'>

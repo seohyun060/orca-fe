@@ -136,7 +136,7 @@ const InsightsContainer = (props: Props) => {
 					id: d.id,
 					title: d.title,
 					date: new Date(d.createDate),
-					type: 'White Paper',
+					type: d.category,
 					link: 'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf',
 				};
 				updatedList.push(tempData);
@@ -170,26 +170,27 @@ const InsightsContainer = (props: Props) => {
 		switch (selectedTab) {
 			case 0:
 				setFilteredList(insightList);
+				console.log(insightList);
 				break;
 			case 1:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'White Paper'),
+					insightList.filter((insight) => insight.type == 'WHITE_PAPER'),
 				);
 				break;
 			case 2:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'Publication'),
+					insightList.filter((insight) => insight.type == 'PUBLICATION'),
 				);
 				console.log(selectedTab);
 				break;
 			case 3:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'News'),
+					insightList.filter((insight) => insight.type == 'NEWS'),
 				);
 				break;
 			case 4:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'Education'),
+					insightList.filter((insight) => insight.type == 'EDUCATION'),
 				);
 				break;
 		}

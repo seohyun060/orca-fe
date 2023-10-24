@@ -20,5 +20,17 @@ export type Insight = {
 	title: string;
 	date: Date;
 	link: string;
+	isStored: boolean;
 };
 export type ResearcherList = Researchers[];
+
+export type Publication = {
+	link: string;
+	title: string;
+	author: string;
+	pubYear: string;
+	journal: string;
+	conference: string;
+	volume: string;
+	//editable: boolean;
+};

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Insights from '../Insights';
 import { Insight } from '@typedef/types';
 import { useNavigate } from 'react-router-dom';
-import { getInsights } from 'src/api/InsightAPI';
+import { getInsights, getInsightDetail } from 'src/api/InsightAPI';
 type Props = {};
 
 for (let j = 0; j < 18; j++) {}
@@ -113,7 +113,7 @@ const InsightsContainer = (props: Props) => {
 	};
 	const onInsightClick = useCallback(
 		(type: string, title: string, link: string, date: Date, id: number) => {
-			console.log(type, title, link);
+			console.log(type, title, link, id);
 			saveScrollPosition();
 			navigate(`/insights/${id}`, {
 				state: {
@@ -129,15 +129,16 @@ const InsightsContainer = (props: Props) => {
 	);
 	useEffect(() => {
 		getInsights().then((data) => {
-			console.log(typeof data.data[0].createDate); // 나옴
+			console.log(data); // 나옴
 			const updatedList: Insight[] = [];
 			data.data.map((d: any) => {
 				const tempData: Insight = {
 					id: d.id,
 					title: d.title,
 					date: new Date(d.createDate),
-					type: 'White Paper',
-					link: 'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf',
+					type: d.category,
+					link: d.file,
+					isStored: d.isStored,
 				};
 				updatedList.push(tempData);
 			});
@@ -166,30 +167,35 @@ const InsightsContainer = (props: Props) => {
 		// 	});
 		return () => {};
 	}, []);
+
 	useEffect(() => {
+		setFilteredList(
+			insightList.filter((insight) => insight.isStored !== false),
+		);
 		switch (selectedTab) {
 			case 0:
 				setFilteredList(insightList);
+				console.log(insightList);
 				break;
 			case 1:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'White Paper'),
+					insightList.filter((insight) => insight.type == 'WHITE_PAPER'),
 				);
 				break;
 			case 2:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'Publication'),
+					insightList.filter((insight) => insight.type == 'PUBLICATION'),
 				);
 				console.log(selectedTab);
 				break;
 			case 3:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'News'),
+					insightList.filter((insight) => insight.type == 'NEWS'),
 				);
 				break;
 			case 4:
 				setFilteredList(
-					insightList.filter((insight) => insight.type == 'Education'),
+					insightList.filter((insight) => insight.type == 'EDUCATION'),
 				);
 				break;
 		}

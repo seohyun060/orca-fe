@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import images from 'src/assets/images';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
 	requestedItems: ResearcherList;
@@ -42,6 +43,7 @@ const ResearcherBox = ({
 	totalPage,
 }: Props) => {
 	const { t } = useTranslation();
+	const navigate = useNavigate();
 	return (
 		<div className={`country${boxType}`}>
 			<div
@@ -85,6 +87,9 @@ const ResearcherBox = ({
 								transition={{ duration: 0.3 }}
 								className='researcher-card'
 								key={`${requestItem.name}`}
+								onClick={() => {
+									navigate(`/researcher/${requestItem.id}`);
+								}}
 							>
 								<img src={requestItem.profile} />
 								<span>{requestItem.name}</span>

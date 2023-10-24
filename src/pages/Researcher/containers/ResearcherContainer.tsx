@@ -130,25 +130,6 @@ const ResearcherContainer = ({ location }: Props) => {
 			console.log(researcherList); // 안나옴
 		});
 		console.log(researcherList); // 안나옴
-		//console.log(tempData);
-
-		// for (let i = 0; i < ResearcherAPI.length; i++){
-		// 	researcherList.push({
-		// 		id: ResearcherAPI[i].id,
-		// 		name: ResearcherAPI[i].name,
-		// 		location: ResearcherAPI[i].name,
-		// 		profile: ResearcherAPI[i].name,
-		// 		project: ResearcherAPI[i].name,
-		// 		department: ResearcherAPI[i].name,
-		// 	});
-		// }
-		// 	researcherList.push({
-		// 		name: `${j}Name`,
-		// 		profile: randomProfile,
-		// 		department: 'Radiology Department',
-		// 		project: 'CadAI-B projects',
-		// 	});
-		return () => {};
 	}, []);
 	//console.log(researcherAPI);
 	console.log(researcherList); //나옴

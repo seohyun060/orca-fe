@@ -8,13 +8,14 @@ const InsightsDetailContainer = (props: Props) => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const params = useParams();
+	console.log(params.id);
 	// const title = location.state.Title;
 	// const type = location.state.Type;
 	// const link = location.state.Link;
 	// const date = location.state.InsightDate;
 	const [title, setTitle] = useState('');
 	const [type, setType] = useState('');
-	const [link, setLink] = useState('');
+	const [link, setLink] = useState([]);
 	const [date, setDate] = useState(new Date(2023, 10, 17));
 	function formatDate(date: Date) {
 		const year = date.getFullYear().toString().substr(-2); // 년도의 마지막 두 자리
@@ -46,10 +47,8 @@ const InsightsDetailContainer = (props: Props) => {
 			console.log(data.data); // 나옴
 			setTitle(data.data.title);
 			setDate(new Date(data.data.createDate));
-			setType('White Paper');
-			setLink(
-				'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf',
-			);
+			setType(data.data.category);
+			setLink(data.data.files);
 		});
 		return () => {};
 	}, []);

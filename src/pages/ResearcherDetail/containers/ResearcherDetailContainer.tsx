@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 import ResearcherDetail from '../ResearcherDetail';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { getResearcherDetail } from 'src/api/ResearcherAPI';
-import { ResearcherList, Researchers } from '@typedef/types';
+import { ResearcherList, Researchers, Publication } from '@typedef/types';
+import images from 'src/assets/images';
 type Props = {};
 
 const ResearcherDetailContainer = ({}: Props) => {
@@ -17,6 +18,10 @@ const ResearcherDetailContainer = ({}: Props) => {
 	const [profile, setProfile] = useState('');
 	const [department, setDepartment] = useState('');
 	const [project, setProject] = useState('');
+	const [biography, setBiography] = useState('');
+	const [linkedIn, setLinkedIn] = useState('');
+	const [twitter, setTwitter] = useState('');
+	const [publication, setPublication] = useState<Publication[]>([]);
 	let index = 0;
 	if (location.state) {
 		index = location.state.Index;
@@ -50,9 +55,19 @@ const ResearcherDetailContainer = ({}: Props) => {
 		getResearcherDetail(params.id).then((data) => {
 			console.log(data.data); // 나옴
 			setName(data.data.name);
-			setProfile(data.data.image);
+			if (data.data.image) {
+				setProfile(data.data.image);
+			} else {
+				setProfile(images.logo_b);
+			}
+			//setProfile(data.data.image);
 			setDepartment(data.data.affiliation);
 			setProject(data.data.projectType);
+			setPublication(data.data.publications);
+			setBiography(data.data.biography);
+			setTwitter(data.data.twitter);
+			setLinkedIn(data.data.linkedIn);
+			console.log(data);
 		});
 		return () => {};
 	}, []);
@@ -67,6 +82,10 @@ const ResearcherDetailContainer = ({}: Props) => {
 					publist={publist}
 					navigate={navigate}
 					onBackClick={onBackClick}
+					publication={publication}
+					linkedIn={linkedIn}
+					twitter={twitter}
+					biography={biography}
 				/>
 			) : (
 				''

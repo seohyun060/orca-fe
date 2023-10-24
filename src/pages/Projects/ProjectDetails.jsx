@@ -21,6 +21,7 @@ const PrejectsDetails = (props) => {
   const StudyPharagraph = useRef();
   const params = useParams();
 
+  console.log(params)
   const projID = params.id;
 
   const [projectData, setProjectData] = useState();
@@ -73,8 +74,6 @@ const PrejectsDetails = (props) => {
 
   useEffect(() => {
     makeStatusSector();
-    postProjectForm();
-    console.log('good')
     getOneProjectData(projID).then((data) => {
       setProjectData(data.data);
     });
@@ -100,7 +99,7 @@ const PrejectsDetails = (props) => {
             <div className="Contents" ref={StudyPharagraph}>
               {projectData ? projectData.overview : ""}
             </div>
-            {StudyPharagraph.offsetWidth &&
+            {StudyPharagraph.current.scrollHeight > 280 &&
               (!isPharagraphOpen ? (
                 <button className="ShowMoreButton" onClick={openPharagraph}>
                   + {t("show_more")}
@@ -295,9 +294,9 @@ const PrejectsDetails = (props) => {
               projectData.collaborators.length !== 0 ? (
                 projectData.collaborators.map((data) => (
                   <CandIInfo
-                    id={data.pi.id}
-                    name={data.pi.name}
-                    affiliation={data.pi.affiliation}
+                    id={data.link}
+                    name={data.name}
+                    affiliation={data.affiliation}
                   />
                 ))
               ) : (

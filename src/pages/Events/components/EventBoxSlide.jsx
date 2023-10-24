@@ -22,14 +22,14 @@ const EventBoxSlide = (props) => {
 
   const onBackButtonClick = () => {
     // eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
-    if (currentEventSlide == totalSides) {
+    if (currentEventSlide <= 0) {
+      eventSlideRef.current.style.transform = `translateX(${eventSlideMoving}px)`;
+    } else if (currentEventSlide == totalSides) {
       setEventSlideMoving(eventSlideMoving + cardHiddenSize);
       setCurrentEventSlide(currentEventSlide - 1);
       eventSlideRef.current.style.transform = `translateX(${
         eventSlideMoving + cardHiddenSize
       }px)`;
-    } else if (currentEventSlide <= 0) {
-      eventSlideRef.current.style.transform = `translateX(${eventSlideMoving}px)`;
     } else {
       setEventSlideMoving(eventSlideMoving + cardSize);
       setCurrentEventSlide(currentEventSlide - 1);

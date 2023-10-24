@@ -873,7 +873,7 @@
   overflow-x: "hidden";
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   transform: translate(0px);

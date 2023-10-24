@@ -14,7 +14,7 @@ const HomeEvents = () => {
   const [comingEventsData, setComingEventsData] = useState([]);
 
   useEffect(() => {
-    getAllEventData().then((data) => {
+    getAllEventData(false).then((data) => {
       let coming = [];
 
       data.data.map((event) => {

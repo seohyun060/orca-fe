@@ -39,21 +39,16 @@ const EventsPage = (props) => {
   };
 
   useEffect(() => {
-    getAllEventData().then((data) => {
-      let coming = [];
-      let past = [];
-
-      data.data.map((event) => {
-        if (event.dday >= 0) {
-          coming.push(event);
-        } else {
-          past.push(event);
-        }
-      });
+    getAllEventData(false).then((data) => {
+      let coming = data.data
       coming = coming.sort((a, b) => (a.dday - b.dday))
       console.log(coming)
-      console.log(past)
       setComingEventsData(coming);
+    });
+    getAllEventData(true).then((data) => {
+      let past = data.data
+      past = past.sort((a, b) => (a.dday - b.dday))
+      console.log(past)
       setPastEventsData(past);
     });
   }, []);

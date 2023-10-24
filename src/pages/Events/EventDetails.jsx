@@ -74,6 +74,7 @@ const EventDetails = (props) => {
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     changeCardSize(window.innerWidth);
     getOneEventData(eventID).then((data) => {
+      console.log(data)
       setEventData(data.data);
       console.log(data.data);
       setTotalSlideNum(data.data.mainImages.length)

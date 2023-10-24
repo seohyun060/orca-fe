@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Insights from '../Insights';
 import { Insight } from '@typedef/types';
 import { useNavigate } from 'react-router-dom';
-import { getInsights } from 'src/api/InsightAPI';
+import { getInsights, getInsightDetail } from 'src/api/InsightAPI';
 type Props = {};
 
 for (let j = 0; j < 18; j++) {}
@@ -113,7 +113,7 @@ const InsightsContainer = (props: Props) => {
 	};
 	const onInsightClick = useCallback(
 		(type: string, title: string, link: string, date: Date, id: number) => {
-			console.log(type, title, link);
+			console.log(type, title, link, id);
 			saveScrollPosition();
 			navigate(`/insights/${id}`, {
 				state: {
@@ -137,7 +137,8 @@ const InsightsContainer = (props: Props) => {
 					title: d.title,
 					date: new Date(d.createDate),
 					type: d.category,
-					link: 'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf',
+					link: d.file,
+					isStored: d.isStored,
 				};
 				updatedList.push(tempData);
 			});
@@ -166,7 +167,11 @@ const InsightsContainer = (props: Props) => {
 		// 	});
 		return () => {};
 	}, []);
+
 	useEffect(() => {
+		setFilteredList(
+			insightList.filter((insight) => insight.isStored !== false),
+		);
 		switch (selectedTab) {
 			case 0:
 				setFilteredList(insightList);

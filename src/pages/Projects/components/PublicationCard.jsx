@@ -30,7 +30,12 @@ const PublicationCard = (props) => {
 		publicationDate.getFullYear();
 	console.log(title, projDate);
 	return (
-		<article className='PublicationCard' onClick={() => navigate('')}>
+		<article
+			className='PublicationCard'
+			onClick={() => {
+				window.location.href = check.link;
+			}}
+		>
 			<div className='PublicationCardTitle'>{title}</div>
 			<div className='PublicationDate'>{check.pubYear}</div>
 		</article>

@@ -250,6 +250,9 @@
   font-style: normal;
   font-weight: 600;
   line-height: 32px; /* 145.455% */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .insights-body .insight-info-date {
   margin-top: 10px;

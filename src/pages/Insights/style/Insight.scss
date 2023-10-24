@@ -12,32 +12,32 @@
 	opacity: 0;
 	z-index: 200;
 	&:hover {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  cursor: pointer;
-	  background-color: rgba(60, 60, 60, 0.8);
-	  transition: 0.3s;
-	  opacity: 1;
-	  div {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 192px;
-		height: 44px;
-		color: #fff;
-		text-align: center;
-		font-family: Pretendard;
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 300;
-		line-height: 45px;
-		border: 1px solid white;
-		border-radius: 10px;
-		align-items: center;
-	  }
+		cursor: pointer;
+		background-color: rgba(60, 60, 60, 0.8);
+		transition: 0.3s;
+		opacity: 1;
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 192px;
+			height: 44px;
+			color: #fff;
+			text-align: center;
+			font-family: Pretendard;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 45px;
+			border: 1px solid white;
+			border-radius: 10px;
+			align-items: center;
+		}
 	}
-  }
+}
 
 .InsightImage {
 	display: flex;
@@ -213,6 +213,13 @@
 				height: 280px;
 				flex-shrink: 0;
 				background: var(--Light-gray, #f0f0f0);
+				// .pageContainer {
+				// 	width: 180px;
+				// 	.page {
+				// 		max-width: 100%;
+				// 		max-height: 180px;
+				// 	}
+				// }
 			}
 			.learnMore {
 				@extend .insight-info-box;
@@ -261,6 +268,9 @@
 				font-style: normal;
 				font-weight: 600;
 				line-height: 32px; /* 145.455% */
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
 			}
 			&-date {
 				margin-top: 10px;
@@ -434,7 +444,6 @@
 			margin-left: 5px;
 		}
 	}
-
 
 	.insights {
 		padding-left: 0px;

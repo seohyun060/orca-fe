@@ -7,7 +7,7 @@ import './styles/insightsdetail.styles.css';
 type Props = {
 	title: string;
 	type: string;
-	link: string;
+	link: string[];
 	date: Date;
 	formatDate: (date: Date) => string;
 	onBackClick: () => void;
@@ -37,7 +37,9 @@ const InsightsDetail = ({
 				<div className='iDetail-typedate-date'>{formatDate(date)}</div>
 			</div>
 			<div className='iDetail-pdf'>
-				<PdfViewer link={link} />
+				{link.map((l, index) => (
+					<PdfViewer link={l} />
+				))}
 			</div>
 			<div className='iDetail-back-container'>
 				<div className='readmore' onClick={() => onBackClick()}>

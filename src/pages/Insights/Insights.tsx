@@ -37,7 +37,7 @@ const Insights = ({
 	onInsightClick,
 }: Props) => {
 	const { t } = useTranslation();
-	console.log(filteredList)
+	console.log(filteredList);
 	return (
 		<div className='insights'>
 			<div className='insights-head'>
@@ -119,42 +119,44 @@ const Insights = ({
 					<AnimatePresence>
 						{filteredList.map((insight, index) => {
 							// 첫 12개만 출력하거나 readMore가 true면 모두 출력
-							if (!readMore && index >= 12) return null;
+							if (!insight.isStored) {
+								if (!readMore && index >= 12) return null;
 
-							return (
-								<motion.div
-									className='insight-info'
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									exit={{ opacity: 0 }}
-									transition={{
-										duration: 0.3,
-										delay: 0.05 * (readMore ? index - 12 : index),
-									}}
-									key={`insight-${index}`}
-									onClick={() => {
-										onInsightClick(
-											insight.type,
-											insight.title,
-											insight.link,
-											insight.date,
-											insight.id,
-										);
-									}}
-								>
-									<div className='learnMore'>
-										<div className='text'>Learn More</div>
-									</div>
-									<div className='insight-info-box'>
-										<PdfThumbnail link={insight.link} />
-									</div>
-									<div className='insight-info-type'>{insight.type}</div>
-									<div className='insight-info-title'>{insight.title}</div>
-									<div className='insight-info-date'>
-										{formatDate(insight.date)}
-									</div>
-								</motion.div>
-							);
+								return (
+									<motion.div
+										className='insight-info'
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										exit={{ opacity: 0 }}
+										transition={{
+											duration: 0.3,
+											delay: 0.05 * (readMore ? index - 12 : index),
+										}}
+										key={`insight-${index}`}
+										onClick={() => {
+											onInsightClick(
+												insight.type,
+												insight.title,
+												insight.link,
+												insight.date,
+												insight.id,
+											);
+										}}
+									>
+										<div className='learnMore'>
+											<div className='text'>Learn More</div>
+										</div>
+										<div className='insight-info-box'>
+											<PdfThumbnail link={insight.link} />
+										</div>
+										<div className='insight-info-type'>{insight.type}</div>
+										<div className='insight-info-title'>{insight.title}</div>
+										<div className='insight-info-date'>
+											{formatDate(insight.date)}
+										</div>
+									</motion.div>
+								);
+							}
 						})}
 					</AnimatePresence>
 				</div>

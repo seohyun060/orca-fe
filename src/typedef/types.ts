@@ -20,6 +20,7 @@ export type Insight = {
 	title: string;
 	date: Date;
 	link: string;
+	isStored: boolean;
 };
 export type ResearcherList = Researchers[];
 

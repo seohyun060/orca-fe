@@ -123,6 +123,7 @@ const ResearcherContainer = ({ location }: Props) => {
 					location: d.locationNumber,
 					department: d.affiliation,
 					project: d.projectType,
+					isStored: d.isStored,
 				};
 				updatedList.push(tempData);
 			});

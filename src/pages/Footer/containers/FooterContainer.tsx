@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../Footer';
 import { useState, useEffect, useCallback } from 'react';
 import { EChange } from '@typedef/types';
+import { postNewsletters } from 'src/api/NewsletterAPI';
 const emailList: string[] = [];
 type Props = {
 	location: string;
@@ -16,9 +17,10 @@ const FooterContainer = ({ location }: Props) => {
 		[email],
 	);
 	const onSubmitClicked = useCallback(() => {
-		emailList.push(email);
+		//emailList.push(email);
+		postNewsletters(email);
 		setEmail('');
-	}, []);
+	}, [email]);
 	useEffect(() => {
 		setEmail('');
 

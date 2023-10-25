@@ -24,6 +24,7 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 					></input>
 					<button
 						className={!email ? 'button' : 'button-active'}
+						//onClick={onSubmitClicked}
 						type='submit'
 						style={{
 							color: email ? '#ffffff' : '#9e9e9e',

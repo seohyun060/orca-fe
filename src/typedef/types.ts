@@ -12,6 +12,7 @@ export type Researchers = {
 	department: string;
 	project: string;
 	location: number;
+	isStored: boolean;
 };
 
 export type Insight = {

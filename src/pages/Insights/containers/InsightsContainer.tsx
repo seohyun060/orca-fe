@@ -169,9 +169,6 @@ const InsightsContainer = (props: Props) => {
 	}, []);
 
 	useEffect(() => {
-		setFilteredList(
-			insightList.filter((insight) => insight.isStored !== false),
-		);
 		switch (selectedTab) {
 			case 0:
 				setFilteredList(insightList);

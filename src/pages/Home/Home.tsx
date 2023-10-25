@@ -14,8 +14,9 @@ import FooterContainer from '../Footer/containers/FooterContainer';
 import './styles/home.styles.scss';
 type Props = {
 	route: string;
+	mainBanner: string;
 };
-const Home = ({ route }: Props) => {
+const Home = ({ route, mainBanner }: Props) => {
 	return (
 		<div className='home'>
 			<div className='home-anime'>

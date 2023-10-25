@@ -34,6 +34,9 @@ const ResearcherBoxContainer = ({
 	const [topPosition, setTopPosition] = useState('');
 	const [leftPosition, setLeftPosition] = useState('');
 	const [dotList, setDotList] = useState<string[]>([]);
+	researcherList = researcherList.filter(
+		(researcher) => researcher.isStored !== true,
+	);
 	const requestedItems = useMemo(
 		() => researcherList.slice(firstIndex, lastIndex),
 		[currentPage, researcherList],

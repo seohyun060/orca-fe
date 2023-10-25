@@ -67,6 +67,7 @@ const ResearcherMapContainer = ({ route }: Props) => {
 					location: d.locationNumber,
 					department: d.affiliation,
 					project: d.projectType,
+					isStored: d.isStored,
 				};
 				updatedList[d.locationNumber - 1].push(tempData);
 			});

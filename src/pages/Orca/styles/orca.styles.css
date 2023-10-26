@@ -1,4 +1,5 @@
 .orca {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,28 +8,48 @@
 .orca * {
   word-break: keep-all;
 }
-.orca-what-background {
+.orca-what-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 37.9%;
+  z-index: 50;
+}
+.orca-what-container .orca-banner {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 727px;
+  height: 100%;
+}
+.orca-what-container .banner-curtain {
+  position: absolute;
+  z-index: 10;
   width: 100%;
   background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+  height: 100%;
 }
 .orca-what {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 1192px;
-  height: 727px;
+  height: 37.8vw;
   margin: auto;
-  background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+  z-index: 20;
 }
 .orca-what-box {
+  position: absolute;
   width: 948px;
   height: 364px;
   color: white;
   display: grid;
   grid-template-columns: 1fr 2.02fr;
   grid-template-rows: 1.5fr 1fr;
-  margin-top: 213px;
-  position: relative;
+  bottom: 100px;
   grid-template-areas: "head head" "about body";
 }
 .orca-what-box-head {
@@ -139,9 +160,8 @@
 .orca-benefits-box {
   display: flex;
   flex-direction: column;
-  width: 941px;
+  width: 1192px;
   height: 664px;
-  margin-left: 152px;
 }
 .orca-benefits-box-head {
   margin-bottom: 70px;
@@ -154,22 +174,21 @@
 }
 .orca-benefits-box-body1, .orca-benefits-box-body3, .orca-benefits-box-body2 {
   display: grid;
-  grid-template-columns: 152px 432px;
+  grid-template-columns: 310px 800px;
   grid-template-rows: 52px 84px;
-  width: 584px;
+  width: 1110px;
   height: 136px;
   margin-bottom: 80px;
   grid-template-areas: "graybox head" "graybox body";
 }
 .orca-benefits-box-body1-square, .orca-benefits-box-body3-square, .orca-benefits-box-body2-square {
   grid-area: graybox;
-  width: 128px;
+  width: 280px;
   height: 136px;
-  background: var(--Light-gray, #f0f0f0);
 }
 .orca-benefits-box-body1-head, .orca-benefits-box-body3-head, .orca-benefits-box-body2-head {
   grid-area: head;
-  width: 426px;
+  width: 800px;
   height: 28px;
   color: #000;
   /* web. semi.30 */
@@ -203,13 +222,17 @@
   }
   .orca-what {
     width: 900px;
+    margin-bottom: 0px;
   }
   .orca-what-box {
     width: 771px;
     height: 250px;
+    grid-template-rows: 1fr 1.8fr;
+    bottom: 30px;
   }
   .orca-what-box-head {
-    font-size: 45px;
+    font-size: 35px;
+    margin-bottom: 10px;
   }
   .orca-what-box-about {
     font-size: 20px;
@@ -224,18 +247,20 @@
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
-    line-height: 35px;
+    line-height: 30px;
     letter-spacing: normal;
   }
   .orca-goal {
     width: 900px;
+    margin-top: 100px;
   }
   .orca-goal-box {
     width: 771px;
     height: 250px;
+    grid-template-rows: 1fr 1.8fr;
   }
   .orca-goal-box-head {
-    font-size: 45px;
+    font-size: 35px;
   }
   .orca-goal-box-body1 {
     width: 400px;
@@ -248,38 +273,35 @@
     width: 900px;
   }
   .orca-benefits-box {
-    width: 771px;
+    width: 900px;
     margin-left: 0px;
   }
+  .orca-benefits-box-head {
+    font-size: 35px;
+  }
   .orca-benefits-box-body1, .orca-benefits-box-body2, .orca-benefits-box-body3 {
-    grid-template-columns: 141px 630px;
-    grid-template-rows: 40px 50px;
-    width: 771px;
+    width: 900px;
     margin-bottom: 20px;
   }
-  .orca-benefits-box-body1-square, .orca-benefits-box-body2-square, .orca-benefits-box-body3-square {
-    width: 90px;
-    height: 90px;
-  }
   .orca-benefits-box-body1-head, .orca-benefits-box-body2-head, .orca-benefits-box-body3-head {
-    font-size: 20px;
+    font-size: 23px;
+    width: 650px;
   }
   .orca-benefits-box-body1-body, .orca-benefits-box-body2-body, .orca-benefits-box-body3-body {
-    font-size: 15px;
+    font-size: 18px;
+    width: 350px;
   }
 }
 @media (max-width: 1023px) {
-  .orca {
-    justify-content: center;
-  }
   .orca-what {
     width: 700px;
   }
   .orca-what-box {
-    display: flex;
-    flex-direction: column;
     width: 600px;
-    height: 250px;
+    height: 150px;
+    grid-template-columns: 170px 430px;
+    grid-template-rows: 70px 80px;
+    margin-bottom: 30px;
   }
   .orca-what-box-head {
     align-self: start;
@@ -298,7 +320,7 @@
   }
   .orca-what-box-body {
     width: 500px;
-    margin-top: 20px;
+    margin-top: 0px;
     color: white;
     font-size: 19px;
     font-family: Pretendard;
@@ -310,6 +332,7 @@
   }
   .orca-goal {
     width: 700px;
+    margin-top: 70px;
   }
   .orca-goal-box {
     display: flex;
@@ -328,7 +351,7 @@
     letter-spacing: normal;
   }
   .orca-goal-box-body1 {
-    width: 500px;
+    width: 600px;
     margin-top: 50px;
     color: black;
     font-size: 16px;
@@ -340,7 +363,7 @@
     letter-spacing: normal;
   }
   .orca-goal-box-body2 {
-    width: 500px;
+    width: 600px;
     margin-top: 15px;
     color: black;
     font-size: 16px;
@@ -355,7 +378,7 @@
     width: 700px;
   }
   .orca-benefits-box {
-    width: 600px;
+    width: 700px;
     margin-left: 0px;
   }
   .orca-benefits-box-head {
@@ -369,35 +392,50 @@
     letter-spacing: normal;
   }
   .orca-benefits-box-body1, .orca-benefits-box-body2, .orca-benefits-box-body3 {
-    grid-template-columns: 110px 490px;
-    grid-template-rows: 40px 50px;
-    width: 600px;
+    grid-template-columns: 220px 480px;
+    grid-template-rows: 35px 55px;
+    width: 700px;
     margin-bottom: 20px;
   }
   .orca-benefits-box-body1-square, .orca-benefits-box-body2-square, .orca-benefits-box-body3-square {
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 100px;
   }
   .orca-benefits-box-body1-head, .orca-benefits-box-body2-head, .orca-benefits-box-body3-head {
-    font-size: 20px;
+    font-size: 18px;
+    width: 480px;
+    line-height: 1.1;
   }
   .orca-benefits-box-body1-body, .orca-benefits-box-body2-body, .orca-benefits-box-body3-body {
     font-size: 15px;
+    width: 300px;
+    line-height: 1.2;
   }
 }
 @media (max-width: 767px) {
   .orca {
     justify-content: center;
   }
+  .orca-what-container {
+    height: 300px;
+  }
+  .orca-what-container .orca-banner {
+    height: 300px;
+    display: none;
+  }
+  .orca-what-container .banner-curtain {
+    height: 300px;
+  }
   .orca-what {
     width: 350px;
-    height: 500px;
+    height: 200px;
   }
   .orca-what-box {
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
     width: 300px;
-    height: 250px;
+    margin-bottom: 10px;
   }
   .orca-what-box-head {
     color: white;
@@ -426,14 +464,16 @@
     letter-spacing: normal;
   }
   .orca-goal {
+    margin-top: 50px;
     width: 350px;
-    height: 350px;
+    height: 250px;
   }
   .orca-goal-box {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0px;
     width: 300px;
-    height: 200px;
+    height: 250px;
   }
   .orca-goal-box-head {
     width: 300px;
@@ -448,6 +488,8 @@
   }
   .orca-goal-box-body1 {
     width: 300px;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-top: 30px;
     color: black;
     font-size: 12px;
@@ -476,7 +518,7 @@
     margin-bottom: 0px;
   }
   .orca-benefits-box {
-    width: 300px;
+    width: 350px;
     margin-left: 0px;
   }
   .orca-benefits-box-head {
@@ -491,8 +533,8 @@
     margin-bottom: 40px;
   }
   .orca-benefits-box-body1, .orca-benefits-box-body2, .orca-benefits-box-body3 {
-    grid-template-columns: 100px 200px;
-    grid-template-rows: 50px 50px;
+    grid-template-columns: 100px 250px;
+    grid-template-rows: 45px 55px;
     margin-bottom: 0px;
     width: 300px;
   }
@@ -501,13 +543,13 @@
     height: 90px;
   }
   .orca-benefits-box-body1-head, .orca-benefits-box-body2-head, .orca-benefits-box-body3-head {
-    width: 200px;
-    font-size: 14px;
-    line-height: 1;
+    width: 250px;
+    font-size: 13px;
+    line-height: 1.4;
   }
   .orca-benefits-box-body1-body, .orca-benefits-box-body2-body, .orca-benefits-box-body3-body {
     width: 200px;
     font-size: 11px;
-    line-height: 14px;
+    line-height: 16px;
   }
 }/*# sourceMappingURL=orca.styles.css.map */

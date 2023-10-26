@@ -37,6 +37,11 @@ const images = {
 	menu_b: '/assets/images/menu-b.svg',
 	language_b: '/assets/images/language-b.svg',
 	gnb_back_b: '/assets/images/gnb-back-b.svg',
+	logo_gif: '/assets/images/logo-gif.gif',
+	logo_gif2: '/assets/images/logo-gif2.gif',
+	picto1: '/assets/images/picto1.svg',
+	picto2: '/assets/images/picto2.svg',
+	picto3: '/assets/images/picto3.svg',
 };
 
 export default images;

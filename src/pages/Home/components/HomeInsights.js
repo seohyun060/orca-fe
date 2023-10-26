@@ -35,14 +35,16 @@ const HomeInsights = () => {
         </button>
       </div>
       <div className="EventBoxSlide Insight">
-        {selectedInsightsData && selectedInsightsData.map((data) => (
-          <InsightsCard
-            pdfLink={data.file}
-            category={data.category}
-            title={data.title}
-            views={data.views}
-          />
-        ))}
+        {selectedInsightsData &&
+          selectedInsightsData.map((data) => (
+            <InsightsCard
+              id={data.id}
+              pdfLink={data.file}
+              category={data.category}
+              title={data.title}
+              views={data.views}
+            />
+          ))}
       </div>
     </section>
   );

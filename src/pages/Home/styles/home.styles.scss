@@ -20,16 +20,17 @@
 	&-anime {
 		//animation section
 		width: 100%;
-		height: fit-content;
+		height: 100%;
+		//height: fit-content;
 		background-color: black;
-		margin-top: 77px;
+		//margin-top: 77px;
 		display: flex;
 		align-items: center;
 		position: relative;
 		justify-content: center;
 		img {
 			width: 100%;
-			//margin-top: 77px;
+			margin-top: 77px;
 		}
 	}
 	.intro-background {
@@ -47,7 +48,7 @@
 		display: flex;
 		flex-direction: column;
 		&-what {
-			margin-top: 40px;
+			margin-top: 55px;
 			width: 948px;
 			height: 364px;
 			color: white;
@@ -207,7 +208,7 @@
 		flex-direction: column;
 		&-anime {
 			//animation section
-			margin-top: 50px;
+			//margin-top: 50px;
 		}
 		.intro-background {
 			width: 100%;
@@ -340,7 +341,12 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-
+		&-anime {
+			//animation section
+			img {
+				margin-top: 55px;
+			}
+		}
 		.intro-background {
 			width: 100%;
 			background-color: black;

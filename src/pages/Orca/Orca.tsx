@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/orca.styles.scss';
 import { useTranslation } from 'react-i18next';
+import images from 'src/assets/images';
 type Props = {
 	orcaBanner: string;
 };
@@ -31,7 +32,10 @@ const Orca = ({ orcaBanner }: Props) => {
 				<div className='orca-benefits-box'>
 					<div className='orca-benefits-box-head'>{t('orca_benefits')}</div>
 					<div className='orca-benefits-box-body1'>
-						<div className='orca-benefits-box-body1-square'></div>
+						<img
+							className='orca-benefits-box-body1-square'
+							src={images.picto1}
+						></img>
 						<div className='orca-benefits-box-body1-head'>
 							{t('orca_benefit_goal1')}:
 						</div>
@@ -40,7 +44,10 @@ const Orca = ({ orcaBanner }: Props) => {
 						</div>
 					</div>
 					<div className='orca-benefits-box-body2'>
-						<div className='orca-benefits-box-body2-square'></div>
+						<img
+							className='orca-benefits-box-body2-square'
+							src={images.picto2}
+						></img>
 						<div className='orca-benefits-box-body2-head'>
 							{t('orca_benefit_goal2')}:
 						</div>
@@ -49,7 +56,10 @@ const Orca = ({ orcaBanner }: Props) => {
 						</div>
 					</div>
 					<div className='orca-benefits-box-body3'>
-						<div className='orca-benefits-box-body3-square'></div>
+						<img
+							className='orca-benefits-box-body3-square'
+							src={images.picto3}
+						></img>
 						<div className='orca-benefits-box-body3-head'>
 							{t('orca_benefit_goal3')}:
 						</div>

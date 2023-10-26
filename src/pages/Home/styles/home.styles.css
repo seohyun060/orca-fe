@@ -8,10 +8,8 @@
 }
 .home-anime {
   width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
   background-color: black;
-  margin-top: 77px;
   display: flex;
   align-items: center;
   position: relative;
@@ -19,6 +17,7 @@
 }
 .home-anime img {
   width: 100%;
+  margin-top: 77px;
 }
 .home .intro-background {
   width: 100%;
@@ -34,7 +33,7 @@
   flex-direction: column;
 }
 .home-intro-what {
-  margin-top: 40px;
+  margin-top: 55px;
   width: 948px;
   height: 364px;
   color: white;
@@ -248,9 +247,6 @@
     display: flex;
     flex-direction: column;
   }
-  .home-anime {
-    margin-top: 50px;
-  }
   .home .intro-background {
     width: 100%;
     background-color: black;
@@ -424,6 +420,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+  .home-anime img {
+    margin-top: 55px;
   }
   .home .intro-background {
     width: 100%;

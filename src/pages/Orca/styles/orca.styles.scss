@@ -12,6 +12,7 @@
 }
 
 .orca {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -20,25 +21,27 @@
 		word-break: keep-all;
 	}
 	&-what-container {
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-
+		height: 37.9%;
 		z-index: 50;
 		.orca-banner {
 			position: absolute;
 			z-index: 0;
 			width: 100%;
 			height: 727px;
+			height: 100%;
 		}
 		.banner-curtain {
 			position: absolute;
 			z-index: 10;
 			width: 100%;
 			background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
-			height: 727px;
+			height: 100%;
 		}
 	}
 	&-what {
@@ -46,20 +49,21 @@
 		flex-direction: column;
 		position: relative;
 		width: 1192px;
-		height: 727px;
+		height: 37.8vw;
 		margin: auto;
 		z-index: 20;
 		//background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
 		&-box {
+			position: absolute;
 			width: 948px;
 			height: 364px;
 			color: white;
 			display: grid;
 			grid-template-columns: 1fr 2.02fr;
 			grid-template-rows: 1.5fr 1fr;
-			margin-top: 213px;
+			bottom: 100px;
 			//margin-left: 18.9583%;
-			position: relative;
+
 			&-head {
 				align-self: end;
 				@include font-setting(white, 600, 60px, 70px);
@@ -135,10 +139,10 @@
 		&-box {
 			display: flex;
 			flex-direction: column;
-			width: 941px;
+			width: 1192px;
 			height: 664px;
 
-			margin-left: 152px;
+			//margin-left: 152px;
 			&-head {
 				margin-bottom: 70px;
 				color: #000;
@@ -150,21 +154,21 @@
 			}
 			&-body1 {
 				display: grid;
-				grid-template-columns: 152px 432px;
+				grid-template-columns: 310px 800px;
 				grid-template-rows: 52px 84px;
-				width: 584px;
+				width: 1110px;
 				height: 136px;
 
 				margin-bottom: 80px;
 				&-square {
 					grid-area: graybox;
-					width: 128px;
+					width: 280px;
 					height: 136px;
-					background: var(--Light-gray, #f0f0f0);
+					//background: var(--Light-gray, #f0f0f0);
 				}
 				&-head {
 					grid-area: head;
-					width: 426px;
+					width: 800px;
 					height: 28px;
 					color: #000;
 					/* web. semi.30 */
@@ -225,11 +229,16 @@
 		justify-content: center;
 		&-what {
 			width: 900px;
+			margin-bottom: 0px;
 			&-box {
 				width: 771px;
 				height: 250px;
+				grid-template-rows: 1fr 1.8fr;
+				bottom: 30px;
+				//margin-bottom: 50px;
 				&-head {
-					font-size: 45px;
+					font-size: 35px;
+					margin-bottom: 10px;
 				}
 				&-about {
 					font-size: 20px;
@@ -238,17 +247,20 @@
 				&-body {
 					width: 542px;
 					margin-top: 20px;
-					@include font-setting(white, 600, 25px, 35px);
+					@include font-setting(white, 600, 25px, 30px);
 				}
 			}
 		}
 		&-goal {
 			width: 900px;
+			margin-top: 100px;
 			&-box {
 				width: 771px;
 				height: 250px;
+				//grid-template-columns: 1fr 2fr;
+				grid-template-rows: 1fr 1.8fr;
 				&-head {
-					font-size: 45px;
+					font-size: 35px;
 				}
 				&-body1 {
 					width: 400px;
@@ -262,22 +274,22 @@
 		&-benefits {
 			width: 900px;
 			&-box {
-				width: 771px;
+				width: 900px;
 				margin-left: 0px;
+				&-head {
+					font-size: 35px;
+				}
 				&-body1 {
-					grid-template-columns: 141px 630px;
-					grid-template-rows: 40px 50px;
-					width: 771px;
+					width: 900px;
 					margin-bottom: 20px;
-					&-square {
-						width: 90px;
-						height: 90px;
-					}
+
 					&-head {
-						font-size: 20px;
+						font-size: 23px;
+						width: 650px;
 					}
 					&-body {
-						font-size: 15px;
+						font-size: 18px;
+						width: 350px;
 					}
 				}
 			}
@@ -287,30 +299,22 @@
 
 @media (max-width: 1023px) {
 	.orca {
-		justify-content: center;
+		//justify-content: center;
 		&-what-container {
 			.orca-banner {
-				position: absolute;
-				z-index: 0;
-				width: 100%;
-				height: 500px;
 			}
 			.banner-curtain {
-				position: absolute;
-				z-index: 10;
-				width: 100%;
-				background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
-				height: 500px;
 			}
 		}
 		&-what {
 			width: 700px;
-			height: 500px;
+			//height: 500px;
 			&-box {
-				display: flex;
-				flex-direction: column;
 				width: 600px;
-				height: 250px;
+				height: 150px;
+				grid-template-columns: 170px 430px;
+				grid-template-rows: 70px 80px;
+				margin-bottom: 30px;
 				&-head {
 					align-self: start;
 					@include font-setting(white, 600, 30px, 45px);
@@ -321,13 +325,14 @@
 				}
 				&-body {
 					width: 500px;
-					margin-top: 20px;
+					margin-top: 0px;
 					@include font-setting(white, 600, 19px, 28px);
 				}
 			}
 		}
 		&-goal {
 			width: 700px;
+			margin-top: 70px;
 			&-box {
 				display: flex;
 				flex-direction: column;
@@ -339,12 +344,12 @@
 					@include font-setting(black, 600, 30px, 28px);
 				}
 				&-body1 {
-					width: 500px;
+					width: 600px;
 					margin-top: 50px;
 					@include font-setting(black, 600, 16px, 28px);
 				}
 				&-body2 {
-					width: 500px;
+					width: 600px;
 					margin-top: 15px;
 					@include font-setting(black, 600, 16px, 28px);
 				}
@@ -353,25 +358,31 @@
 		&-benefits {
 			width: 700px;
 			&-box {
-				width: 600px;
+				width: 700px;
 				margin-left: 0px;
 				&-head {
 					@include font-setting(black, 600, 45px, 28px);
 				}
 				&-body1 {
-					grid-template-columns: 110px 490px;
-					grid-template-rows: 40px 50px;
-					width: 600px;
+					grid-template-columns: 220px 480px;
+					grid-template-rows: 35px 55px;
+					width: 700px;
 					margin-bottom: 20px;
 					&-square {
-						width: 90px;
-						height: 90px;
+						width: 200px;
+						height: 100px;
+						// width: 90px;
+						// height: 90px;
 					}
 					&-head {
-						font-size: 20px;
+						font-size: 18px;
+						width: 480px;
+						line-height: 1.1;
 					}
 					&-body {
 						font-size: 15px;
+						width: 300px;
+						line-height: 1.2;
 					}
 				}
 			}
@@ -383,29 +394,24 @@
 	.orca {
 		justify-content: center;
 		&-what-container {
+			height: 300px;
 			.orca-banner {
-				position: absolute;
-				z-index: 0;
-				width: 100%;
 				height: 300px;
+				display: none;
 			}
 			.banner-curtain {
-				position: absolute;
-				z-index: 10;
-				width: 100%;
-				background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
 				height: 300px;
 			}
 		}
 		&-what {
 			width: 350px;
-			height: 300px;
+			height: 200px;
 			&-box {
 				display: flex;
 				flex-direction: column;
 				margin-top: 80px;
 				width: 300px;
-				height: 250px;
+				margin-bottom: 10px;
 				&-head {
 					@include font-setting(white, 600, 19px, 28px);
 				}
@@ -454,15 +460,15 @@
 			margin-top: 50px;
 			margin-bottom: 0px;
 			&-box {
-				width: 300px;
+				width: 350px;
 				margin-left: 0px;
 				&-head {
 					@include font-setting(black, 600, 25px, 28px);
 					margin-bottom: 40px;
 				}
 				&-body1 {
-					grid-template-columns: 100px 200px;
-					grid-template-rows: 50px 50px;
+					grid-template-columns: 100px 250px;
+					grid-template-rows: 45px 55px;
 					margin-bottom: 0px;
 					width: 300px;
 					&-square {
@@ -470,14 +476,14 @@
 						height: 90px;
 					}
 					&-head {
-						width: 200px;
-						font-size: 14px;
-						line-height: 1;
+						width: 250px;
+						font-size: 13px;
+						line-height: 1.4;
 					}
 					&-body {
 						width: 200px;
 						font-size: 11px;
-						line-height: 14px;
+						line-height: 16px;
 					}
 				}
 			}

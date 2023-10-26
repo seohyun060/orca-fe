@@ -672,6 +672,10 @@
 	-khtml-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
+
+	&.Insight {
+		justify-content: space-between;
+	}
 }
 
 @media (max-width: 1400px) {

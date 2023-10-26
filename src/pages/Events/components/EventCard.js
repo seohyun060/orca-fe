@@ -91,13 +91,15 @@ export default function EventCard(props) {
           </div>
         </div>
         <div className="EventCardDate">
-          {end ? start.getDate() + "-" + end.getDate() : start.getDate()}
+          {moment(start).format("YYYY.M.D") !== moment(end).format("YYYY.M.D")
+            ? start.getDate() + "-" + end.getDate()
+            : start.getDate()}
         </div>
         <div className="EventCardTitle InEvent">
           {title ? title : "No title"}
         </div>
         <div className="EventCardTime">
-          {openingHour ? openingHour : "All Day"}
+          {openingHour != "00:00:00" ? openingHour.slice(0, 5) : "All-Day"}
         </div>
       </article>
     )
@@ -122,11 +124,13 @@ export default function EventCard(props) {
         <div className="EventCardDday">{dday ? "Day - " + dday : "D-day"}</div>
       </div>
       <div className="EventCardDate">
-        {end ? start.getDate() + "-" + end.getDate() : start.getDate()}
+        {moment(start).format("YYYY.M.D") !== moment(end).format("YYYY.M.D")
+          ? start.getDate() + "-" + end.getDate()
+          : start.getDate()}
       </div>
       <div className="EventCardTitle">{title ? title : "No title"}</div>
       <div className="EventCardTime">
-        {openingHour ? openingHour : "All-Day"}
+        {openingHour != "00:00:00" ? openingHour.slice(0, 5) : "All-Day"}
       </div>
     </article>
   );

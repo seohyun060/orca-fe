@@ -5,9 +5,7 @@ import { useTranslation } from "react-i18next";
 import "../styles/home.styles.css";
 import ProjectCard from "../../Projects/components/ProjectCard";
 
-import ProjectDummyData from "../../Projects/components/ProjectDummyData";
-
-import { getAllProjectData } from "src/api/projectsAPI";
+import { getAllProjectData, getSeletedProjectData } from "src/api/projectsAPI";
 
 const HomeProjects = () => {
   const navigate = useNavigate();
@@ -16,18 +14,10 @@ const HomeProjects = () => {
   const [projectData, setProjectData] = useState([]);
 
   useEffect(() => {
-    getAllProjectData().then((data) => {
-      let dummy = [];
-      for (let i = 0; i < 3; i++) {
-        dummy.push(data.data[i]);
-      }
-      setProjectData(dummy);
+    getSeletedProjectData().then((data) => {
+      console.log(data)
+      setProjectData(data.data);
     });
-
-    let dummy = [];
-    for (let i = 0; i < 3; i++) {
-      dummy.push(projectData[i]);
-    }
   }, []);
 
   return (
@@ -45,7 +35,11 @@ const HomeProjects = () => {
         </button>
       </div>
       <div className="ProjectBox">
-        {/* 우선 앞에서 세개 가져옴 */}
+        {/* 데이터가 없을때는 어떻게? */}
+        {projectData == undefined && <ProjectCard
+            inProject={false}
+            projectTitle={"Preparing..."}
+          />}
         {projectData.map((data) => (
           <ProjectCard
             id={data.id}

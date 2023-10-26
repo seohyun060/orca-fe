@@ -4,7 +4,7 @@ import { useNavigate, Routes, Route } from 'react-router-dom';
 const PublicationCard = (props) => {
 	const navigate = useNavigate();
 
-	const { title, projDate, check } = props;
+	const { title, projDate, link } = props;
 
 	const monthNames = [
 		'January',
@@ -20,7 +20,7 @@ const PublicationCard = (props) => {
 		'November',
 		'December',
 	];
-	console.log(check);
+
 	const publicationDate = new Date(projDate);
 	const publicationDateFormat =
 		publicationDate.getDate() +
@@ -33,11 +33,11 @@ const PublicationCard = (props) => {
 		<article
 			className='PublicationCard'
 			onClick={() => {
-				window.location.href = check.link;
+				window.location.href = link;
 			}}
 		>
 			<div className='PublicationCardTitle'>{title}</div>
-			<div className='PublicationDate'>{check.pubYear}</div>
+			<div className='PublicationDate'>{projDate}</div>
 		</article>
 	);
 };

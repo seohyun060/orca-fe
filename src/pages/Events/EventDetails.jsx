@@ -74,10 +74,10 @@ const EventDetails = (props) => {
     eventSlideRef.current.style.transition = "transform 0.4s ease-in-out";
     changeCardSize(window.innerWidth);
     getOneEventData(eventID).then((data) => {
-      console.log(data)
+      console.log(data);
       setEventData(data.data);
       console.log(data.data);
-      setTotalSlideNum(data.data.mainImages.length)
+      setTotalSlideNum(data.data.mainImages.length);
     });
   }, []);
 
@@ -145,7 +145,7 @@ const EventDetails = (props) => {
             <div className="EventTime">
               <label className="SubtitleFont">{t("opening_hours")}</label>
               <label className="DescriptFont">
-                {eventData ? eventData.openingHour : null}
+                {eventData ? eventData.openingHour.slice(0, 5) : null}
               </label>
             </div>
             <div className="EventWebsite">

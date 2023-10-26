@@ -10,6 +10,16 @@ export async function getAllProjectData() {
     });
 }
 
+export async function getSeletedProjectData() {
+  return fetch(`http://43.202.46.227/api/projects?select=true`, {
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
+}
+
 export async function getOneProjectData(id) {
   return fetch(`http://43.202.46.227/api/projects/${id}`, {
     method: "GET",

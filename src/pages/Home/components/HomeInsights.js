@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "../styles/home.styles.scss";
 import InsightsCard from "../../Insights/components/InsightsCard";
 
+import { getSeletedInsightsData } from "src/api/InsightAPI";
+
 const HomeInsights = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const [selectedInsightsData, setSelectedInsightsData] = useState();
+
+  useEffect(() => {
+    getSeletedInsightsData().then((data) => {
+      console.log(data);
+      setSelectedInsightsData(data.data);
+    });
+  }, []);
 
   return (
     <section className="Section">
@@ -23,11 +34,15 @@ const HomeInsights = () => {
           {t("view_all")}
         </button>
       </div>
-      <div className="EventBoxSlide">
-        <InsightsCard />
-        <InsightsCard />
-        <InsightsCard />
-        <InsightsCard />
+      <div className="EventBoxSlide Insight">
+        {selectedInsightsData.map((data) => (
+          <InsightsCard
+            pdfLink={data.file}
+            category={data.category}
+            title={data.title}
+            views={data.views}
+          />
+        ))}
       </div>
     </section>
   );

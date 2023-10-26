@@ -22,3 +22,13 @@ export async function getInsightDetail(id) {
 			return data;
 		});
 }
+
+export async function getSeletedInsightsData() {
+	return fetch(`http://43.202.46.227/api/insights?select=true`, {
+	  method: "GET",
+	})
+	  .then((res) => res.json())
+	  .then((data) => {
+		return data;
+	  });
+  }

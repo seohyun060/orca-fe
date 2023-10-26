@@ -205,6 +205,12 @@ const EventBoxSlide = (props) => {
               inEvent={inEvent}
             />
           ))}
+          {eventsData.length < 1 && (
+            <EventCard inEvent={inEvent} title="Coming" comingSoon={true} />
+          )}
+          {eventsData.length < 2 && (
+            <EventCard inEvent={inEvent} title="Coming" comingSoon={true} />
+          )}
           <EventCard inEvent={inEvent} title="Coming" comingSoon={true} />
         </div>
       </div>

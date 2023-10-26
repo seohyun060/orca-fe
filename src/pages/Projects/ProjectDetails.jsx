@@ -11,8 +11,6 @@ import ProjectMenuBar from "./components/ProjectMenuBar";
 import CandIInfo from "./components/CandIInfo";
 import PublicationCard from "./components/PublicationCard";
 
-import ProjectDummyData from "./components/ProjectDummyData";
-
 import { getOneProjectData, postProjectForm } from "src/api/projectsAPI";
 
 const PrejectsDetails = (props) => {
@@ -21,7 +19,7 @@ const PrejectsDetails = (props) => {
   const StudyPharagraph = useRef();
   const params = useParams();
 
-  console.log(params)
+  console.log(params);
   const projID = params.id;
 
   const [projectData, setProjectData] = useState();
@@ -99,7 +97,8 @@ const PrejectsDetails = (props) => {
             <div className="Contents" ref={StudyPharagraph}>
               {projectData ? projectData.overview : ""}
             </div>
-            {StudyPharagraph.current.scrollHeight > 280 &&
+            {StudyPharagraph.current ? (
+              StudyPharagraph.current.scrollHeight > 280 &&
               (!isPharagraphOpen ? (
                 <button className="ShowMoreButton" onClick={openPharagraph}>
                   + {t("show_more")}
@@ -108,7 +107,10 @@ const PrejectsDetails = (props) => {
                 <button className="ShowMoreButton" onClick={openPharagraph}>
                   - {t("fold")}
                 </button>
-              ))}
+              ))
+            ) : (
+              <></>
+            )}
 
             <div className="ProjectOfficial">
               <div className="SubjectName">{t("study_title")}</div>
@@ -290,8 +292,9 @@ const PrejectsDetails = (props) => {
               <CandIInfo />
             )}
             <div className="SubjectName">{t("collaborators")}</div>
+            {console.log(projectData)}
             {projectData ? (
-              projectData.collaborators.length !== 0 ? (
+              projectData.collaborators[0] != null ? (
                 projectData.collaborators.map((data) => (
                   <CandIInfo
                     id={data.link}
@@ -308,11 +311,18 @@ const PrejectsDetails = (props) => {
           </article>
           <article className="Publications Article">
             <div className="ArticleTitle">{t("related_publications")}</div>
-            <PublicationCard
-              // Publication API 연동
-              title={ProjectDummyData[0].title}
-              projDate={ProjectDummyData[0].projDate}
-            />
+            {projectData ? (
+              projectData.publications.map((data) => (
+                <PublicationCard
+                  // Publication API 연동
+                  title={data.title}
+                  projDate={data.pubYear}
+                  link={data.link}
+                />
+              ))
+            ) : (
+              <></>
+            )}
           </article>
         </div>
       </section>

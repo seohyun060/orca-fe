@@ -34,7 +34,7 @@ const Orca = ({ orcaBanner }: Props) => {
 					<div className='orca-benefits-box-body1'>
 						<img
 							className='orca-benefits-box-body1-square'
-							src={images.picto1}
+							src={images.picto3}
 						></img>
 						<div className='orca-benefits-box-body1-head'>
 							{t('orca_benefit_goal1')}:
@@ -46,7 +46,7 @@ const Orca = ({ orcaBanner }: Props) => {
 					<div className='orca-benefits-box-body2'>
 						<img
 							className='orca-benefits-box-body2-square'
-							src={images.picto2}
+							src={images.picto1}
 						></img>
 						<div className='orca-benefits-box-body2-head'>
 							{t('orca_benefit_goal2')}:
@@ -58,7 +58,7 @@ const Orca = ({ orcaBanner }: Props) => {
 					<div className='orca-benefits-box-body3'>
 						<img
 							className='orca-benefits-box-body3-square'
-							src={images.picto3}
+							src={images.picto2}
 						></img>
 						<div className='orca-benefits-box-body3-head'>
 							{t('orca_benefit_goal3')}:

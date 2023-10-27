@@ -20,7 +20,7 @@ const Home = ({ route, mainBanner }: Props) => {
 	return (
 		<div className='home'>
 			<div className='home-anime'>
-				<img src={images.logo_gif} />
+				<img src={mainBanner} />
 			</div>
 			<HomeIntroContainer />
 			<HomeResearcherContainer route={route} />

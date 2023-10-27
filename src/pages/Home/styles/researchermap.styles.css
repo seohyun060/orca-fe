@@ -50,11 +50,12 @@
 .researcher-map .country0 .researchers, .researcher-map .country3 .researchers, .researcher-map .country2 .researchers, .researcher-map .country1 .researchers, .researcher-map .country0 .researchers-active, .researcher-map .country3 .researchers-active, .researcher-map .country2 .researchers-active, .researcher-map .country1 .researchers-active {
   position: absolute;
   width: 247px;
-  height: 393px;
+  height: -moz-fit-content;
+  height: fit-content;
   z-index: -10;
   display: grid;
   grid-template-columns: 18px 211px 18px;
-  grid-template-rows: 33px 344px 16px;
+  grid-template-rows: 33px fit-content 16px;
   opacity: 0;
   transform: translateY(-20px);
   /* transition 적용 */
@@ -81,7 +82,8 @@
 }
 .researcher-map .country0 .researchers-body, .researcher-map .country3 .researchers-body, .researcher-map .country2 .researchers-body, .researcher-map .country1 .researchers-body {
   width: 211px;
-  height: 344px;
+  height: -moz-fit-content;
+  height: fit-content;
   grid-area: body;
 }
 .researcher-map .country0 .researchers-body .researcher-card, .researcher-map .country3 .researchers-body .researcher-card, .researcher-map .country2 .researchers-body .researcher-card, .researcher-map .country1 .researchers-body .researcher-card {
@@ -204,9 +206,10 @@
   left: 165px;
   display: grid;
   width: 247px;
-  height: 393px;
+  height: -moz-fit-content;
+  height: fit-content;
   grid-template-columns: 18px 211px 18px;
-  grid-template-rows: 33px 344px 16px;
+  grid-template-rows: 33px fit-content 16px;
   opacity: 0;
   transform: translateY(-20px);
   /* transition 적용 */
@@ -231,7 +234,8 @@
 }
 .researcher-map-black .country0 .researchers-body, .researcher-map-black .country3 .researchers-body, .researcher-map-black .country2 .researchers-body, .researcher-map-black .country1 .researchers-body {
   width: 211px;
-  height: 344px;
+  height: -moz-fit-content;
+  height: fit-content;
   grid-area: body;
 }
 .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card {

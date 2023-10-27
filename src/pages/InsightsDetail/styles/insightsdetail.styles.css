@@ -17,10 +17,13 @@
   align-items: center;
 }
 .iDetail-back-box {
+  position: relative;
   display: flex;
   flex-direction: row;
-  width: 98px;
+  width: -moz-fit-content;
+  width: fit-content;
   justify-content: end;
+  align-items: center;
 }
 .iDetail-back-box div {
   color: #000;
@@ -31,13 +34,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 127.273% */
-  margin-left: 11px;
+  margin-left: 40px;
+}
+.iDetail-back-box img {
+  position: absolute;
+  left: 0px;
 }
 .iDetail-back-box:hover {
   cursor: pointer;
 }
-.iDetail-back-box:hover div {
-  margin-left: 21px;
+.iDetail-back-box:hover img {
+  left: -10px;
   transition: 0.2s ease-in-out;
 }
 .iDetail-title {
@@ -50,6 +57,9 @@
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   line-height: 70px; /* 46.667% */
 }
 .iDetail-typedate {
@@ -118,22 +128,9 @@
   }
   .iDetail-back {
     width: 900px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 132px;
-    align-items: center;
   }
   .iDetail-back div {
     color: #000;
-    margin-top: 2px;
-    /* web. re.22 */
-    font-family: Pretendard;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 127.273% */
-    margin-left: 11px;
   }
   .iDetail .researcherdetail-back:hover {
     cursor: pointer;
@@ -191,22 +188,6 @@
   }
   .iDetail-back {
     width: 700px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 132px;
-    align-items: center;
-  }
-  .iDetail-back div {
-    color: #000;
-    margin-top: 2px;
-    /* web. re.22 */
-    font-family: Pretendard;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 127.273% */
-    margin-left: 11px;
   }
   .iDetail .researcherdetail-back:hover {
     cursor: pointer;
@@ -264,22 +245,13 @@
   }
   .iDetail-back {
     width: 350px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    margin-top: 52px;
-    align-items: center;
   }
-  .iDetail-back div {
-    color: #000;
-    margin-top: 2px;
-    /* web. re.22 */
-    font-family: Pretendard;
+  .iDetail-back-box img {
+    width: 20px;
+  }
+  .iDetail-back-box div {
     font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 127.273% */
-    margin-left: 11px;
+    margin-left: 30px;
   }
   .iDetail .researcherdetail-back:hover {
     cursor: pointer;

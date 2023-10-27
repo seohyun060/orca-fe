@@ -230,6 +230,7 @@
 		&-what {
 			width: 900px;
 			margin-bottom: 0px;
+
 			&-box {
 				width: 771px;
 				height: 250px;
@@ -239,6 +240,7 @@
 				&-head {
 					font-size: 35px;
 					margin-bottom: 10px;
+					line-height: 45px;
 				}
 				&-about {
 					font-size: 20px;
@@ -311,13 +313,15 @@
 			//height: 500px;
 			&-box {
 				width: 600px;
-				height: 150px;
+				height: 200px;
 				grid-template-columns: 170px 430px;
-				grid-template-rows: 70px 80px;
-				margin-bottom: 30px;
+				grid-template-rows: 100px 100px;
+				margin-bottom: 0px;
 				&-head {
-					align-self: start;
+					align-self: center;
+					//justify-self: center;
 					@include font-setting(white, 600, 30px, 45px);
+					line-height: 40px;
 				}
 				&-about {
 					font-size: 16px;
@@ -337,7 +341,8 @@
 				display: flex;
 				flex-direction: column;
 				width: 600px;
-				height: 250px;
+				height: 230px;
+				grid-template-rows: 50px 95px 95px;
 
 				//background-color: blue;
 				&-head {
@@ -345,12 +350,12 @@
 				}
 				&-body1 {
 					width: 600px;
-					margin-top: 50px;
+					margin-top: 40px;
 					@include font-setting(black, 600, 16px, 28px);
 				}
 				&-body2 {
 					width: 600px;
-					margin-top: 15px;
+					margin-top: 0px;
 					@include font-setting(black, 600, 16px, 28px);
 				}
 			}
@@ -406,23 +411,30 @@
 		&-what {
 			width: 350px;
 			height: 200px;
+			margin-top: 70px;
 			&-box {
 				display: flex;
 				flex-direction: column;
+				height: fit-content;
 				margin-top: 80px;
 				width: 300px;
-				margin-bottom: 10px;
+				margin-top: 0px;
+				margin-bottom: 0px;
 				&-head {
 					@include font-setting(white, 600, 19px, 28px);
+					align-self: flex-start;
+					height: fit-content;
 				}
 				&-about {
 					margin-top: 0px;
 					font-size: 14px;
+					height: fit-content;
 				}
 				&-body {
 					width: 300px;
 					margin-top: 10px;
 					@include font-setting(white, 600, 12px, 20px);
+					height: fit-content;
 				}
 			}
 		}
@@ -441,23 +453,23 @@
 					@include font-setting(black, 600, 19px, 24px);
 				}
 				&-body1 {
-					width: 300px;
+					width: 350px;
 					height: fit-content;
 					margin-top: 30px;
-					@include font-setting(black, 600, 12px, 20px);
+					@include font-setting(black, 600, 12px, 18px);
 				}
 				&-body2 {
-					width: 300px;
+					width: 350px;
 
-					//margin-top: 15px;
-					@include font-setting(black, 600, 12px, 20px);
+					margin-top: 20px;
+					@include font-setting(black, 600, 12px, 18px);
 				}
 			}
 		}
 		&-benefits {
 			width: 350px;
 			height: 550px;
-			margin-top: 50px;
+			margin-top: 0px;
 			margin-bottom: 0px;
 			&-box {
 				width: 350px;

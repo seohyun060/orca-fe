@@ -50,6 +50,11 @@ const ResearcherDetailContainer = ({}: Props) => {
 
 		console.log(targetScrollPosition);
 	}, [location.pathname]);
+	const navgateSns = useCallback((link: string) => {
+		if (link) {
+			window.location.href = link;
+		}
+	}, []);
 
 	useEffect(() => {
 		getResearcherDetail(params.id).then((data) => {
@@ -63,6 +68,7 @@ const ResearcherDetailContainer = ({}: Props) => {
 			//setProfile(data.data.image);
 			setDepartment(data.data.affiliation);
 			setProject(data.data.projectType);
+
 			setPublication(data.data.publications);
 			setBiography(data.data.biography);
 			setTwitter(data.data.twitter);
@@ -71,6 +77,7 @@ const ResearcherDetailContainer = ({}: Props) => {
 		});
 		return () => {};
 	}, []);
+	console.log(biography);
 	return (
 		<>
 			{profile ? (
@@ -86,6 +93,7 @@ const ResearcherDetailContainer = ({}: Props) => {
 					linkedIn={linkedIn}
 					twitter={twitter}
 					biography={biography}
+					navigateSns={navgateSns}
 				/>
 			) : (
 				''

@@ -45,7 +45,7 @@
 			font-size: 30px;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 36.5px; /* 121.667% */
+			line-height: 130%; /* 121.667% */
 			//overflow-wrap: break-word;
 			//word-break: keep-all;
 		}
@@ -140,6 +140,9 @@
 
 					/* web. semi.30 */
 					font-family: Pretendard;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
 					font-size: 30px;
 					font-style: normal;
 					font-weight: 600;
@@ -148,6 +151,9 @@
 				&-department {
 					color: #000;
 					font-family: Pretendard;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
 					font-size: 16px;
 					font-style: normal;
 					font-weight: 300;

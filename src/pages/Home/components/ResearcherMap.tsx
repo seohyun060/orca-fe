@@ -33,6 +33,7 @@ const ResearcherMap = ({
 				<div className='research-box-container'>
 					{globalLists.map((researcherList, index) => (
 						<ResearcherBoxContainer
+							key={index}
 							researcherList={researcherList}
 							index={index}
 							isSelected={isSelected}

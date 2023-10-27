@@ -40,6 +40,7 @@
   height: 37.8vw;
   margin: auto;
   z-index: 20;
+  z-index: 20;
 }
 .orca-what-box {
   position: absolute;
@@ -295,6 +296,7 @@
 @media (max-width: 1023px) {
   .orca-what {
     width: 700px;
+    height: 500px;
   }
   .orca-what-box {
     width: 600px;
@@ -434,6 +436,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 80px;
+    margin-top: 80px;
     width: 300px;
     margin-bottom: 10px;
   }
@@ -465,14 +468,18 @@
   }
   .orca-goal {
     margin-top: 50px;
+    margin-top: 50px;
     width: 350px;
+    height: 250px;
     height: 250px;
   }
   .orca-goal-box {
     display: flex;
     flex-direction: column;
     margin-bottom: 0px;
+    margin-bottom: 0px;
     width: 300px;
+    height: 250px;
     height: 250px;
   }
   .orca-goal-box-head {
@@ -488,6 +495,8 @@
   }
   .orca-goal-box-body1 {
     width: 300px;
+    height: -moz-fit-content;
+    height: fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-top: 30px;

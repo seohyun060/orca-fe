@@ -686,7 +686,13 @@
 	-webkit-user-select: none;
 	user-select: none;
 
-	&.Insight {
+	&.InsightEmpty {
+		> div {
+			margin-right: 20px;
+		}
+	}
+
+	&.InsightFull {
 		justify-content: space-between;
 	}
 }
@@ -718,6 +724,11 @@
 
 	.EventBoxSlide {
 		width: 350px;
+		&.InsightEmpty {
+			> div {
+				margin-right:9px;
+			}
+		}
 	}
 
 	.ViewButton {

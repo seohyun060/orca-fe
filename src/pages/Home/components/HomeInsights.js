@@ -34,7 +34,23 @@ const HomeInsights = () => {
           {t("view_all")}
         </button>
       </div>
-      <div className="EventBoxSlide Insight">
+      <div
+        className={
+          selectedInsightsData?.length === 4
+            ? "EventBoxSlide InsightFull"
+            : "EventBoxSlide InsightEmpty"
+        }
+      >
+        {selectedInsightsData &&
+          selectedInsightsData.map((data) => (
+            <InsightsCard
+              id={data.id}
+              pdfLink={data.file}
+              category={data.category}
+              title={data.title}
+              views={data.views}
+            />
+          ))}
         {selectedInsightsData &&
           selectedInsightsData.map((data) => (
             <InsightsCard

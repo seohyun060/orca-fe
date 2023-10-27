@@ -881,6 +881,12 @@
   -webkit-user-select: none;
   user-select: none;
 }
+.EventBoxSlide.InsightEmpty > div {
+  margin-right: 20px;
+}
+.EventBoxSlide.InsightFull {
+  justify-content: space-between;
+}
 
 @media (max-width: 1400px) {
   .EventBox {
@@ -904,6 +910,9 @@
   }
   .EventBoxSlide {
     width: 350px;
+  }
+  .EventBoxSlide.InsightEmpty > div {
+    margin-right: 9px;
   }
   .ViewButton {
     width: 70px;

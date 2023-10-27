@@ -7,9 +7,26 @@
 .orca * {
   word-break: keep-all;
 }
-.orca-what-background {
+.orca-what-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 50;
+}
+.orca-what-container .orca-banner {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 727px;
+}
+.orca-what-container .banner-curtain {
+  position: absolute;
+  z-index: 10;
   width: 100%;
   background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+  height: 727px;
 }
 .orca-what {
   display: flex;
@@ -18,7 +35,7 @@
   width: 1192px;
   height: 727px;
   margin: auto;
-  background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+  z-index: 20;
 }
 .orca-what-box {
   width: 948px;
@@ -272,8 +289,22 @@
   .orca {
     justify-content: center;
   }
+  .orca-what-container .orca-banner {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 500px;
+  }
+  .orca-what-container .banner-curtain {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+    height: 500px;
+  }
   .orca-what {
     width: 700px;
+    height: 500px;
   }
   .orca-what-box {
     display: flex;
@@ -389,13 +420,27 @@
   .orca {
     justify-content: center;
   }
+  .orca-what-container .orca-banner {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 300px;
+  }
+  .orca-what-container .banner-curtain {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background: linear-gradient(90deg, #000 26.98%, rgba(0, 0, 0, 0) 100%);
+    height: 300px;
+  }
   .orca-what {
     width: 350px;
-    height: 500px;
+    height: 300px;
   }
   .orca-what-box {
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
     width: 300px;
     height: 250px;
   }
@@ -426,14 +471,16 @@
     letter-spacing: normal;
   }
   .orca-goal {
+    margin-top: 50px;
     width: 350px;
-    height: 350px;
+    height: 250px;
   }
   .orca-goal-box {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0px;
     width: 300px;
-    height: 200px;
+    height: 250px;
   }
   .orca-goal-box-head {
     width: 300px;
@@ -448,6 +495,8 @@
   }
   .orca-goal-box-body1 {
     width: 300px;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-top: 30px;
     color: black;
     font-size: 12px;

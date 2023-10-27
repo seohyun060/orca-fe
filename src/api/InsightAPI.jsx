@@ -1,5 +1,5 @@
 export async function getInsights() {
-	return fetch('http://43.202.46.227/api/insights', {
+	return fetch('https://api-orca.beamworks.co.kr/api/insights', {
 		method: 'GET',
 	})
 		.then((res) => res.json())
@@ -11,7 +11,7 @@ export async function getInsights() {
 		});
 }
 export async function getInsightDetail(id) {
-	return fetch(`http://43.202.46.227/api/insights/${id}`, {
+	return fetch(`https://api-orca.beamworks.co.kr/api/insights/${id}`, {
 		method: 'GET',
 	})
 		.then((res) => res.json())
@@ -24,7 +24,7 @@ export async function getInsightDetail(id) {
 }
 
 export async function getSeletedInsightsData() {
-	return fetch(`http://43.202.46.227/api/insights?select=true`, {
+	return fetch(`https://api-orca.beamworks.co.kr/api/insights?select=true`, {
 	  method: "GET",
 	})
 	  .then((res) => res.json())

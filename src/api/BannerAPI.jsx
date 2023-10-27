@@ -1,5 +1,5 @@
 export async function getOrcaBanner() {
-	return fetch('http://43.202.46.227/api/banners?is-main=false', {
+	return fetch('https://api-orca.beamworks.co.kr/api/banners?is-main=false', {
 		method: 'GET',
 	})
 		.then((res) => res.json())
@@ -12,7 +12,7 @@ export async function getOrcaBanner() {
 }
 
 export async function getMainBanner() {
-	return fetch('http://43.202.46.227/api/banners?is-main=true', {
+	return fetch('https://api-orca.beamworks.co.kr/api/banners?is-main=true', {
 		method: 'GET',
 	})
 		.then((res) => res.json())

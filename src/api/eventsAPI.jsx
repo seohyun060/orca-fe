@@ -1,7 +1,7 @@
 import client from "./client.js";
 
 export async function getAllEventData(end) {
-  return fetch(`http://43.202.46.227/api/events?is-ended=${end}`, {
+  return fetch(`https://api-orca.beamworks.co.kr/api/events?is-ended=${end}`, {
     method: "GET",
   })
     .then((res) => res.json())
@@ -11,7 +11,7 @@ export async function getAllEventData(end) {
 }
 
 export async function getOneEventData(id) {
-  return fetch(`http://43.202.46.227/api/events/${id}`, {
+  return fetch(`https://api-orca.beamworks.co.kr/api/events/${id}`, {
     method: "GET",
   })
     .then((res) => res.json())

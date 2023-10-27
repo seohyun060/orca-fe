@@ -1,7 +1,7 @@
 export async function postOrcaMembers(email) {
 	let data = new FormData();
 	data.append('email', email);
-	return fetch('http://43.202.46.227/api/orcaMembers', {
+	return fetch('https://api-orca.beamworks.co.kr/api/orcaMembers', {
 		method: 'POST',
 		body: data,
 	})

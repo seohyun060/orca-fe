@@ -1,5 +1,5 @@
 export async function getResearchers() {
-	return fetch('http://43.202.46.227/api/researchers', {
+	return fetch('https://api-orca.beamworks.co.kr/api/researchers', {
 		method: 'GET',
 	})
 		.then((res) => res.json())
@@ -12,7 +12,7 @@ export async function getResearchers() {
 }
 
 export async function getResearcherDetail(id) {
-	return fetch(`http://43.202.46.227/api/researchers/${id}`, {
+	return fetch(`https://api-orca.beamworks.co.kr/api/researchers/${id}`, {
 		method: 'GET',
 	})
 		.then((res) => res.json())

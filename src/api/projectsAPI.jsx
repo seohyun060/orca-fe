@@ -1,7 +1,7 @@
 import client from "./client.js";
 
 export async function getAllProjectData() {
-  return fetch(`http://43.202.46.227/api/projects`, {
+  return fetch(`https://api-orca.beamworks.co.kr/api/projects`, {
     method: "GET",
   })
     .then((res) => res.json())
@@ -11,7 +11,7 @@ export async function getAllProjectData() {
 }
 
 export async function getSeletedProjectData() {
-  return fetch(`http://43.202.46.227/api/projects?select=true`, {
+  return fetch(`https://api-orca.beamworks.co.kr/api/projects?select=true`, {
     method: "GET",
   })
     .then((res) => res.json())
@@ -21,7 +21,7 @@ export async function getSeletedProjectData() {
 }
 
 export async function getOneProjectData(id) {
-  return fetch(`http://43.202.46.227/api/projects/${id}`, {
+  return fetch(`https://api-orca.beamworks.co.kr/api/projects/${id}`, {
     method: "GET",
   })
     .then((res) => res.json())

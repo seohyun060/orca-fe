@@ -105,12 +105,11 @@ const ResearcherBoxContainer = ({
 	}, [
 		black,
 		index,
+		currentPage,
+		totalPage,
 		boxType,
 		topPosition,
 		leftPosition,
-		currentPage,
-		totalPage,
-		researcherList,
 		window.innerWidth,
 	]);
 

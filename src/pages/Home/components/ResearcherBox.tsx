@@ -112,7 +112,7 @@ const ResearcherBox = ({
 					}}
 				>
 					{dotList.map((dot, index) => (
-						<img src={dot} />
+						<img src={dot} key={index} />
 					))}
 				</div>
 			</div>

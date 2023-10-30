@@ -98,7 +98,7 @@ const ResearcherContainer = ({ location }: Props) => {
 			setResearcherIndex(index);
 			saveScrollPosition();
 
-			navigate(`/researcher/${id}`, {
+			navigate(`/researchers/${id}`, {
 				state: {
 					Name: name,
 					Profile: profile,

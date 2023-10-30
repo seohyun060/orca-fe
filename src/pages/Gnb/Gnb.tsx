@@ -18,6 +18,7 @@ type Props = {
 	onGlobeClicked: any;
 	setLanguage: any;
 	i18n: any;
+	onSideJoinUsClicked: any;
 };
 
 const gnb = ({
@@ -34,6 +35,7 @@ const gnb = ({
 	onGlobeClicked,
 	setLanguage,
 	i18n,
+	onSideJoinUsClicked,
 }: Props) => {
 	const krBtnStyle = {
 		backgroundColor: language === 'Kr' ? 'black' : 'white',
@@ -84,7 +86,11 @@ const gnb = ({
 									className='side-menu-button'
 									key={idx}
 									onClick={() => {
-										onItemClicked(item.path);
+										// onItemClicked(item.path);
+										// item.path === '/'
+										// 	? window.scrollTo(0, 900)
+										// 	: window.scrollTo(0, 0);
+										onSideJoinUsClicked(item.path);
 										onMenuToggleClicked();
 									}}
 								>

@@ -62,14 +62,14 @@ const ResearcherDetail = ({
 							navigateSns(linkedIn);
 						}}
 					>
-						L
+						<img src={images.linkedin} />
 					</div>
 					<div
 						onClick={() => {
 							navigateSns(twitter);
 						}}
 					>
-						T
+						<img src={images.twitter} />
 					</div>
 				</div>
 			</div>

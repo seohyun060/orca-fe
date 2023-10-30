@@ -28,7 +28,15 @@ const ResearcherDetailContainer = ({}: Props) => {
 	}
 
 	const params = useParams();
-	const onBackClick = useCallback(() => {
+	const navigateResearcher = useCallback(async () => {
+		navigate('/researchers', {
+			state: {
+				Index: index,
+			},
+		});
+	}, []);
+
+	const onBackClick = useCallback(async () => {
 		let scrollPosition = localStorage.getItem('scrollPosition');
 		localStorage.removeItem('scrollPosition');
 		if (!scrollPosition) {
@@ -37,16 +45,9 @@ const ResearcherDetailContainer = ({}: Props) => {
 		// Get the maximum scroll height of the document
 		let targetScrollPosition = parseFloat(scrollPosition) || 0;
 
-		// If the target scroll position is beyond the maximum scroll height, set it to the maximum scroll height
-		navigate('/researcher', {
-			state: {
-				Index: index,
-			},
-		});
+		await navigateResearcher();
 
-		setTimeout(() => {
-			window.scrollTo({ top: targetScrollPosition });
-		}, 150);
+		window.scrollTo({ top: targetScrollPosition });
 
 		console.log(targetScrollPosition);
 	}, [location.pathname]);

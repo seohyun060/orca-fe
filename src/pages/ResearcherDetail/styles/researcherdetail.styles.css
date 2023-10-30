@@ -130,10 +130,19 @@
   align-self: end;
 }
 .researcherdetail-profile-icon div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
-  background: var(--Light-gray, #f0f0f0);
+  position: relative;
+  background-color: black;
+  z-index: 5;
   margin-right: 10px;
+}
+.researcherdetail-profile-icon div img {
+  width: 57%;
+  height: 57%;
 }
 .researcherdetail-profile-icon:hover {
   cursor: pointer;
@@ -302,19 +311,6 @@
     line-height: 28px; /* 175% */
     align-self: end;
   }
-  .researcherdetail-profile-icon {
-    grid-area: icons;
-    display: flex;
-    flex-direction: row;
-    height: 30px;
-    align-self: end;
-  }
-  .researcherdetail-profile-icon div {
-    width: 30px;
-    height: 30px;
-    background: var(--Light-gray, #f0f0f0);
-    margin-right: 10px;
-  }
   .researcherdetail-biography {
     width: 900px;
     margin: auto;
@@ -450,19 +446,6 @@
     font-weight: 300;
     line-height: 28px; /* 175% */
     align-self: end;
-  }
-  .researcherdetail-profile-icon {
-    grid-area: icons;
-    display: flex;
-    flex-direction: row;
-    height: 30px;
-    align-self: end;
-  }
-  .researcherdetail-profile-icon div {
-    width: 30px;
-    height: 30px;
-    background: var(--Light-gray, #f0f0f0);
-    margin-right: 10px;
   }
   .researcherdetail-biography {
     width: 700px;
@@ -617,7 +600,6 @@
   .researcherdetail-profile-icon div {
     width: 20px;
     height: 20px;
-    background: var(--Light-gray, #f0f0f0);
     margin-right: 10px;
   }
   .researcherdetail-biography {

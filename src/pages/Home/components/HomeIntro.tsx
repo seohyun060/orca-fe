@@ -30,6 +30,7 @@ const HomeIntro = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 							className='email'
 							placeholder={t('email_placeholder')}
 							onChange={onChangeEmail}
+							type='email'
 							required
 							value={email}
 						></input>

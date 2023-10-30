@@ -885,7 +885,10 @@
   -webkit-user-select: none;
   user-select: none;
 }
-.EventBoxSlide.Insight {
+.EventBoxSlide.InsightEmpty > div {
+  margin-right: 20px;
+}
+.EventBoxSlide.InsightFull {
   justify-content: space-between;
 }
 

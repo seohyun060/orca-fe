@@ -1,5 +1,6 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import moment from "moment";
 
 import "../styles/home.styles.scss";
 import { useTranslation } from "react-i18next";
@@ -14,16 +15,15 @@ const HomeEvents = () => {
   const [comingEventsData, setComingEventsData] = useState([]);
 
   useEffect(() => {
-    getAllEventData(false).then((data) => {
+    getAllEventData().then((data) => {
+      const today = moment(new Date());
       let coming = [];
-
       data.data.map((event) => {
-        if (event.dday >= 0) {
+        if (today.isSameOrBefore(event.endDate)) {
           coming.push(event);
         }
       });
       coming = coming.sort((a, b) => a.dday - b.dday);
-      console.log(coming);
       setComingEventsData(coming);
     });
   }, []);
@@ -42,7 +42,7 @@ const HomeEvents = () => {
           {t("view_all")}
         </button>
       </div>
-      <EventBoxSlide inEvent={false} eventsData={comingEventsData}/>
+      <EventBoxSlide inEvent={false} eventsData={comingEventsData} />
     </section>
   );
 };

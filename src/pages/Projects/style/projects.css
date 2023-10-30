@@ -702,7 +702,7 @@
   line-height: 32px;
   margin-bottom: 6px;
   overflow: hidden;
-  white-space: normal;
+  white-space: nowrap;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;

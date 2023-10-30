@@ -19,6 +19,7 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 					<input
 						placeholder={t('input_email')}
 						onChange={onChangeEmail}
+						type='email'
 						required
 						value={email}
 					></input>

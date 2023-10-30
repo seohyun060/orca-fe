@@ -30,7 +30,7 @@
 	&-logo {
 		position: absolute;
 		width: 6.4%;
-		left: 15%;
+		left: 14.3%;
 	}
 	&-logo:hover {
 		cursor: pointer;
@@ -61,7 +61,7 @@
 	.gnb-tiny {
 		position: absolute;
 		width: 2.7%;
-		left: 21.75%;
+		left: 21%;
 		top: 17px;
 		color: var(--Dark-gray, white);
 		text-align: center;
@@ -268,8 +268,8 @@
 		position: fixed;
 		z-index: 100;
 		&-logo {
-			left: 16.5%;
-			width: 110px;
+			left: 15.5%;
+			//width: 110px;
 		}
 		&-menu {
 			width: 454px;

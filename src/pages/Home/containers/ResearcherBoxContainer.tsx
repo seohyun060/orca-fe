@@ -47,15 +47,7 @@ const ResearcherBoxContainer = ({
 	);
 	const totalPage = Math.ceil(totalPosts / 3);
 	const [goTransition, setGoTransition] = useState(true);
-
-	useEffect(() => {
-		if (index === 31) {
-			setBoxType(3);
-		} else if (index > 23) {
-			setBoxType(2);
-		} else if (index % 8 === 7) {
-			setBoxType(1);
-		}
+	const handleResize = useCallback(() => {
 		if (black == '') {
 			if (index < 16) {
 				if (index % 8 < 4) {
@@ -93,6 +85,18 @@ const ResearcherBoxContainer = ({
 				}
 			}
 		}
+	}, [window.innerWidth, topPosition, leftPosition]);
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+		if (index === 31) {
+			setBoxType(3);
+		} else if (index > 23) {
+			setBoxType(2);
+		} else if (index % 8 === 7) {
+			setBoxType(1);
+		}
+
 		const newDotList = [];
 		for (let i = 1; i <= totalPage; i++) {
 			if (i === currentPage) {
@@ -102,16 +106,7 @@ const ResearcherBoxContainer = ({
 			}
 		}
 		setDotList(newDotList);
-	}, [
-		black,
-		index,
-		currentPage,
-		totalPage,
-		boxType,
-		topPosition,
-		leftPosition,
-		window.innerWidth,
-	]);
+	}, [black, index, currentPage, totalPage, boxType, window.innerWidth]);
 
 	const onBackClick = useCallback(
 		(e: React.MouseEvent<HTMLImageElement>) => {

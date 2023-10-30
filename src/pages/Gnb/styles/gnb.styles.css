@@ -20,7 +20,7 @@
 .gnb-logo {
   position: absolute;
   width: 6.4%;
-  left: 15%;
+  left: 14.3%;
 }
 .gnb-logo:hover {
   cursor: pointer;
@@ -58,7 +58,7 @@
 .gnb .gnb-tiny, .gnb-white .gnb-tiny {
   position: absolute;
   width: 2.7%;
-  left: 21.75%;
+  left: 21%;
   top: 17px;
   color: var(--Dark-gray, white);
   text-align: center;
@@ -282,8 +282,7 @@
     z-index: 100;
   }
   .gnb-logo {
-    left: 16.5%;
-    width: 110px;
+    left: 15.5%;
   }
   .gnb-menu {
     width: 454px;

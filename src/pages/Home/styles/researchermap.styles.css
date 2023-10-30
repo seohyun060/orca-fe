@@ -239,6 +239,7 @@
   grid-area: body;
 }
 .researcher-map-black .country0 .researchers-body .researcher-card, .researcher-map-black .country3 .researchers-body .researcher-card, .researcher-map-black .country2 .researchers-body .researcher-card, .researcher-map-black .country1 .researchers-body .researcher-card {
+  position: relative;
   width: 211px;
   height: 108px;
   display: flex;
@@ -255,17 +256,21 @@
   width: 45%;
   height: -moz-fit-content;
   height: fit-content;
+  max-height: 70%;
   align-self: end;
   word-wrap: break-word;
+  overflow: hidden;
   margin-left: 8px;
+  text-overflow: ellipsis;
+  margin-top: 8px;
   margin-bottom: 8px;
   color: black;
-  font-size: 15;
+  font-size: 14px;
   font-family: Pretendard;
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  line-height: 20px;
+  line-height: 17px;
   letter-spacing: normal;
 }
 .researcher-map-black .country0 .researchers-go, .researcher-map-black .country3 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country1 .researchers-go {

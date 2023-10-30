@@ -67,10 +67,10 @@ const ResearcherBoxContainer = ({
 				}
 			} else {
 				if (index % 8 < 4) {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-131%');
+					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
 					setLeftPosition('100%');
 				} else {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-131%');
+					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			}
@@ -85,10 +85,10 @@ const ResearcherBoxContainer = ({
 				}
 			} else {
 				if (index % 8 < 4) {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-131%');
+					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
 					setLeftPosition('100%');
 				} else {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-131%');
+					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			}

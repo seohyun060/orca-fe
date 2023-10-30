@@ -87,7 +87,7 @@ export default function EventCard(props) {
         <div className="EventCardPeriod">
           <div className="EventCardMonth">{monthNames[start.getMonth()]}</div>
           <div className="EventCardDday">
-            {dday ? "Day - " + dday : "D-day"}
+            {dday > 0 ? "Day - " + dday : "D-day"}
           </div>
         </div>
         <div className="EventCardDate">
@@ -121,7 +121,9 @@ export default function EventCard(props) {
     >
       <div className="EventCardPeriod">
         <div className="EventCardMonth">{monthNames[start.getMonth()]}</div>
-        <div className="EventCardDday">{dday ? "Day - " + dday : "D-day"}</div>
+        <div className="EventCardDday">
+          {dday > 0 ? "Day - " + dday : "D-day"}
+        </div>
       </div>
       <div className="EventCardDate">
         {moment(start).format("YYYY.M.D") !== moment(end).format("YYYY.M.D")

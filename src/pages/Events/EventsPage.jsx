@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import moment from "moment";
 
-// import { ReactComponent as pagingBar } from 'src/assets/images/paging_bar';
 import "./style/events.css";
 import EventCard from "./components/EventCard";
 import EventBoxSlide from "./components/EventBoxSlide";
@@ -39,16 +39,20 @@ const EventsPage = (props) => {
   };
 
   useEffect(() => {
-    getAllEventData(false).then((data) => {
-      let coming = data.data
-      coming = coming.sort((a, b) => (a.dday - b.dday))
-      console.log(coming)
+    getAllEventData().then((data) => {
+      const today = moment(new Date());
+      let coming = [];
+      let past = [];
+      data.data.map((event) => {
+        if (today.isSameOrBefore(event.endDate)) {
+          coming.push(event);
+        } else {
+          past.push(event);
+        }
+      });
+      past = past.sort((a, b) => b.dday - a.dday);
+      coming = coming.sort((a, b) => a.dday - b.dday);
       setComingEventsData(coming);
-    });
-    getAllEventData(true).then((data) => {
-      let past = data.data
-      past = past.sort((a, b) => (a.dday - b.dday))
-      console.log(past)
       setPastEventsData(past);
     });
   }, []);
@@ -58,7 +62,11 @@ const EventsPage = (props) => {
       <section className="Section">
         <div className="SectionTitle">{t("events")}</div>
         <div className="SubPhrase">{t("events_phrase")}</div>
-        {comingEventsData ? <EventBoxSlide inEvent={true} eventsData={comingEventsData} /> : <></>}
+        {comingEventsData ? (
+          <EventBoxSlide inEvent={true} eventsData={comingEventsData} />
+        ) : (
+          <></>
+        )}
       </section>
       <section className="Section">
         <div className="SectionTitle">{t("past_events")}</div>

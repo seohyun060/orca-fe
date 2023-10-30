@@ -111,7 +111,7 @@ circle {
 .EventCardHoverAction {
   display: flex;
   position: absolute;
-  width: inherit;
+  width: 582px;
   height: 278px;
   opacity: 0;
 }
@@ -143,7 +143,7 @@ circle {
 }
 
 .EventCardImage {
-  width: 584px;
+  width: 582px;
   height: 278px;
   flex-shrink: 0;
   background: #717171;
@@ -156,6 +156,7 @@ circle {
   justify-content: space-between;
 }
 .EventCardPeriod.Past {
+  width: 100%;
   height: 94px;
   padding: 10px;
   flex-direction: column;
@@ -200,6 +201,7 @@ circle {
 
 .EventCardTitle {
   color: #fff;
+  height: 50px;
   font-family: Pretendard;
   font-size: 22px;
   font-style: normal;
@@ -207,9 +209,14 @@ circle {
   line-height: 25px;
   margin-left: 4px;
   margin-bottom: 30px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .EventCardTitle.InEvent {
-  height: 205px;
+  height: 200px;
+  -webkit-line-clamp: 8;
 }
 .EventCardTitle.Past {
   color: #000;
@@ -258,19 +265,23 @@ circle {
 
 .EventInformation {
   display: flex;
+  margin-top: 10px;
 }
 
 .EventImage {
-  margin-top: 9px;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin-right: 20px;
   width: 432px;
-  height: 402px;
+  height: 405px;
   flex-shrink: 0;
-  background: rgb(113, 113, 113);
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(200, 200, 200);
 }
 
 .EventTitle {
   width: 736px;
+  height: 180px;
   color: #000;
   font-family: Pretendard;
   font-size: 55px;
@@ -278,6 +289,11 @@ circle {
   font-weight: 600;
   line-height: 60px;
   margin-bottom: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .EventPeriod {
@@ -297,6 +313,11 @@ circle {
 .EventTime :first-child,
 .EventWebsite :first-child {
   margin-right: 30px;
+}
+.EventVenue .DescriptFont,
+.EventTime .DescriptFont,
+.EventWebsite .DescriptFont {
+  position: absolute;
 }
 
 .EventPurpose {
@@ -324,6 +345,7 @@ circle {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 70px;
+  height: 200px;
 }
 
 .EventCarouselImages {
@@ -334,6 +356,7 @@ circle {
 }
 
 .EventCarouselSlide {
+  width: inherit;
   display: flex;
   justify-content: center;
   transform: translate(0px);
@@ -344,6 +367,16 @@ circle {
   width: 1066px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.ImageEmpty {
+  width: inherit;
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: center;
 }
 
 .EventMap {
@@ -413,6 +446,7 @@ circle {
     margin-right: 20px;
   }
   .EventCardHoverAction {
+    width: 438px;
     height: 210px;
   }
   .EventCardHoverAction:hover div {
@@ -420,7 +454,7 @@ circle {
     height: 44px;
   }
   .EventCardImage {
-    width: 440px;
+    width: 438px;
     height: 210px;
   }
   .EventCardPeriod.Past {
@@ -436,6 +470,7 @@ circle {
   }
   .EventCardTitle.InEvent {
     height: 150px;
+    -webkit-line-clamp: 6;
   }
   .EventInformation .SubtitleFont {
     font-size: 22px;
@@ -455,10 +490,11 @@ circle {
   }
   .EventImage {
     width: 324px;
-    height: 301px;
+    height: 303px;
   }
   .EventTitle {
     width: 556px;
+    height: 135px;
     font-size: 41px;
     line-height: 45px;
     margin-bottom: 30px;
@@ -534,6 +570,7 @@ circle {
     margin-right: 20px;
   }
   .EventCardHoverAction {
+    width: 338px;
     height: 157px;
   }
   .EventCardHoverAction:hover div {
@@ -542,7 +579,7 @@ circle {
     font-size: 15px;
   }
   .EventCardImage {
-    width: 340px;
+    width: 100%;
     height: 157px;
   }
   .EventCardPeriod.Past {
@@ -569,12 +606,14 @@ circle {
   }
   .EventCardTitle {
     font-size: 17px;
+    height: 39px;
     line-height: 19.5px;
     margin-left: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   .EventCardTitle.InEvent {
     height: 120px;
+    -webkit-line-clamp: 5;
   }
   .EventCardTitle.Past {
     font-size: 16px;
@@ -599,10 +638,11 @@ circle {
   }
   .EventImage {
     width: 252px;
-    height: 234px;
+    height: 242px;
   }
   .EventTitle {
     width: 428px;
+    height: 105px;
     font-size: 32px;
     line-height: 35px;
     margin-bottom: 18px;
@@ -679,6 +719,9 @@ circle {
     width: 5px;
     height: 9px;
   }
+  .EventBox__past {
+    display: block;
+  }
   .EventCard {
     width: 163px;
     height: 103px;
@@ -691,7 +734,10 @@ circle {
     height: 225px;
   }
   .EventCard.Past img {
-    width: 350px;
+    width: 348px;
+  }
+  .EventCardHoverAction {
+    width: 348px;
   }
   .EventCardPeriod.Past {
     height: 120px;
@@ -712,13 +758,16 @@ circle {
     margin-bottom: 5px;
   }
   .EventCardTitle {
+    height: 22px;
     font-size: 9.5px;
     line-height: 11px;
     margin-left: 2px;
-    margin-bottom: 5.5px;
+    margin-bottom: 10px;
   }
   .EventCardTitle.InEvent {
-    height: 80px;
+    height: 66px;
+    -webkit-line-clamp: 6;
+    margin-bottom: 15px;
   }
   .EventCardTitle.Coming {
     margin: 15px 0px;
@@ -751,6 +800,7 @@ circle {
   }
   .EventTitle {
     width: 214px;
+    height: 45px;
     font-size: 16px;
     line-height: 15px;
     margin-bottom: 9px;
@@ -766,7 +816,7 @@ circle {
   .EventTime,
   .EventWebsite {
     height: 14px;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
   }
   .EventVenue :first-child,
   .EventTime :first-child,

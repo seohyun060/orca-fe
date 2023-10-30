@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import "../styles/home.styles.css";
 import ProjectCard from "../../Projects/components/ProjectCard";
 
-import { getAllProjectData, getSeletedProjectData } from "src/api/projectsAPI";
+import { getSeletedProjectData } from "src/api/projectsAPI";
 
 const HomeProjects = () => {
   const navigate = useNavigate();

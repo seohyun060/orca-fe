@@ -1,3 +1,16 @@
+.ErrorHandlingPage {
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  align-items: center;
+
+  font-family: Pretendard;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 300px;
+}
+
 // Projects //////////////////////////////////////////////////////////////////////
 
 .Projects {
@@ -333,6 +346,7 @@
     font-style: normal;
     font-weight: 300;
     line-height: 28px;
+    white-space: pre-line;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -357,7 +371,6 @@
 
 .ProjectCondition {
   margin-top: 40px;
-
   button {
     margin-top: 10px;
     // width: 249px;
@@ -397,8 +410,9 @@
 .StudyInformation {
   grid-column-start: 2;
   grid-row-start: 1;
+  grid-row-end: span 2;
   width: 432px;
-  height: 496px;
+  height: fit-content;
   flex-shrink: 0;
   border: 1px solid var(--Dark-gray, #3c3c3c);
   padding-top: 5px;
@@ -434,6 +448,25 @@
 
   .ArticleTitle {
     margin-bottom: 20px;
+  }
+}
+
+.CreteriaInformation {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-end: span 4;
+
+  width: 432px;
+  height: fit-content;
+  flex-shrink: 0;
+  border: 1px solid var(--Dark-gray, #3c3c3c);
+  padding-top: 5px;
+  padding-bottom: 11px;
+  margin-top: 88px;
+  margin-left: 24px;
+
+  .Information {
+    margin: 30px 0px 30px 44px;
   }
 }
 
@@ -474,12 +507,13 @@
   }
 
   td {
+    vertical-align: super;
     width: 30%;
     border: 1px solid #000;
   }
 
   .element {
-    height: 161px;
+    min-height: 161px;
     flex-shrink: 0;
     resize: none;
     padding: 9px 10px;
@@ -1063,7 +1097,7 @@
     padding: 20px 0px;
     font-size: 20px;
     line-height: 24px;
-  
+
     .element {
       // height: 161px;
       // padding: 9px 10px;
@@ -1389,7 +1423,7 @@
     padding: 20px 0px;
     font-size: 15px;
     line-height: 20px;
-  
+
     .element {
       // height: 161px;
       // padding: 9px 10px;

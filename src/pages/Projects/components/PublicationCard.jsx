@@ -33,7 +33,7 @@ const PublicationCard = (props) => {
 		<article
 			className='PublicationCard'
 			onClick={() => {
-				window.location.href = link;
+				window.location.href = "http://www.naver.com";
 			}}
 		>
 			<div className='PublicationCardTitle'>{title}</div>

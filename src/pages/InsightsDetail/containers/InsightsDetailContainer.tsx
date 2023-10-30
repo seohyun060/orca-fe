@@ -24,7 +24,11 @@ const InsightsDetailContainer = (props: Props) => {
 
 		return `${year}.${month}.${day}`;
 	}
-	const onBackClick = useCallback(() => {
+	const navigateInsight = useCallback(async () => {
+		navigate('/insights');
+	}, []);
+
+	const onBackClick = useCallback(async () => {
 		let scrollPosition = localStorage.getItem('scrollPosition');
 		localStorage.removeItem('scrollPosition');
 		if (!scrollPosition) {
@@ -34,11 +38,10 @@ const InsightsDetailContainer = (props: Props) => {
 		let targetScrollPosition = parseFloat(scrollPosition) || 0;
 
 		// If the target scroll position is beyond the maximum scroll height, set it to the maximum scroll height
-		navigate('/insights');
+		//navigate('/insights');
+		await navigateInsight();
 
-		setTimeout(() => {
-			window.scrollTo({ top: targetScrollPosition });
-		}, 150);
+		window.scrollTo({ top: targetScrollPosition });
 
 		console.log(targetScrollPosition);
 	}, [location.pathname]);

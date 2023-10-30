@@ -42,6 +42,8 @@ const images = {
 	picto1: '/assets/images/picto1.svg',
 	picto2: '/assets/images/picto2.svg',
 	picto3: '/assets/images/picto3.svg',
+	linkedin: '/assets/images/linkedin.svg',
+	twitter: '/assets/images/twitter.svg',
 };
 
 export default images;

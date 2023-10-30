@@ -93,7 +93,7 @@ export default function ProjectCard(props) {
       </div>
       <div className="RowBox">
         <p className="ProjectCardLocation">
-          {t("locaion")} : {location}
+          {t("locaion")} : {location ? location : "Unknown"}
         </p>
         <button
           className="ReadMoreButton"

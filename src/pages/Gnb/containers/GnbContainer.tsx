@@ -15,7 +15,7 @@ const GnbContainer = ({ location }: Props) => {
 		},
 		{
 			label: 'Researcher',
-			path: '/researcher',
+			path: '/researchers',
 		},
 		{
 			label: 'Projects',
@@ -51,13 +51,11 @@ const GnbContainer = ({ location }: Props) => {
 	}, []);
 
 	const onItemClicked = useCallback(
-		(path: string) => {
-			if (path === '/custom') {
-				return;
-			}
+		async (path: string) => {
 			setSelectedTab(path);
 
 			navigate(path);
+
 			window.scrollTo(0, 0);
 		},
 		[selectedTab],
@@ -65,6 +63,12 @@ const GnbContainer = ({ location }: Props) => {
 	const updateScroll = () => {
 		setScrollPosition(window.scrollY || document.documentElement.scrollTop);
 	};
+	const onSideJoinUsClicked = useCallback(async (path: string) => {
+		await onItemClicked(path);
+		if (path === '/') {
+			window.scrollTo(0, 900);
+		}
+	}, []);
 
 	const gnbColorHandler = useCallback(() => {
 		if (`/${route}` == '/') {
@@ -79,7 +83,7 @@ const GnbContainer = ({ location }: Props) => {
 			} else {
 				setGnbColor('');
 			}
-		} else if (`/${route}` == '/researcher') {
+		} else if (location === '/researchers') {
 			if (window.innerWidth > 1400) {
 				if (scrollPosition > 1080) {
 					setGnbColor('-white');
@@ -107,7 +111,7 @@ const GnbContainer = ({ location }: Props) => {
 			}
 		} else if (`/${route}` == '/projects') {
 			setGnbColor('-white');
-		} else if (`/${route}` == '/researcherdetail') {
+		} else if (location.includes('/researchers')) {
 			setGnbColor('-white');
 		} else if (`/${route}` == '/insights') {
 			setGnbColor('-white');
@@ -157,6 +161,7 @@ const GnbContainer = ({ location }: Props) => {
 				onGlobeClicked={onGlobeClicked}
 				setLanguage={setLanguage}
 				i18n={i18n}
+				onSideJoinUsClicked={onSideJoinUsClicked}
 			/>
 		</div>
 	);

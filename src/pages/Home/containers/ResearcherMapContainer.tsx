@@ -97,7 +97,7 @@ const ResearcherMapContainer = ({ route }: Props) => {
 	}, [route]);
 
 	useEffect(() => {
-		if (route === 'researcher') {
+		if (route === 'researchers') {
 			setBlack('-black');
 		} else {
 			setBlack('');

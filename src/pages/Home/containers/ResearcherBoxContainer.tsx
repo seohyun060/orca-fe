@@ -51,36 +51,36 @@ const ResearcherBoxContainer = ({
 		if (black == '') {
 			if (index < 16) {
 				if (index % 8 < 4) {
-					setTopPosition('-22%');
-					setLeftPosition('100%');
+					setTopPosition('-45%');
+					setLeftPosition('110%');
 				} else {
-					setTopPosition('-22%');
+					setTopPosition('-45%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			} else {
 				if (index % 8 < 4) {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
-					setLeftPosition('100%');
+					setTopPosition('-60%');
+					setLeftPosition('110%');
 				} else {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
+					setTopPosition('-60%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			}
 		} else {
 			if (index < 16) {
 				if (index % 8 < 4) {
-					setTopPosition('-42%');
-					setLeftPosition('100%');
+					setTopPosition('-45%');
+					setLeftPosition('110%');
 				} else {
-					setTopPosition('-42%');
+					setTopPosition('-45%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			} else {
 				if (index % 8 < 4) {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
-					setLeftPosition('100%');
+					setTopPosition('-60%');
+					setLeftPosition('110%');
 				} else {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
+					setTopPosition('-60%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			}
@@ -88,6 +88,7 @@ const ResearcherBoxContainer = ({
 	}, [window.innerWidth, topPosition, leftPosition]);
 
 	useEffect(() => {
+		handleResize();
 		window.addEventListener('resize', handleResize);
 		if (index === 31) {
 			setBoxType(3);

@@ -51,10 +51,10 @@ const ResearcherBoxContainer = ({
 		if (black == '') {
 			if (index < 16) {
 				if (index % 8 < 4) {
-					setTopPosition('-45%');
+					setTopPosition('-40%');
 					setLeftPosition('110%');
 				} else {
-					setTopPosition('-45%');
+					setTopPosition('-40%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			} else {
@@ -69,10 +69,10 @@ const ResearcherBoxContainer = ({
 		} else {
 			if (index < 16) {
 				if (index % 8 < 4) {
-					setTopPosition('-45%');
+					setTopPosition('-40%');
 					setLeftPosition('110%');
 				} else {
-					setTopPosition('-45%');
+					setTopPosition('-40%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			} else {

@@ -20,7 +20,10 @@ const Home = ({ route, mainBanner }: Props) => {
 	return (
 		<div className='home'>
 			<div className='home-anime'>
-				<img src={mainBanner} />
+				{/* <img src={mainBanner} /> */}
+				<video autoPlay loop muted>
+					<source src={mainBanner} type='video/mp4' />
+				</video>
 			</div>
 			<HomeIntroContainer />
 			<HomeResearcherContainer route={route} />

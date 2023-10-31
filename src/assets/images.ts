@@ -39,6 +39,7 @@ const images = {
 	gnb_back_b: '/assets/images/gnb-back-b.svg',
 	logo_gif: '/assets/images/logo-gif.gif',
 	logo_gif2: '/assets/images/logo-gif2.gif',
+	logo_mp4: '/assets/images/logo-mp4.mp4',
 	picto1: '/assets/images/picto1.svg',
 	picto2: '/assets/images/picto2.svg',
 	picto3: '/assets/images/picto3.svg',

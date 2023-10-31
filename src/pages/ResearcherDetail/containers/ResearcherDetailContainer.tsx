@@ -78,7 +78,7 @@ const ResearcherDetailContainer = ({}: Props) => {
 		});
 		return () => {};
 	}, []);
-	console.log(biography);
+	console.log(publication);
 	return (
 		<>
 			{profile ? (

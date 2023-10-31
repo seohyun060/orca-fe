@@ -33,7 +33,9 @@ const PublicationCard = (props) => {
 		<article
 			className='PublicationCard'
 			onClick={() => {
-				window.location.href = "http://www.naver.com";
+				if (link.includes('https://') || link.includes('http://')) {
+					window.location.href = link;
+				}
 			}}
 		>
 			<div className='PublicationCardTitle'>{title}</div>

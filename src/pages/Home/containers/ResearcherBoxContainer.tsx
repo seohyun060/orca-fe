@@ -51,18 +51,18 @@ const ResearcherBoxContainer = ({
 		if (black == '') {
 			if (index < 16) {
 				if (index % 8 < 4) {
-					setTopPosition('-40%');
+					setTopPosition('-30%');
 					setLeftPosition('110%');
 				} else {
-					setTopPosition('-40%');
+					setTopPosition('-30%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			} else {
 				if (index % 8 < 4) {
-					setTopPosition('-60%');
+					setTopPosition('-70%');
 					setLeftPosition('110%');
 				} else {
-					setTopPosition('-60%');
+					setTopPosition('-70%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			}
@@ -77,10 +77,10 @@ const ResearcherBoxContainer = ({
 				}
 			} else {
 				if (index % 8 < 4) {
-					setTopPosition('-60%');
+					setTopPosition('-70%');
 					setLeftPosition('110%');
 				} else {
-					setTopPosition('-60%');
+					setTopPosition('-70%');
 					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
 				}
 			}

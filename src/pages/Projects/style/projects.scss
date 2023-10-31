@@ -553,6 +553,9 @@
 		gap: 10px;
 		margin-right: 24px;
 		background: var(--Light-gray, #f0f0f0);
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
 	.SeparateLine {

@@ -120,7 +120,7 @@ const GnbContainer = ({ location }: Props) => {
 		} else if (`/${route}` == '/insightsdetail') {
 			setGnbColor('-white');
 		}
-	}, [scrollPosition, route]);
+	}, [scrollPosition, location, route]);
 
 	const onLanguageClicked = useCallback(() => {
 		if (language === 'Kr') {
@@ -144,7 +144,7 @@ const GnbContainer = ({ location }: Props) => {
 		// 	setMobile(false);
 		// }
 		//console.log(mobile);
-	}, [scrollPosition, route]);
+	}, [scrollPosition, route, location]);
 	return (
 		<div>
 			<Gnb

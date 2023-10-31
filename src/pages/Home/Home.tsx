@@ -20,8 +20,8 @@ const Home = ({ route, mainBanner }: Props) => {
 	return (
 		<div className='home'>
 			<div className='home-anime'>
-				{/* <img src={mainBanner} /> */}
 				<video autoPlay loop muted>
+					{/* <source src={images.logo_mp4} type='video/mp4' /> */}
 					<source src={mainBanner} type='video/mp4' />
 				</video>
 			</div>

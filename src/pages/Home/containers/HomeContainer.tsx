@@ -19,9 +19,7 @@ const HomeContainer = ({ location }: Props) => {
 		return () => {};
 	}, []);
 	return (
-		<>
-			<Home route={route} mainBanner={mainBanner} />
-		</>
+		<>{mainBanner ? <Home route={route} mainBanner={mainBanner} /> : ''}</>
 	);
 };
 

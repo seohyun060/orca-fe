@@ -255,12 +255,16 @@ circle {
 }
 
 .DescriptFont {
+  position: relative;
   color: #000;
   font-family: Pretendard;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 100px;
   white-space: pre-line;
 }
 
@@ -315,11 +319,6 @@ circle {
 .EventWebsite :first-child {
   margin-right: 30px;
 }
-.EventVenue .DescriptFont,
-.EventTime .DescriptFont,
-.EventWebsite .DescriptFont {
-  position: absolute;
-}
 
 .EventPurpose {
   width: 62%;
@@ -346,13 +345,14 @@ circle {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 70px;
-  height: 200px;
+  height: 100%;
 }
 
 .EventCarouselImages {
   display: flex;
   margin: 0px 53px;
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   overflow: hidden;
 }
 

@@ -47,8 +47,49 @@ const ResearcherBoxContainer = ({
 	);
 	const totalPage = Math.ceil(totalPosts / 3);
 	const [goTransition, setGoTransition] = useState(true);
+	const handleResize = useCallback(() => {
+		if (black == '') {
+			if (index < 16) {
+				if (index % 8 < 4) {
+					setTopPosition('-45%');
+					setLeftPosition('110%');
+				} else {
+					setTopPosition('-45%');
+					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
+				}
+			} else {
+				if (index % 8 < 4) {
+					setTopPosition('-60%');
+					setLeftPosition('110%');
+				} else {
+					setTopPosition('-60%');
+					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
+				}
+			}
+		} else {
+			if (index < 16) {
+				if (index % 8 < 4) {
+					setTopPosition('-45%');
+					setLeftPosition('110%');
+				} else {
+					setTopPosition('-45%');
+					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
+				}
+			} else {
+				if (index % 8 < 4) {
+					setTopPosition('-60%');
+					setLeftPosition('110%');
+				} else {
+					setTopPosition('-60%');
+					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
+				}
+			}
+		}
+	}, [window.innerWidth, topPosition, leftPosition]);
 
 	useEffect(() => {
+		handleResize();
+		window.addEventListener('resize', handleResize);
 		if (index === 31) {
 			setBoxType(3);
 		} else if (index > 23) {
@@ -56,43 +97,7 @@ const ResearcherBoxContainer = ({
 		} else if (index % 8 === 7) {
 			setBoxType(1);
 		}
-		if (black == '') {
-			if (index < 16) {
-				if (index % 8 < 4) {
-					setTopPosition('-22%');
-					setLeftPosition('100%');
-				} else {
-					setTopPosition('-22%');
-					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
-				}
-			} else {
-				if (index % 8 < 4) {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
-					setLeftPosition('100%');
-				} else {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
-					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
-				}
-			}
-		} else {
-			if (index < 16) {
-				if (index % 8 < 4) {
-					setTopPosition('-42%');
-					setLeftPosition('100%');
-				} else {
-					setTopPosition('-42%');
-					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
-				}
-			} else {
-				if (index % 8 < 4) {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
-					setLeftPosition('100%');
-				} else {
-					setTopPosition(window.innerWidth < 768 ? '-270%' : '-71%');
-					setLeftPosition(window.innerWidth < 768 ? '-280%' : '-165%');
-				}
-			}
-		}
+
 		const newDotList = [];
 		for (let i = 1; i <= totalPage; i++) {
 			if (i === currentPage) {
@@ -102,16 +107,7 @@ const ResearcherBoxContainer = ({
 			}
 		}
 		setDotList(newDotList);
-	}, [
-		black,
-		index,
-		currentPage,
-		totalPage,
-		boxType,
-		topPosition,
-		leftPosition,
-		window.innerWidth,
-	]);
+	}, [black, index, currentPage, totalPage, boxType, window.innerWidth]);
 
 	const onBackClick = useCallback(
 		(e: React.MouseEvent<HTMLImageElement>) => {

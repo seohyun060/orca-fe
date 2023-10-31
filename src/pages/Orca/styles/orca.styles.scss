@@ -402,10 +402,19 @@
 			height: 300px;
 			.orca-banner {
 				height: 300px;
-				display: none;
+				width: 767px;
+				overflow: hidden;
+				//position: relative;
+				//display: none;
+				//left: -90px;
 			}
 			.banner-curtain {
 				height: 300px;
+				background: linear-gradient(
+					90deg,
+					rgba(0, 0, 0, 0.8) 10%,
+					rgba(0, 0, 0, 0) 100%
+				);
 			}
 		}
 		&-what {

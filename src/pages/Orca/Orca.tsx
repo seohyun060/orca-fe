@@ -4,14 +4,21 @@ import { useTranslation } from 'react-i18next';
 import images from 'src/assets/images';
 type Props = {
 	orcaBanner: string;
+	mobileWidth: number;
 };
 
-const Orca = ({ orcaBanner }: Props) => {
+const Orca = ({ orcaBanner, mobileWidth }: Props) => {
 	const { t } = useTranslation();
 	return (
 		<div className='orca'>
 			<div className='orca-what-container'>
-				<img className='orca-banner' src={orcaBanner} />
+				<img
+					className='orca-banner'
+					src={orcaBanner}
+					style={{
+						left: mobileWidth < 768 ? mobileWidth - 768 : 0,
+					}}
+				/>
 				<div className='banner-curtain' />
 				<div className='orca-what'>
 					<div className='orca-what-box'>

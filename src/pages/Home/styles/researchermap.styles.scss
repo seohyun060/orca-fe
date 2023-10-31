@@ -109,11 +109,16 @@
 					}
 					span {
 						width: 45%;
+						//height: 60%;
 						height: fit-content;
+						max-height: 70%;
 						align-self: end;
 						word-wrap: break-word;
-						//margin-top: 72px;
+						overflow: hidden;
 						margin-left: 8px;
+						//white-space: nowrap;
+						text-overflow: ellipsis;
+						margin-top: 8px;
 						margin-bottom: 8px;
 						@include font-setting(white, 600, 15px, 20px);
 					}
@@ -364,12 +369,10 @@
 				height: 112.5px;
 			}
 			.researchers {
-				top: -24.9px;
-				left: 124.58px;
 				width: 186.5px;
-				height: 296.7px;
+				//height: 296.7px;
 				grid-template-columns: 13.6px 159.3px 13.6px;
-				grid-template-rows: 25px 259.7px 12.1px;
+				grid-template-rows: 25px fit-content 12.1px;
 				&-head {
 					grid-area: head;
 					//color: #fff;
@@ -389,7 +392,8 @@
 				}
 				&-body {
 					width: 159.3px;
-					height: 259.7px;
+					height: fit-content;
+					//height: 259.7px;
 					grid-area: body;
 					.researcher-card {
 						width: 159.3px;
@@ -451,12 +455,10 @@
 				height: 124.58px;
 			}
 			.researchers {
-				top: -24.9px;
-				left: 124.58px;
 				width: 186.5px;
-				height: 296.7px;
+				//height: 296.7px;
 				grid-template-columns: 13.6px 159.3px 13.6px;
-				grid-template-rows: 25px 259.7px 12.1px;
+				grid-template-rows: 25px fit-content 12.1px;
 				&-head {
 					grid-area: head;
 					color: #fff;
@@ -476,7 +478,7 @@
 				}
 				&-body {
 					width: 159.3px;
-					height: 259.7px;
+					height: fit-content;
 					grid-area: body;
 					.researcher-card {
 						width: 159.3px;
@@ -560,12 +562,10 @@
 				height: 96.9px;
 			}
 			.researchers {
-				top: -34.9px;
-				left: 94.58px;
 				width: 145px;
-				height: 230.7px;
+				//height: 230.7px;
 				grid-template-columns: 10.6px 123.9px 10.6px;
-				grid-template-rows: 19.4px 202px 9.4px;
+				grid-template-rows: 19.4px fit-content 9.4px;
 				&-head {
 					grid-area: head;
 					color: #fff;
@@ -583,13 +583,13 @@
 				}
 				&-body {
 					width: 124px;
-					height: 202px;
+					//height: 202px;
 					grid-area: body;
 					.researcher-card {
 						width: 124px;
 						height: 61px;
 						display: flex;
-						margin-bottom: 10px;
+						margin-bottom: 5px;
 						background-color: #fff;
 						img {
 							width: 54px;
@@ -659,12 +659,10 @@
 				height: 87.5px;
 			}
 			.researchers {
-				top: -34.9px;
-				left: 94.58px;
 				width: 145px;
-				height: 230.7px;
+				//height: 230.7px;
 				grid-template-columns: 10.6px 123.9px 10.6px;
-				grid-template-rows: 19.4px 202px 9.4px;
+				grid-template-rows: 19.4px fit-content 9.4px;
 				&-head {
 					grid-area: head;
 					//color: #fff;
@@ -682,13 +680,13 @@
 				}
 				&-body {
 					width: 124px;
-					height: 202px;
+					//height: 202px;
 					grid-area: body;
 					.researcher-card {
 						width: 124px;
 						height: 61px;
 						display: flex;
-						margin-bottom: 10px;
+						margin-bottom: 5px;
 						//background-color: #fff;
 						img {
 							width: 54px;
@@ -748,19 +746,18 @@
 				height: 43.75px;
 			}
 			.researchers {
-				width: 150px;
-				height: 174px; //1.69
-				top: -10.9px;
-				left: 56.58px;
-				grid-template-columns: 10px 130px 10px;
-				grid-template-rows: 14px 150px 10px;
+				width: 120px;
+				//height: 174px; //1.69
+
+				grid-template-columns: 10px 100px 10px;
+				grid-template-rows: 14px fit-content 10px;
 				&-head {
 					grid-area: head;
 					color: #fff;
-					width: px;
+					//width: px;
 					/* web. re.22 */
 					font-family: Pretendard;
-					font-size: 6px;
+					font-size: 11px;
 					font-style: normal;
 					font-weight: 400;
 					line-height: 15px; /* 127.273% */
@@ -768,34 +765,43 @@
 				&-back {
 					grid-area: back;
 					place-self: center center;
-					width: 10px;
+					width: 6px;
 				}
 				&-body {
-					width: 130px;
-					height: 150px;
+					width: 100px;
+					//height: 150px;
 					grid-area: body;
 					.researcher-card {
-						width: 130px;
-						height: 50px;
+						width: 100px;
+						height: 40px;
 						display: flex;
+						flex-direction: row;
 						margin-bottom: 3px;
 						background-color: #fff;
+						align-items: center;
+						//justify-content: center;
 						img {
-							width: 40px;
-							height: 40px;
+							width: 30px;
+							height: 30px;
 							margin-left: 5px;
 						}
 						span {
-							margin-bottom: 5px;
-							width: 60px;
-							@include font-setting(black, 600, 9px, 11px);
+							width: 55px;
+							height: fit-content;
+							//margin: auto;
+							//margin-bottom: 5px;
+
+							//text-align: center;
+							margin-left: 5px;
+							//margin: auto;
+							@include font-setting(black, 600, 8px, 9px);
 						}
 					}
 				}
 				&-go {
 					grid-area: go;
 					place-self: center center;
-					width: 10px;
+					width: 6px;
 				}
 				&-dot {
 					margin-left: 1px;
@@ -859,19 +865,18 @@
 					height: 43.75px;
 				}
 				.researchers {
-					width: 150px;
-					height: 174px; //1.69
-					top: -10.9px;
-					left: 56.58px;
-					grid-template-columns: 10px 130px 10px;
-					grid-template-rows: 14px 150px 10px;
+					width: 120px;
+					//height: 174px; //1.69
+
+					grid-template-columns: 10px 100px 10px;
+					grid-template-rows: 14px fit-content 10px;
 					&-head {
 						grid-area: head;
 						//color: #fff;
-						width: 90px;
+						//width: 90px;
 						/* web. re.22 */
 						font-family: Pretendard;
-						font-size: 9px;
+						font-size: 11px;
 						font-style: normal;
 						font-weight: 400;
 						line-height: 15px; /* 127.273% */
@@ -879,27 +884,36 @@
 					&-back {
 						grid-area: back;
 						place-self: center center;
-						width: 10px;
+						width: 6px;
 					}
 					&-body {
-						width: 130px;
-						height: 150px;
+						width: 100px;
+						//height: 150px;
 						grid-area: body;
 						.researcher-card {
-							width: 130px;
-							height: 50px;
+							width: 100px;
+							height: 40px;
 							display: flex;
 							margin-bottom: 3px;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
 							//background-color: #fff;
 							img {
-								width: 40px;
-								height: 40px;
+								width: 30px;
+								height: 30px;
 								margin-left: 5px;
 							}
 							span {
-								width: 60px;
-								margin-bottom: 5px;
-								@include font-setting(white, 600, 9px, 11px);
+								width: 55px;
+								height: fit-content;
+								//margin: auto;
+								//margin-bottom: 5px;
+
+								//text-align: center;
+								margin-left: 5px;
+								//margin: auto;
+								@include font-setting(white, 400, 8px, 9px);
 							}
 						}
 					}

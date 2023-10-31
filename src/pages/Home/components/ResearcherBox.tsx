@@ -88,7 +88,7 @@ const ResearcherBox = ({
 								className='researcher-card'
 								key={`${requestItem.name}`}
 								onClick={() => {
-									navigate(`/researcher/${requestItem.id}`);
+									navigate(`/researchers/${requestItem.id}`);
 								}}
 							>
 								<img src={requestItem.profile} />

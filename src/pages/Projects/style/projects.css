@@ -516,6 +516,9 @@
   margin-right: 24px;
   background: var(--Light-gray, #f0f0f0);
 }
+.CandIInfo .Link:hover {
+  cursor: pointer;
+}
 .CandIInfo .SeparateLine {
   margin: 0px 30px;
   flex-shrink: 0;

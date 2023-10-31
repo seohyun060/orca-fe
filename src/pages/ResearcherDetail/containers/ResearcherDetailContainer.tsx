@@ -52,8 +52,10 @@ const ResearcherDetailContainer = ({}: Props) => {
 		console.log(targetScrollPosition);
 	}, [location.pathname]);
 	const navgateSns = useCallback((link: string) => {
-		if (link) {
+		if (link && (link.includes('https://') || link.includes('http://'))) {
 			window.location.href = link;
+		} else {
+			alert('존재하지 않는 사이트입니다.');
 		}
 	}, []);
 

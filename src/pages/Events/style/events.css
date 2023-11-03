@@ -219,6 +219,7 @@ circle {
   -webkit-line-clamp: 8;
 }
 .EventCardTitle.Past {
+  display: block;
   color: #000;
   font-size: 30px;
   line-height: 35px;
@@ -299,6 +300,9 @@ circle {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+.EventTitle:hover {
+  display: block;
 }
 
 .EventPeriod {

@@ -40,7 +40,7 @@ const EventsPage = (props) => {
 
   useEffect(() => {
     getAllEventData().then((data) => {
-      const today = moment(new Date());
+      const today = moment(new Date()).startOf("day");
       let coming = [];
       let past = [];
       data.data.map((event) => {

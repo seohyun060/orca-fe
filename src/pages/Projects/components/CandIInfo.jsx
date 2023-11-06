@@ -11,7 +11,7 @@ const CandIInfo = (props) => {
 	return (
 		<div className='CandIInfo'>
 			<div
-				className='Link'
+				className={id ? "Link IsLink" : "Link"}
 				onClick={() => {
 					if (id) {
 						navigate(`/researchers/${id}`);

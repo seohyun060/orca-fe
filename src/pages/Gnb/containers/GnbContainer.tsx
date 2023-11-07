@@ -14,7 +14,7 @@ const GnbContainer = ({ location }: Props) => {
 			path: '/orca',
 		},
 		{
-			label: 'Researcher',
+			label: 'Researchers',
 			path: '/researchers',
 		},
 		{
@@ -147,22 +147,26 @@ const GnbContainer = ({ location }: Props) => {
 	}, [scrollPosition, route, location]);
 	return (
 		<div>
-			<Gnb
-				gnbColor={gnbColor}
-				tabTable={tabTable}
-				language={language}
-				route={route}
-				onLanguageClicked={onLanguageClicked}
-				onItemClicked={onItemClicked}
-				menuToggle={menuToggle}
-				onMenuToggleClicked={onMenuToggleClicked}
-				setMenuToggle={setMenuToggle}
-				globe={globe}
-				onGlobeClicked={onGlobeClicked}
-				setLanguage={setLanguage}
-				i18n={i18n}
-				onSideJoinUsClicked={onSideJoinUsClicked}
-			/>
+			{location !== '/error404' ? (
+				<Gnb
+					gnbColor={gnbColor}
+					tabTable={tabTable}
+					language={language}
+					route={route}
+					onLanguageClicked={onLanguageClicked}
+					onItemClicked={onItemClicked}
+					menuToggle={menuToggle}
+					onMenuToggleClicked={onMenuToggleClicked}
+					setMenuToggle={setMenuToggle}
+					globe={globe}
+					onGlobeClicked={onGlobeClicked}
+					setLanguage={setLanguage}
+					i18n={i18n}
+					onSideJoinUsClicked={onSideJoinUsClicked}
+				/>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

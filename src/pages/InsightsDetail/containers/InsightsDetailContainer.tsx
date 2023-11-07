@@ -47,11 +47,15 @@ const InsightsDetailContainer = (props: Props) => {
 	}, [location.pathname]);
 	useEffect(() => {
 		getInsightDetail(params.id).then((data) => {
-			console.log(data.data); // 나옴
-			setTitle(data.data.title);
-			setDate(new Date(data.data.createDate));
-			setType(data.data.category);
-			setLink(data.data.files);
+			if (data !== -1) {
+				console.log(data.data); // 나옴
+				setTitle(data.data.title);
+				setDate(new Date(data.data.createDate));
+				setType(data.data.category);
+				setLink(data.data.files);
+			} else {
+				navigate('/error404');
+			}
 		});
 		return () => {};
 	}, []);

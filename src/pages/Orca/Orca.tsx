@@ -22,7 +22,10 @@ const Orca = ({ orcaBanner, mobileWidth }: Props) => {
 				<div className='banner-curtain' />
 				<div className='orca-what'>
 					<div className='orca-what-box'>
-						<div className='orca-what-box-head'>{t('orca_introduce')}</div>
+						<div
+							className='orca-what-box-head'
+							dangerouslySetInnerHTML={{ __html: t('orca_introduce') }}
+						></div>
 						<div className='orca-what-box-about'>{t('orca_about')}</div>
 						<div className='orca-what-box-body'>{t('orca_what')}</div>
 					</div>

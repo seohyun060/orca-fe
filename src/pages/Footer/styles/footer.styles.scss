@@ -167,32 +167,28 @@
 
 			.ceo {
 				margin-right: 21px;
-
 				color: #000;
-
 				font-family: Pretendard;
-
 				font-size: 22px;
-
 				font-style: normal;
-
 				font-weight: 600;
-
 				line-height: 28px; /* 127.273% */
 			}
 
 			.kim {
 				color: #000;
-
 				font-family: Pretendard;
-
 				font-size: 22px;
-
 				font-style: normal;
-
 				font-weight: 400;
-
 				line-height: 28px; /* 127.273% */
+			}
+			.brtext {
+				@extend .ceo;
+				margin-left: 45px;
+			}
+			.brnumber {
+				@extend .kim;
 			}
 		}
 
@@ -570,7 +566,7 @@
 
 			grid-template-columns: 100px 100px 150px;
 
-			grid-template-rows: 1fr 1.4fr 1.75fr 1.25fr;
+			grid-template-rows: 1fr 1.15fr 1.75fr 1.25fr;
 
 			width: 350px;
 
@@ -610,6 +606,12 @@
 				.kim {
 					font-size: 11px;
 				}
+				.brtext {
+					display: none;
+				}
+				.brnumber {
+					display: none;
+				}
 			}
 
 			&-address {
@@ -620,7 +622,7 @@
 				margin-bottom: 0px;
 
 				.business {
-					margin-bottom: 10px;
+					margin-bottom: 3px;
 
 					font-size: 11px;
 				}
@@ -642,7 +644,7 @@
 				.number1 {
 					margin-bottom: -5px;
 
-					font-size: 11px;
+					font-size: 10.7px;
 				}
 
 				.number2 {
@@ -652,7 +654,7 @@
 				.email1 {
 					margin-bottom: -5px;
 
-					font-size: 12px;
+					font-size: 11px;
 				}
 
 				.email2 {
@@ -662,7 +664,7 @@
 				.fax1 {
 					margin-bottom: -5px;
 
-					font-size: 12px;
+					font-size: 11px;
 				}
 
 				.fax2 {

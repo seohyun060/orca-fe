@@ -62,6 +62,10 @@ const RootNavigation = ({
 				<Route path='/insights' element={<InsightsContainer />} />
 				<Route path='/error404' element={<Error404 />} />
 				<Route path='/insights/:id' element={<InsightsDetailContainer />} />
+				<Route
+					path='*'
+					element={<HomeContainer location={location.pathname} />}
+				/>
 				{/* <Route path="/*" element={<></>} /> */}
 			</Routes>
 			{newsPop ? (

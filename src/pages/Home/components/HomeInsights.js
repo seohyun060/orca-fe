@@ -15,7 +15,6 @@ const HomeInsights = () => {
 
   useEffect(() => {
     getSeletedInsightsData().then((data) => {
-      console.log(data);
       setSelectedInsightsData(data.data);
     });
   }, []);

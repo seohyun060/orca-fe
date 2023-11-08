@@ -15,7 +15,6 @@ const HomeProjects = () => {
 
   useEffect(() => {
     getSeletedProjectData().then((data) => {
-      console.log(data)
       setProjectData(data.data);
     });
   }, []);

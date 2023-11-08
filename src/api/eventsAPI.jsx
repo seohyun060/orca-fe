@@ -1,5 +1,3 @@
-import client from "./client.js";
-
 export async function getAllEventData() {
   return fetch(`https://api-orca.beamworks.co.kr/api/events`, {
     method: "GET",

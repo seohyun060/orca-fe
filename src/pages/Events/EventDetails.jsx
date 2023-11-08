@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
@@ -24,9 +24,7 @@ const EventDetails = (props) => {
 
   useEffect(() => {
     getOneEventData(eventID).then((data) => {
-      console.log(data);
       setEventData(data.data);
-      console.log(data.data);
     });
   }, []);
 
@@ -67,9 +65,19 @@ const EventDetails = (props) => {
                     ).getDate() +
                     (eventData.startDate != eventData.endDate
                       ? "-" +
-                        new Date(
-                          moment(eventData.endDate).format("YYYY.M.D")
-                        ).getDate()
+                        (new Date(eventData.startDate).getMonth() ==
+                        new Date(eventData.endDate).getMonth()
+                          ? new Date(
+                              moment(eventData.endDate).format("YYYY.M.D")
+                            ).getDate()
+                          : new Date(
+                              moment(eventData.endDate).format("YYYY.M.D")
+                            ).getMonth() +
+                            1 +
+                            "." +
+                            new Date(
+                              moment(eventData.endDate).format("YYYY.M.D")
+                            ).getDate())
                       : "")
                   : null}
               </label>
@@ -88,7 +96,10 @@ const EventDetails = (props) => {
             </div>
             <div className="EventWebsite">
               <label className="SubtitleFont">{t("related_website")}</label>
-              <label className="DescriptFont">
+              <label
+                className="DescriptFont"
+                // onClick={navigate(eventData.relatedWebsite)}
+              >
                 {eventData ? eventData.relatedWebsite : null}
               </label>
             </div>

@@ -20,7 +20,6 @@ const PrejectsDetails = (props) => {
   const [refallocated, setRefAllocated] = useState(false);
   const params = useParams();
 
-  console.log(params);
   const projID = params.id;
 
   const [is404, setIs404] = useState(false);
@@ -38,7 +37,7 @@ const PrejectsDetails = (props) => {
     CHAT_AI: "Chat AI",
   };
 
-  // 추후 데이터에서 상태를 받아올 때 사용
+  // 데이터에서 상태를 받아올 때 사용
   const [statusSector, setStatusSector] = useState(<></>);
 
   const makeStatusSector = (status) => {
@@ -66,7 +65,6 @@ const PrejectsDetails = (props) => {
 
   useEffect(() => {
     getOneProjectData(projID).then((data) => {
-      console.log(data);
       if (data === "Unexpected Error" || data.status !== 200) {
         setIs404(true);
         throw new Error("Wrong Project Path");
@@ -76,7 +74,6 @@ const PrejectsDetails = (props) => {
       setProjectData(data.data);
     });
   }, []);
-  console.log(projectData);
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
@@ -340,7 +337,6 @@ const PrejectsDetails = (props) => {
                   <CandIInfo />
                 )}
                 <div className="SubjectName">{t("collaborators")}</div>
-                {console.log(projectData)}
                 {projectData ? (
                   projectData.collaborators[0] != null ? (
                     projectData.collaborators.map((data) => (

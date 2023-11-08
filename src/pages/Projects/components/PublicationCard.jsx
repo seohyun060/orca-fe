@@ -28,7 +28,6 @@ const PublicationCard = (props) => {
 		monthNames[publicationDate.getMonth()] +
 		'.' +
 		publicationDate.getFullYear();
-	console.log(title, projDate);
 	return (
 		<article
 			className='PublicationCard'

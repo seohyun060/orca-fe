@@ -185,7 +185,6 @@ const ProjectExplore = (props) => {
 
   useEffect(() => {
     getAllProjectData().then((data) => {
-      console.log(data);
       const projData = data.data.filter((project) => project.isStored == false);
       setProjectData(projData);
     });

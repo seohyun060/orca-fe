@@ -112,7 +112,6 @@ export default function EventCard(props) {
     <article
       className="EventCard"
       onClick={() => {
-        console.log(preventClick);
         if (!preventClick) {
           navigate(`/events/${id}`, { state: { past: past } });
           window.scrollTo(0, 0);

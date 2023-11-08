@@ -49,7 +49,7 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 				<div className='footer-info-ceo'>
 					<div className='ceo'>{t('ceo')}</div>
 					<div className='kim'>{t('ceo_name')}</div>
-					<div className='brtext'>Business Registration Number</div>
+					<div className='brtext'>{t('b_r_number')}</div>
 					<div className='brnumber'>251-87-02290</div>
 				</div>
 				<div className='footer-info-address'>

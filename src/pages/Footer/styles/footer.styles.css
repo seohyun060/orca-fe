@@ -369,9 +369,9 @@
   .footer-info {
     display: grid;
     grid-template-columns: 100px 100px 150px;
-    grid-template-rows: 1fr 1.15fr 1.75fr 1.25fr;
+    grid-template-rows: 0.5fr 0.3fr 1fr 1.3fr 1fr;
     width: 350px;
-    grid-template-areas: "head head head" "beamworks ceo number" "address address number" "logo logo logo";
+    grid-template-areas: "head head head" "beamworks beamworks number" "ceo ceo number" "address address number" "logo logo logo";
   }
   .footer-info-head {
     grid-area: head;
@@ -387,21 +387,28 @@
   }
   .footer-info-ceo {
     grid-area: ceo;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr;
     margin-bottom: 0px;
+    grid-template-areas: "cceo ckim" "ctext ctext" "cnumber cnumber";
   }
   .footer-info-ceo .ceo, .footer-info-ceo .brtext {
     font-size: 11px;
+    grid-area: cceo;
   }
   .footer-info-ceo .kim, .footer-info-ceo .brnumber {
     font-size: 11px;
+    grid-area: ckim;
+    margin-left: 0px;
   }
   .footer-info-ceo .brtext {
-    display: none;
+    font-size: 11px;
+    grid-area: ctext;
+    margin-left: 0;
   }
   .footer-info-ceo .brnumber {
-    display: none;
+    font-size: 11px;
+    grid-area: cnumber;
   }
   .footer-info-address {
     grid-area: address;
@@ -422,7 +429,7 @@
     flex-direction: column;
   }
   .footer-info-number .number1 {
-    margin-bottom: -5px;
+    margin-bottom: -2px;
     font-size: 10.7px;
   }
   .footer-info-number .number2 {
@@ -434,6 +441,7 @@
   }
   .footer-info-number .email2 {
     font-size: 12px;
+    margin-bottom: 5px;
   }
   .footer-info-number .fax1 {
     margin-bottom: -5px;

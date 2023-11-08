@@ -70,7 +70,7 @@ const PrejectsDetails = (props) => {
         throw new Error("Wrong Project Path");
         return;
       }
-	  makeStatusSector(data.data.status);
+      makeStatusSector(data.data.status);
       setProjectData(data.data);
     });
   }, []);

@@ -3,6 +3,7 @@ import ProjectsPage from 'src/pages/Projects/ProjectsPage';
 import ProjectDetails from 'src/pages/Projects/ProjectDetails';
 import EventsPage from 'src/pages/Events/EventsPage';
 import EventDetails from 'src/pages/Events/EventDetails';
+import Error404 from 'src/pages/Error404/Error404';
 
 import React, { useEffect, useState } from 'react';
 import {
@@ -46,6 +47,7 @@ const RootNavigation = () => {
 				<Route path='/events' element={<EventsPage />} />
 				<Route path='/events/:id' element={<EventDetails />} />
 				<Route path='/insights' element={<InsightsContainer />} />
+				<Route path='/error404' element={<Error404 />} />
 				<Route path='/insights/:id' element={<InsightsDetailContainer />} />
 				{/* <Route path="/*" element={<></>} /> */}
 			</Routes>

@@ -14,6 +14,7 @@ const ResearcherDetailContainer = ({}: Props) => {
 	// const profile = location.state.Profile;
 	// const department = location.state.Department;
 	// const project = location.state.Project;
+	const [check404, setCheck404] = useState(false);
 	const [name, setName] = useState('');
 	const [profile, setProfile] = useState('');
 	const [department, setDepartment] = useState('');
@@ -61,23 +62,28 @@ const ResearcherDetailContainer = ({}: Props) => {
 
 	useEffect(() => {
 		getResearcherDetail(params.id).then((data) => {
-			console.log(data.data); // 나옴
-			setName(data.data.name);
-			if (data.data.image) {
-				setProfile(data.data.image);
-			} else {
-				setProfile(images.logo_b);
-			}
-			//setProfile(data.data.image);
-			setDepartment(data.data.affiliation);
-			setProject(data.data.projectType);
+			if (data !== -1) {
+				setName(data.data.name);
+				if (data.data.image) {
+					setProfile(data.data.image);
+				} else {
+					setProfile(images.logo_b);
+				}
+				//setProfile(data.data.image);
+				setDepartment(data.data.affiliation);
+				setProject(data.data.projectType);
 
-			setPublication(data.data.publications);
-			setBiography(data.data.biography);
-			setTwitter(data.data.twitter);
-			setLinkedIn(data.data.linkedIn);
-			console.log(data);
+				setPublication(data.data.publications);
+				setBiography(data.data.biography);
+				setTwitter(data.data.twitter);
+				setLinkedIn(data.data.linkedIn);
+				setCheck404(true);
+				console.log(data);
+			} else {
+				navigate('/error404');
+			}
 		});
+
 		return () => {};
 	}, []);
 	console.log(publication);

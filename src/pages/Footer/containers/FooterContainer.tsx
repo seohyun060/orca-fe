@@ -26,12 +26,14 @@ const FooterContainer = ({ location }: Props) => {
 
 		return () => {};
 	}, [location]);
-	return (
+	return location !== '/error404' ? (
 		<Footer
 			email={email}
 			onChangeEmail={onChangeEmail}
 			onSubmitClicked={onSubmitClicked}
 		/>
+	) : (
+		<></>
 	);
 };
 

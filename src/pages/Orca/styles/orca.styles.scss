@@ -68,6 +68,7 @@
 			&-head {
 				align-self: end;
 				@include font-setting(white, 600, 60px, 70px);
+				// width: 90%;
 				grid-area: head;
 				margin-bottom: 42px;
 			}

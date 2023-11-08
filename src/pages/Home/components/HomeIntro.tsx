@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 type Props = {
 	email: string;
 	onChangeEmail: (e: EChange) => void;
-	onSubmitClicked: () => void;
+	onSubmitClicked: (e: any) => void;
 };
 
 const HomeIntro = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
@@ -25,7 +25,12 @@ const HomeIntro = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 				</div>
 				<div className='home-intro-contact'>
 					<div className='home-intro-contact-head'>{t('interested')}</div>
-					<form className='home-intro-contact-email' onSubmit={onSubmitClicked}>
+					<form
+						className='home-intro-contact-email'
+						onSubmit={(e) => {
+							onSubmitClicked(e);
+						}}
+					>
 						<input
 							className='email'
 							placeholder={t('email_placeholder')}

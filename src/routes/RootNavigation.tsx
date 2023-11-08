@@ -21,12 +21,25 @@ import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherConta
 import InsightsContainer from 'src/pages/Insights/containers/InsightsContainer';
 import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
 import InsightsDetailContainer from 'src/pages/InsightsDetail/containers/InsightsDetailContainer';
+import { EChange } from '@typedef/types';
 // /* eslint no-restricted-globals: ["off"] */
-
-const RootNavigation = () => {
+type Props = {
+	newsPop: boolean;
+	newsEmail: string;
+	onChangeNewsEmail: (e: EChange) => void;
+	onConfirmNews: () => void;
+	onNewsSubClick: () => void;
+};
+const RootNavigation = ({
+	newsPop,
+	newsEmail,
+	onChangeNewsEmail,
+	onConfirmNews,
+	onNewsSubClick,
+}: Props) => {
 	const location = useLocation();
 	return (
-		<>
+		<div className='entire'>
 			<GnbContainer location={location.pathname} />
 			<Routes location={location}>
 				<Route
@@ -51,9 +64,27 @@ const RootNavigation = () => {
 				<Route path='/insights/:id' element={<InsightsDetailContainer />} />
 				{/* <Route path="/*" element={<></>} /> */}
 			</Routes>
-
-			<FooterContainer location={location.pathname} />
-		</>
+			{newsPop ? (
+				<div className='newspop'>
+					<div className='newspop-box'>
+						<div className='text'>
+							Now you can check various updates and news with
+							<br />
+							{`${newsEmail}!`}
+						</div>
+						<button onClick={onConfirmNews}>Subscribe</button>
+					</div>
+				</div>
+			) : (
+				''
+			)}
+			<FooterContainer
+				location={location.pathname}
+				email={newsEmail}
+				onChangeEmail={onChangeNewsEmail}
+				onNewsSubClick={onNewsSubClick}
+			/>
+		</div>
 	);
 };
 

@@ -53,7 +53,12 @@ const gnb = ({
 				src={gnbColor === '-white' ? images.newlogo_b : images.newlogo_w}
 				// src={images.logo_w}
 				className='gnb-newlogo'
+				onClick={() => {
+					onItemClicked('/');
+					setMenuToggle(false);
+				}}
 			/>
+
 			<img
 				src={gnbColor === '-white' ? images.logo_b : images.logo_w}
 				// src={images.logo_w}
@@ -63,6 +68,15 @@ const gnb = ({
 					setMenuToggle(false);
 				}}
 			/>
+			<div
+				className='gnb-tiny'
+				onClick={() => {
+					onItemClicked('/');
+					setMenuToggle(false);
+				}}
+			>
+				[ˈɔːr.kə]
+			</div>
 			{!menuToggle ? (
 				<img
 					src={gnbColor === '-white' ? images.menu_b : images.menu}
@@ -101,7 +115,7 @@ const gnb = ({
 					</div>
 				</div>
 			)}
-			<div className='gnb-tiny'>[ˈɔːr.kə]</div>
+
 			<div className='gnb-menu'>
 				{tabTable.slice(0, -1).map((item, idx) => {
 					return (

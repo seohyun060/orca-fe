@@ -6,23 +6,36 @@ import { postNewsletters } from 'src/api/NewsletterAPI';
 const emailList: string[] = [];
 type Props = {
 	location: string;
+	email: string;
+	onChangeEmail: (e: EChange) => void;
+	onNewsSubClick: () => void;
 };
 
-const FooterContainer = ({ location }: Props) => {
-	const [email, setEmail] = useState('');
-	const onChangeEmail = useCallback(
-		(e: EChange) => {
-			setEmail(e.target.value);
+const FooterContainer = ({
+	location,
+	email,
+	onChangeEmail,
+	onNewsSubClick,
+}: Props) => {
+	// const [email, setEmail] = useState('');
+	// const onChangeEmail = useCallback(
+	// 	(e: EChange) => {
+	// 		setEmail(e.target.value);
+	// 	},
+	// 	[email],
+	// );
+	const onSubmitClicked = useCallback(
+		(e: any) => {
+			//emailList.push(email);
+			e.preventDefault();
+			postNewsletters(email);
+			onNewsSubClick();
+			//setEmail('');
 		},
 		[email],
 	);
-	const onSubmitClicked = useCallback(() => {
-		//emailList.push(email);
-		postNewsletters(email);
-		setEmail('');
-	}, [email]);
 	useEffect(() => {
-		setEmail('');
+		//setEmail('');
 
 		return () => {};
 	}, [location]);

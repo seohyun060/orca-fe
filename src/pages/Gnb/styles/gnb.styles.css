@@ -17,6 +17,9 @@
   left: 39px;
   width: 10.6%;
 }
+.gnb-newlogo:hover {
+  cursor: pointer;
+}
 .gnb-logo {
   position: absolute;
   width: 6.4%;
@@ -67,6 +70,9 @@
   font-style: normal;
   font-weight: 300;
   line-height: 28px; /* 175% */
+}
+.gnb .gnb-tiny:hover, .gnb-white .gnb-tiny:hover {
+  cursor: pointer;
 }
 .gnb .side, .gnb-white .side {
   position: fixed;

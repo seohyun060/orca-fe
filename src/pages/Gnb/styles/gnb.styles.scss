@@ -26,6 +26,9 @@
 		position: absolute;
 		left: 39px;
 		width: 10.6%;
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	&-logo {
 		position: absolute;
@@ -70,6 +73,9 @@
 		font-style: normal;
 		font-weight: 300;
 		line-height: 28px; /* 175% */
+		&:hover {
+			cursor: pointer;
+		}
 	}
 	.side {
 		position: fixed;

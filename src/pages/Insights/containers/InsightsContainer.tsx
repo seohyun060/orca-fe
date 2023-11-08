@@ -106,6 +106,7 @@ const InsightsContainer = (props: Props) => {
 					type: d.category,
 					link: d.file,
 					isStored: d.isStored,
+					views: d.views,
 				};
 				updatedList.push(tempData);
 			});

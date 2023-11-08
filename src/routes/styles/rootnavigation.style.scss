@@ -16,11 +16,29 @@
 	transition: all 0.4s ease-out;
 }
 // ::-webkit-scrollbar {
-// 	width: 0rem;
+// 	width: 1rem;
+// }
+// ::-webkit-scrollbar {
+// 	width: 0.6vw; /* 너비 조절 */
+// 	padding: 0.05vw;
+// 	margin: 0.05vw;
 // }
 
+// /* 스크롤바의 추적 부분 */
+// ::-webkit-scrollbar-thumb {
+// 	background: #cecece; /* 스크롤바의 색상 */
+// 	width: 0.2vw;
+// 	height: 1vw;
+
+// 	border-radius: 0.25vw;
+// 	//padding: 0.05vw;
+// }
+
+// /* 스크롤바의 트랙 부분 */
+// ::-webkit-scrollbar-track {
+// 	background: #f1f1f1; /* 스크롤바의 트랙 색상 */
+// }
 .entire {
-	width: fit-content;
 	height: fit-content;
 	//position: relative;
 	.newspop {

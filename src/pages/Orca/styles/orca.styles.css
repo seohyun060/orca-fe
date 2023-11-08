@@ -50,6 +50,7 @@
   grid-template-columns: 1fr 2.02fr;
   grid-template-rows: 1.5fr 1fr;
   bottom: 100px;
+  white-space: pre-wrap;
   grid-template-areas: "head head" "about body";
 }
 .orca-what-box-head {

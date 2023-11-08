@@ -265,7 +265,7 @@ circle {
   line-height: 28px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: pre-line;
+  white-space: pre-wrap;
 }
 
 .EventInformation {
@@ -282,6 +282,10 @@ circle {
   flex-shrink: 0;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(200, 200, 200);
+}
+
+.EventOverview {
+  width: 736px;
 }
 
 .EventTitle {
@@ -315,12 +319,18 @@ circle {
 .EventVenue,
 .EventTime,
 .EventWebsite {
+  display: flex;
   margin-bottom: 20px;
 }
 .EventVenue :first-child,
 .EventTime :first-child,
 .EventWebsite :first-child {
   margin-right: 30px;
+}
+.EventVenue .SubtitleFont,
+.EventTime .SubtitleFont,
+.EventWebsite .SubtitleFont {
+  white-space: nowrap;
 }
 
 .EventPurpose {
@@ -496,6 +506,9 @@ circle {
     width: 324px;
     height: 303px;
   }
+  .EventOverview {
+    width: 556px;
+  }
   .EventTitle {
     width: 556px;
     height: 135px;
@@ -643,6 +656,9 @@ circle {
   .EventImage {
     width: 252px;
     height: 242px;
+  }
+  .EventOverview {
+    width: 428px;
   }
   .EventTitle {
     width: 428px;
@@ -802,6 +818,9 @@ circle {
     width: 126px;
     height: 117px;
   }
+  .EventOverview {
+    width: 214px;
+  }
   .EventTitle {
     width: 214px;
     height: 45px;
@@ -819,8 +838,7 @@ circle {
   .EventVenue,
   .EventTime,
   .EventWebsite {
-    height: 14px;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
   }
   .EventVenue :first-child,
   .EventTime :first-child,

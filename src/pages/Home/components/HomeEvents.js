@@ -16,7 +16,7 @@ const HomeEvents = () => {
 
   useEffect(() => {
     getAllEventData().then((data) => {
-      const today = moment(new Date());
+      const today = moment(new Date()).startOf("day");
       let coming = [];
       data.data.map((event) => {
         if (today.isSameOrBefore(event.endDate)) {

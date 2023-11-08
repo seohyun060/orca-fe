@@ -96,12 +96,9 @@ const EventDetails = (props) => {
             </div>
             <div className="EventWebsite">
               <label className="SubtitleFont">{t("related_website")}</label>
-              <label
-                className="DescriptFont"
-                // onClick={navigate(eventData.relatedWebsite)}
-              >
-                {eventData ? eventData.relatedWebsite : null}
-              </label>
+              <a className="DescriptFont" href={eventData && eventData.relatedWebsite}>
+                {eventData && eventData.relatedWebsite}
+              </a>
             </div>
           </div>
         </div>

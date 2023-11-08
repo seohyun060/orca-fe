@@ -16,11 +16,11 @@ const EventDetails = (props) => {
 
   const eventID = params.id;
 
-  const location = useLocation();
   const navigate = useNavigate();
-  const { past } = location.state;
 
   const [eventData, setEventData] = useState();
+
+  const today = moment(new Date()).startOf("day");
 
   useEffect(() => {
     getOneEventData(eventID).then((data) => {
@@ -128,7 +128,7 @@ const EventDetails = (props) => {
           </div>
         </div>
         {/* 지난 이벤트의 경우 Gallery 표현 */}
-        {past ? (
+        {eventData && today.isAfter(eventData.endDate) ? (
           <div className="EventGallery">
             <label className="SubtitleFont">Gallery</label>
             <EventImageCarousel

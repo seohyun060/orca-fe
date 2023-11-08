@@ -55,7 +55,7 @@ export default function EventCard(props) {
     <article
       className="EventCard Past"
       onClick={() => {
-        navigate(`/events/${id}`, { state: { past: past } });
+        navigate(`/events/${id}`);
         window.scrollTo(0, 0);
       }}
     >

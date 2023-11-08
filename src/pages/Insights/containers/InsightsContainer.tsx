@@ -6,39 +6,6 @@ import { getInsights, getInsightDetail } from 'src/api/InsightAPI';
 type Props = {};
 
 for (let j = 0; j < 18; j++) {}
-//const insightList: Insight[] = [];
-
-// for (let i = 0; i < 2; i++) {
-// 	let tempType: string = '';
-// 	let tempLink: string = '';
-// 	let tempTitle: string = '';
-// 	if (i == 0) {
-// 		tempType = 'White Paper';
-// 		tempLink =
-// 			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
-// 		tempTitle = 'CadAI-B Initial Clinical Validation';
-// 	} else if (i == 1) {
-// 		tempType = 'White Paper';
-// 		tempLink =
-// 			'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
-// 		tempTitle = 'CadAI-B Technical Perspective';
-// 	}
-// 	//  else if (i < 15) {
-// 	// 	tempType = 'News';
-// 	// 	tempLink =
-// 	// 		'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B%20Initial%20Clinical%20Validation.pdf';
-// 	// } else {
-// 	// 	tempType = 'Education';
-// 	// 	tempLink =
-// 	// 		'https://raw.githubusercontent.com/seohyun060/orca-fe-pdf/main/CadAI-B Technical Perspective.pdf';
-// 	// }
-// 	insightList.push({
-// 		type: tempType,
-// 		title: tempTitle,
-// 		date: new Date(2023, 7, 19),
-// 		link: tempLink,
-// 	});
-// }
 
 const InsightsContainer = (props: Props) => {
 	const navigate = useNavigate();

@@ -120,6 +120,9 @@
   line-height: 20px;
   letter-spacing: normal;
 }
+.researcher-map .country0 .researchers-body .researcher-card:hover, .researcher-map .country3 .researchers-body .researcher-card:hover, .researcher-map .country2 .researchers-body .researcher-card:hover, .researcher-map .country1 .researchers-body .researcher-card:hover {
+  cursor: pointer;
+}
 .researcher-map .country0 .researchers-go, .researcher-map .country3 .researchers-go, .researcher-map .country2 .researchers-go, .researcher-map .country1 .researchers-go {
   grid-area: go;
   place-self: center center;
@@ -276,6 +279,9 @@
   font-style: normal;
   line-height: 17px;
   letter-spacing: normal;
+}
+.researcher-map-black .country0 .researchers-body .researcher-card:hover, .researcher-map-black .country3 .researchers-body .researcher-card:hover, .researcher-map-black .country2 .researchers-body .researcher-card:hover, .researcher-map-black .country1 .researchers-body .researcher-card:hover {
+  cursor: pointer;
 }
 .researcher-map-black .country0 .researchers-go, .researcher-map-black .country3 .researchers-go, .researcher-map-black .country2 .researchers-go, .researcher-map-black .country1 .researchers-go {
   grid-area: go;

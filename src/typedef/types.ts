@@ -22,6 +22,7 @@ export type Insight = {
 	date: Date;
 	link: string;
 	isStored: boolean;
+	views: number;
 };
 export type ResearcherList = Researchers[];
 

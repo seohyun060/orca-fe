@@ -167,32 +167,28 @@
 
 			.ceo {
 				margin-right: 21px;
-
 				color: #000;
-
 				font-family: Pretendard;
-
 				font-size: 22px;
-
 				font-style: normal;
-
 				font-weight: 600;
-
 				line-height: 28px; /* 127.273% */
 			}
 
 			.kim {
 				color: #000;
-
 				font-family: Pretendard;
-
 				font-size: 22px;
-
 				font-style: normal;
-
 				font-weight: 400;
-
 				line-height: 28px; /* 127.273% */
+			}
+			.brtext {
+				@extend .ceo;
+				margin-left: 45px;
+			}
+			.brnumber {
+				@extend .kim;
 			}
 		}
 
@@ -570,7 +566,7 @@
 
 			grid-template-columns: 100px 100px 150px;
 
-			grid-template-rows: 1fr 1.4fr 1.75fr 1.25fr;
+			grid-template-rows: 0.5fr 0.3fr 1fr 1.3fr 1fr;
 
 			width: 350px;
 
@@ -596,20 +592,36 @@
 
 			&-ceo {
 				grid-area: ceo;
-
-				flex-direction: column;
-
-				flex-wrap: wrap;
-
+				display: grid;
+				grid-template-columns: 0.5fr 2.5fr;
 				margin-bottom: 0px;
 
 				.ceo {
 					font-size: 11px;
+					grid-area: cceo;
+					//margin-right: -10px;
 				}
 
 				.kim {
 					font-size: 11px;
+					grid-area: ckim;
+					margin-left: 0px;
 				}
+				.brtext {
+					//display: none;
+					font-size: 11px;
+					grid-area: ctext;
+					margin-left: 0;
+				}
+				.brnumber {
+					//display: none;
+					font-size: 11px;
+					grid-area: cnumber;
+				}
+				grid-template-areas:
+					'cceo ckim'
+					'ctext ctext'
+					'cnumber cnumber';
 			}
 
 			&-address {
@@ -620,7 +632,7 @@
 				margin-bottom: 0px;
 
 				.business {
-					margin-bottom: 10px;
+					margin-bottom: 3px;
 
 					font-size: 11px;
 				}
@@ -640,9 +652,9 @@
 				flex-direction: column;
 
 				.number1 {
-					margin-bottom: -5px;
+					margin-bottom: -2px;
 
-					font-size: 11px;
+					font-size: 10.7px;
 				}
 
 				.number2 {
@@ -652,17 +664,18 @@
 				.email1 {
 					margin-bottom: -5px;
 
-					font-size: 12px;
+					font-size: 11px;
 				}
 
 				.email2 {
 					font-size: 12px;
+					margin-bottom: 5px;
 				}
 
 				.fax1 {
 					margin-bottom: -5px;
 
-					font-size: 12px;
+					font-size: 11px;
 				}
 
 				.fax2 {
@@ -680,7 +693,8 @@
 
 			grid-template-areas:
 				'head head head'
-				'beamworks ceo number'
+				'beamworks beamworks number'
+				'ceo ceo number'
 				'address address number'
 				'logo logo logo';
 		}

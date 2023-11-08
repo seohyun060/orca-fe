@@ -6,7 +6,7 @@ import images from 'src/assets/images';
 type Props = {
 	email: string;
 	onChangeEmail: (e: EChange) => void;
-	onSubmitClicked: () => void;
+	onSubmitClicked: (e: any) => void;
 };
 
 const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
@@ -15,7 +15,11 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 		<div className='footer'>
 			<div className='footer-news'>
 				<div className='footer-news-head'>{t('newsletter_subscribe')}</div>
-				<form onSubmit={onSubmitClicked}>
+				<form
+					onSubmit={(e) => {
+						onSubmitClicked(e);
+					}}
+				>
 					<input
 						placeholder={t('input_email')}
 						onChange={onChangeEmail}
@@ -45,6 +49,8 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 				<div className='footer-info-ceo'>
 					<div className='ceo'>{t('ceo')}</div>
 					<div className='kim'>{t('ceo_name')}</div>
+					<div className='brtext'>{t('b_r_number')}</div>
+					<div className='brnumber'>251-87-02290</div>
 				</div>
 				<div className='footer-info-address'>
 					<div className='business'>{t('business_location')}</div>

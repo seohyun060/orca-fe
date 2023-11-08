@@ -122,6 +122,9 @@
 						margin-bottom: 8px;
 						@include font-setting(white, 600, 15px, 20px);
 					}
+					&:hover {
+						cursor: pointer;
+					}
 				}
 			}
 			&-go {
@@ -290,6 +293,9 @@
 						margin-top: 8px;
 						margin-bottom: 8px;
 						@include font-setting(black, 600, 14px, 17px);
+					}
+					&:hover {
+						cursor: pointer;
 					}
 				}
 			}

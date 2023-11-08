@@ -17,11 +17,8 @@
 }
 
 .entire {
-  width: -moz-fit-content;
-  width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  position: relative;
 }
 .entire .newspop {
   display: flex;

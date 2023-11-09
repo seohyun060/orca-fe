@@ -24,7 +24,11 @@ const EventDetails = (props) => {
 
   useEffect(() => {
     getOneEventData(eventID).then((data) => {
-      setEventData(data.data);
+      if (data === "Unexpected Error" || data.status !== 200) {
+        navigate("/error404");
+      } else {
+        setEventData(data.data);
+      }
     });
   }, []);
 
@@ -96,7 +100,10 @@ const EventDetails = (props) => {
             </div>
             <div className="EventWebsite">
               <label className="SubtitleFont">{t("related_website")}</label>
-              <a className="DescriptFont" href={eventData && eventData.relatedWebsite}>
+              <a
+                className="DescriptFont"
+                href={eventData && eventData.relatedWebsite}
+              >
                 {eventData && eventData.relatedWebsite}
               </a>
             </div>

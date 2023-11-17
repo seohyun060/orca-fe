@@ -3,46 +3,29 @@ import Footer from '../Footer';
 import { useState, useEffect, useCallback } from 'react';
 import { EChange } from '@typedef/types';
 import { postNewsletters } from 'src/api/NewsletterAPI';
+import useSubscribeStore from '@store/zustand/subscribeZustand';
 const emailList: string[] = [];
 type Props = {
 	location: string;
-	email: string;
-	onChangeEmail: (e: EChange) => void;
-	onNewsSubClick: () => void;
 };
 
-const FooterContainer = ({
-	location,
-	email,
-	onChangeEmail,
-	onNewsSubClick,
-}: Props) => {
-	// const [email, setEmail] = useState('');
-	// const onChangeEmail = useCallback(
-	// 	(e: EChange) => {
-	// 		setEmail(e.target.value);
-	// 	},
-	// 	[email],
-	// );
+const FooterContainer = ({ location }: Props) => {
+	const { newsEmail, onChangeNewsEmail, onNewsSubClick } = useSubscribeStore();
 	const onSubmitClicked = useCallback(
 		(e: any) => {
-			//emailList.push(email);
 			e.preventDefault();
-			postNewsletters(email);
+			postNewsletters(newsEmail);
 			onNewsSubClick();
-			//setEmail('');
 		},
-		[email],
+		[newsEmail],
 	);
 	useEffect(() => {
-		//setEmail('');
-
 		return () => {};
 	}, [location]);
 	return location !== '/error404' ? (
 		<Footer
-			email={email}
-			onChangeEmail={onChangeEmail}
+			email={newsEmail}
+			onChangeEmail={onChangeNewsEmail}
 			onSubmitClicked={onSubmitClicked}
 		/>
 	) : (

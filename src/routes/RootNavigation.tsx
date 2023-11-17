@@ -21,23 +21,13 @@ import ResearcherContainer from 'src/pages/Researcher/containers/ResearcherConta
 import InsightsContainer from 'src/pages/Insights/containers/InsightsContainer';
 import ResearcherDetailContainer from 'src/pages/ResearcherDetail/containers/ResearcherDetailContainer';
 import InsightsDetailContainer from 'src/pages/InsightsDetail/containers/InsightsDetailContainer';
+import useSubscribeStore from '@store/zustand/subscribeZustand';
 import { EChange } from '@typedef/types';
 // /* eslint no-restricted-globals: ["off"] */
-type Props = {
-	newsPop: boolean;
-	newsEmail: string;
-	onChangeNewsEmail: (e: EChange) => void;
-	onConfirmNews: () => void;
-	onNewsSubClick: () => void;
-};
-const RootNavigation = ({
-	newsPop,
-	newsEmail,
-	onChangeNewsEmail,
-	onConfirmNews,
-	onNewsSubClick,
-}: Props) => {
+type Props = {};
+const RootNavigation = ({}: Props) => {
 	const location = useLocation();
+	const { newsPop, newsEmail, onConfirmNews } = useSubscribeStore();
 	return (
 		<div className='entire'>
 			<GnbContainer location={location.pathname} />
@@ -82,12 +72,7 @@ const RootNavigation = ({
 			) : (
 				''
 			)}
-			<FooterContainer
-				location={location.pathname}
-				email={newsEmail}
-				onChangeEmail={onChangeNewsEmail}
-				onNewsSubClick={onNewsSubClick}
-			/>
+			<FooterContainer location={location.pathname} />
 		</div>
 	);
 };

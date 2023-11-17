@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import images from 'src/assets/images';
 type Props = {
 	email: string;
-	onChangeEmail: (e: EChange) => void;
+	onChangeEmail: (e: any) => void;
 	onSubmitClicked: (e: any) => void;
 };
 
@@ -22,7 +22,9 @@ const Footer = ({ email, onChangeEmail, onSubmitClicked }: Props) => {
 				>
 					<input
 						placeholder={t('input_email')}
-						onChange={onChangeEmail}
+						onChange={(e) => {
+							onChangeEmail(e);
+						}}
 						type='email'
 						required
 						value={email}
